@@ -71,11 +71,7 @@ p{
     background:	#A52A2A;
 }
 header{
-<<<<<<< HEAD
-    background: radial-gradient(#FFFFCC,#777);
-=======
     background: linear-gradient(to bottom right, #ffd4d4 ,#fff7d4);
->>>>>>> 6534ffd6490a345ba1d3e3715780ae2d9e044a6e
 }
 header .row{
     margin-top: 70px;
