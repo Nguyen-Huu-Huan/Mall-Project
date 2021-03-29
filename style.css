@@ -70,10 +70,10 @@ p{
 .btn:hover{
     background:	#A52A2A;
 }
-.header{
+header{
     background: radial-gradient(#fff,#F4C2C2);
 }
-.header .row{
+header .row{
     margin-top: 70px;
 }
 .caterogies{
