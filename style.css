@@ -71,10 +71,13 @@ p{
     background:	#A52A2A;
 }
 header{
-    background: radial-gradient(#fff,#F4C2C2);
+    background: linear-gradient(to right, #ed294f ,#ffcb48);
 }
 header .row{
     margin-top: 70px;
+}
+header h1{
+    color: white;
 }
 .caterogies{
     margin: 70px 0;
