@@ -71,7 +71,7 @@ p{
     background:	#A52A2A;
 }
 header{
-    background: linear-gradient(to right, #ed294f ,#ffcb48);
+    background: linear-gradient(to right, white ,#ed294f);
 }
 header .row{
     margin-top: 70px;
