@@ -324,3 +324,17 @@ ul{
 .qa4-container #a4:target{
   display: block;
 }
+/* Fees*/
+main>h1{
+  text-align: center;
+}
+.fees{
+  display: flex;
+  flex-direction: row;
+}
+.fees>div{
+  border: 1px black solid;
+}
+.fees>div>h2{
+  text-align:center;
+}
