@@ -338,3 +338,70 @@ main>h1{
 .fees>div>h2{
   text-align:center;
 }
+/* My Account */
+input[type=text] {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+main>div{
+  width: 30%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+label{
+  font-weight: bold;
+  width: 50%;
+  align-items: center;
+  display: contents;
+}
+a{
+  text-decoration: none;
+  color: darkviolet;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+a:hover{
+  text-decoration: underline;
+}
+input[type=text]:focus {
+  border: 3px solid darkviolet;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+input[type=password]:focus {
+  border: 3px solid darkviolet;
+}
+.login_info{
+  width: 40%;
+}
+input[type=button]{
+  background-color: darkviolet;
+  border-color: darkviolet;
+  color: white;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  font-size: 1.5em;
+  margin-bottom: 3%;
+  height: 100%;
+}
