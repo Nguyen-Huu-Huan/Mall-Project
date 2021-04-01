@@ -525,10 +525,17 @@ input[type=password]:focus {
     margin-top: 20px;
 }
 /*---contact----*/
-.color-bar{
+.shopper-colorbar{
     width: 100%;
-    color: white;
+    color: orange;
     height: 15%;
     background-color: orange;
+    border-radius: 3%;
+}
+.store_owner-colorbar{
+    width: 100%;
+    color: green;
+    height: 15%;
+    background-color: green;
     border-radius: 3%;
 }
