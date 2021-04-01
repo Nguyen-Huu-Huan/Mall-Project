@@ -482,6 +482,7 @@ ul {
     border-radius: 14px;
     outline: none;
 }
+
 input[type=text] {
   width: 40%;
   overflow: hidden;
@@ -493,9 +494,27 @@ input[type=text] {
   transition: 0.5s;
   outline: none;
 }
+
 input[type=text]:focus {
   border: 3px solid darkviolet;
 }
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border: 3px solid darkviolet;
+}
+
 .other-input {
     width: 400px;
     height: 40px;
