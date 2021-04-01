@@ -91,6 +91,10 @@ h3 {
     font-size: 1.6rem;
 }
 
+label {
+  font-weight: bold;  
+}
+
 .text-thin {
     font-weight: 400;
 }
