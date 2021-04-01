@@ -479,7 +479,7 @@ ul {
     outline: none;
 }
 input[type=text] {
-  width: 100%;
+  width: 40%;
   overflow: hidden;
   padding: 12px 20px;
   margin: 8px 0;
