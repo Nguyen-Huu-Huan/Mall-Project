@@ -91,6 +91,10 @@ h3 {
     font-size: 1.6rem;
 }
 
+label {
+  font-weight: bold;  
+}
+
 .text-thin {
     font-weight: 400;
 }
@@ -254,6 +258,10 @@ h3 {
 
 .col-20 {
     flex-basis: 20%;
+}
+
+.col-17 {
+    flex-basis: 17%;
 }
 
 .col-10 {
@@ -480,8 +488,55 @@ ul {
     outline: none;
 }
 
+input[type=text] {
+  width: 40%;
+  overflow: hidden;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid darkviolet;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border: 3px solid darkviolet;
+}
+
 .other-input {
     width: 400px;
     height: 40px;
     margin-top: 20px;
+}
+/*---contact----*/
+.shopper-colorbar{
+    width: 100%;
+    color: orange;
+    height: 15%;
+    background-color: orange;
+    border-radius: 3%;
+}
+.store_owner-colorbar{
+    width: 100%;
+    color: green;
+    height: 15%;
+    background-color: green;
+    border-radius: 3%;
 }
