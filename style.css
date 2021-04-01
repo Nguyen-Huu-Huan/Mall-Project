@@ -526,7 +526,7 @@ input[type=password]:focus {
 }
 /*---contact----*/
 .color-bar{
-    width: 100%;
+    width: 50%;
     height: 15%;
     background-color: orange;
     border-radius: 3%;
