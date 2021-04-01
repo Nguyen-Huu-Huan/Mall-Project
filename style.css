@@ -259,6 +259,10 @@ label {
     flex-basis: 20%;
 }
 
+.col-17 {
+    flex-basis: 17%;
+}
+
 .col-10 {
     flex-basis: 10%;
 }
