@@ -8,138 +8,150 @@
     <title>SaiGonMall | Ecommerce Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header>
+    <header class="bg-gradient-light">
         <div class="container">
-            <div class="navbar">
-                <div>
-                    <img class="logo" src="images/logo.png" width="200px">
+            <div class="row">
+                <div class="col-20">
+                    <img class="header-logo" src="images/logo.png">
                 </div>
-                <nav>
+                <nav class="col-80">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#about-us">About us</a></li>
-                        <li><a href="fees.html">Fees</a></li>
-                        <li><a href="myaccount.html">My Account</a></li>
+                        <li><a href="">Fees</a></li>
+                        <li><a href="">My Account</a></li>
                         <li><a href="">Browse</a></li>
                         <li><a href="faq.html">FAQs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <img class="cart-icon" src="images/cart.png">
                 </nav>
-                <img src="images/cart.png" width="30px" height="30px">
+
             </div>
             <div class="row">
-                <div class="col-2">
-                    <h1>Welcome to <br>MalLux!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.adipisci repellendus,</p>
-                    <a href="" class="btn">Discover Now &#10147; </a>
+                <div class="col-50">
+                    <h1>EXPERIENCE<br>
+                        <span class="text-thin">BETTER SHOPPING</span>
+                    </h1>
+                    <p>Experience going to the mall without "GOING" to the mall with us</p>
+                    <a href="" class="btn">Browse from hundreds of stores &#10148;</a>
                 </div>
-                <div class="col-2">
-                    <img src="images/image1.png">
+                <div class="col-50">
+                    <img class="hero-image" src="images/image1.png">
                 </div>
             </div>
         </div>
     </header>
 
-    <!----NEW STORES--->
-    <div class="categories">
-        <div class="small-container">
-            <h2 class="tittle">New Stores</h2>
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/HM.png">
-                </div>
-                <div class="col-3">
-                    <img src="images/nike.jpg">
-                </div>
-                <div class="col-3">
-                    <img src="images/cocacola.png">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!----NEW PRODUCTS--->
-    <div class="small-container">
-        <h2 class="tittle">New Products</h2>
-        <div class="row">
-            <div class="col-4">
-                <img src="images/product1.png">
-                <h4>Relaxed Fit Hoodie</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$29.99</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product2.png">
-                <h4>Nike Heritage 2.0</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$20.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product3.png">
-                <h4>Nike Air Tuned Max</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$499.99</p>
-            </div>
-
-        </div>
-    </div>
     <!----FEATURED STORES--->
-    <div class="categories">
-        <div class="small-container">
-            <h2 class="tittle">Featured Stores</h2>
+    <section class="featured-stores">
+        <div class="container">
+            <h2 class="section-title">Featured Stores</h2>
             <div class="row">
-                <div class="col-3">
-                    <img src="images/levi.png">
+                <div class="col-45">
+                    <div class="featured-stores-wrapper">
+                        <figure>
+                            <img class="hover-shadow" src="images/lg.jpg">
+                        </figure>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="images/mc.png">
-                </div>
-                <div class="col-3">
-                    <img src="images/LG.jpg">
-                </div>
-                <div class="col-3">
-                    <img src="images/puma.png">
-                </div>
-                <div class="col-3">
-                    <img src="images/redbull.png">
-                </div>
-                <div class="col-3">
-                    <img src="images/nestle.jpg">
-                </div>
+                <figure class="col-45">
+                    <img class="hover-shadow" src="images/locklock.jpg">
+                </figure>
             </div>
         </div>
-    </div>
-    <!----FEATURED PRODUCTS--->
-    <h2 class="tittle">Featured Products</h2>
-    <div class="offer">
+    </section>
+
+    <!----NEW STORES--->
+    <section class="new-stores">
         <div class="small-container">
+            <h2 class="section-title">New Stores</h2>
             <div class="row">
-                <div class="col-2">
-                    <img src="images/offer1.png" class="offer-img">
+                <figure class="col-30 ">
+                    <img class="hover-shadow" src="images/hm.jpg">
+                </figure>
+                <figure class="col-30">
+                    <img class="hover-shadow" src="images/nike.jpg">
+                </figure>
+                <figure class="col-30">
+                    <img class="hover-shadow" src="images/cocacola.jpg">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!----NEW PRODUCTS--->
+    <section class="new-products">
+        <div class="small-container">
+            <h2 class="section-title">New Products</h2>
+            <div class="row">
+                <div class="col-20">
+                    <div class="new-products-wrapper hover-shadow">
+                        <figure class="new-products-img-wrapper">
+                            <img class="new-products-img " src="images/product1.png">
+                            <img class="new-products-brand" src="images/nike.jpg">
+                        </figure>
+                        <p class="text-center text-small color-gray">Nike</p>
+                        <h2 class="text-center text-medium">Grey Sportwear Hoodie</h2>
+                        <h3 class="text-center text-normal color-red">$25.99</h3>
+
+                    </div>
                 </div>
-                <div class="col-2">
+                <div class="col-20">
+                    <div class="new-products-wrapper hover-shadow">
+                        <figure class="new-products-img-wrapper">
+                            <img class="new-products-img " src="images/product1.png">
+                            <img class="new-products-brand" src="images/nike.jpg">
+                        </figure>
+                        <p class="text-center text-small color-gray">Nike</p>
+                        <h2 class="text-center text-medium">Grey Sportwear Hoodie</h2>
+                        <h3 class="text-center text-normal color-red">$25.99</h3>
+
+                    </div>
+                </div>
+                <div class="col-20">
+                    <div class="new-products-wrapper hover-shadow">
+                        <figure class="new-products-img-wrapper">
+                            <img class="new-products-img " src="images/product1.png">
+                            <img class="new-products-brand" src="images/nike.jpg">
+                        </figure>
+                        <p class="text-center text-small color-gray">Nike</p>
+                        <h2 class="text-center text-medium">Grey Sportwear Hoodie</h2>
+                        <h3 class="text-center text-normal color-red">$25.99</h3>
+
+                    </div>
+                </div>
+                <div class="col-20">
+                    <div class="new-products-wrapper hover-shadow">
+                        <figure class="new-products-img-wrapper">
+                            <img class="new-products-img " src="images/product1.png">
+                            <img class="new-products-brand" src="images/nike.jpg">
+                        </figure>
+                        <p class="text-center text-small color-gray">Nike</p>
+                        <h2 class="text-center text-medium">Grey Sportwear Hoodie</h2>
+                        <h3 class="text-center text-normal color-red">$25.99</h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!----FEATURED PRODUCTS--->
+    <h2 class="section-title ">Featured Products</h2>
+    <div class="offer ">
+        <div class="small-container ">
+            <div class="row ">
+                <div class="col-2 ">
+                    <img src="images/offer1.png " class="offer-img ">
+                </div>
+                <div class="col-2 ">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <h1>Smart Tivi LED LG</h1>
                     <small>
@@ -147,14 +159,14 @@
                         ducimus asperiores vitae dolorem at nobis excepturi ipsum praesentium, quos labore quod illo rem
                         tempore aliquam unde!
                     </small><br>
-                    <a href="" class="btn">Buy Now &#10147; </a>
+                    <a href=" " class="btn ">Buy Now &#10147; </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2">
-                    <img src="images/ac.png" class="offer-img">
+            <div class="row ">
+                <div class="col-2 ">
+                    <img src="images/ac.png " class="offer-img ">
                 </div>
-                <div class="col-2">
+                <div class="col-2 ">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <h1>
                         LG AC Inverter 1 HP</h1>
@@ -163,65 +175,66 @@
                         ducimus asperiores vitae dolorem at nobis excepturi ipsum praesentium, quos labore quod illo rem
                         tempore aliquam unde!
                     </small><br>
-                    <a href="" class="btn">Buy Now &#10147; </a>
+                    <a href=" " class="btn ">Buy Now &#10147; </a>
                 </div>
             </div>
         </div>
     </div>
     <!----About Us--->
-<div class="about-us" id="about-us">
-    <div class="small-containner">
-        <div class="row">
-            <div class="col-3">
-                <i class="fa fa-quote-left"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
-                <img src="images/Huy-Portrait.png" >
-                <h3>Quach Nhat Huy</h3> 
-            </div>
-            <div class="col-3">
-                <i class="fa fa-quote-left"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
-                <img src="images/Nguyen-Portrait.png" >
-                <h3>Vo Tran Cong Nguyen</h3> 
-            </div> <div class="col-3">
-                <i class="fa fa-quote-left"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
-                <img src="images/Huan-Portrait.png" >
-                <h3>Nguyen Huu Huan</h3> 
+    <div class="about-us " id="about-us ">
+        <div class="small-containner ">
+            <div class="row ">
+                <div class="col-3 ">
+                    <i class="fa fa-quote-left "></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
+                    <img src="images/Huy-Portrait.png ">
+                    <h3>Quach Nhat Huy</h3>
+                </div>
+                <div class="col-3 ">
+                    <i class="fa fa-quote-left "></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
+                    <img src="images/Nguyen-Portrait.png ">
+                    <h3>Vo Tran Cong Nguyen</h3>
+                </div>
+                <div class="col-3 ">
+                    <i class="fa fa-quote-left "></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo blanditiis, magnam voluptate dolorem sit ipsa sequi veniam soluta officia vitae repudiandae molestias error asperiores suscipit repellat. Odio, eos ex?</p>
+                    <img src="images/Huan-Portrait.png ">
+                    <h3>Nguyen Huu Huan</h3>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <!----Footer--->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
+    <div class="footer ">
+        <div class="container ">
+            <div class="row ">
+                <div class="footer-col-1 ">
                     <h3>Download our app</h3>
                     <p>Download App for Android and iOS mobile phone</p>
-                    <div class="app-logo">
-                        <img src="images/android.png">
-                        <img src="images/ios.png">
+                    <div class="app-logo ">
+                        <img src="images/android.png ">
+                        <img src="images/ios.png ">
                     </div>
                 </div>
-                <div class="footer-col-2">
-                    <img class="logo" src="images/logo.png">
+                <div class="footer-col-2 ">
+                    <img class="logo " src="images/logo.png ">
                     <p>Thank you for shopping with us</p>
                 </div>
-                <div class="footer-col-3">
+                <div class="footer-col-3 ">
                     <h3>Useful Links</h3>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Term of Service</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Browse</a></li>
-                        <li><a href="">FAQs</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href=" ">Home</a></li>
+                        <li><a href=" ">Term of Service</a></li>
+                        <li><a href=" ">Privacy Policy</a></li>
+                        <li><a href=" ">Browse</a></li>
+                        <li><a href=" ">FAQs</a></li>
+                        <li><a href=" ">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
-            <p class="copyright">Copyright 2021 © - Web Programming - Group 38</p>
+            <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
         </div>
     </div>
 </body>
