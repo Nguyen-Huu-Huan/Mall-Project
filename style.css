@@ -206,6 +206,7 @@ h3 {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 1rem;
 }
 
 
@@ -288,7 +289,7 @@ h3 {
 /*---Main---*/
 
 header {
-    padding-bottom: 10%;
+    padding-bottom: 1%;
 }
 
 header h1 {
