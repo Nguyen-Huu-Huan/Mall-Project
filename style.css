@@ -540,6 +540,34 @@ input[type=password]:focus {
     margin-bottom: 10%;
     justify-self: center;
 }
+.dollar{
+    display: inline-block;
+    margin-top: 1rem;
+    vertical-align: top;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.cent{
+    display: inline-block;
+    margin-top: 1rem;
+    vertical-align: top;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.value{
+  font-size: 10rem;
+}
+.month{
+  display: inline-block;
+  margin-top: 1rem;
+  vertical-align: bottom;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.month::before{
+  content: "/";
+  margin-right: 2%;
+}
 /*--Browse dropdown button---*/
 .dropbtn {
     background: none;
