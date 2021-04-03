@@ -521,7 +521,7 @@ input[type=password]:focus {
     height: 40px;
     margin-top: 20px;
 }
-/*---contact----*/
+/*---fees----*/
 .shopper-colorbar{
     width: 100%;
     color: orange;
@@ -535,6 +535,9 @@ input[type=password]:focus {
     height: 15%;
     background-color: green;
     border-radius: 3%;
+}
+.box-height{
+    height: 30%;
 }
 /*--Browse dropdown button---*/
 .dropbtn {
