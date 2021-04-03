@@ -522,16 +522,20 @@ input[type=password]:focus {
     margin-top: 20px;
 }
 /*---fees----*/
+.shopper_owner_h3{
+    color: white;
+    text-align: center;
+}
 .shopper-colorbar{
     width: 100%;
-    color: white;
+    color: orange;
     height: 15%;
     background-color: orange;
     border-radius: 3%;
 }
 .store_owner-colorbar{
     width: 100%;
-    color: white;
+    color: green;
     height: 15%;
     background-color: green;
     border-radius: 3%;
