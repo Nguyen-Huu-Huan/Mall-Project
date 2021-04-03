@@ -537,7 +537,7 @@ input[type=password]:focus {
     border-radius: 3%;
 }
 .box-height *{
-    margin-bottom: 2%;
+    margin-bottom: 10%;
 }
 /*--Browse dropdown button---*/
 .dropbtn {
