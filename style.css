@@ -536,8 +536,8 @@ input[type=password]:focus {
     background-color: green;
     border-radius: 3%;
 }
-.box-height{
-    height: 70%;
+.box-height *{
+    margin-bottom: 2%;
 }
 /*--Browse dropdown button---*/
 .dropbtn {
