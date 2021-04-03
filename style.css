@@ -524,14 +524,14 @@ input[type=password]:focus {
 /*---fees----*/
 .shopper-colorbar{
     width: 100%;
-    color: orange;
+    color: white;
     height: 15%;
     background-color: orange;
     border-radius: 3%;
 }
 .store_owner-colorbar{
     width: 100%;
-    color: green;
+    color: white;
     height: 15%;
     background-color: green;
     border-radius: 3%;
