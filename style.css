@@ -232,7 +232,9 @@ label {
 .col-70 {
     flex-basis: 70%;
 }
-
+.col-65{
+    flex-basis: 65%;
+}
 .col-60 {
     flex-basis: 60%;
 }
