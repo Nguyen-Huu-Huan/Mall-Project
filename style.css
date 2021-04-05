@@ -524,6 +524,21 @@ input[type=password] {
 input[type=password]:focus {
   border: 3px solid #ffb7c5;
 }
+input[type=email] {
+  width: 70%;
+  overflow: hidden;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=email]:focus {
+  border: 3px solid #ffb7c5;
+}
 
 .other-input {
     width: 400px;
