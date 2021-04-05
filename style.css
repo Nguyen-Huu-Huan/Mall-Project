@@ -586,7 +586,7 @@ input[type=email]:focus {
 }
 .qa1-container #a1:target{
   display: block;
-  background: #FFB6C1;
+  background: white;
   color: black;
 }
 .qa2-container{
@@ -604,7 +604,7 @@ input[type=email]:focus {
 }
 .qa2-container #a2:target{
   display: block;
-  background: #FFB6C1;
+  background: white;
   color: black;
 }
 .qa3-container{
@@ -622,7 +622,7 @@ input[type=email]:focus {
 }
 .qa3-container #a3:target{
   display: block;
-  background: #FFB6C1;
+  background: white;
   color: black;
 }
 .qa4-container{
@@ -640,7 +640,7 @@ input[type=email]:focus {
 }
 .qa4-container #a4:target{
   display: block;
-  background: #FFB6C1;
+  background: white;
   color: black;
 }
 /*--Browse dropdown button---*/
