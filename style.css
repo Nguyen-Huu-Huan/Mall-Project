@@ -492,7 +492,7 @@ ul {
 }
 
 input[type=text] {
-  width: 40%;
+  width: 60%;
   overflow: hidden;
   padding: 12px 20px;
   margin: 8px 0;
@@ -504,13 +504,13 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  border: 3px solid darkviolet;
+  border: 3px solid #ffb7c5;
 }
 
 input[type=password] {
-  width: 100%;
+  width: 60%;
+  overflow: hidden;
   padding: 12px 20px;
-
   margin: 8px 0;
   box-sizing: border-box;
   border: 3px solid #ccc;
@@ -520,7 +520,7 @@ input[type=password] {
 }
 
 input[type=password]:focus {
-  border: 3px solid darkviolet;
+  border: 3px solid #ffb7c5;
 }
 
 .other-input {
