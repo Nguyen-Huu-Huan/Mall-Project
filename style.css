@@ -571,13 +571,13 @@ input[type=email]:focus {
 }
 /*--FAQs--*/
 .qa1-container{
-  background: white;
+  background-image: linear-gradient(to right, #ff0084, #33001b);
   width: 70%;
   text-align: center;
 }
 
 .qa1-container div a{
-  color: black;
+  color: white;
   font-size: 3vw;
   text-decoration: none;
 }
@@ -586,14 +586,16 @@ input[type=email]:focus {
 }
 .qa1-container #a1:target{
   display: block;
+  background: #FFB6C1;
+  color: black;
 }
 .qa2-container{
-  background: white;
+  background-image: linear-gradient(to right, #ff0084, #33001b);
   width: 70%;
   text-align: center;
 }
 .qa2-container div a{
-  color: black;
+  color: white;
   font-size: 3vw;
   text-decoration: none;
 }
@@ -602,14 +604,16 @@ input[type=email]:focus {
 }
 .qa2-container #a2:target{
   display: block;
+  background: #FFB6C1;
+  color: black;
 }
 .qa3-container{
-  background: white;
+  background-image: linear-gradient(to right, #ff0084, #33001b);
   width: 70%;
   text-align: center;
 }
 .qa3-container div a{
-  color: black;
+  color: white;
   font-size: 3vw;
   text-decoration: none;
 }
@@ -618,14 +622,16 @@ input[type=email]:focus {
 }
 .qa3-container #a3:target{
   display: block;
+  background: #FFB6C1;
+  color: black;
 }
 .qa4-container{
-  background: white;
+  background-image: linear-gradient(to right, #ff0084, #33001b);
   width: 70%;
   text-align: center;
 }
 .qa4-container div a{
-  color: black;
+  color: white;
   font-size: 3vw;
   text-decoration: none;
 }
@@ -634,6 +640,8 @@ input[type=email]:focus {
 }
 .qa4-container #a4:target{
   display: block;
+  background: #FFB6C1;
+  color: black;
 }
 /*--Browse dropdown button---*/
 .dropbtn {
