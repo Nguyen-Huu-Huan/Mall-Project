@@ -569,7 +569,72 @@ input[type=email]:focus {
     margin-bottom: 10%;
     justify-self: center;
 }
+/*--FAQs--*/
+.qa1-container{
+  background: white;
+  width: 70%;
+  text-align: center;
+}
 
+.qa1-container div a{
+  color: black;
+  font-size: 3vw;
+  text-decoration: none;
+}
+.qa1-container #a1{
+  display: none;
+}
+.qa1-container #a1:target{
+  display: block;
+}
+.qa2-container{
+  background: white;
+  width: 70%;
+  text-align: center;
+}
+.qa2-container div a{
+  color: black;
+  font-size: 3vw;
+  text-decoration: none;
+}
+.qa2-container #a2{
+  display: none;
+}
+.qa2-container #a2:target{
+  display: block;
+}
+.qa3-container{
+  background: white;
+  width: 70%;
+  text-align: center;
+}
+.qa3-container div a{
+  color: black;
+  font-size: 3vw;
+  text-decoration: none;
+}
+.qa3-container #a3{
+  display: none;
+}
+.qa3-container #a3:target{
+  display: block;
+}
+.qa4-container{
+  background: white;
+  width: 70%;
+  text-align: center;
+}
+.qa4-container div a{
+  color: black;
+  font-size: 3vw;
+  text-decoration: none;
+}
+.qa4-container #a4{
+  display: none;
+}
+.qa4-container #a4:target{
+  display: block;
+}
 /*--Browse dropdown button---*/
 .dropbtn {
     background: none;
