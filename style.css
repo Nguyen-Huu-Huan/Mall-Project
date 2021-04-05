@@ -205,7 +205,14 @@ label {
     width: 65%;
     margin: auto;
 }
-
+.middle-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
 .row {
     display: flex;
     align-items: center;
