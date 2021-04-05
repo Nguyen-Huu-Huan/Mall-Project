@@ -528,6 +528,17 @@ input[type=password]:focus {
     height: 40px;
     margin-top: 20px;
 }
+.login-button{
+  background-color: #ffb7c5;
+  border-color: #ffb7c5;
+  color: white;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  font-size: 1.5em;
+  margin-bottom: 3%;
+  height: 100%;
+}
 /*---fees----*/
 .shopper_owner_h3{
     color: white;
