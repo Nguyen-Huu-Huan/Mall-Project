@@ -38,7 +38,6 @@ nav ul li {
     margin-right: 20px;
 }
 
-
 img {
     width: 100%;
 }
@@ -81,6 +80,7 @@ h1 {
 }
 
 h2 {
+    padding: 5px 0;
     color: #2b2b2b;
     font-weight: 800;
     font-size: 2.3rem;
@@ -93,7 +93,7 @@ h3 {
 }
 
 label {
-  font-weight: bold;  
+    font-weight: bold;
 }
 
 .text-thin {
@@ -122,6 +122,10 @@ label {
 
 .text-normal {
     font-size: 1rem;
+}
+
+.text-bitsmall {
+    font-size: 0.8rem;
 }
 
 .text-small {
@@ -193,6 +197,10 @@ label {
     transform: scale(1.009);
 }
 
+.shadow {
+    box-shadow: 0 0 1.1rem -0.4rem rgb(49, 49, 49);
+}
+
 
 /*---Container---*/
 
@@ -205,7 +213,8 @@ label {
     width: 65%;
     margin: auto;
 }
-.middle-container{
+
+.middle-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -213,6 +222,7 @@ label {
     margin-left: 15%;
     margin-right: 15%;
 }
+
 .row {
     display: flex;
     align-items: center;
@@ -239,16 +249,19 @@ label {
 .col-70 {
     flex-basis: 70%;
 }
-.col-65{
+
+.col-65 {
     flex-basis: 65%;
 }
+
 .col-60 {
     flex-basis: 60%;
 }
 
-.col-57{
+.col-57 {
     flex-basis: 57%;
 }
+
 .col-50 {
     flex-basis: 50%;
 }
@@ -261,8 +274,8 @@ label {
     flex-basis: 40%;
 }
 
-.col-37{
-    flex-basis: 37%;    
+.col-37 {
+    flex-basis: 37%;
 }
 
 .col-30 {
@@ -453,7 +466,8 @@ header .btn {
     width: 180px;
     margin-bottom: 20px;
 }
-.footer-col-2{
+
+.footer-col-2 {
     text-align: center;
     flex: 1;
 }
@@ -501,50 +515,51 @@ ul {
 }
 
 input[type=text] {
-  width: 70%;
-  overflow: hidden;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    width: 70%;
+    overflow: hidden;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
 input[type=text]:focus {
-  border: 3px solid #ffb7c5;
+    border: 3px solid #ffb7c5;
 }
 
 input[type=password] {
-  width: 70%;
-  overflow: hidden;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    width: 70%;
+    overflow: hidden;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
 input[type=password]:focus {
-  border: 3px solid #ffb7c5;
+    border: 3px solid #ffb7c5;
 }
+
 input[type=email] {
-  width: 70%;
-  overflow: hidden;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    width: 70%;
+    overflow: hidden;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
 input[type=email]:focus {
-  border: 3px solid #ffb7c5;
+    border: 3px solid #ffb7c5;
 }
 
 .other-input {
@@ -553,147 +568,204 @@ input[type=email]:focus {
     margin-top: 20px;
 }
 
+
 /*---fees----*/
-.shopper_owner_h3{
+
+.shopper_owner_h3 {
     color: white;
     text-align: center;
 }
-.shopper-colorbar{
+
+.shopper-colorbar {
+    padding: 0.8rem 0;
     width: 100%;
-    color: orange;
+    color: #ec2e50;
     height: 15%;
-    background-color: orange;
-    border-radius: 3%;
-}
-.store_owner-colorbar{
-    width: 100%;
-    color: green;
-    height: 15%;
-    background-color: green;
-    border-radius: 3%;
-}
-.box-height *{
-    margin-bottom: 10%;
-    justify-self: center;
+    background-color: #ec2e50;
 }
 
-.btn-fees{
-display: block !important;
-margin: 1rem !important;
+.store_owner-colorbar {
+    padding: 0.8rem 0;
+    width: 100%;
+    color: #cc29bd;
+    height: 15%;
+    background-color: #cc29bd;
 }
+
+.smallbox-fees {
+    padding: 0 !important;
+    color: none;
+    margin-bottom: 1rem;
+}
+
+.box-fees {
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 1rem 0.7rem;
+}
+
+.btn-fees {
+    display: block !important;
+    margin: 1rem !important;
+}
+
+.fees hr {
+    width: 60%;
+    margin: 0.4rem auto;
+    height: 2px;
+    border-width: 0;
+}
+
+.hr-shopper {
+    background-color: #ffc6c6;
+    color: #ffc6c6;
+}
+
+.hr-owner {
+    background-color: #f4c6ff;
+    color: #f4c6ff;
+}
+
 
 /*--FAQs--*/
-.qa1-container{
-  background-image: linear-gradient(to right, #ff0084, #33001b);
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1%;
+
+.qa1-container {
+    background-image: linear-gradient(to right, #ff0084, #33001b);
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1%;
 }
 
-.qa1-container div a{
-  color: white;
-  font-size: 3vw;
-  text-decoration: none;
+.qa1-container div a {
+    color: white;
+    font-size: 3vw;
+    text-decoration: none;
 }
-.qa1-container #a1{
-  display: none;
+
+.qa1-container #a1 {
+    display: none;
 }
-.qa1-container #a1:target{
-  display: block;
-  background: white;
-  color: black;
+
+.qa1-container #a1:target {
+    display: block;
+    background: white;
+    color: black;
 }
-.qa2-container{
-  background-image: linear-gradient(to right, #ff0084, #33001b);
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1%;
+
+.qa2-container {
+    background-image: linear-gradient(to right, #ff0084, #33001b);
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1%;
 }
-.qa2-container div a{
-  color: white;
-  font-size: 3vw;
-  text-decoration: none;
+
+.qa2-container div a {
+    color: white;
+    font-size: 3vw;
+    text-decoration: none;
 }
-.qa2-container #a2{
-  display: none;
+
+.qa2-container #a2 {
+    display: none;
 }
-.qa2-container #a2:target{
-  display: block;
-  background: white;
-  color: black;
+
+.qa2-container #a2:target {
+    display: block;
+    background: white;
+    color: black;
 }
-.qa3-container{
-  background-image: linear-gradient(to right, #ff0084, #33001b);
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1%;
+
+.qa3-container {
+    background-image: linear-gradient(to right, #ff0084, #33001b);
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1%;
 }
-.qa3-container div a{
-  color: white;
-  font-size: 3vw;
-  text-decoration: none;
+
+.qa3-container div a {
+    color: white;
+    font-size: 3vw;
+    text-decoration: none;
 }
-.qa3-container #a3{
-  display: none;
+
+.qa3-container #a3 {
+    display: none;
 }
-.qa3-container #a3:target{
-  display: block;
-  background: white;
-  color: black;
+
+.qa3-container #a3:target {
+    display: block;
+    background: white;
+    color: black;
 }
-.qa4-container{
-  background-image: linear-gradient(to right, #ff0084, #33001b);
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1%;
+
+.qa4-container {
+    background-image: linear-gradient(to right, #ff0084, #33001b);
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1%;
 }
-.qa4-container div a{
-  color: white;
-  font-size: 3vw;
-  text-decoration: none;
+
+.qa4-container div a {
+    color: white;
+    font-size: 3vw;
+    text-decoration: none;
 }
-.qa4-container #a4{
-  display: none;
+
+.qa4-container #a4 {
+    display: none;
 }
-.qa4-container #a4:target{
-  display: block;
-  background: white;
-  color: black;
+
+.qa4-container #a4:target {
+    display: block;
+    background: white;
+    color: black;
 }
+
+
 /*--Browse dropdown button---*/
+
 .dropbtn {
     background: none;
     border: none;
     cursor: none;
-  }
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background: none;
     min-width: 160px;
-  }
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  .dropdown-content a:hover {
+}
+
+.dropdown-content a:hover {
     color: #ec2e50;
-    }
-  .dropdown:hover .dropdown-content {
-    display: block; 
-  }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 /*-----nike store---*/
-.nikefeature{
+
+.nikefeature {
     background: radial-gradient(#fff, #8a8a8a);
     margin: 0 15rem 2rem;
     border-radius: 1%;
 }
+
 .btnnike {
     font-weight: 600;
     box-sizing: border-box;
@@ -711,14 +783,17 @@ margin: 1rem !important;
     box-shadow: inset 0 0 0 2rem white;
     color: #2b2b2b;
 }
+
+
 /*---nike product dunk low black----*/
-.small-img-row{
+
+.small-img-row {
     display: flex;
     justify-content: space-between;
 }
-.small-img-col{
+
+.small-img-col {
     flex-basis: 24%;
     cursor: pointer;
     margin: 0.1rem;
 }
- 
