@@ -577,10 +577,11 @@ input[type=email]:focus {
     justify-self: center;
 }
 
-.btn-fee{
+.btn-fees{
 display: block !important;
 margin: 1rem !important;
 }
+
 /*--FAQs--*/
 .qa1-container{
   background-image: linear-gradient(to right, #ff0084, #33001b);
