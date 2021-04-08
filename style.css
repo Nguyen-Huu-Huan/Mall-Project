@@ -16,7 +16,7 @@ html {
 
 @media (max-width: 400px) {
     html {
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
@@ -321,6 +321,13 @@ label {
 }
 
 
+/*---Header & Footer---*/
+
+.small-header .header-logo {
+    padding: 1.4rem 0 0 0;
+}
+
+
 /*----------PAGE----------*/
 
 
@@ -356,7 +363,7 @@ header .btn {
 
 .header-logo {
     width: 100%;
-    padding: 2rem 3rem 3rem 0;
+    padding: 2rem 3rem 2rem 0;
 }
 
 .featured-stores figure img,
@@ -408,7 +415,10 @@ header .btn {
 
 .offer {
     padding: 3rem 0 2rem 0;
-    background: radial-gradient(#fff, #F4C2C2);
+}
+
+.offer-des * {
+    margin: 15px 0;
 }
 
 
@@ -442,7 +452,8 @@ header .btn {
     padding: 60px 0 20px;
 }
 
-.footer p {
+.footer p,
+.footer a {
     color: #ffffff;
 }
 
@@ -728,7 +739,7 @@ input[type=email]:focus {
 .dropbtn {
     background: none;
     border: none;
-    cursor: none;
+    cursor: pointer;
 }
 
 .dropdown {
@@ -746,7 +757,6 @@ input[type=email]:focus {
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
 }
 
