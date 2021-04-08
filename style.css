@@ -8,13 +8,13 @@ html {
     font-size: 17px;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
     html {
         font-size: 14px;
     }
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 767px) {
     html {
         font-size: 8px;
     }
@@ -354,7 +354,7 @@ header .btn {
 }
 
 .cart-icon {
-    width: 30px;
+    width: 0.8rem;
 }
 
 .hero-image {
@@ -475,7 +475,7 @@ header .btn {
 }
 
 .footer-col-1 img {
-    width: 180px;
+    width: 12rem;
     margin-bottom: 20px;
 }
 
@@ -750,7 +750,7 @@ input[type=email]:focus {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: none;
+    background: white;
     min-width: 160px;
 }
 
@@ -796,7 +796,7 @@ input[type=email]:focus {
 }
 
 
-/*---nike product dunk low black----*/
+/*---nike product dunk low black---*/
 
 .small-img-row {
     display: flex;
@@ -807,4 +807,17 @@ input[type=email]:focus {
     flex-basis: 24%;
     cursor: pointer;
     margin: 0.1rem;
+}
+
+
+/*--My Account Login--*/
+
+.login-wrapper {
+    padding: 2rem 0 1rem 0;
+}
+
+.login-wrapper input[type="submit" i] {
+    border: none;
+    width: 70%;
+    cursor: pointer;
 }
