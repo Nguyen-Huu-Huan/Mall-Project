@@ -328,6 +328,15 @@ label {
 }
 
 
+/*---Scroll To Top Button---*/
+
+.back-to-top {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+
 /*----------PAGE----------*/
 
 
