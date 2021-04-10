@@ -792,7 +792,7 @@ input[type=email]:focus {
 /*--My Account Register--*/
 
 select {
-    width: 70%;
+    width: 85%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
