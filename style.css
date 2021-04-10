@@ -849,3 +849,8 @@ select {
 select:focus {
     border: 3px solid #ffb7c5;
 }
+legend{
+    text-align:right;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
