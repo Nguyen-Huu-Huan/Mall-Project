@@ -59,23 +59,23 @@
                                 <br>
                                 <label for="fname">First name</label>
                                 <br>
-                                <input type="text" name="fname" value="">
+                                <input type="text" name="fname" value="" required>
                                 <br>
                                 <label for="lname">Last name</label>
                                 <br>
-                                <input type="text" name="lname" value="">
+                                <input type="text" name="lname" value="" required>
                                 <br>
                                 <label for="email">Email address</label>
                                 <br>
-                                <input type="email" name="email" value="">
+                                <input type="email" name="email" value="" required>
                                 <br>
                                 <label for="pass">Password</label>
                                 <br>
-                                <input type="password" name="pass" value="">
+                                <input type="password" name="pass" value="" required>
                                 <br>
                                 <label for="cfpass">Confirm Password</label>
                                 <br>
-                                <input type="password" name="cfpass" value="">
+                                <input type="password" name="cfpass" value="" required>
                                 <br>
                                 <input type="submit" name="" value="Register" class="small-container btn text-medium">
                             </form>
@@ -90,11 +90,11 @@
                                 <br>
                                 <label for="bname">Business Name</label>
                                 <br>
-                                <input type="text" name="bname" value="">
+                                <input type="text" name="bname" value="" required>
                                 <br>
                                 <label for="sname">Store Name</label>
                                 <br>
-                                <input type="text" name="sname" value="">
+                                <input type="text" name="sname" value="" required>
                                 <br>
                                 <label for="scategory">Store Category</label>
                                 <br>
@@ -113,8 +113,10 @@
                                     <option value="kiosks">Kiosks</option>
                                 </select>
                                 <br>
-                                <input type="submit" name="" value="Register" class="small-container btn text-medium">
-                                <input type="reset" name="" value="Clear" class="small-container btn text-medium">
+                                <div class="row">
+                                    <input type="submit" name="" value="Register" class="col-50 btn text-medium">
+                                    <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
+                                </div>
                             </form>
                         </div>
                     </div>
