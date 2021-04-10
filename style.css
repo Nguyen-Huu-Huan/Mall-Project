@@ -814,7 +814,7 @@ legend {
     margin-right: 5vw;
 }
 input[type=tel] {
-    width: 100%;
+    width: 70%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
