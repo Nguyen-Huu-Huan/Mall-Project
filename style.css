@@ -829,3 +829,19 @@ input[type=email]:focus {
     width: 70%;
     cursor: pointer;
 }
+/*--My Account Register--*/
+select {
+    width: 70%;
+    overflow: hidden;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+select:focus {
+    border: 3px solid #ffb7c5;
+}
