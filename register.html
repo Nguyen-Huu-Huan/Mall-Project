@@ -55,47 +55,52 @@
                                 <legend class="text-big">For customers</legend>
                                 <br>
                                 <div class="small-container">
-                                    <label for="email">Email address</label>
+                                    <div class="col-40">
+                                        <label for="email">Email address</label>
+                                        <br>
+                                        <input type="email" name="email" value="" required>
+                                        <br>
+                                        <label for="phone">Phone number</label>
+                                        <br>
+                                        <input type="tel" name="phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
+                                        <br>
+                                        <label for="pass">Password</label>
+                                        <br>
+                                        <input type="password" name="pass" value="" required>
+                                        <br>
+                                        <label for="cfpass">Confirm Password</label>
+                                        <br>
+                                        <input type="password" name="cfpass" value="" required>
+                                        <br>
+                                    </div>
                                     <br>
-                                    <input type="email" name="email" value="" required>
-                                    <br>
-                                    <label for="phone">Phone number</label>
-                                    <br>
-                                    <input type="tel" name="phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
-                                    <br>
-                                    <label for="pass">Password</label>
-                                    <br>
-                                    <input type="password" name="pass" value="" required>
-                                    <br>
-                                    <label for="cfpass">Confirm Password</label>
-                                    <br>
-                                    <input type="password" name="cfpass" value="" required>
-                                    <br>
-                                    <br>
-                                    <label for="upload"><strong>Profile Picture</strong></label>
-                                    <input type="file" name="upload" value="">
-                                    <br>
-                                    <br>
-                                    <label for="fname">First name</label>
-                                    <br>
-                                    <input type="text" name="fname" value="" required>
-                                    <br>
-                                    <label for="lname">Last name</label>
-                                    <br>
-                                    <input type="text" name="lname" value="" required>
-                                    <br>
-                                    <label for="address">Address</label>
-                                    <br>
-                                    <input type="text" name="address" value="" required>
-                                    <br>
-                                    <label for="city">City</label>
-                                    <br>
-                                    <input type="text" name="city" value="" required>                                        
-                                    <br>
-                                    <label for="zipcode">Zipcode</label>
-                                    <input type="tel" name="zipcode" value="" required pattern="[0-9]{4,6}">   
-                                    <br>
-                                    <br>
+                                    <div class="col-40">
+                                        <label for="upload"><strong>Profile Picture</strong></label>
+                                        <input type="file" name="upload" value="">
+                                        <br>
+                                        <br>
+                                        <label for="fname">First name</label>
+                                        <br>
+                                        <input type="text" name="fname" value="" required>
+                                        <br>
+                                        <label for="lname">Last name</label>
+                                        <br>
+                                        <input type="text" name="lname" value="" required>
+                                        <br>
+                                        <label for="address">Address</label>
+                                        <br>
+                                        <input type="text" name="address" value="" required>
+                                        <br>
+                                        <label for="city">City</label>
+                                        <br>
+                                        <input type="text" name="city" value="" required>                                        
+                                        <br>
+                                        <label for="zipcode">Zipcode</label>
+                                        <br>
+                                        <input type="tel" name="zipcode" value="" required pattern="[0-9]{4,6}">   
+                                        <br>
+                                        <br>
+                                    </div>
                                     <br>
                                 </div>
                             </fieldset>
