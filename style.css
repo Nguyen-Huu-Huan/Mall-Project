@@ -649,100 +649,54 @@ input[type=email]:focus {
 
 /*--FAQs--*/
 
-.qa1-container {
-    background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1%;
+.faqs {
+    padding: 2rem 0;
 }
 
-.qa1-container div a {
-    color: white;
-    font-size: 3vw;
-    text-decoration: none;
-}
-
-.qa1-container #a1 {
+.faqs input {
     display: none;
 }
 
-.qa1-container #a1:target {
+.faqs label {
     display: block;
-    background: white;
-    color: black;
-    border: 0.1vw solid grey;
+    margin-top: 0.3rem;
+    padding: 1rem;
+    color: #fff;
+    font-weight: bold;
+    background: #cc29bd;
+    cursor: pointer;
 }
 
-.qa2-container {
-    background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1%;
+.faqs .faqs-content {
+    border: 2px solid #f4c6ff;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
 }
 
-.qa2-container div a {
-    color: white;
-    font-size: 3vw;
-    text-decoration: none;
+.faqs-container {
+    position: relative;
 }
 
-.qa2-container #a2 {
-    display: none;
+.faqs .faqs-content p {
+    padding: 0.5rem;
 }
 
-.qa2-container #a2:target {
+.faqs input:checked~.faqs-content {
+    max-height: 100vh;
+}
+
+.faqs label::after {
+    content: "\25b6";
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
     display: block;
-    background: white;
-    color: black;
-    border: 0.1vw solid grey;
+    transition: all 0.5s;
 }
 
-.qa3-container {
-    background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1%;
-}
-
-.qa3-container div a {
-    color: white;
-    font-size: 3vw;
-    text-decoration: none;
-}
-
-.qa3-container #a3 {
-    display: none;
-}
-
-.qa3-container #a3:target {
-    display: block;
-    background: white;
-    color: black;
-    border: 0.1vw solid grey;
-}
-
-.qa4-container {
-    background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1%;
-}
-
-.qa4-container div a {
-    color: white;
-    font-size: 3vw;
-    text-decoration: none;
-}
-
-.qa4-container #a4 {
-    display: none;
-}
-
-.qa4-container #a4:target {
-    display: block;
-    background: white;
-    color: black;
-    border: 0.1vw solid grey;
+.faqs input:checked~label::after {
+    transform: rotate(90deg);
 }
 
 
@@ -833,7 +787,10 @@ input[type=email]:focus {
     width: 70%;
     cursor: pointer;
 }
+
+
 /*--My Account Register--*/
+
 select {
     width: 70%;
     overflow: hidden;
@@ -849,8 +806,9 @@ select {
 select:focus {
     border: 3px solid #ffb7c5;
 }
-legend{
-    text-align:right;
+
+legend {
+    text-align: right;
     padding-right: 2vw;
     padding-left: 2vw;
     margin-right: 5vw;
