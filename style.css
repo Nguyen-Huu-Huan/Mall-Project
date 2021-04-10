@@ -670,6 +670,7 @@ input[type=email]:focus {
     display: block;
     background: white;
     color: black;
+    border: 0.5vw solid black;
 }
 
 .qa2-container {
@@ -693,6 +694,7 @@ input[type=email]:focus {
     display: block;
     background: white;
     color: black;
+    border: 0.5vw solid black;
 }
 
 .qa3-container {
@@ -716,6 +718,7 @@ input[type=email]:focus {
     display: block;
     background: white;
     color: black;
+    border: 0.5vw solid black;
 }
 
 .qa4-container {
@@ -739,6 +742,7 @@ input[type=email]:focus {
     display: block;
     background: white;
     color: black;
+    border: 0.5vw solid black;
 }
 
 
