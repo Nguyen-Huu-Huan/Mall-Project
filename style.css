@@ -535,7 +535,7 @@ ul {
 }
 
 input[type=text] {
-    width: 70%;
+    width: 85%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
@@ -551,7 +551,7 @@ input[type=text]:focus {
 }
 
 input[type=password] {
-    width: 70%;
+    width: 85%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
@@ -567,7 +567,7 @@ input[type=password]:focus {
 }
 
 input[type=email] {
-    width: 70%;
+    width: 85%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
@@ -814,7 +814,7 @@ legend {
     margin-right: 5vw;
 }
 input[type=tel] {
-    width: 70%;
+    width: 85%;
     overflow: hidden;
     padding: 12px 20px;
     margin: 8px 0;
