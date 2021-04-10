@@ -651,7 +651,7 @@ input[type=email]:focus {
 
 .qa1-container {
     background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin-bottom: 1%;
 }
@@ -674,7 +674,7 @@ input[type=email]:focus {
 
 .qa2-container {
     background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin-bottom: 1%;
 }
@@ -697,7 +697,7 @@ input[type=email]:focus {
 
 .qa3-container {
     background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin-bottom: 1%;
 }
@@ -720,7 +720,7 @@ input[type=email]:focus {
 
 .qa4-container {
     background-image: linear-gradient(to right, #ff0084, #33001b);
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin-bottom: 1%;
 }
