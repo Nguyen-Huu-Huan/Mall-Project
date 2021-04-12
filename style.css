@@ -833,5 +833,3 @@ input[type=tel]:focus {
 .owner-reg {
     display: none;
 }
-
-#owner-checked:checked {}
