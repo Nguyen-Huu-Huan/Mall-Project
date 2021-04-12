@@ -74,13 +74,21 @@
                                     <br>
                                     <input type="password" name="cfpass" value="" required placeholder="*required">
                                     <br>
+                                    <br>
+                                    <label for="account">Account Type</label>
+                                    <br><br>
+                                    <input type="radio" name="account" value="shopper" required>
+                                    <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
+                                    <input type="radio" name="account" value="owner" id="owner-checked" required>
+                                    <label class="text-thin" for="account">Store Owner</label>
+                                    <br>
                                 </div>
                             </div>
                             <br>
                             <div class="col-50">
                                 <div class="container">
                                     <label for="upload"><strong>Profile Picture</strong></label>
-                                    <input type="file" name="upload" value="">
+                                    <input type="file" name="upload" value="" required>
                                     <br>
                                     <br>
                                     <label for="fname">First name</label>
@@ -97,15 +105,15 @@
                                     <br>
                                     <label for="city">City</label>
                                     <br>
-                                    <input type="text" name="city" value="" required placeholder="*required">                                        
+                                    <input type="text" name="city" value="" required placeholder="*required">
                                     <br>
                                     <label for="zipcode">Zipcode</label>
                                     <br>
-                                    <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}">   
+                                    <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}">
                                     <br>
                                     <label for="country">Country</label>
                                     <br>
-                                    <select name="country">
+                                    <select name="country" required>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -364,7 +372,7 @@
                     </fieldset>
                     <br>
                     <br>
-                    <fieldset>
+                    <fieldset class="owner-reg">
                         <legend class="text-big">Store Onwers only</legend>
                         <br>
                         <div class="small-container">

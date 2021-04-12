@@ -663,7 +663,7 @@ input[type=email]:focus {
     padding: 1rem;
     color: #fff;
     font-weight: bold;
-    background-image: linear-gradient(to right, #f2709c,#ff9472);
+    background-image: linear-gradient(to right, #f2709c, #ff9472);
     cursor: pointer;
 }
 
@@ -813,6 +813,7 @@ legend {
     padding-left: 2vw;
     margin-right: 5vw;
 }
+
 input[type=tel] {
     width: 85%;
     overflow: hidden;
@@ -828,3 +829,9 @@ input[type=tel] {
 input[type=tel]:focus {
     border: 3px solid #ffb7c5;
 }
+
+.owner-reg {
+    display: none;
+}
+
+#owner-checked:checked {}
