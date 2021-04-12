@@ -846,8 +846,12 @@ input[type=tel]:focus {
 .owner-reg {
     display: none;
 }
-
-
+.owner_fieldset{
+    display: none;
+}
+#owner-checked:checked+.owner_fieldset{
+    display: block;
+}
 /*---RESPONSIVE---*/
 
 
