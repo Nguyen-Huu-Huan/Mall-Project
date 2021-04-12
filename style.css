@@ -422,6 +422,19 @@ header .btn {
     ;
 }
 
+.new-stores figcaption,
+.new-stores a {
+    padding: 1rem 0;
+}
+
+.new-stores img {
+    width: 90%;
+}
+
+.new-stores figure {
+    text-align: center;
+}
+
 .offer {
     padding: 3rem 0 2rem 0;
 }
