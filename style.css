@@ -846,3 +846,24 @@ input[type=tel]:focus {
 .owner-reg {
     display: none;
 }
+
+
+/*---RESPONSIVE---*/
+
+
+/*--TABLET--*/
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+
+/*--PHONE--*/
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 8px;
+    }
+}
