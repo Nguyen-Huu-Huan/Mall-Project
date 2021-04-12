@@ -851,6 +851,7 @@ input[type=tel]:focus {
 }
 #owner-checked:checked+.owner_fieldset{
     display: block;
+    margin-top: 2%;
 }
 /*---RESPONSIVE---*/
 
