@@ -618,7 +618,7 @@ input[type=email]:focus {
 
 /*---fees----*/
 
-.shopper_owner_h3 {
+.shopper__h3 {
     color: white;
     text-align: center;
 }
@@ -631,7 +631,7 @@ input[type=email]:focus {
     background-color: #ec2e50;
 }
 
-.store_owner-colorbar {
+.store_-colorbar {
     padding: 0.8rem 0;
     width: 100%;
     color: #cc29bd;
@@ -668,7 +668,7 @@ input[type=email]:focus {
     color: #ffc6c6;
 }
 
-.hr-owner {
+.hr- {
     background-color: #f4c6ff;
     color: #f4c6ff;
 }
@@ -857,11 +857,7 @@ input[type=tel]:focus {
     border: 3px solid #ffb7c5;
 }
 
-.owner-reg {
-    display: none;
-}
-
-.owner_fieldset {
+.owner-fieldset {
     display: none;
 }
 
