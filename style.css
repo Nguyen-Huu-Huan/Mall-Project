@@ -423,15 +423,19 @@ header .btn {
 }
 
 .new-stores figcaption,
-.new-stores a {
+.new-stores a,
+.browse-by-name figcaption,
+.browse-by-name a {
     padding: 1rem 0;
 }
 
-.new-stores img {
+.new-stores img,
+.browse-by-name img {
     width: 90%;
 }
 
-.new-stores figure {
+.new-stores figure,
+.browse-by-name figure {
     text-align: center;
 }
 
@@ -846,13 +850,17 @@ input[type=tel]:focus {
 .owner-reg {
     display: none;
 }
-.owner_fieldset{
+
+.owner_fieldset {
     display: none;
 }
-#owner-checked:checked+.owner_fieldset{
+
+#owner-checked:checked+.owner_fieldset {
     display: block;
     margin-top: 10%;
 }
+
+
 /*---RESPONSIVE---*/
 
 
