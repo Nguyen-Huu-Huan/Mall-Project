@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiGonMall | Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+</head>
+
+
+<body>
+    <header class="bg-gradient-light small-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <img class="header-logo" src="images/logo.png">
+                </div>
+                <nav class="col-90">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about-us.html">About us</a></li>
+                        <li><a href="../fees.html">Fees</a></li>
+                        <li><a href="../myaccount.html">My Account</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">
+                  <a href="">Browse &#8642; </a></button>
+                                <div class="dropdown-content">
+                                    <a href="../browse-by-name.html">Browse stores by names</a>
+                                    <a href="../browse-by-category.html">Browse store by category</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="../faq.html">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <img class="cart-icon" src="images/cart.png">
+                </nav>
+            </div>
+    </header>
+    <!--Contact-->
+    <main>
+        <section class="contact">
+            <div class="small-container">
+                <h1 class="section-title">Contact Form</h1>
+                <form class="" action="contact.html" method="post">
+                    <label for="contact_purpose"><strong>Contact Purpose</strong></label>
+                    <br>
+                    <select name="contact_purpose">
+                        <option value="OS">Open a store</option>
+                        <option value="CS">Customer Service</option>
+                        <option value="GI">General Inquiry</option>
+                        <option value="CP">Complaints</option>
+                        <option value="FB">Feedback</option>
+                        <option value="BC">Business Collaboration</option>
+                        <option value="OP">Other purpose</option>
+                    </select>
+                    <br>
+                    <label for="Name"><strong>Name:</strong></label>
+                    <input class="input-field" type="text" name="Name" value="" required placeholder="*required">
+                    <br>
+                    <label for="Email"><strong>Email:</strong></label>
+                    <input class="input-field" type="email" name="Email" value="" required placeholder="*required">
+                    <br>
+                    <label for="Phone"><strong>Phone:</strong></label>
+                    <input class="input-field" type="tel" name="Phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
+                    <br>
+                    <div class="other-input">
+                        <label for="contact-method "><strong>Prefered Contact Method:</strong></label>
+                        <input type="radio" name="contact" value=" " required>
+                        <label class="text-thin" for="contact-method">Email</label>
+                        <input type="radio" name="contact" value=" " required>
+                        <label class="text-thin" for="contact-method">Phone</label>
+                    </div>
+                    <br>
+                    <label for="Contact_days"> <strong>Contact days:</strong> </label>
+                    <div class="other-input">
+                        <label for="monday">Monday</label>
+                        <input type="checkbox" name="contact-day-1" value="yes">
+                        <label for="tuesday">Tuesday</label>
+                        <input type="checkbox" name="days" value=" ">
+                        <label for="wednesday">Wednesday</label>
+                        <input type="checkbox" name="days" value=" ">
+                        <label for="thursday">Thursday</label>
+                        <input type="checkbox" name="days" value=" ">
+                        <label for="friday">Friday</label>
+                        <input type="checkbox" name="days" value=" ">
+                        <label for="saturday">Saturday</label>
+                        <input type="checkbox" name="days" value=" ">
+                        <label for="sunday">Sunday</label>
+                        <input type="checkbox" name="days" value=" ">
+                    </div>
+                    <br>
+                    <textarea name="message" rows="8" cols="80" placeholder="Your Message"></textarea>
+                    <br>
+                    <input class="btn" type="reset" value="Clear">
+                    <input class="btn" type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <section class="footer">
+        <div class="container">
+            <div class="row ">
+                <div class="footer-col-1">
+                    <img class="logo " src="images/logo-dark.png">
+                    <p>Thank you for shopping with us</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="term_of_service.html">Term of Service</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="copyright.html">Copyright</a></li>
+                        <li><a href=" ">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
+        </div>
+    </section>
+</body>
+
+</html>
