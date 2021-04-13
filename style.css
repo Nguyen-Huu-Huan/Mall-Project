@@ -618,7 +618,7 @@ input[type=email]:focus {
 
 /*---fees----*/
 
-.shopper__h3 {
+.shopper_h3 {
     color: white;
     text-align: center;
 }
@@ -631,7 +631,7 @@ input[type=email]:focus {
     background-color: #ec2e50;
 }
 
-.store_-colorbar {
+.store_owner-colorbar {
     padding: 0.8rem 0;
     width: 100%;
     color: #cc29bd;
