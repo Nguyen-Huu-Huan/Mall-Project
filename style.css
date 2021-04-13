@@ -209,6 +209,11 @@ label {
     margin: auto;
 }
 
+.medium-container {
+    width: 78%;
+    margin: auto;
+}
+
 .small-container {
     width: 65%;
     margin: auto;
@@ -292,6 +297,10 @@ label {
 
 .col-17 {
     flex-basis: 17%;
+}
+
+.col-15 {
+    flex-basis: 15%;
 }
 
 .col-10 {
@@ -431,7 +440,8 @@ header .btn {
 
 .new-stores img,
 .browse-by-name img {
-    width: 90%;
+    padding-top: 1rem;
+    width: 80%;
 }
 
 .new-stores figure,
