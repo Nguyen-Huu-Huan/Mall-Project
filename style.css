@@ -810,11 +810,13 @@ input[type=file]{
 .owner-fieldset {
     display: none;
 }
-
+.owner-fieldset>legend{
+    color: #f4c6ff;
+}
 #owner-checked:checked+.owner-fieldset {
     display: block;
     margin-top: 10%;
-    border-color: red;
+    border-color: #f4c6ff;
 }
 
 
