@@ -808,7 +808,7 @@ input[type=file]{
     font-size: 0.7rem;
 }
 .shopper-fieldset{
-    border-color: #ec2e50;
+    border: 1rem solid #ec2e50;
 }
 .shopper-fieldset>legend{
     color: #ec2e50;
