@@ -856,7 +856,9 @@ input[type=tel] {
 input[type=tel]:focus {
     border: 3px solid #ffb7c5;
 }
-
+input[type=tel]:placeholder{
+    font-size: 0.1rem;
+}
 .owner-fieldset {
     display: none;
 }
