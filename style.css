@@ -804,6 +804,9 @@ input[type=tel]::placeholder, input[type=email]::placeholder, input[type=passwor
 select option{
     font-size: 1rem;
 }
+input[type=file]{
+    font-size: 1rem;
+}
 .owner-fieldset {
     display: none;
 }
