@@ -800,6 +800,9 @@ input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus, inpu
 input[type=tel]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder, input[type=text]::placeholder{
     font-size: 1rem;
 }
+select option{
+    font-size: 1rem;
+}
 .owner-fieldset {
     display: none;
 }
