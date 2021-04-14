@@ -775,22 +775,6 @@ ul {
 
 /*--My Account Register--*/
 
-select {
-    width: 85%;
-    overflow: hidden;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
-select:focus {
-    border: 3px solid #ffb7c5;
-}
-
 legend {
     text-align: right;
     padding-right: 2vw;
@@ -798,7 +782,7 @@ legend {
     margin-right: 5vw;
 }
 
-input[type=tel], input[type=email], input[type=password], input[type=text] {
+input[type=tel], input[type=email], input[type=password], input[type=text], select {
     width: 85%;
     overflow: hidden;
     padding: 0.5rem 0.6rem;
@@ -810,7 +794,7 @@ input[type=tel], input[type=email], input[type=password], input[type=text] {
     outline: none;
 }
 
-input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
+input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, select:focus {
     border: 3px solid #ffb7c5;
 }
 input[type=tel]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder, input[type=text]::placeholder{
