@@ -801,7 +801,7 @@ input[type=tel]::placeholder, input[type=email]::placeholder, input[type=passwor
     font-size: 1rem;
 }
 select option{
-    font-size: 10rem;
+    font-size: 0.5rem;
 }
 .owner-fieldset {
     display: none;
