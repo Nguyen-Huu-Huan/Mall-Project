@@ -807,6 +807,12 @@ select option{
 input[type=file]{
     font-size: 0.7rem;
 }
+.shopper-fieldset{
+    border-color: #cc29bd;
+}
+.shopper-fieldset>legend{
+    color: #cc29bd;
+}
 .owner-fieldset {
     display: none;
 }
