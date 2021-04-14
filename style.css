@@ -822,7 +822,7 @@ input[type=file]{
 #owner-checked:checked+.owner-fieldset {
     display: block;
     margin-top: 10%;
-    border: 0.5rem solid #ec2e50;
+    border: 0.5rem solid #cc29bd;
 }
 
 
