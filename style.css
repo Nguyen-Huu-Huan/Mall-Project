@@ -135,6 +135,9 @@ label {
 .text-center {
     text-align: center;
 }
+.text-start{
+    text-align: left;
+}
 
 .section-title {
     margin: auto;
