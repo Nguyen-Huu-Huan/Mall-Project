@@ -285,6 +285,9 @@ label {
 .col-37 {
     flex-basis: 37%;
 }
+.col-35 {
+    flex-basis: 35%;
+}
 
 .col-30 {
     flex-basis: 30%;
