@@ -814,6 +814,7 @@ input[type=file]{
 #owner-checked:checked+.owner-fieldset {
     display: block;
     margin-top: 10%;
+    background-color: red;
 }
 
 
