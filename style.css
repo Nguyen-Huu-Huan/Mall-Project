@@ -63,7 +63,7 @@
     
     .close-hamburger {
         display: none;
-        font-size: 4vw;
+        font-size: 8vw;
     }
     
     #hamburger:checked~.mobile-menu {
@@ -462,7 +462,7 @@
     }
     
     .header-logo {
-        width: 100%;
+        width: 60%;
         padding: 2rem 3rem 2rem 0;
     }
     
@@ -909,13 +909,35 @@
     
     @media only screen and (max-width: 767px) {
         html {
-            font-size: 8px;
+            font-size: 10px;
         }
         /*--index.html--*/
+        .col-50 {
+            flex-basis: 100%;
+        }
+        .col-45 {
+            flex-basis: 49%;
+        }
         .menu {
             display: none;
         }
         .hamburger {
             display: inline-block;
+        }
+        .res-index-space1 {
+            display: block;
+        }
+        .header-logo {
+            width: 100%;
+        }
+        .header-text {
+            text-align: center;
+        }
+        .header-text h1 {
+            font-size: 4rem;
+            line-height: 4.5rem;
+        }
+        .header-text p {
+            font-size: 1.5rem;
         }
     }
