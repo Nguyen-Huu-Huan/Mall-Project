@@ -494,8 +494,9 @@
         width: 100%;
         position: relative;
     }
-    .new-products-img-wrapper:hover+ #red-shirt{
+    .new-products-img-wrapper:hover> #red-shirt{
        width: 100%;
+       border: black 5px solid;
     }
     .new-products-img {
         position: relative;
