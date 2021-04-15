@@ -1,4 +1,4 @@
-The following ... are some of the notices while browsing through the webpage:
+Special Instruction and Notices while browsing through the webpage:
 
       * My Account tab:
 
