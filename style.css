@@ -698,6 +698,10 @@
         background-color: #f4c6ff;
         color: #f4c6ff;
     }
+    
+    textarea {
+        max-width: 100%;
+    }
     /*--FAQs--*/
     
     .faqs {
