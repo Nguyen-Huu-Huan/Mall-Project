@@ -17,9 +17,11 @@ Special Instruction and Notices while browsing through the webpage:
             2. Click on the Order button near the Footer section to get to the order-completed page
       
       * Input requirements: 
-            1. By standard, all inputs with placeholder requires users to fill in the inputs before submission. For "required" placeholder, input of any type is all                            accepted.
-            1. "(+84) 0123456789" placeholder in Phone Number and similar labels will require user to type in character "0" at first and the following are not matter, as                      long as they are numbers and the maximum length of the number should be 10 (including 0).
-            3. "4-6" digits is what it sounds like, the input only requires users to type in 4-6 digits.
+            1. By standard, all inputs with placeholder requires users to fill in the inputs before submission. For "required" placeholder, input of any type is all
+               accepted.
+            3. "(+84) 0123456789" placeholder in Phone Number and similar labels will require user to type in character "0" at first and the following are not matter, as
+               long as they are numbers and the maximum length of the number should be 10 (including 0).
+            5. "4-6" digits is what it sounds like, the input only requires users to type in 4-6 digits.
             
       * Term Of Service, Privacy Policy, and Copyright button are located in the Footer section of every page.
       
