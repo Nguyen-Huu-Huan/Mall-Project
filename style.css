@@ -536,7 +536,7 @@
     }
     
     .offer-des * {
-        margin: 15px 0;
+        margin: 0.8rem 0;
     }
     
     .offer-img {
@@ -909,7 +909,7 @@
     
     @media only screen and (max-width: 767px) {
         html {
-            font-size: 8px;
+            font-size: 10px;
         }
         /*--index.html--*/
         .col-50 {
@@ -941,9 +941,11 @@
         .header-text p {
             font-size: 1.5rem;
         }
-        .header-text a {
+        .header-text a,
+        .offer a {
             width: 90%;
             font-size: 1.5rem;
+            text-align: center;
         }
         .hero-image-container {
             text-align: center;
@@ -958,5 +960,12 @@
         }
         .offer .col-40 {
             flex-basis: 100%;
+            text-align: center;
+        }
+        .offer h1 {
+            font-size: 3rem;
+        }
+        .offer h3 {
+            font-size: 2rem;
         }
     }
