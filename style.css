@@ -8,18 +8,6 @@
         font-size: 17px;
     }
     
-    @media only screen and (max-width: 1023px) and (min-width: 768px) {
-        html {
-            font-size: 14px;
-        }
-    }
-    
-    @media only screen and (max-width: 767px) {
-        html {
-            font-size: 8px;
-        }
-    }
-    
     body {
         font-family: 'Public Sans', sans-serif;
     }
@@ -103,6 +91,7 @@
     }
     
     .mobile-menu li {
+        margin: 0;
         padding: 1rem 1rem;
         display: block;
     }
@@ -446,7 +435,6 @@
     }
     
     header .experience {
-        color: #ec2e50;
         font-size: 4rem;
     }
     
@@ -909,16 +897,44 @@
     /*---RESPONSIVE---*/
     /*--TABLET--*/
     
-    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    @media (max-width: 1023px) and (min-width: 767px) {
         html {
             font-size: 14px;
+        }
+        /*--index.html--*/
+        .container {
+            width: 95%;
+        }
+        .col-50 {
+            flex-basis: 44%;
+        }
+        .menu a {
+            font-size: 0.9rem;
+        }
+        .featured-stores .col-45 {
+            flex-basis: 47%;
+        }
+        .new-products a {
+            font-size: 1rem;
         }
     }
     /*--PHONE--*/
     
-    @media only screen and (max-width: 767px) {
+    @media (max-width: 767px) {
         html {
             font-size: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .text-small {
+            font-size: 1.2rem;
+        }
+        .text-nomal {
+            font-size: 1.3rem;
+        }
+        .text-medium {
+            font-size: 1.5rem;
         }
         /*--index.html--*/
         .col-50 {
@@ -975,8 +991,14 @@
         .offer h1 {
             font-size: 3rem;
         }
-        .offer h3,
-        p {
+        .offer h3 {
             font-size: 2rem;
+        }
+        .new-products .col-24 {
+            flex-basis: 49%;
+            margin-bottom: 10px;
+        }
+        .new-products .row {
+            margin-bottom: -10px;
         }
     }
