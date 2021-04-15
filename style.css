@@ -58,7 +58,7 @@
         z-index: 15;
         padding: 1vw;
         margin: 0;
-        display: inline-block;
+        display: none;
         width: 12vw;
     }
     
@@ -917,7 +917,7 @@
         .menu {
             display: none;
         }
-        /* .hamburger {
-            display: block;
-        } */
+        .hamburger {
+            display: inline-block;
+        }
     }
