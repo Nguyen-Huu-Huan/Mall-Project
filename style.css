@@ -496,7 +496,7 @@
     }
     .new-products-img-wrapper:hover #brand-hover{
        width: 100%;
-       transition: 0.6s;
+       transition: 0.5s;
        border-style: solid;
        border-width: 5px;
        border-color: transparent transparent black transparent; 
