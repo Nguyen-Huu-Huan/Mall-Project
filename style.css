@@ -21,7 +21,7 @@
     }
     
     body {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Public Sans', sans-serif;
     }
     
     nav {
@@ -150,7 +150,7 @@
         padding: 5px 0;
         color: #2b2b2b;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 300;
         text-decoration: none;
     }
     
@@ -178,7 +178,7 @@
     
     h3 {
         color: #2b2b2b;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 1.6rem;
     }
     
@@ -187,11 +187,11 @@
     }
     
     .text-thin {
-        font-weight: 400;
+        font-weight: 300;
     }
     
     .text-bold {
-        font-weight: 600;
+        font-weight: 500;
     }
     
     .text-black {
@@ -381,6 +381,10 @@
         flex-basis: 25%;
     }
     
+    .col-24 {
+        flex-basis: 24%;
+    }
+    
     .col-20 {
         flex-basis: 20%;
     }
@@ -402,7 +406,7 @@
     }
     
     .btn {
-        font-weight: 600;
+        font-weight: 500;
         box-sizing: border-box;
         display: inline-block;
         background-image: linear-gradient(to right, #cc29bd, #ec2e50);
@@ -441,12 +445,9 @@
         padding: 1rem 0;
     }
     
-    header h2 {
-        padding: 1rem 0;
-    }
-    
-    header h3 {
-        padding: 1rem 0;
+    header .experience {
+        color: #ec2e50;
+        font-size: 4rem;
     }
     
     header .btn {
@@ -476,6 +477,10 @@
         width: 100%;
         position: absolute;
         top: 50%;
+    }
+    
+    .new-products-wrapper {
+        text-align: center;
     }
     
     .new-products-wrapper p {
@@ -627,7 +632,7 @@
     /*---contact----*/
     
     .input-field {
-        width: 400px;
+        width: 300px;
         height: 40px;
         margin-top: 20px;
         padding-left: 10px;
@@ -790,7 +795,7 @@
     }
     
     .btnnike {
-        font-weight: 600;
+        font-weight: 500;
         box-sizing: border-box;
         display: inline-block;
         background-image: linear-gradient(to right, #2b2b2b, #8a8a8a);
