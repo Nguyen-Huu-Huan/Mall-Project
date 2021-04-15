@@ -43,7 +43,7 @@
     }
     
     section {
-        padding-bottom: 30px;
+        padding-bottom: 2rem;
     }
     /*--Mobile Menu--*/
     
@@ -909,7 +909,7 @@
     
     @media only screen and (max-width: 767px) {
         html {
-            font-size: 10px;
+            font-size: 8px;
         }
         /*--index.html--*/
         .col-50 {
@@ -931,6 +931,7 @@
             width: 100%;
         }
         .header-text {
+            z-index: 10;
             text-align: center;
         }
         .header-text h1 {
@@ -939,5 +940,23 @@
         }
         .header-text p {
             font-size: 1.5rem;
+        }
+        .header-text a {
+            width: 90%;
+            font-size: 1.5rem;
+        }
+        .hero-image-container {
+            text-align: center;
+        }
+        .hero-image {
+            opacity: 10%;
+            margin-top: -20rem;
+            width: 70%;
+        }
+        .new-stores .col-15 {
+            flex-basis: 32%;
+        }
+        .offer .col-40 {
+            flex-basis: 100%;
         }
     }
