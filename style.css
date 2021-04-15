@@ -497,6 +497,8 @@
     .new-products-img-wrapper:hover>#red-shirt{
        width: 100%;
        transition: 1s;
+       border-style: solid;
+       border-width: 5px;
        border-color: none none black none; 
     }
     .new-products-img {
