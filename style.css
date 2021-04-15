@@ -961,6 +961,7 @@
         }
         .new-stores .col-15 {
             flex-basis: 32%;
+            margin-bottom: 10px;
         }
         .offer .col-40 {
             flex-basis: 100%;
@@ -969,7 +970,8 @@
         .offer h1 {
             font-size: 3rem;
         }
-        .offer h3 {
+        .offer h3,
+        .offer p {
             font-size: 2rem;
         }
     }
