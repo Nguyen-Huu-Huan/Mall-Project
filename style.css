@@ -56,7 +56,7 @@
         right: 0;
         top: 0;
         z-index: 15;
-        padding: 1vw;
+        padding: 5vw;
         margin: 0;
         display: none;
         width: 12vw;
@@ -64,8 +64,8 @@
     
     .close-hamburger {
         display: none;
-        padding: 0 1vw;
-        font-size: 5vw;
+        padding: 1vw 1vw;
+        font-size: 10vw;
     }
     
     #hamburger:checked~.mobile-menu {
