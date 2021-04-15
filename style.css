@@ -56,16 +56,14 @@
         right: 0;
         top: 0;
         z-index: 15;
-        padding: 5vw;
-        margin: 0;
+        margin: 3vw;
         display: none;
         width: 12vw;
     }
     
     .close-hamburger {
         display: none;
-        padding: 1vw 1vw;
-        font-size: 10vw;
+        font-size: 4vw;
     }
     
     #hamburger:checked~.mobile-menu {
