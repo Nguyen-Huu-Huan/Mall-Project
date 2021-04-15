@@ -496,7 +496,7 @@
     }
     .new-products-img-wrapper:hover> #red-shirt{
        width: 100%;
-       border: black 5px solid;
+       transition: 3s;
     }
     .new-products-img {
         position: relative;
