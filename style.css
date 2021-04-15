@@ -494,7 +494,7 @@
         width: 100%;
         position: relative;
     }
-    .new-products-img-wrapper:hover>#red-shirt{
+    .new-products-img-wrapper:hover>#brand-hover{
        width: 100%;
        transition: 1s;
        border-style: solid;
