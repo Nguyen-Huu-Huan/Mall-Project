@@ -1,6 +1,6 @@
 Special Instruction and Notices while browsing through the webpage:
 
-      * My Account tab:
+      * My Account Page:
             1. Login Page
                   - Click on the "Sign up here" anchor on the left (after the "Not a member yet" phrase) to get access to the Sign Up page.
                   - Click the "Forgot Password" anchor just right above the Login button to get access to the Forgot Password Page.
