@@ -124,6 +124,7 @@
     .mobile-menu .mobile-menu-dropdown-content a,
     .mobile-menu .mobile-menu-dropdown-content label {
         display: block;
+        font-size: 3vw;
     }
     
     .mobile-menu-dropdown-trigger:checked~.mobile-menu-dropdown-content {
