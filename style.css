@@ -306,7 +306,12 @@ label {
 }
 
 .small-container {
-    width: 65%;
+    width: 60%;
+    margin: auto;
+}
+
+.tiny-container {
+    width: 45%;
     margin: auto;
 }
 
@@ -594,28 +599,15 @@ header .btn {
 
 .footer h3 {
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.footer-col-1,
-.footer-col-2 {
-    margin-bottom: 1rem;
+.footer-logo {
+    width: 60%;
 }
 
-.footer-col-1 {
-    flex-basis: 49%;
-    flex: 1;
+.footer * {
     text-align: center;
-}
-
-.footer-col-1 img {
-    width: 9rem;
-    margin-bottom: 1rem;
-}
-
-.footer-col-2 {
-    text-align: center;
-    flex: 1;
 }
 
 ul {
@@ -634,7 +626,7 @@ ul {
     border: none;
     background: #b5b5b5;
     height: 1px;
-    margin: 20px 0;
+    margin: 1rem 0;
 }
 
 .copyright {
@@ -885,11 +877,11 @@ input[type=password],
 input[type=text],
 input[type=number],
 select {
-    width: 85%;
+    width: 100%;
     font-size: 1rem;
     overflow: hidden;
     padding: 0.5rem 0.6rem;
-    margin: 3%;
+    margin: 3% 0;
     box-sizing: border-box;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
@@ -1067,6 +1059,14 @@ input[type=file] {
 }
 
 @media (max-width: 1023px) {
+    /*--FOOTER--*/
+    .footer .col-20 {
+        flex-basis: 100%;
+    }
+    .footer-logo {
+        width: 30%;
+        max-width: 10rem;
+    }
     /*--about-us.html--*/
     .about-us .col-30 {
         flex-basis: 100%;
