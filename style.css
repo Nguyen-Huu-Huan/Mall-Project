@@ -68,7 +68,7 @@ section {
     display: block;
 }
 
-#hamburger:checked~main {
+#hamburger:checked~.mobile-menu-opened {
     display: none;
 }
 
