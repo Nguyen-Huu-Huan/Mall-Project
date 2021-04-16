@@ -86,3 +86,6 @@ Citation:
             52. valentino.jpg
             53. yayoi.jpg
             54. zara.jpg
+
+	Product detail: https://www.nike.com/vn/launch/t/dunk-low-black
+	
