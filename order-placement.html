@@ -8,131 +8,179 @@
     <title>SaiGonMall | Ecommerce Website</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
-            rel="stylesheet"
-            type="text/css"
-        />
-    </noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
+        rel="stylesheet"
+        type="text/css"
+    />
+</noscript>
 </head>
 
 
-<body>
-    <header class="bg-gradient-light small-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <img class="header-logo" src="images/logo.png">
+<body class="index">
+    <input type="checkbox" id="hamburger">
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a class="text-bold" href="index.html">Home</a></li>
+            <li><a class="text-bold" href="about-us.html">About us</a></li>
+            <li><a class="text-bold" href="fees.html">Fees</a></li>
+            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li>
+                <div class="mobile-menu-dropdown">
+                    <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
+                    <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
+                    <div class="mobile-menu-dropdown-content">
+                        <ul>
+                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                        </ul>
+                        <div class="mobile-menu-dropdown">
+                            <ul>
+                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
+                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
+
+                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
+                                        <ul>
+                                            <li><a href="fashion.html">Clothes</a></li>
+                                            <li><a href="electronics.html">Electronics and technology</a></li>
+                                            <li><a href="beauty.html">Beauty</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
                 </div>
-                <nav class="col-90">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About us</a></li>
-                        <li><a href="fees.html">Fees</a></li>
-                        <li><a href="myaccount.html">My Account</a></li>
-                        <li>
-                            <div class="dropdown">
-                                <a>Browse &#8628;</a>
-                                <div class="dropdown-content">
-                                    <a href="browse-by-name.html">Browse stores by names</a>
-                                    <a href="browse-by-category.html">Browse store by category</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                    <a href="#"><img class="cart-icon" src="images/cart.png"></a>
-                </nav>
-            </div>
-    </header>
+            </li>
+            <li><a class="text-bold" href="faq.html">FAQs</a></li>
+            <li><a class="text-bold" href="store/contact.html">Contact</a></li>
+            <li>
+                <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
+            </li>
+        </ul>
+
+    </nav>
     <main>
-        <h1 class="section-title">ORDER SUMMARY</h1>
-        <section class="about-us">
-            <div class="medium-container">
+        <header class="bg-gradient-light small-header">
+            <div class="container">
                 <div class="row">
-                    <h2 class="col-40 text-center">Products' names</th>
-                        <h2 class="col-20 text-center">Price</th>
-                            <h2 class="col-20 text-center">Quantity</th>
+                    <div class="col-30">
+                        <img class="header-logo" src="images/logo.png" alt="mallux logo">
+                    </div>
+                    <nav class="col-70 menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About us</a></li>
+                            <li><a href="fees.html">Fees</a></li>
+                            <li><a href="myaccount.html">My Account</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a>Browse &#8628;</a>
+                                    <div class="dropdown-content">
+                                        <a href="browse-by-name.html">Browse stores by names</a>
+                                        <a href="browse-by-category.html">Browse store by category</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
+                        <a href="#"><img class="cart-icon" src="images/cart.png"></a>
+                    </nav>
                 </div>
-                <div class="row">
-                    <div class="col-40">
-                        <div class="container">
-                            <div class="row">
-                                <img src="images/air-max-plus.jpg" alt="Product's image is not available">
+        </header>
+        <main>
+            <h1 class="section-title">ORDER SUMMARY</h1>
+            <section class="about-us">
+                <div class="medium-container">
+                    <div class="row">
+                        <h2 class="col-40 text-center">Products' names</th>
+                            <h2 class="col-20 text-center">Price</th>
+                                <h2 class="col-20 text-center">Quantity</th>
+                    </div>
+                    <div class="row">
+                        <div class="col-40">
+                            <div class="container">
+                                <div class="row">
+                                    <img src="images/air-max-plus.jpg" alt="Product's image is not available">
+                                </div>
+                                <h3 class="text-center">Product's name</h3>
                             </div>
-                            <h3 class="text-center">Product's name</h3>
+                        </div>
+                        <div class="col-20 text-center">15$</div>
+                        <div class="col-20">
+                            <div class="row">
+                                <input type="number" value="1">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-20 text-center">15$</div>
-                    <div class="col-20">
-                        <div class="row">
-                            <input type="number" value="1">
+                    <div class="row">
+                        <div class="col-40">
+                            <div class="container">
+                                <div class="row">
+                                    <img src="images/dunklowblack1.jpg" alt="Product's image is not available">
+                                </div>
+                                <h3 class="text-center">Product's name</h3>
+                            </div>
+                        </div>
+                        <div class="col-20 text-center">15$</div>
+                        <div class="col-20">
+                            <div class="row">
+                                <input type="number" value="1">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <div class="container">
-                            <div class="row">
-                                <img src="images/dunklowblack1.jpg" alt="Product's image is not available">
-                            </div>
-                            <h3 class="text-center">Product's name</h3>
-                        </div>
+                    <div class="col-45">
+                        <p style="color: white;">fwifowief</p>
                     </div>
-                    <div class="col-20 text-center">15$</div>
-                    <div class="col-20">
-                        <div class="row">
-                            <input type="number" value="1">
-                        </div>
+                    <div class="col-30">
+                        <h1>Total</h1>
+                        <hr>
+                        <p class="text-big">300$</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-45">
-                    <p style="color: white;">fwifowief</p>
+                <div class="row">
+                    <div class="col-45">
+                        <a href="">&#8592; Continue Shopping</a>
+                    </div>
+                    <div class="col-30">
+                        <a href="order-completed.html" class="btn hover-shadow img">Order</a>
+                    </div>
                 </div>
-                <div class="col-30">
-                    <h1>Total</h1>
-                    <hr>
-                    <p class="text-big">300$</p>
+            </section>
+        </main>
+        <section class="footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="footer-col-1">
+                        <img class="logo " src="images/logo-dark.png">
+                        <p>Thank you for shopping with us</p>
+                    </div>
+                    <div class="footer-col-2">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="store/term-of-service.html">Term of Service</a></li>
+                            <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="store/copyright.html">Copyright</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-45">
-                    <a href="">&#8592; Continue Shopping</a>
-                </div>
-                <div class="col-30">
-                    <a href="order-completed.html" class="btn hover-shadow img">Order</a>
-                </div>
+                <hr>
+                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
         </section>
     </main>
-    <section class="footer">
-        <div class="container">
-            <div class="row ">
-                <div class="footer-col-1">
-                    <img class="logo " src="images/logo-dark.png">
-                    <p>Thank you for shopping with us</p>
-                </div>
-                <div class="footer-col-2">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store/term-of-service.html">Term of Service</a></li>
-                        <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="store/copyright.html">Copyright</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
-        </div>
-    </section>
 </body>
 
 </html>

@@ -8,100 +8,148 @@
     <title>SaiGonMall | Ecommerce Website</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
-            rel="stylesheet"
-            type="text/css"
-        />
-    </noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
+        rel="stylesheet"
+        type="text/css"
+    />
+</noscript>
 </head>
 
 
-<body>
-    <header class="bg-gradient-light small-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <img class="header-logo" src="images/logo.png">
-                </div>
-                <nav class="col-90">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About us</a></li>
-                        <li><a href="fees.html">Fees</a></li>
-                        <li><a href="myaccount.html">My Account</a></li>
-                        <li>
-                            <div class="dropdown">
-                                <a>Browse &#8628;</a>
-                                <div class="dropdown-content">
-                                    <a href="browse-by-name.html">Browse stores by names</a>
-                                    <a href="browse-by-category.html">Browse store by category</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                    <a href="order-placement.html"><img class="cart-icon" src="images/cart.png"></a>
-                </nav>
-            </div>
-    </header>
+<body class="index">
+    <input type="checkbox" id="hamburger">
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a class="text-bold" href="index.html">Home</a></li>
+            <li><a class="text-bold" href="about-us.html">About us</a></li>
+            <li><a class="text-bold" href="fees.html">Fees</a></li>
+            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li>
+                <div class="mobile-menu-dropdown">
+                    <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
+                    <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
+                    <div class="mobile-menu-dropdown-content">
+                        <ul>
+                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                        </ul>
+                        <div class="mobile-menu-dropdown">
+                            <ul>
+                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
+                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
 
-    <main class="login-wrapper">
-        <h1 class="section-title">Register</h1>
-        <div class="row">
-            <div class="col-30">
-                <h1 class="text-medium">Already a member? <a href="myaccount.html" class="text-medium">Login here</a></h1>
-            </div>
-            <div class="col-60">
-                <form>
-                    <fieldset class="shopper-fieldset">
-                        <legend class="text-big">For Shoppers</legend>
-                        <br>
-                        <div class="row">
-                            <div class="col-50">
-                                <div class="container">
-                                    <label for="email">Email address</label>
-                                    <br>
-                                    <input type="email" name="email" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="phone">Phone number</label>
-                                    <br>
-                                    <input type="tel" name="phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
-                                    <br>
-                                    <label for="pass">Password</label>
-                                    <br>
-                                    <input type="password" name="pass" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="cfpass">Confirm Password</label>
-                                    <br>
-                                    <input type="password" name="cfpass" value="" required placeholder="*required">
-                                    <br>
-                                    <br>
-                                    <label for="account">Account Type</label>
-                                    <br><br>
-                                    <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                    <input type="radio" name="account" value="shopper" required checked="checked">
-                                    <br>
-                                    <label class="text-thin" for="account">Store Owner</label>
-                                    <input type="radio" name="account" value="owner" id="owner-checked" required>
-                                    <fieldset class="owner-fieldset">
-                                        <legend class="text-normal">Store Onwers only</legend>
+                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
+                                        <ul>
+                                            <li><a href="fashion.html">Clothes</a></li>
+                                            <li><a href="electronics.html">Electronics and technology</a></li>
+                                            <li><a href="beauty.html">Beauty</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li><a class="text-bold" href="faq.html">FAQs</a></li>
+            <li><a class="text-bold" href="store/contact.html">Contact</a></li>
+            <li>
+                <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
+            </li>
+        </ul>
+
+    </nav>
+    <main>
+        <header class="bg-gradient-light small-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-30">
+                        <img class="header-logo" src="images/logo.png" alt="mallux logo">
+                    </div>
+                    <nav class="col-70 menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About us</a></li>
+                            <li><a href="fees.html">Fees</a></li>
+                            <li><a href="myaccount.html">My Account</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a>Browse &#8628;</a>
+                                    <div class="dropdown-content">
+                                        <a href="browse-by-name.html">Browse stores by names</a>
+                                        <a href="browse-by-category.html">Browse store by category</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
+                        <a href="order-placement.html"><img class="cart-icon" src="images/cart.png"></a>
+                    </nav>
+                    <div class="res-index-space1 col-70"></div>
+                </div>
+        </header>
+
+        <main class="login-wrapper">
+            <h1 class="section-title">Register</h1>
+            <div class="row">
+                <div class="col-30">
+                    <h1 class="text-medium">Already a member? <a href="myaccount.html" class="text-medium">Login here</a></h1>
+                </div>
+                <div class="col-60">
+                    <form>
+                        <fieldset class="shopper-fieldset">
+                            <legend class="text-big">For Shoppers</legend>
+                            <br>
+                            <div class="row">
+                                <div class="col-50">
+                                    <div class="container">
+                                        <label for="email">Email address</label>
                                         <br>
-                                        <div class="container">
-                                            <label for="bname">Business Name</label>
+                                        <input type="email" name="email" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="phone">Phone number</label>
+                                        <br>
+                                        <input type="tel" name="phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
+                                        <br>
+                                        <label for="pass">Password</label>
+                                        <br>
+                                        <input type="password" name="pass" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="cfpass">Confirm Password</label>
+                                        <br>
+                                        <input type="password" name="cfpass" value="" required placeholder="*required">
+                                        <br>
+                                        <br>
+                                        <label for="account">Account Type</label>
+                                        <br><br>
+                                        <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
+                                        <input type="radio" name="account" value="shopper" required checked="checked">
+                                        <br>
+                                        <label class="text-thin" for="account">Store Owner</label>
+                                        <input type="radio" name="account" value="owner" id="owner-checked" required>
+                                        <fieldset class="owner-fieldset">
+                                            <legend class="text-normal">Store Onwers only</legend>
                                             <br>
-                                            <input type="text" name="bname" value="">
-                                            <br>
-                                            <label for="sname">Store Name</label>
-                                            <br>
-                                            <input type="text" name="sname" value="">
-                                            <br>
-                                            <label for="scategory">Store Category</label>
-                                            <br>
-                                            <select name="scategory">
+                                            <div class="container">
+                                                <label for="bname">Business Name</label>
+                                                <br>
+                                                <input type="text" name="bname" value="">
+                                                <br>
+                                                <label for="sname">Store Name</label>
+                                                <br>
+                                                <input type="text" name="sname" value="">
+                                                <br>
+                                                <label for="scategory">Store Category</label>
+                                                <br>
+                                                <select name="scategory">
                                                 <option value="department_stores">Department Stores</option>
                                                 <option value="grocery_stores">Grocery Stores</option>
                                                 <option value="restaurants">Restaurants</option>
@@ -115,45 +163,45 @@
                                                 <option value="services">Services</option>
                                                 <option value="kiosks">Kiosks</option>
                                             </select>
-                                            <br>
+                                                <br>
 
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </fieldset>
-                                    <br>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </fieldset>
+                                        <br>
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="col-50">
-                                <div class="container">
-                                    <label for="upload"><strong>Profile Picture</strong></label>
-                                    <input type="file" name="upload" value="" required>
-                                    <br>
-                                    <br>
-                                    <label for="fname">First name</label>
-                                    <br>
-                                    <input type="text" name="fname" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="lname">Last name</label>
-                                    <br>
-                                    <input type="text" name="lname" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="address">Address</label>
-                                    <br>
-                                    <input type="text" name="address" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="city">City</label>
-                                    <br>
-                                    <input type="text" name="city" value="" required placeholder="*required">
-                                    <br>
-                                    <label for="zipcode">Zipcode</label>
-                                    <br>
-                                    <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}">
-                                    <br>
-                                    <label for="country">Country</label>
-                                    <br>
-                                    <select name="country" required>
+                                <br>
+                                <div class="col-50">
+                                    <div class="container">
+                                        <label for="upload"><strong>Profile Picture</strong></label>
+                                        <input type="file" name="upload" value="" required>
+                                        <br>
+                                        <br>
+                                        <label for="fname">First name</label>
+                                        <br>
+                                        <input type="text" name="fname" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="lname">Last name</label>
+                                        <br>
+                                        <input type="text" name="lname" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="address">Address</label>
+                                        <br>
+                                        <input type="text" name="address" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="city">City</label>
+                                        <br>
+                                        <input type="text" name="city" value="" required placeholder="*required">
+                                        <br>
+                                        <label for="zipcode">Zipcode</label>
+                                        <br>
+                                        <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}">
+                                        <br>
+                                        <label for="country">Country</label>
+                                        <br>
+                                        <select name="country" required>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -404,47 +452,48 @@
                                         <option value="ZM">Zambia</option>
                                         <option value="YW">Zimbabwe</option>
                                     </select>
-                                    <br>
+                                        <br>
+                                    </div>
                                 </div>
+                                <br>
                             </div>
-                            <br>
-                        </div>
-                    </fieldset>
-                    <br>
-                    <br>
+                        </fieldset>
+                        <br>
+                        <br>
 
-                    <div class="row">
-                        <input type="submit" name="" value="Register" class="col-50 btn text-medium">
-                        <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
+                        <div class="row">
+                            <input type="submit" name="" value="Register" class="col-50 btn text-medium">
+                            <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!----Footer--->
+        <section class="footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="footer-col-1">
+                        <img class="logo " src="images/logo-dark.png">
+                        <p>Thank you for shopping with us</p>
                     </div>
-                </form>
+                    <div class="footer-col-2">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="store/term-of-service.html">Term of Service</a></li>
+                            <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="store/copyright.html">Copyright</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
-        </div>
+        </section>
     </main>
-    <!----Footer--->
-    <section class="footer">
-        <div class="container">
-            <div class="row ">
-                <div class="footer-col-1">
-                    <img class="logo " src="images/logo-dark.png">
-                    <p>Thank you for shopping with us</p>
-                </div>
-                <div class="footer-col-2">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store/term-of-service.html">Term of Service</a></li>
-                        <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="store/copyright.html">Copyright</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
-        </div>
-    </section>
 </body>
 
 </html>

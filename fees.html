@@ -8,151 +8,264 @@
     <title>SaiGonMall | Ecommerce Website</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
-            rel="stylesheet"
-            type="text/css"
-        />
-    </noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
+        rel="stylesheet"
+        type="text/css"
+    />
+</noscript>
 </head>
 
 
-<body>
-    <header class="bg-gradient-light small-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <img class="header-logo" src="images/logo.png">
+<body class="index">
+    <input type="checkbox" id="hamburger">
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a class="text-bold" href="index.html">Home</a></li>
+            <li><a class="text-bold" href="about-us.html">About us</a></li>
+            <li><a class="text-bold" href="fees.html">Fees</a></li>
+            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li>
+                <div class="mobile-menu-dropdown">
+                    <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
+                    <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
+                    <div class="mobile-menu-dropdown-content">
+                        <ul>
+                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                        </ul>
+                        <div class="mobile-menu-dropdown">
+                            <ul>
+                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
+                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
+
+                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
+                                        <ul>
+                                            <li><a href="fashion.html">Clothes</a></li>
+                                            <li><a href="electronics.html">Electronics and technology</a></li>
+                                            <li><a href="beauty.html">Beauty</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
                 </div>
-                <nav class="col-90">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About us</a></li>
-                        <li><a href="#">Fees</a></li>
-                        <li><a href="myaccount.html">My Account</a></li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">
-                  <a href="">Browse &#8642; </a></button>
-                                <div class="dropdown-content">
-                                    <a href="browse-by-name.html">Browse stores by names</a>
-                                    <a href="browse-by-category.html">Browse store by category</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                    <a href="order-placement.html"><img class="cart-icon" src="images/cart.png"></a>
-                </nav>
-            </div>
-    </header>
+            </li>
+            <li><a class="text-bold" href="faq.html">FAQs</a></li>
+            <li><a class="text-bold" href="store/contact.html">Contact</a></li>
+            <li>
+                <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
+            </li>
+        </ul>
+
+    </nav>
     <main>
-        <section class="fees">
-            <div class="containter">
-                <h1 class="section-title">Fees</h1>
-                <h3 class="text-center">Get the perfect plan that best suits your needs!</h3>
-                <br>
-                <br>
+        <header class="bg-gradient-light small-header">
+            <div class="container">
                 <div class="row">
-                    <div class="col-57 shopper-colorbar">
-                        <h3 class="shopper_h3">Shoppers</h3>
+                    <div class="col-30">
+                        <img class="header-logo" src="images/logo.png" alt="mallux logo">
                     </div>
-                    <div class="col-37 store_owner-colorbar">
-                        <h3 class="shopper_h3">Shop owners
-                        </h3>
+                    <nav class="col-70 menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About us</a></li>
+                            <li><a href="#">Fees</a></li>
+                            <li><a href="myaccount.html">My Account</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">
+                  <a href="">Browse &#8642; </a></button>
+                                    <div class="dropdown-content">
+                                        <a href="browse-by-name.html">Browse stores by names</a>
+                                        <a href="browse-by-category.html">Browse store by category</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
+                        <a href="order-placement.html"><img class="cart-icon" src="images/cart.png"></a>
+                    </nav>
+                </div>
+        </header>
+        <main>
+            <section class="fees">
+                <div class="containter">
+                    <h1 class="section-title">Fees</h1>
+                    <h3 class="text-center">Get the perfect plan that best suits your needs!</h3>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-57 shopper-colorbar">
+                            <h3 class="fees-category">Shoppers</h3>
+
+                        </div>
+                        <div class="fees-responsive">
+                            <div class="col-17 hover-shadow  shadow">
+                                <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                                <h2 class="text-center text-extras color-red">Monthly</h2>
+                                <p class="text-center text-normal">For people who prefer something interesting</p>
+                                <h1 class="text-center text-extras">$15.00</h1>
+                                <hr class="hr-shopper">
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <a class="text-center btn btn-fees" href="">Subscribe</a>
+                            </div>
+                            <div class="col-17 hover-shadow  shadow">
+                                <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                                <h2 class="text-center text-extras color-red">Commision</h2>
+                                <p class="text-center text-normal">For people who prefer something interesting</p>
+                                <h1 class="text-center text-extras">$32.00</h1>
+                                <hr class="hr-shopper">
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <a class="text-center btn btn-fees" href="">Subscribe</a>
+                            </div>
+                            <div class="col-17 hover-shadow  shadow">
+                                <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                                <h2 class="text-center text-extras color-red">Premium</h2>
+                                <p class="text-center text-normal">For people who prefer something interesting</p>
+                                <h1 class="text-center text-extras">$49.00</h1>
+                                <hr class="hr-shopper">
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <a class="text-center btn btn-fees" href="">Subscribe</a>
+                            </div>
+                        </div>
+                        <div class="col-37 store_owner-colorbar">
+                            <h3 class="fees-category">Shop owners </h3>
+
+                        </div>
+                        <div class="fees-responsive">
+                            <div class="col-17 hover-shadow  shadow">
+                                <div class="store_owner-colorbar smallbox-fees">fefwefew</div>
+                                <h2 class="text-center text-extras color-purple">Monthly</h2>
+                                <p class="text-center text-normal">For people who prefer something interesting</p>
+                                <h1 class="text-center text-extras">$15.00</h1>
+                                <hr class="hr-owner">
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <a class="text-center btn btn-fees" href="">Subscribe</a>
+                            </div>
+                            <div class="col-17 hover-shadow  shadow">
+                                <div class="store_owner-colorbar smallbox-fees">fewfewfwe</div>
+                                <h2 class="text-center text-extras color-purple">Commision</h2>
+                                <p class="text-center text-normal">For people who prefer something interesting</p>
+                                <h1 class="text-center text-extras">$32.00</h1>
+                                <hr class="hr-owner">
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <p class="text-center text-small">✔ this that these those</p>
+                                <a class="text-center btn btn-fees" href="">Subscribe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row fees-desktop">
+                        <div class="col-17 hover-shadow  shadow">
+                            <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                            <h2 class="text-center text-medium color-red">Monthly</h2>
+                            <p class="text-center text-normal">For people who prefer something interesting</p>
+                            <h1 class="text-center text-medium">$15.00</h1>
+                            <hr class="hr-shopper">
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <a class="text-center btn btn-fees" href="">Subscribe</a>
+                        </div>
+                        <div class="col-17 hover-shadow  shadow">
+                            <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                            <h2 class="text-center text-medium color-red">Commision</h2>
+                            <p class="text-center text-normal">For people who prefer something interesting</p>
+                            <h1 class="text-center text-medium">$32.00</h1>
+                            <hr class="hr-shopper">
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <a class="text-center btn btn-fees" href="">Subscribe</a>
+                        </div>
+                        <div class="col-17 hover-shadow  shadow">
+                            <div class="shopper-colorbar smallbox-fees">fewfewf</div>
+                            <h2 class="text-center text-medium color-red">Premium</h2>
+                            <p class="text-center text-normal">For people who prefer something interesting</p>
+                            <h1 class="text-center text-medium">$49.00</h1>
+                            <hr class="hr-shopper">
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <a class="text-center btn btn-fees" href="">Subscribe</a>
+                        </div>
+                        <div class="col-17 hover-shadow  shadow">
+                            <div class="store_owner-colorbar smallbox-fees">fefwefew</div>
+                            <h2 class="text-center text-medium color-purple">Monthly</h2>
+                            <p class="text-center text-normal">For people who prefer something interesting</p>
+                            <h1 class="text-center text-medium">$15.00</h1>
+                            <hr class="hr-owner">
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <a class="text-center btn btn-fees" href="">Subscribe</a>
+                        </div>
+                        <div class="col-17 hover-shadow  shadow">
+                            <div class="store_owner-colorbar smallbox-fees">fewfewfwe</div>
+                            <h2 class="text-center text-medium color-purple">Commision</h2>
+                            <p class="text-center text-normal">For people who prefer something interesting</p>
+                            <h1 class="text-center text-medium">$32.00</h1>
+                            <hr class="hr-owner">
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <p class="text-center text-bitsmall">✔ this that these those</p>
+                            <a class="text-center btn btn-fees" href="">Subscribe</a>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-17 hover-shadow box-height shadow">
-                        <div class="shopper-colorbar smallbox-fees">fewfewf</div>
-                        <h2 class="text-center text-medium color-red">Monthly</h2>
-                        <p class="text-center text-normal">For people who prefer something interesting</p>
-                        <h1 class="text-center text-medium">$15.00</h1>
-                        <hr class="hr-shopper">
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <a class="text-center btn btn-fees" href="">Subscribe</a>
+            </section>
+        </main>
+        <section class="footer">
+            <div class="container">
+                <div class="row ">
+                    <div class="footer-col-1">
+                        <img class="logo " src="images/logo-dark.png">
+                        <p>Thank you for shopping with us</p>
                     </div>
-                    <div class="col-17 hover-shadow box-height shadow">
-                        <div class="shopper-colorbar smallbox-fees">fewfewf</div>
-                        <h2 class="text-center text-medium color-red">Commision</h2>
-                        <p class="text-center text-normal">For people who prefer something interesting</p>
-                        <h1 class="text-center text-medium">$32.00</h1>
-                        <hr class="hr-shopper">
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <a class="text-center btn btn-fees" href="">Subscribe</a>
-                    </div>
-                    <div class="col-17 hover-shadow box-height shadow">
-                        <div class="shopper-colorbar smallbox-fees">fewfewf</div>
-                        <h2 class="text-center text-medium color-red">Premium</h2>
-                        <p class="text-center text-normal">For people who prefer something interesting</p>
-                        <h1 class="text-center text-medium">$49.00</h1>
-                        <hr class="hr-shopper">
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <a class="text-center btn btn-fees" href="">Subscribe</a>
-                    </div>
-                    <div class="col-17 hover-shadow box-height shadow">
-                        <div class="store_owner-colorbar smallbox-fees">fefwefew</div>
-                        <h2 class="text-center text-medium color-purple">Monthly</h2>
-                        <p class="text-center text-normal">For people who prefer something interesting</p>
-                        <h1 class="text-center text-medium">$15.00</h1>
-                        <hr class="hr-owner">
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <a class="text-center btn btn-fees" href="">Subscribe</a>
-                    </div>
-                    <div class="col-17 hover-shadow box-height shadow">
-                        <div class="store_owner-colorbar smallbox-fees">fewfewfwe</div>
-                        <h2 class="text-center text-medium color-purple">Commision</h2>
-                        <p class="text-center text-normal">For people who prefer something interesting</p>
-                        <h1 class="text-center text-medium">$32.00</h1>
-                        <hr class="hr-owner">
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <p class="text-center text-bitsmall">✔ this that these those</p>
-                        <a class="text-center btn btn-fees" href="">Subscribe</a>
+                    <div class="footer-col-2">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="store/term-of-service.html">Term of Service</a></li>
+                            <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="store/copyright.html">Copyright</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="store/contact.html">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
+                <hr>
+                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
         </section>
     </main>
-    <section class="footer">
-        <div class="container">
-            <div class="row ">
-                <div class="footer-col-1">
-                    <img class="logo " src="images/logo-dark.png">
-                    <p>Thank you for shopping with us</p>
-                </div>
-                <div class="footer-col-2">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store/term-of-service.html">Term of Service</a></li>
-                        <li><a href="store/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="store/copyright.html">Copyright</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="store/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
-        </div>
-    </section>
 </body>
 
 </html>
