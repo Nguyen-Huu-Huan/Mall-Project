@@ -33,12 +33,12 @@ Special Instruction and Notices while browsing through the webpage:
 Citation:
      * Images:
             1. ac.png: 
-            2. adidas.jpg
-            3. air-max-plus.jpg
+            2. adidas.jpg: 
+            3. air-max-plus.jpg: https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/fzqrio6jdfgjbgdz9xyv/air-max-plus-og-shoe-v7x2sV.jpg
             4. babylon.jpg
             5. cart.png
             6. chanel.jpg
-            7. congrats.png
+            7. congrats.png: https://www.kindpng.com/imgv/hbbmo_competition-clipart-congratulation-congratulations-png-hd-transparent-png/
             8. cottononbody.png
             9. drmartens.jpg
             10. dunklowblack1.jpg
@@ -75,7 +75,7 @@ Citation:
             41. product1.png
             42. product2.png
             43. product3.png
-            44. profile_picture.png
+            44. profile_picture.png: http://clipart-library.com/clipart/6103.htm
             45. redbull.png
             46. rmwilliams.jpg
             47. saintlaurent.jpg
@@ -87,5 +87,5 @@ Citation:
             53. yayoi.jpg
             54. zara.jpg
 
-	Product detail: https://www.nike.com/vn/launch/t/dunk-low-black
+	* Product Description: https://www.nike.com/vn/launch/t/dunk-low-black
 	
