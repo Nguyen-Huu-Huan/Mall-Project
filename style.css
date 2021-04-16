@@ -1060,11 +1060,14 @@ input[type=file] {
 
 @media (max-width: 1023px) {
     /*--FOOTER--*/
+    .tiny-container {
+        width: 80%;
+    }
     .footer .col-20 {
-        flex-basis: 100%;
+        flex-basis: 40%;
     }
     .footer-logo {
-        width: 30%;
+        width: 60%;
         max-width: 10rem;
     }
     /*--about-us.html--*/
