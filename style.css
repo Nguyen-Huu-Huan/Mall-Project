@@ -894,6 +894,7 @@ input[type=email]:focus,
 input[type=password]:focus,
 input[type=text]:focus,
 input[type=number]:focus,
+input[type=reset]:focus,
 select:focus {
     border: 3px solid #ffb7c5;
 }
@@ -914,7 +915,7 @@ input[type=file] {
 }
 
 .shopper-fieldset {
-    border: 0.2rem solid #ec2e50;
+    border: 0.2rem solid white;
 }
 
 .shopper-fieldset>legend {
@@ -1061,6 +1062,9 @@ input[type=file] {
 @media (max-width: 1023px) {
     /*--FOOTER--*/
     .tiny-container {
+        width: 80%;
+    }
+    .small-container {
         width: 80%;
     }
     .footer .col-20 {
