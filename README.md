@@ -9,7 +9,7 @@ Special Instructions and Notices while browsing through the webpage:
                   - Click on the "Login here" anchor on the left (after the "Figured out your password" phrase) to get access to the Login page
             3. On Sign Up Page:
                   - Click on the "Login here" anchor on the left (after the "Already a member" phrase) to get access to the Login page.
-                  - The Account Type label is located at the bottom left corner of the fieldset, the Shopper option is chosen by default, please choose the Store Owner option
+                  - The Account Type label is located at the top left corner of the fieldset, the Shopper option is chosen by default, please choose the Store Owner option
                     in order to view the Store Owner fieldset which contains Business Name, Store Name, and Store Category
                  
      * Order Summary Page: 
