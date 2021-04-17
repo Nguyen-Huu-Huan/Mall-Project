@@ -18,91 +18,72 @@
 </noscript>
 </head>
 
-<body class="index">
+<body class="store-contact">
     <a href="../index.html" class="back-to-top btnnike">&#9664; Back to Mallux</a>
     <input type="checkbox" id="hamburger">
     <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
-            <li><a class="text-bold" href="index.html">Home</a></li>
-            <li><a class="text-bold" href="about-us.html">About us</a></li>
-            <li><a class="text-bold" href="fees.html">Fees</a></li>
-            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li><a href="store-home.html" class="text-bold">Home</a></li>
+            <li><a href="about-us.html" class="text-bold">About us</a></li>
             <li>
                 <div class="mobile-menu-dropdown">
                     <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
-                    <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
+                    <label for="menu-drop" class="text-bold">Products &#8628;</label>
                     <div class="mobile-menu-dropdown-content">
                         <ul>
-                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                            <li><a href="browse-by-category.html" class="text-bold">Browse Products by Category</a></li>
+                            <li><a href="browse-by-time.html" class="text-bold">Browse Products by Created Time</a></li>
                         </ul>
-                        <div class="mobile-menu-dropdown">
-                            <ul>
-                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
-                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
-
-                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
-                                        <ul>
-                                            <li><a href="fashion.html">Clothes</a></li>
-                                            <li><a href="electronics.html">Electronics and technology</a></li>
-                                            <li><a href="beauty.html">Beauty</a></li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                            </ul>
-
-
-                        </div>
-
                     </div>
                 </div>
             </li>
-            <li><a class="text-bold" href="faq.html">FAQs</a></li>
-            <li><a class="text-bold" href="contact.html">Contact</a></li>
+            <li><a class="text-bold" href="contact-nike.html">Contact</a></li>
             <li>
-                <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
+                <a href="order-placement.html"><img class="mobile-cart-icon" src="../images/cart.png" alt="cart"></a>
             </li>
         </ul>
 
     </nav>
-    <main>
-        <header class="small-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-10">
-                        <img class="header-logo" src="../images/nike logo.png">
-                    </div>
-                    <nav class="col-90">
-                        <ul>
-                            <li><a href="store-home.html">Home</a></li>
-                            <li><a href="about-us.html">About us</a></li>
-                            <li>
-                                <div class="dropdown">
-                                    <button class="dropbtn">
+    <div class="mobile-menu-opened">
+        <main>
+            <header class="small-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <img class="header-logo" src="../images/nike logo.png">
+                        </div>
+                        <nav class="col-90">
+                            <ul>
+                                <li><a href="store-home.html">Home</a></li>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="dropbtn">
                                     <p>Products &#8642;</p>
                                 </button>
-                                    <div class="dropdown-content">
-                                        <a href="browse-by-category.html">Browse Products by Category</a>
-                                        <a href="browse-by-time.html">Browse Products by Created Time</a>
+                                        <div class="dropdown-content">
+                                            <a href="browse-by-category.html">Browse Products by Category</a>
+                                            <a href="browse-by-time.html">Browse Products by Created Time</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li><a href="contact-nike.html">Contact</a></li>
-                        </ul>
-                        <a href="order-placement.html"><img class="cart-icon" src="../images/cart.png"></a>
-                    </nav>
+                                </li>
+                                <li><a href="contact-nike.html">Contact</a></li>
+                            </ul>
+                            <a href="order-placement.html"><img class="cart-icon" src="../images/cart.png"></a>
+                        </nav>
+                    </div>
                 </div>
-        </header>
-        <!--Contact-->
-        <main>
-            <section class="contact">
-                <div class="small-container">
-                    <h1 class="section-title">Contact Form</h1>
-                    <form class="" action="contact.html" method="post">
-                        <label for="contact_purpose"><strong>Contact Purpose</strong></label>
-                        <br>
-                        <select name="contact_purpose">
+            </header>
+            <!--Contact-->
+            <main>
+                <section class="contact">
+                    <div class="small-container">
+                        <h1 class="section-title">Contact Form</h1>
+                        <form class="" action="contact.html" method="post">
+                            <label for="contact_purpose"><strong>Contact Purpose</strong></label>
+                            <br>
+                            <select name="contact_purpose">
                     <option value="OS">Open a store</option>
                     <option value="CS">Customer Service</option>
                     <option value="GI">General Inquiry</option>
@@ -111,79 +92,81 @@
                     <option value="BC">Business Collaboration</option>
                     <option value="OP">Other purpose</option>
                 </select>
-                        <br>
-                        <label for="Name"><strong>Name:</strong></label>
-                        <br>
-                        <input type="text" name="Name" value="" required placeholder="*required">
-                        <br>
-                        <label for="Email"><strong>Email:</strong></label>
-                        <br>
-                        <input type="email" name="Email" value="" required placeholder="*required">
-                        <br>
-                        <label for="Phone"><strong>Phone:</strong></label>
-                        <br>
-                        <input type="tel" name="Phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
-                        <br>
-                        <div class="other-input">
-                            <label for="contact-method "><strong>Prefered Contact Method:</strong></label>
-                            <input type="radio" name="contact" value=" " required>
-                            <label class="text-thin" for="contact-method">Email</label>
-                            <input type="radio" name="contact" value=" " required>
-                            <label class="text-thin" for="contact-method">Phone</label>
-                        </div>
-                        <br>
-                        <br>
-                        <label for="Contact_days"> <strong>Contact days:</strong> </label>
-                        <div class="other-input">
-                            <label for="monday">Monday</label>
-                            <input type="checkbox" name="contact-day-1" value="yes">
-                            <label for="tuesday">Tuesday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="wednesday">Wednesday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="thursday">Thursday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="friday">Friday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="saturday">Saturday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="sunday">Sunday</label>
-                            <input type="checkbox" name="days" value=" ">
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <textarea name="message" rows="8" cols="80" placeholder="Your Message"></textarea>
-                        <br>
-                        <input class="btnnike" type="reset" value="Clear">
-                        <input class="btnnike" type="submit" value="Send">
-                    </form>
-                </div>
-            </section>
+                            <br>
+                            <label for="Name"><strong>Name:</strong></label>
+                            <br>
+                            <input type="text" name="Name" value="" required placeholder="*required">
+                            <br>
+                            <label for="Email"><strong>Email:</strong></label>
+                            <br>
+                            <input type="email" name="Email" value="" required placeholder="*required">
+                            <br>
+                            <label for="Phone"><strong>Phone:</strong></label>
+                            <br>
+                            <input type="tel" name="Phone" value="" required placeholder="(+84) 0123456789" pattern="0[0-9]{9}">
+                            <br>
+                            <div class="other-input">
+                                <label for="contact-method "><strong>Prefered Contact Method:</strong></label>
+                                <input type="radio" name="contact" value=" " required>
+                                <label class="text-thin" for="contact-method">Email</label>
+                                <input type="radio" name="contact" value=" " required>
+                                <label class="text-thin" for="contact-method">Phone</label>
+                            </div>
+                            <br>
+                            <br>
+                            <label for="Contact_days"> <strong>Contact days:</strong> </label>
+                            <div class="other-input">
+                                <label for="monday">Monday</label>
+                                <input type="checkbox" name="contact-day-1" value="yes">
+                                <label for="tuesday">Tuesday</label>
+                                <input type="checkbox" name="days" value=" ">
+                                <label for="wednesday">Wednesday</label>
+                                <input type="checkbox" name="days" value=" ">
+                                <label for="thursday">Thursday</label>
+                                <input type="checkbox" name="days" value=" ">
+                                <label for="friday">Friday</label>
+                                <input type="checkbox" name="days" value=" ">
+                                <label for="saturday">Saturday</label>
+                                <input type="checkbox" name="days" value=" ">
+                                <label for="sunday">Sunday</label>
+                                <input type="checkbox" name="days" value=" ">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <textarea name="message" rows="8" cols="80" placeholder="Your Message"></textarea>
+                            <br>
+                            <input class="btnnike" type="reset" value="Clear">
+                            <input class="btnnike" type="submit" value="Send">
+                        </form>
+                    </div>
+                </section>
 
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-20">
-                        <img class="footer-logo " src="../images/logo-dark.png">
-                        <p>Thank you for shopping with us</p>
+            </main>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-20">
+                            <img class="footer-logo " src="../images/logo-dark.png">
+                            <p>Thank you for shopping with us</p>
+                        </div>
+                        <div class="col-20">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li><a href="store-home.html">Home</a></li>
+                                <li><a href="term-of-service.html">Term of Service</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="copyright.html">Copyright</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-20">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="store-home.html">Home</a></li>
-                            <li><a href="term-of-service.html">Term of Service</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="copyright.html">Copyright</a></li>
-                        </ul>
-                    </div>
+                    <hr>
+                    <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
                 </div>
-                <hr>
-                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
-            </div>
-        </footer>
-    </main>
+            </footer>
+        </main>
+    </div>
+
 </body>
 
 </html>

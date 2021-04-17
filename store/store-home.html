@@ -24,174 +24,163 @@
     <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
-            <li><a class="text-bold" href="index.html">Home</a></li>
-            <li><a class="text-bold" href="about-us.html">About us</a></li>
-            <li><a class="text-bold" href="fees.html">Fees</a></li>
-            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li><a href="store-home.html" class="text-bold">Home</a></li>
+            <li><a href="about-us.html" class="text-bold">About us</a></li>
             <li>
                 <div class="mobile-menu-dropdown">
                     <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
-                    <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
+                    <label for="menu-drop" class="text-bold">Products &#8628;</label>
                     <div class="mobile-menu-dropdown-content">
                         <ul>
-                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                            <li><a href="browse-by-category.html" class="text-bold">Browse Products by Category</a></li>
+                            <li><a href="browse-by-time.html" class="text-bold">Browse Products by Created Time</a></li>
                         </ul>
-                        <div class="mobile-menu-dropdown">
-                            <ul>
-                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
-                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
-
-                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
-                                        <ul>
-                                            <li><a href="fashion.html">Clothes</a></li>
-                                            <li><a href="electronics.html">Electronics and technology</a></li>
-                                            <li><a href="beauty.html">Beauty</a></li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                            </ul>
-
-
-                        </div>
-
                     </div>
                 </div>
             </li>
-            <li><a class="text-bold" href="faq.html">FAQs</a></li>
-            <li><a class="text-bold" href="contact.html">Contact</a></li>
+            <li><a class="text-bold" href="contact-nike.html">Contact</a></li>
             <li>
                 <a href="order-placement.html"><img class="mobile-cart-icon" src="../images/cart.png" alt="cart"></a>
             </li>
         </ul>
 
     </nav>
-    <main>
-        <header class="small-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-10">
-                        <img alt="nike logo" class="header-logo" src="../images/nike logo.png">
-                    </div>
-                    <nav class="col-90">
-                        <ul>
-                            <li><a href="store-home.html">Home</a></li>
-                            <li><a href="about-us.html">About us</a></li>
-                            <li>
-                                <div class="dropdown">
-                                    <button class="dropbtn">
-                                    <p>Products &#8642;</p>
-                                </button>
-                                    <div class="dropdown-content">
-                                        <a href="browse-by-category.html">Browse Products by Category</a>
-                                        <a href="browse-by-time.html">Browse Products by Created Time</a>
+    <div class="mobile-menu-opened">
+        <main>
+            <header class="small-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <img alt="nike logo" class="header-logo" src="../images/nike logo.png">
+                        </div>
+                        <nav class="col-90">
+                            <ul>
+                                <li><a href="store-home.html">Home</a></li>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <a>Products &#8628;</a>
+                                        <div class="dropdown-content">
+                                            <a href="browse-by-category.html">Browse Products by Category</a>
+                                            <a href="browse-by-time.html">Browse Products by Created Time</a>
+                                        </div>
                                     </div>
+                                </li>
+                                <li><a href="contact-nike.html">Contact</a></li>
+                            </ul>
+                            <a href="order-placement.html"><img alt="cart" class="cart-icon" src="../images/cart.png"></a>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!----NEW PRODUCTS--->
+            <section class="new-products">
+                <div class="small-container">
+                    <h2 class="section-title">New Products</h2>
+                    <div class="row">
+                        <div class="col-20">
+                            <a href="product-details-dunklowblack.html">
+                                <div class="new-products-wrapper hover-shadow">
+                                    <figure class="new-products-img-wrapper">
+                                        <img class="new-products-img " src="../images/shirtnike1.png" alt="Red Shirt">
+
+                                    </figure>
+                                    <p class="text-center text-small color-gray">Nike</p>
+                                    <h2 class="text-center text-medium">Red Shirt</h2>
+                                    <h3 class="text-center text-normal color-red">$20.50</h3>
+
                                 </div>
-                            </li>
-                            <li><a href="contact-nike.html">Contact</a></li>
-                        </ul>
-                        <a href="order-placement.html"><img alt="cart" class="cart-icon" src="../images/cart.png"></a>
-                    </nav>
-                </div>
-        </header>
-
-        <!----NEW PRODUCTS--->
-        <section class="new-products">
-            <div class="small-container">
-                <h2 class="section-title">New Products</h2>
-                <div class="row">
-                    <div class="col-20">
-                        <div class="new-products-wrapper hover-shadow">
-                            <figure class="new-products-img-wrapper">
-                                <img class="new-products-img " src="../images/shirtnike1.png" alt="Red Shirt">
-                                <img class="new-products-brand" src="../images/nike.jpg">
-                            </figure>
-                            <p class="text-center text-small color-gray">Nike</p>
-                            <h2 class="text-center text-medium">Red Shirt</h2>
-                            <h3 class="text-center text-normal color-red">$20.50</h3>
-
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-20">
-                        <div class="new-products-wrapper hover-shadow">
-                            <figure class="new-products-img-wrapper">
-                                <img class="new-products-img " src="../images/product1.png" alt="Grey Hoodie">
-                                <img class="new-products-brand" src="../images/nike.jpg">
-                            </figure>
-                            <p class="text-center text-small color-gray">Nike</p>
-                            <h2 class="text-center text-medium">Grey Hoodie</h2>
-                            <h3 class="text-center text-normal color-red">$29.99</h3>
+                        <div class="col-20">
+                            <a href="product-details-dunklowblack.html">
+                                <div class="new-products-wrapper hover-shadow">
+                                    <figure class="new-products-img-wrapper">
+                                        <img class="new-products-img " src="../images/product1.png" alt="Grey Hoodie">
 
+                                    </figure>
+                                    <p class="text-center text-small color-gray">Nike</p>
+                                    <h2 class="text-center text-medium">Grey Hoodie</h2>
+                                    <h3 class="text-center text-normal color-red">$29.99</h3>
+
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-20">
-                        <div class="new-products-wrapper hover-shadow">
-                            <figure class="new-products-img-wrapper">
-                                <img class="new-products-img " src="../images/shirtnike2.png" alt="Black Shirt">
-                                <img class="new-products-brand" src="../images/nike.jpg">
-                            </figure>
-                            <p class="text-center text-small color-gray">Nike</p>
-                            <h2 class="text-center text-medium">Black Shirt</h2>
-                            <h3 class="text-center text-normal color-red">$17.99</h3>
+                        <div class="col-20">
+                            <a href="product-details-dunklowblack.html">
+                                <div class="new-products-wrapper hover-shadow">
+                                    <figure class="new-products-img-wrapper">
+                                        <img class="new-products-img " src="../images/shirtnike2.png" alt="Black Shirt">
 
+                                    </figure>
+                                    <p class="text-center text-small color-gray">Nike</p>
+                                    <h2 class="text-center text-medium">Black Shirt</h2>
+                                    <h3 class="text-center text-normal color-red">$17.99</h3>
+
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-20">
-                        <div class="new-products-wrapper hover-shadow">
-                            <figure class="new-products-img-wrapper">
-                                <img class="new-products-img " src="../images/pantnike.png" alt="Black Pant">
-                                <img class="new-products-brand" src="../images/nike.jpg">
-                            </figure>
-                            <p class="text-center text-small color-gray">Nike</p>
-                            <h2 class="text-center text-medium">Long Black Pant</h2>
-                            <h3 class="text-center text-normal color-red">$30.50</h3>
+                        <div class="col-20">
+                            <a href="product-details-dunklowblack.html">
+                                <div class="new-products-wrapper hover-shadow">
+                                    <figure class="new-products-img-wrapper">
+                                        <img class="new-products-img " src="../images/pantnike.png" alt="Black Pant">
 
+                                    </figure>
+                                    <p class="text-center text-small color-gray">Nike</p>
+                                    <h2 class="text-center text-medium">Long Black Pant</h2>
+                                    <h3 class="text-center text-normal color-red">$30.50</h3>
+
+                                </div>
+                            </a>
                         </div>
+
                     </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!----FEATURED PRODUCTS--->
-        <h2 class="section-title ">Featured</h2>
-        <div class="nikefeature">
-            <div class="small-container "></div>
-            <div class="row ">
-                <div class="col-2">
-                    <img src="../images/nikefeature.png " class="offer-img">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2 ">
-                    <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
-                    <h1>Dunk low black</h1>
-                    <a href="../dunklowblack.html" class="btnnike ">See details &#10147; </a>
-                </div>
-            </div>
-        </div>
-
-        <section class="footer">
-            <div class="container">
+            <!----FEATURED PRODUCTS--->
+            <h2 class="section-title ">Featured</h2>
+            <div class="nikefeature">
+                <div class="small-container "></div>
                 <div class="row ">
-                    <div class="color-gray footer-col-1">
-                        <img class="logo " src="../images/nike logo.png" alt="nike logo">
-                        <p>Thank you for shopping with us</p>
-                    </div>
-                    <div class="footer-col-2">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="term-of-service.html">Term of Service</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="copyright.html">Copyright</a></li>
-                        </ul>
+                    <div class="col-2">
+                        <img src="../images/nikefeature.png " class="offer-img">
                     </div>
                 </div>
-                <hr>
-                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
+                <div class="row">
+                    <div class="col-2 ">
+                        <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
+                        <h1>Dunk low black</h1>
+                        <a href="product-details-dunklowblack.html" class="btnnike ">See details &#10147; </a>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <section class="footer">
+                <div class="container">
+                    <div class="row ">
+                        <div class="color-gray footer-col-1">
+                            <img class="store-logo" src="../images/nike logo.png" alt="nike logo">
+                            <p>Thank you for shopping with us</p>
+                        </div>
+                        <div class="footer-col-2">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li><a href="term-of-service.html">Term of Service</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="copyright.html">Copyright</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
 </body>
 
 </html>
