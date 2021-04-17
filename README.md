@@ -3,13 +3,13 @@
 # Special Instructions and Notices while browsing through the webpage:
 ## My Account Page:
 1. On Login Page:
-- Click on the "Sign up here" anchor on the left (after the "Not a member yet" phrase) to get access to the Sign Up page.
+- Click on the "Sign up here" anchor at the bottom of the page (after the "Not a member yet" phrase) to get access to the Sign Up page.
 - Click the "Forgot Password" anchor just right above the Login button to get access to the Forgot Password Page.
 - Fill in the Email/Username and Password inputs and hit the Login button to get access to the Account Information page.
 2. On Forgot Password Page:
 - Click on the "Login here" anchor on the left (after the "Figured out your password" phrase) to get access to the Login page.
 3. On Sign Up Page:
-- Click on the "Login here" anchor on the left (after the "Already a member" phrase) to get access to the Login page.
+- Click on the "Login here" anchor at the bottom of the page (after the "Already a member" phrase) to get access to the Login page.
 - The Account Type label is located at the top left corner of the fieldset, the Shopper option is chosen by default, please choose the Store Owner option in order to view the Store Owner fieldset which contains Business Name, Store Name, and Store Category.
                  
 ## Order Summary Page: 
