@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Public Sans', Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -841,11 +841,13 @@ textarea {
     border-radius: 30px;
     transition: 0.8s;
 }
+
 .btnnike:hover:hover,
 .btnnike:focus {
     box-shadow: inset 0 0 0 2rem white;
     color: black;
 }
+
 
 /*---nike product dunk low black---*/
 
