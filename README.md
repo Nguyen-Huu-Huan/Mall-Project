@@ -78,7 +78,7 @@
 - valentino.jpg: https://www.westfield.com.au/sydney/store/1ztyExI2eoGiiKSQ4GsO6a/valentino
 - yayoi.jpg: https://www.westfield.com.au/sydney/store/9Fd5T8o2uQ20egkmICEuG/yayoi
 - zara.jpg: https://www.westfield.com.au/sydney/store/4dqFP8SnGgksOS4S2IQOYc/zara
-       
+## GitHub URL: https://github.com/Nguyen-Huu-Huan/Mall-Project.git       
 ## Font:
 https://fonts.google.com/specimen/Public+Sans?category=Sans+Serif
 	
