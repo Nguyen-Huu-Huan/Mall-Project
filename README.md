@@ -1,6 +1,6 @@
-Special Instructions and Notices while browsing through the webpage:
+#Special Instructions and Notices while browsing through the webpage:
 
-     * My Account Page:
+     ## My Account Page:
             1. On Login Page:
                   - Click on the "Sign up here" anchor on the left (after the "Not a member yet" phrase) to get access to the Sign Up page.
                   - Click the "Forgot Password" anchor just right above the Login button to get access to the Forgot Password Page.
@@ -12,27 +12,27 @@ Special Instructions and Notices while browsing through the webpage:
                   - The Account Type label is located at the top left corner of the fieldset, the Shopper option is chosen by default, please choose the Store Owner option
                     in order to view the Store Owner fieldset which contains Business Name, Store Name, and Store Category
                  
-     * Order Summary Page: 
+     ## Order Summary Page: 
             1. This page is accessed via clicking the Shopping cart icon (located right next to the Contact button in the header navigation bar)
             2. When on the Order Summary Page: Click on the Order button near the Footer section to get to the order-completed page
       
-     * Input requirements: 
+     ## Input requirements: 
             1. By standard, all inputs with placeholder requires users to fill in the inputs before submission. For "required" placeholder, input of any type is all
                accepted.
             3. "0901234567" placeholder in Phone Number and similar labels will require user to type in character "0" at first and the following are not matter, as
                long as they are numbers and the maximum length of the input should be 10 (including 0).
             5. "4-6" digits is what it sounds like, the input only requires users to type in 4-6 digits.
             
-     * Term Of Service, Privacy Policy, and Copyright button are located in the Footer section of every page.
+     ## Term Of Service, Privacy Policy, and Copyright button are located in the Footer section of every page.
       
-     * Browse by Name and Brose by Categories:
+     ## Browse by Name and Brose by Categories:
             1.  On desktop: Browse by Name: Hover on the Browse button in the header navigation bar and click on the "Browse by Name" button to get access the the page
             2.  On desktop: Browse by Categories: Do as above but hover on the "Browse by Categories" button and choose which category to be accessed
             3. On mobile: do as above but instead of "hover", you tap
        
       
-Citation:
-     * Images:
+#Citation:
+     ## Images:
             ac.png: https://www.lg.com/africa/images/split-air-conditioners/md06013556/gallery/medium01.jpg
             adidas.jpg: https://www.freepnglogos.com/images/adidas-logo-png-2381.html
             air-max-plus.jpg: https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/fzqrio6jdfgjbgdz9xyv/air-max-plus-og-shoe-v7x2sV.jpg
@@ -79,7 +79,7 @@ Citation:
             yayoi.jpg: https://www.westfield.com.au/sydney/store/9Fd5T8o2uQ20egkmICEuG/yayoi
             zara.jpg: https://www.westfield.com.au/sydney/store/4dqFP8SnGgksOS4S2IQOYc/zara
        
-       * Font:
+       ## Font:
               https://fonts.google.com/specimen/Public+Sans?category=Sans+Serif
 	
 	
