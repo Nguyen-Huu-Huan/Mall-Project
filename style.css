@@ -1098,7 +1098,14 @@ input[type=file] {
         width: 80%;
     }
     .footer .col-20 {
-        flex-basis: 40%;
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+    }
+    .footer h3 {
+        font-size: 2rem;
+    }
+    .footer a {
+        font-size: 1.5rem;
     }
     .footer-logo {
         width: 60%;
