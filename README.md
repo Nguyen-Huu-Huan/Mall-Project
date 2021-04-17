@@ -1,3 +1,5 @@
+# Access hosted website: https://mallux.netlify.app/
+
 # Special Instructions and Notices while browsing through the webpage:
 ## My Account Page:
 1. On Login Page:
