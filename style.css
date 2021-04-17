@@ -932,7 +932,7 @@ input[type=file] {
     color: #cc29bd;
 }
 
-#owner-checked:checked+.owner-fieldset {
+#owner-checked:checked~.owner-fieldset {
     display: block;
     margin-top: 10%;
     border: 0.2rem solid #cc29bd;
