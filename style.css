@@ -790,6 +790,9 @@ textarea {
 }
 
 
+/*--Order Placement--*/
+
+
 /*--Browse dropdown button---*/
 
 .dropdown {
@@ -936,6 +939,22 @@ input[type=file] {
 }
 
 
+/*--STORE/dunklowblack--*/
+
+.dunklowblack .small-container {
+    width: 95%;
+}
+
+.dunklowblack .col-45 {
+    flex-basis: 95%;
+}
+
+.nike-recommended-products .col-20 {
+    flex-basis: 45%;
+    margin: 0.4rem;
+}
+
+
 /*---RESPONSIVE---*/
 
 
@@ -1047,6 +1066,18 @@ input[type=file] {
     .new-products .row {
         margin-bottom: -10px;
     }
+    /*--fashion.html--*/
+    .fashion-stores .col-20,
+    .electronics-stores .col-20,
+    .beauty-stores .col-20 {
+        flex-basis: 45%;
+        margin: 0.3rem;
+    }
+    /*--browse-by-name.html--*/
+    .browse-by-name .col-20 {
+        flex-basis: 45%;
+        margin: 0.3rem;
+    }
 }
 
 
@@ -1149,5 +1180,21 @@ input[type=file] {
     }
     .store-footer .store-logo {
         width: 60%;
+    }
+    /*--order-placement.html--*/
+    .order-placement .medium-container {
+        width: 96%;
+    }
+    .order-placement h2,
+    h3,
+    h1 {
+        font-size: 1.2rem;
+    }
+    .order-placement img {
+        width: 50%;
+    }
+    .order-placement #order-button {
+        width: 100%;
+        text-align: center;
     }
 }
