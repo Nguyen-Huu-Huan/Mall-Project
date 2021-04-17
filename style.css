@@ -719,6 +719,8 @@ ul {
 }
 
 .fees .col-17 {
+    min-height: 25rem;
+    height: 100%;
     padding: 1rem;
 }
 
@@ -1090,6 +1092,9 @@ input[type=file] {
 }
 
 @media (max-width: 1023px) {
+    .section-title {
+        font-size: 2rem;
+    }
     /*--FOOTER--*/
     .tiny-container {
         width: 80%;
@@ -1113,6 +1118,7 @@ input[type=file] {
     }
     /*--about-us.html--*/
     .about-us .col-30 {
+        min-height: 0;
         flex-basis: 100%;
         padding: 2rem 1rem 1.5rem 1rem;
         margin-bottom: 2rem;
@@ -1124,6 +1130,7 @@ input[type=file] {
     .fees .col-37,
     .fees .col-57,
     .fees .col-17 {
+        min-height: 0;
         flex-basis: 100%;
     }
     .fees .col-17 {
