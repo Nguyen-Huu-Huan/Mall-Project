@@ -33,8 +33,8 @@ Special Instructions and Notices while browsing through the webpage:
       
 Citation:
      * Images:
-            1. ac.png: 
-            2. adidas.jpg: 
+            1. ac.png: https://www.lg.com/africa/images/split-air-conditioners/md06013556/gallery/medium01.jpg
+            2. adidas.jpg: https://www.freepnglogos.com/images/adidas-logo-png-2381.html
             3. air-max-plus.jpg: https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/fzqrio6jdfgjbgdz9xyv/air-max-plus-og-shoe-v7x2sV.jpg
             4. babylon.jpg
             5. cart.png
