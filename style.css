@@ -538,19 +538,27 @@ header .btn {
 .new-stores figcaption,
 .new-stores a,
 .browse-by-name figcaption,
-.browse-by-name a {
+.browse-by-name a,
+.beauty-stores figcaption,
+.beauty-stores a {
     padding: 1rem 0;
 }
 
 .new-stores img,
-.browse-by-name img {
+.browse-by-name img,
+.beauty-stores img {
     padding-top: 1rem;
     width: 80%;
 }
 
 .new-stores figure,
-.browse-by-name figure {
+.browse-by-name figure,
+.beauty-stores figure {
     text-align: center;
+}
+
+.browse-by-name h1 {
+    padding: 2rem;
 }
 
 .offer {
