@@ -447,6 +447,7 @@ label {
     position: fixed;
     right: 0.5rem;
     bottom: 0.5rem;
+    z-index: 100;
 }
 
 
@@ -593,9 +594,8 @@ header .btn {
 
 /*------footer----------*/
 
-.footer {
+footer {
     background-color: black;
-    color: #8a8a8a;
     padding: 2rem 0 1rem;
 }
 
@@ -648,6 +648,10 @@ ul {
 
 
 /*---contact----*/
+
+.other-input label {
+    font-weight: 500;
+}
 
 .input-field {
     width: 300px;
@@ -820,26 +824,13 @@ textarea {
 
 .nikefeature {
     background: radial-gradient(#fff, #8a8a8a);
-    margin: 0 15rem 2rem;
-    border-radius: 1%;
 }
 
 .btnnike {
-    font-weight: 500;
-    box-sizing: border-box;
-    display: inline-block;
-    background-image: linear-gradient(to right, #2b2b2b, #8a8a8a);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-    border-radius: 30px;
-    transition: 0.8s;
-}
-
-.btnnike:hover:hover,
-.btnnike:focus {
-    box-shadow: inset 0 0 0 2rem white;
-    color: #2b2b2b;
+    background-image: linear-gradient(to right, #2b2b2b, #8a8a8a) !important;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 
@@ -1124,5 +1115,39 @@ input[type=file] {
     .fees .fees-category {
         font-size: 3rem;
         font-weight: 800;
+    }
+    /*--STORE/about-us.html--*/
+    .store-browse-by-time .col-20,
+    .store-browse-by-category .col-20 {
+        margin: 1rem;
+        flex-basis: 45%;
+    }
+    .store-browse-by-time .col-20 p,
+    .store-browse-by-category .col-20 p {
+        font-size: 1rem;
+    }
+    .store-browse-by-time .col-20 h3,
+    .store-browse-by-category .col-20 h3 {
+        font-size: 1.5rem;
+    }
+    /*--STORE/about-us.html--*/
+    .store-contact * {
+        font-size: 1.5rem;
+    }
+    /*--STORE/store-home.html--*/
+    .store-home .col-20 {
+        margin: 0.5rem;
+        flex-basis: 40%;
+    }
+    .store-home .small-container {
+        width: 95%;
+    }
+    /*--STORE FOOTER--*/
+    .store-footer .col-30 {
+        flex-basis: 100%;
+        margin: 1rem;
+    }
+    .store-footer .store-logo {
+        width: 60%;
     }
 }
