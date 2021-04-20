@@ -21,10 +21,3 @@ function myFunction(){
   console.log("You have agreed to the cookie policy")
   localStorage.setItem('cookie-consent',true);
 }
-
-function price(){
-  var qty = document.querySelector(".air-max-qty").value
-  qty = parseInt(qty)
-  var price = document.querySelector(".air-max-price")
-  price.innerHTML = (qty*270)+"$"
-}
