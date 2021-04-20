@@ -32,18 +32,6 @@ function add_to_cart(){
   localStorage.setItem("Dunk Low Black",count)
 }
 
-var total_price = 0
-
-function price(){
-  var qty = document.querySelector(".item-qty").value
-  qty = parseInt(qty)
-  localStorage.setItem('Nike Air Max',qty)
-  var price = document.querySelector(".item-price")
-  price.innerHTML = (qty*270)+"$"
-  total_price=(qty*270)+(parseInt(localStorage.getItem("Dunk Low Black"))*130);;
-  document.querySelector(".total_money").innerHTML = total_price
-}
-
 document.querySelector(".total_money").innerHTML = 270+parseInt(localStorage.getItem("Dunk Low Black"))*130;
 function cart_load(){
 
@@ -94,7 +82,7 @@ function cart_load(){
     item_div_1_2.innerHTML = (130*parseInt(input_number.value))+"$"
     if (typeof(parseInt(input_number.value))=="number"){
       localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
-      total_price=(130*parseInt(input_number.value))+parseInt(localStorage.getItem("Nike Air Max"))*270
+      total_price=(130*parseInt(input_number.value))
       document.querySelector(".total_money").innerHTML = total_price
     }
   })
