@@ -9,7 +9,9 @@ function myFunction(){
   document.querySelector("body").querySelectorAll("input").forEach((button)=>{button.disabled = "";})
   console.log("You have agreed to the cookie policy")
 }
-var current_qty = document.querySelector(".air-max-qty").value;
-var price = current_qty*270;
-document.querySelector(".air-max-price").innerHTML = price+"$"
-console.log(price);
+function price(){
+  var current_qty = document.querySelector(".air-max-qty").value;
+  var price = current_qty*270;
+  document.querySelector(".air-max-price").innerHTML = price+"$"
+  console.log(price);
+}
