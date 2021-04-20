@@ -10,10 +10,8 @@ function myFunction(){
   console.log("You have agreed to the cookie policy")
 }
 function price(){
-  var current_qty = document.querySelector(".air-max-qty").value;
-  current_qty = parseInt(current_qty);
-  console.log(current_qty);
-  var price = current_qty*270;
-  document.querySelector(".air-max-price").innerHTML = price+"$"
-  console.log(price);
+  var qty = document.querySelector(".air-max-qty").value
+  qty = parseInt(qty)
+  var price = document.querySelector(".air-max-price")
+  price.innerHTML = (qty*270)+"$"
 }
