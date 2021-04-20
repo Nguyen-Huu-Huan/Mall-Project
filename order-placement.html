@@ -18,8 +18,7 @@
 </noscript>
 </head>
 
-
-<body class="index">
+<body class="index" onload="cart_load()">
   <div class="cookie">
     <div class="container">
       <h1 class="text-extra text-center">Cookie Consent</h1>
@@ -124,7 +123,7 @@
         <main>
             <h1 class="section-title">ORDER SUMMARY</h1>
             <section class="order-placement">
-                <div class="medium-container">
+                <div class="medium-container product-space">
                     <div class="row">
                         <h2 class="col-40 text-center">Products' Names</th>
                             <h2 class="col-20 text-center">Price</th>
@@ -139,10 +138,10 @@
                                 <h3 class="text-center">Nike Air Max Plus</h3>
                             </div>
                         </div>
-                        <div class="col-20 text-center air-max-price">270$</div>
+                        <div class="col-20 text-center item-price">270$</div>
                         <div class="col-20">
                             <div class="row">
-                                <input type="number" value="1" class="air-max-qty" oninput="price()">
+                                <input type="number" value="1" class="item-qty" oninput="price()">
                             </div>
                         </div>
                     </div>
@@ -155,10 +154,10 @@
                                 <h3 class="text-center">Nike Dunk Low Black</h3>
                             </div>
                         </div>
-                        <div class="col-20 text-center">130$</div>
+                        <div class="col-20 text-center item-price">130$</div>
                         <div class="col-20">
                             <div class="row">
-                                <input type="number" value="1">
+                                <input type="number" value="1" class="item-qty" oninput="price()">
                             </div>
                         </div>
                     </div>
@@ -170,7 +169,7 @@
                     <div class="col-30">
                         <h1 class="text-center">Total</h1>
                         <hr>
-                        <p class="text-big text-center">400$</p>
+                        <p class="text-big text-center total_money">400$</p>
                     </div>
                 </div>
                 <div class="row">
