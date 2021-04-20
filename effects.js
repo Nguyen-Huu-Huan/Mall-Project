@@ -21,3 +21,13 @@ function myFunction(){
   console.log("You have agreed to the cookie policy")
   localStorage.setItem('cookie-consent',true);
 }
+
+var count = 0
+function add_to_cart(){
+  count+=parseInt(document.querySelector(".shoe-qty").value)
+  var result = count.toString()
+  document.querySelector(".cart-qty").innerHTML = result
+  document.querySelector(".cart-qty").style.color = "red"
+  document.querySelector(".cart-qty").style.display = "inline"
+  localStorage.setItem("Dunk Low Black",count)
+}
