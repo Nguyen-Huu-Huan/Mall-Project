@@ -12,3 +12,4 @@ function myFunction(){
 var current_qty = document.querySelector(".air-max-qty").value;
 var price = current_qty*270;
 document.querySelector(".air-max-price").innerHTML = price+"$"
+console.log(price);
