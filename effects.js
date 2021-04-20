@@ -15,7 +15,7 @@ if (cookie_consent=='true'){
 
 function myFunction(){
   document.querySelector(".cookie").style.display = "none";
-  x.forEach((div)=>{div.style.opacity="1"})
+  blur_elements.forEach((div)=>{div.style.opacity="1"})
   document.querySelector("body").querySelectorAll("a").forEach((button)=>{button.style.pointerEvents = "auto";})
   document.querySelector("body").querySelectorAll("input").forEach((button)=>{button.disabled = "";})
   console.log("You have agreed to the cookie policy")
