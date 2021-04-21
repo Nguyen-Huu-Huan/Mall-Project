@@ -58,11 +58,12 @@ document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getIte
 //     document.querySelector(".add-to-cart").style.pointerEvents = "none";
 //     document.querySelector(".product-space").style.display = "none";
 //     document.querySelector(".total").style.display = "none";    
-//     document.querySelector(".not_sign_in").style.display = "block";
-//     document.querySelector(".not_sign_in").style.color = "#ff1493";
+
 // }
 if (islogin!='true'){
   document.querySelector(".product-space").style.display = "none"
+  document.querySelector(".not_sign_in").style.display = "block";
+  document.querySelector(".not_sign_in").style.color = "#ff1493";  
 }else{
   document.querySelector(".product-space").style.display = "block"
 }
