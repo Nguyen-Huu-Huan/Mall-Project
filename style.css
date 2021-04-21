@@ -466,7 +466,10 @@ label {
     bottom: 0.5rem;
     z-index: 100;
 }
-
+.back-to-top>img{
+    width: 3vw;
+    height: 3vw;
+}
 
 /*----------PAGE----------*/
 
