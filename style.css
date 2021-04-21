@@ -887,7 +887,10 @@ textarea {
     cursor: pointer;
     margin: 0.1rem;
 }
-
+@keyframes shaking{
+    from {transform: rotate(-20)}
+    to {transform: rotate(20)}
+}
 
 /*--My Account Login--*/
 
