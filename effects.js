@@ -134,5 +134,5 @@ function coupon_apply(){
 //   }else{
 //     alert("The coupon does not exist")
 //   }
-  console.log("hello")
+  console.log(document.querySelector("input[name="coupon"]").value)
 }
