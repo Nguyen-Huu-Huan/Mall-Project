@@ -59,6 +59,7 @@ function cart_load(){
       }else{
         document.querySelector(".product-space").style.display = "block";
         document.querySelector(".total_section").style.display = "block";
+        document.querySelector(".not_sign_in").style.display = "none";
         document.querySelector(".order_empty").style.display = "none";
         var item_div_1 = document.createElement("div");
         item_div_1.setAttribute("class","row");
