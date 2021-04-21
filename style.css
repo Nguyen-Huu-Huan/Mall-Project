@@ -844,7 +844,12 @@ textarea {
     display: block;
 }
 
-
+.HD-apply{
+    color: green;
+}
+.DI-apply{
+    color: green;
+}
 
 /*-----nike store---*/
 
