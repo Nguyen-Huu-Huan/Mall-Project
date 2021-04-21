@@ -128,11 +128,11 @@ function cart_load(){
 }
 function coupon_apply(){
   if (document.querySelector("input[name='coupon']").value=="COSC2430-HD"){
-    total_price = (130*parseInt(input_number.value))
+    total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price *=0.8
     document.querySelector(".total-money").innerHTML = total_price+"$"
   }else if (document.querySelector("input[name='coupon']").value=="COSC2430-DI"){
-    total_price = (130*parseInt(input_number.value))
+    total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price*=0.9
     document.querySelector(".total-money").innerHTML = total_price+"$"
   }else{
