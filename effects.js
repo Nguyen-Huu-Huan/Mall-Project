@@ -82,7 +82,14 @@ function cart_load(){
 
         var item_div_1_2 = document.createElement("div");
         item_div_1_2.setAttribute("class","col-20 text-center item-price");
-        item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+        if (localStorage.getItem("coupon")=="HD"){
+          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
+        }else if (localStorage.getItem("coupon")=="DI"){
+          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
+        }else{
+          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+        }
+        
         item_div_1.appendChild(item_div_1_2)
 
         var item_div_1_3 = document.createElement("div");
@@ -119,7 +126,13 @@ function cart_load(){
           if (typeof(parseInt(input_number.value))=="number"){
             localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
             total_price=(130*parseInt(input_number.value))
-            document.querySelector(".total-money").innerHTML = total_price+"$"
+            if (localStorage.getItem("coupon")=="HD"){
+              document.querySelector(".total-money").innerHTML = total_price*0.8+"$"
+            }else if (localStorage.getItem("coupon")=="DI"){
+              document.querySelector(".total-money").innerHTML = total_price*0.9+"$"
+            }else{
+              document.querySelector(".total-money").innerHTML = total_price+"$"
+            }
           }
         })
         item_div_1_3_1.appendChild(input_number)  
@@ -128,10 +141,12 @@ function cart_load(){
 }
 function coupon_apply(){
   if (document.querySelector("input[name='coupon']").value=="COSC2430-HD"){
+    localStorage.setItem("coupon","HD")
     total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price *=0.8
     document.querySelector(".total-money").innerHTML = total_price+"$"
   }else if (document.querySelector("input[name='coupon']").value=="COSC2430-DI"){
+    localStorage.setItem("coupon","DI")
     total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price*=0.9
     document.querySelector(".total-money").innerHTML = total_price+"$"
