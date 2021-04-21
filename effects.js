@@ -129,8 +129,10 @@ function cart_load(){
 function coupon_apply(){
   if (document.querySelector("input[name='coupon']").value=="COSC2430-HD"){
     total_price *=0.8
+    document.querySelector(".total_money").innerHTML = total_price+"$"
   }else if (document.querySelector("input[name='coupon']").value=="COSC2430-DI"){
     total_price*=0.9
+    document.querySelector(".total_money").innerHTML = total_price+"$"
   }else{
     alert("The coupon does not exist")
   }
