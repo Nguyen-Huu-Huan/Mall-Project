@@ -42,26 +42,27 @@ function add_to_cart(){
 
 var total_price = 0
 document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
-if (islogin=='true'){
-  document.querySelector(".add-to-cart").style.pointerEvents = "auto";
-  document.querySelector(".not_sign_in").style.display = "none";
-  if (localStorage.getItem("Dunk Low Black")<=0){
-    document.querySelector(".order_empty").style.display = "block";
-    document.querySelector(".order_empty").style.color = "#ff1493";
-    document.querySelector(".total").style.display = "none";   
-    document.querySelector(".product-space").style.display = "none";
-  }else{
-    document.querySelector(".order_empty").style.display = "none";
-    document.querySelector(".total").style.display = "block";
-    document.querySelector(".product-space").style.display = "block";
-  }
-}else{
-    document.querySelector(".add-to-cart").style.pointerEvents = "none";
-    document.querySelector(".product-space").style.display = "none";
-    document.querySelector(".total").style.display = "none";    
-    document.querySelector(".not_sign_in").style.display = "block";
-    document.querySelector(".not_sign_in").style.color = "#ff1493";
-}
+// if (islogin=='true'){
+//   document.querySelector(".add-to-cart").style.pointerEvents = "auto";
+//   document.querySelector(".not_sign_in").style.display = "none";
+//   if (localStorage.getItem("Dunk Low Black")<=0){
+//     document.querySelector(".order_empty").style.display = "block";
+//     document.querySelector(".order_empty").style.color = "#ff1493";
+//     document.querySelector(".total").style.display = "none";   
+//     document.querySelector(".product-space").style.display = "none";
+//   }else{
+//     document.querySelector(".order_empty").style.display = "none";
+//     document.querySelector(".total").style.display = "block";
+//     document.querySelector(".product-space").style.display = "block";
+//   }
+// }else{
+//     document.querySelector(".add-to-cart").style.pointerEvents = "none";
+//     document.querySelector(".product-space").style.display = "none";
+//     document.querySelector(".total").style.display = "none";    
+//     document.querySelector(".not_sign_in").style.display = "block";
+//     document.querySelector(".not_sign_in").style.color = "#ff1493";
+// }
+document.querySelector(".produce-space").style.display = "none"
 function cart_load(){
     var item_div_1 = document.createElement("div");
     item_div_1.setAttribute("class","row");
