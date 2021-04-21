@@ -844,14 +844,12 @@ textarea {
   position: fixed;
   z-index: 9999;
   width: 2vw;
-  background: white;
   bottom: 0;
   right:0;
   margin: 5% 5% 5% 5%;
   height: 0.5vw;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 5px 10px #ff007f;
-  padding-top: 8rem;
+/*   padding-top: 8rem; */
 }
 
 
