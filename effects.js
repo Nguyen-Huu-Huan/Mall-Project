@@ -36,7 +36,7 @@ function add_to_cart(){
 
 /*Cart price update*/
 var total_price = 0
-document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
 
 // Check login status
 function login_button(){
@@ -47,23 +47,28 @@ var islogin = localStorage.getItem('login')
 function cart_load(){
       if (islogin!='true'){
       document.querySelector(".product-space").style.display = "none"
-      document.querySelector(".total_section").style.display = "none";
-      document.querySelector(".not_sign_in").style.display = "block";
-      document.querySelector(".not_sign_in>h2").style.color = "#ff1493";  
-      document.querySelector(".order_empty").style.display = "none";
+      document.querySelector(".total-section").style.display = "none";
+      document.querySelector(".not-sign-in").style.display = "block";
+      document.querySelector(".not-sign_in>h2").style.color = "#ff1493";  
+      document.querySelector(".order-empty").style.display = "none";
+      document.querySelector(".coupon-section").style.display = "none";
       document.querySelector(".add-to-cart").style.pointerEvents = "none";
     }else{
       if (localStorage.getItem("Dunk Low Black")<=0){
         document.querySelector(".product-space").style.display = "none";
-        document.querySelector(".total_section").style.display = "none";
-        document.querySelector(".not_sign_in").style.display = "none";
-        document.querySelector(".order_empty").style.display = "block";
-        document.querySelector(".order_empty>h2").style.color = "#ff1493";
+        document.querySelector(".total-section").style.display = "none";
+        document.querySelector(".not-sign-in").style.display = "none";
+        document.querySelector(".coupon-section").style.display = "none";
+        document.querySelector(".order-empty").style.display = "block";
+        document.querySelector(".order-empty>h2").style.color = "#ff1493";
       }else{
         document.querySelector(".product-space").style.display = "block";
-        document.querySelector(".total_section").style.display = "block";
-        document.querySelector(".not_sign_in").style.display = "none";
-        document.querySelector(".order_empty").style.display = "none";
+        document.querySelector(".total-section").style.display = "block";
+        document.querySelector(".order-details").style.display = "block";
+        document.querySelector(".coupon-section").style.display = "block";
+        document.querySelector(".not-sign-in").style.display = "none";
+        document.querySelector(".order-empty").style.display = "none";
+        
         var item_div_1 = document.createElement("div");
         item_div_1.setAttribute("class","row");
         document.querySelector(".product-space>div").appendChild(item_div_1)
