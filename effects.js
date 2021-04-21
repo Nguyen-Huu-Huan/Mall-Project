@@ -65,7 +65,7 @@ function cart_load(){
         document.querySelector(".product-section").style.display = "block";
         document.querySelector(".total-section").style.display = "block";
         document.querySelector(".order-details").style.display = "block";
-        document.querySelector(".order-details>h2").style.color = "#ff1493";
+        document.querySelector(".order-details h2").style.color = "#ff1493";
         document.querySelector(".coupon-section").style.display = "block";
         document.querySelector(".not-sign-in").style.display = "none";
         document.querySelector(".order-empty").style.display = "none";
