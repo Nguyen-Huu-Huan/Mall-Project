@@ -34,6 +34,8 @@ function add_to_cart(){
 
 var total_price = 0
 // document.querySelector(".total_money").innerHTML = parseInt(localStorage.getItem("Dunk Low Black"))*130;
+document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+
 function cart_load(){
 
   var item_div_1 = document.createElement("div");
@@ -83,7 +85,7 @@ function cart_load(){
     if (typeof(parseInt(input_number.value))=="number"){
       localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
       total_price=(130*parseInt(input_number.value))
-      document.querySelector(".total_money").innerHTML = total_price
+      document.querySelector(".total_money").innerHTML = total_price+"$"
     }
   })
   item_div_1_3_1.appendChild(input_number)
