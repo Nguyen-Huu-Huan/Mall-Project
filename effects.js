@@ -27,20 +27,22 @@ function login_button(){
   return true
 }
 
-// var islogin = localStorage.getItem('login')
+var islogin = localStorage.getItem('login')
 
-// if (islogin=='true'){
-//   console.log("You have successfully logged in to your account");
-//   document.querySelector(".not_sign_in").style.display = "none";
-//   document.querySelector(".product-space").style.display = "block";
-//   document.querySelector(".total").style.display = "block";
-// }else{
-//   document.querySelector(".product-space").style.display = "none";
-//   document.querySelector(".order_empty").style.display = "none";
-//   document.querySelector(".not_sign_in").style.display = "block";
-//   document.querySelector(".not_sign_in").style.color = "#ff1493";
-//   document.querySelector(".total").style.display = "none";
-// }
+if (islogin=='true'){
+  console.log("You have successfully logged in to your account");
+  document.querySelector(".add-to-cart").style.pointerEvents = "auto";
+  document.querySelector(".not_sign_in").style.display = "none";
+  document.querySelector(".product-space").style.display = "block";
+  document.querySelector(".total").style.display = "block";
+}else{
+  document.querySelector(".product-space").style.display = "none";
+  document.querySelector(".add-to-cart").style.pointerEvents = "none";
+  document.querySelector(".order_empty").style.display = "none";
+  document.querySelector(".not_sign_in").style.display = "block";
+  document.querySelector(".not_sign_in").style.color = "#ff1493";
+  document.querySelector(".total").style.display = "none";
+}
 
 var count = 0
 function add_to_cart(){
@@ -56,14 +58,7 @@ var total_price = 0
 document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
 
 function cart_load(){
-  if (localStorage.getItem("Dunk Low Black")<=0){
-    document.querySelector(".product-space").style.display = "none";
-    document.querySelector(".order_empty").style.display = "block";
-    document.querySelector(".order_empty").style.color = "#ff1493"
-    document.querySelector(".total").style.display = "none";
-  }else{
-    document.querySelector(".order_empty").style.display = "none";
-    document.querySelector(".total").style.display = "block";
+  
     var item_div_1 = document.createElement("div");
     item_div_1.setAttribute("class","row");
     document.querySelector(".product-space").appendChild(item_div_1)
@@ -115,5 +110,26 @@ function cart_load(){
       }
     })
     item_div_1_3_1.appendChild(input_number)
+  if (islogin=='true'){
+    document.querySelector(".add-to-cart").style.pointerEvents = "auto";
+    document.querySelector(".not_sign_in").style.display = "none";
+    if (localStorage.getItem("Dunk Low Black")<=0){
+      document.querySelector(".order_empty").style.display = "block";
+      document.querySelector(".order_empty").style.color = "#ff1493";
+      document.querySelector(".total").style.display = "none";   
+      document.querySelector(".product-space").style.display = "none";
+    }else{
+      document.querySelector(".order_empty").style.display = "none";
+      document.querySelector(".total").style.display = "block";
+      document.querySelector(".product-space").style.display = "block";
+    }
+  }else{
+      document.querySelector(".add-to-cart").style.pointerEvents = "none";
+      document.querySelector(".product-space").style.display = "none";
+      document.querySelector(".total").style.display = "none";    
+      document.querySelector(".not_sign_in").style.display = "block";
+      document.querySelector(".not_sign_in").style.color = "#ff1493";
   }
+
+  
 }
