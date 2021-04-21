@@ -21,7 +21,6 @@ function myFunction(){
   console.log("You have agreed to the cookie policy")
   localStorage.setItem('cookie-consent',true);
 }
-localStorage.setItem('login',false)
 function login_button(){
   localStorage.setItem('login',true)
   return true
@@ -62,7 +61,7 @@ document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getIte
 //     document.querySelector(".not_sign_in").style.display = "block";
 //     document.querySelector(".not_sign_in").style.color = "#ff1493";
 // }
-if (islogin=='false'){
+if (islogin!='true'){
   document.querySelector(".product-space").style.display = "none"
 }else{
   document.querySelector(".product-space").style.display = "block"
