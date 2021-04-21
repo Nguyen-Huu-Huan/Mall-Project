@@ -53,6 +53,7 @@ function cart_load(){
       if (localStorage.getItem("Dunk Low Black")<=0){
         document.querySelector(".product-space").style.display = "none";
         document.querySelector(".total_section").style.display = "none";
+        document.querySelector(".not_sign_in").style.display = "none";
         document.querySelector(".order_empty").style.display = "block";
         document.querySelector(".order_empty").style.color = "#ff1493";
       }else{
