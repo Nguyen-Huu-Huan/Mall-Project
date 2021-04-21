@@ -74,7 +74,7 @@ function cart_load(){
           document.querySelector(".DI-apply").style.display = "block"
           document.querySelector(".HD-apply").style.display = "none"
         }else{
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147))+"$";
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)+"$";
           document.querySelector(".DI-apply").style.display = "none"
           document.querySelector(".HD-apply").style.display = "none"
         }
