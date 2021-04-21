@@ -29,20 +29,6 @@ function login_button(){
 
 var islogin = localStorage.getItem('login')
 
-if (islogin=='true'){
-  console.log("You have successfully logged in to your account");
-  document.querySelector(".add-to-cart").style.pointerEvents = "auto";
-  document.querySelector(".not_sign_in").style.display = "none";
-  document.querySelector(".product-space").style.display = "block";
-  document.querySelector(".total").style.display = "block";
-}else{
-  document.querySelector(".product-space").style.display = "none";
-  document.querySelector(".add-to-cart").style.pointerEvents = "none";
-  document.querySelector(".order_empty").style.display = "none";
-  document.querySelector(".not_sign_in").style.display = "block";
-  document.querySelector(".not_sign_in").style.color = "#ff1493";
-  document.querySelector(".total").style.display = "none";
-}
 
 var count = 0
 function add_to_cart(){
