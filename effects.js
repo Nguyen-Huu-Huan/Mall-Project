@@ -153,16 +153,22 @@ function cart_load(){
 }
 function coupon_apply(){
   if (document.querySelector("input[name='coupon']").value=="COSC2430-HD"){
+    document.querySelector(".HD-apply").style.display = "block"
+    document.querySelector(".DI-apply").style.display = "none"
     localStorage.setItem("coupon","HD")
     total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price *=0.8
     document.querySelector(".total-money").innerHTML = total_price+"$"
   }else if (document.querySelector("input[name='coupon']").value=="COSC2430-DI"){
+    document.querySelector(".HD-apply").style.display = "none"
+    document.querySelector(".DI-apply").style.display = "block"
     localStorage.setItem("coupon","DI")
     total_price = (parseInt(localStorage.getItem("Dunk Low Black"))*130)
     total_price*=0.9
     document.querySelector(".total-money").innerHTML = total_price+"$"
   }else{
+    document.querySelector(".HD-apply").style.display = "none"
+    document.querySelector(".DI-apply").style.display = "none"
     alert("The coupon does not exist")
   }
 
