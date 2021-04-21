@@ -25,7 +25,7 @@ function myFunction(){
 
 /* add_to_cart button*/
 var count = 0
-function add_to_cart(item){
+function add_to_cart(){
   if (islogin=='true'){
     count+=parseInt(document.querySelector(".shoe-qty").value)
     var result = count.toString()
