@@ -63,17 +63,16 @@ function cart_load(){
       }else{
         if (localStorage.getItem("coupon")=="HD"){
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
-          var HD = document.createElement("p");
-          var HD_apply = HD.createTextNode("&#10004; COSC2430-HD has been applied! You received 20% off")
-          HD.appendChild(HD_apply)
-          HD.setAttribute("class","text-medium")
+          document.querySelector(".DI-apply").style.display = "none"
+          document.querySelector(".HD-apply").style.display = "block"
         }else if (localStorage.getItem("coupon")=="DI"){
-          var DI = document.createElement("p");
-          var DI_apply = DI.createTextNode("&#10004; COSC2430-DI has been applied! You received 10% off")
-          DI.appendChild(DI_apply)
-          DI.setAttribute("class","text-medium")
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
+          document.querySelector(".DI-apply").style.display = "block"
+          document.querySelector(".HD-apply").style.display = "none"
         }else{
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+          document.querySelector(".DI-apply").style.display = "none"
+          document.querySelector(".HD-apply").style.display = "none"
         }
         document.querySelector(".product-section").style.display = "block";
         document.querySelector(".total-section").style.display = "block";
@@ -135,18 +134,16 @@ function cart_load(){
             total_price=(130*parseInt(input_number.value))
             if (localStorage.getItem("coupon")=="HD"){
               document.querySelector(".total-money").innerHTML = total_price*0.8+"$";
-              var HD = document.createElement("p");
-              var HD_apply = HD.createTextNode("&#10004; COSC2430-HD has been applied! You received 20% off")
-              HD.appendChild(HD_apply)
-              HD.setAttribute("class","text-medium")
+              document.querySelector(".HD-apply").style.display = "block"
+              document.querySelector(".DI-apply").style.display = "none"
             }else if (localStorage.getItem("coupon")=="DI"){
               document.querySelector(".total-money").innerHTML = total_price*0.9+"$"
-              var DI = document.createElement("p");
-              var DI_apply = DI.createTextNode("&#10004; COSC2430-DI has been applied! You received 10% off")
-              DI.appendChild(DI_apply)
-              DI.setAttribute("class","text-medium")
+              document.querySelector(".DI-apply").style.display = "block"
+              document.querySelector(".HD-apply").style.display = "none"
             }else{
               document.querySelector(".total-money").innerHTML = total_price+"$"
+              document.querySelector(".DI-apply").style.display = "none"
+              document.querySelector(".HD-apply").style.display = "none"
             }
           }
         })
