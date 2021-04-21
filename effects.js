@@ -36,7 +36,6 @@ function add_to_cart(){
 
 /*Cart price update*/
 var total_price = 0
-document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
 
 // Check login status
 function login_button(){
