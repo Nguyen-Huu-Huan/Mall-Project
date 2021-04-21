@@ -28,7 +28,22 @@ function login_button(){
 
 var islogin = localStorage.getItem('login')
 
-
+if (islogin!='true'){
+  document.querySelector(".product-space").style.display = "none"
+  document.querySelector(".not_sign_in").style.display = "block";
+  document.querySelector(".not_sign_in").style.color = "#ff1493";  
+  document.querySelector(".order_empty").style.display = "none";
+  document.querySelector(".add-to-cart").style.pointerEvents = "none";
+}else{
+  if (localStorage.getItem("Dunk Low Black")<=0){
+    document.querySelector(".product-space").style.display = "none"
+    document.querySelector(".order_empty").style.display = "block";
+    document.querySelector(".order_empty").style.color = "#ff1493";
+  }else{
+    document.querySelector(".product-space").style.display = "block";
+    document.querySelector(".order_empty").style.display = "none";
+  }
+}
 var count = 0
 function add_to_cart(){
   count+=parseInt(document.querySelector(".shoe-qty").value)
@@ -59,22 +74,7 @@ document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getIte
 //     document.querySelector(".total").style.display = "none";    
 
 // }
-if (islogin!='true'){
-  document.querySelector(".product-space").style.display = "none"
-  document.querySelector(".not_sign_in").style.display = "block";
-  document.querySelector(".not_sign_in").style.color = "#ff1493";  
-  document.querySelector(".order_empty").style.display = "none";
-  document.querySelector(".add-to-cart").style.pointerEvents = "none";
-}else{
-  if (localStorage.getItem("Dunk Low Black")<=0){
-    document.querySelector(".product-space").style.display = "none"
-    document.querySelector(".order_empty").style.display = "block";
-    document.querySelector(".order_empty").style.color = "#ff1493";
-  }else{
-    document.querySelector(".product-space").style.display = "block";
-    document.querySelector(".order_empty").style.display = "none";
-  }
-}
+
 // function cart_load(){
 //     var item_div_1 = document.createElement("div");
 //     item_div_1.setAttribute("class","row");
