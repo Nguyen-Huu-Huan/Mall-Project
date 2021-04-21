@@ -122,7 +122,6 @@
         </header>
         <main>
             <h1 class="section-title">ORDER SUMMARY</h1>
-            <h2 class="order-details">Order details</h2>
             <div class="order-empty">
                 <h2 class="text-big text-center">Looks like your cart is empty</h2>
             </div>
@@ -132,7 +131,19 @@
             </div>
             <section class="order-placement product-space">
                 <div class="medium-container">
-                     
+                    <div class="order-details">
+                        <h2 class="text-medium">1. Order Details</h2>
+                    </div>
+                </div>
+            </section>
+            <section class="coupon-section">
+                <div class="order-details">
+                    <h2 class="text-medium">2. Coupon Code</h2>
+                </div>
+                <div class="row">
+                    <label for="coupon" class="col-30">Coupon code</label>
+                    <input type="text" name="coupon" class="col-50"> 
+                    <input type="button" value="apply" onclick="coupon_apply()">
                 </div>
             </section>
             <section class="total-section">
