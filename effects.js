@@ -32,7 +32,7 @@ function add_to_cart(){
   localStorage.setItem("Dunk Low Black",count)
 }
 
-document.querySelector(".total_money").innerHTML = 270+parseInt(localStorage.getItem("Dunk Low Black"))*130;
+document.querySelector(".total_money").innerHTML = parseInt(localStorage.getItem("Dunk Low Black"))*130;
 function cart_load(){
 
   var item_div_1 = document.createElement("div");
