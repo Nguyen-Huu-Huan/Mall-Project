@@ -48,7 +48,7 @@ function cart_load(){
       document.querySelector(".product-section").style.display = "none"
       document.querySelector(".total-section").style.display = "none";
       document.querySelector(".not-sign-in").style.display = "block";
-      document.querySelector(".not-sign_in>h2").style.color = "#ff1493";  
+      document.querySelector(".not-sign-in>h2").style.color = "#ff1493";  
       document.querySelector(".order-empty").style.display = "none";
       document.querySelector(".coupon-section").style.display = "none";
       document.querySelector(".add-to-cart").style.pointerEvents = "none";
