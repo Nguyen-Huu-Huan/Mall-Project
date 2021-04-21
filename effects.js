@@ -64,12 +64,12 @@ function cart_load(){
         if (localStorage.getItem("coupon")=="HD"){
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
           var HD_apply = document.createElement("p");
-          HD_apply.createTextNode("&#10004; COSC2430-HD has been applied! You received 20% off")
+          HD_apply.innerHTML = "&#10004; COSC2430-HD has been applied! You received 20% off"
           HD_apply.setAttribute("class","text-medium")
         }else if (localStorage.getItem("coupon")=="DI"){
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
           var DI_apply = document.createElement("p");
-          DI_apply.createTextNode("&#10004; COSC2430-DI has been applied! You received 10% off")
+          DI_apply.innerHTML = "&#10004; COSC2430-DI has been applied! You received 10% off"
           DI_apply.setAttribute("class","text-medium")
         }else{
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
@@ -135,12 +135,12 @@ function cart_load(){
             if (localStorage.getItem("coupon")=="HD"){
               document.querySelector(".total-money").innerHTML = total_price*0.8+"$";
               var HD_apply = document.createElement("p");
-              HD_apply.createTextNode("&#10004; COSC2430-HD has been applied! You received 20% off")
+              HD_apply.innerHTML = "&#10004; COSC2430-HD has been applied! You received 20% off"
               HD_apply.setAttribute("class","text-medium")
             }else if (localStorage.getItem("coupon")=="DI"){
               document.querySelector(".total-money").innerHTML = total_price*0.9+"$"
               var DI_apply = document.createElement("p");
-              DI_apply.createTextNode("&#10004; COSC2430-DI has been applied! You received 10% off")
+              DI_apply.innerHTML = "&#10004; COSC2430-DI has been applied! You received 10% off"
               DI_apply.setAttribute("class","text-medium")
             }else{
               document.querySelector(".total-money").innerHTML = total_price+"$"
