@@ -176,8 +176,5 @@ function coupon_apply(){
     alert("The coupon does not exist")
   }
 }
-/* Dunk Low Black page */
-function animate_shopping_cart(){
-  document.querySelector(".shopping-cart").style.animation = "shaking 1s infinite"
-}
+
   
