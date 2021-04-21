@@ -1,3 +1,4 @@
+/* Cookie consent form with bluring effect applied for the rest of the items */
 var cookie_consent = localStorage.getItem('cookie-consent')
 var blur_elements = document.querySelector("body").querySelectorAll("div:not(div.cookie,div.cookie>*)")
 if (cookie_consent=='true'){
@@ -12,7 +13,7 @@ if (cookie_consent=='true'){
   document.querySelector("body").querySelectorAll("a:not(a.learn-more)").forEach((button)=>{button.style.pointerEvents = "none";})
   document.querySelector("body").querySelectorAll("input:not(input.agree)").forEach((button)=>{button.disabled = "true";})
 }
-
+// Click accept the cookie and the opacity of the rest of the items will be 1
 function myFunction(){
   document.querySelector(".cookie").style.display = "none";
   blur_elements.forEach((div)=>{div.style.opacity="1"})
