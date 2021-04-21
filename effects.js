@@ -62,7 +62,7 @@ function cart_load(){
         document.querySelector(".order_empty").style.display = "none";
         var item_div_1 = document.createElement("div");
         item_div_1.setAttribute("class","row");
-        document.querySelector(".product-space").appendChild(item_div_1)
+        document.querySelector(".product-space>div").appendChild(item_div_1)
 
         var item_div_1_1 = document.createElement("div");
         item_div_1_1.setAttribute("class","col-40");
