@@ -46,7 +46,7 @@ function cart_load(){
       document.querySelector(".product-space").style.display = "none"
       document.querySelector(".total_section").style.display = "none";
       document.querySelector(".not_sign_in").style.display = "block";
-      document.querySelector(".not_sign_in").style.color = "#ff1493";  
+      document.querySelector(".not_sign_in>h2").style.color = "#ff1493";  
       document.querySelector(".order_empty").style.display = "none";
       document.querySelector(".add-to-cart").style.pointerEvents = "none";
     }else{
@@ -55,7 +55,7 @@ function cart_load(){
         document.querySelector(".total_section").style.display = "none";
         document.querySelector(".not_sign_in").style.display = "none";
         document.querySelector(".order_empty").style.display = "block";
-        document.querySelector(".order_empty").style.color = "#ff1493";
+        document.querySelector(".order_empty>h2").style.color = "#ff1493";
       }else{
         document.querySelector(".product-space").style.display = "block";
         document.querySelector(".total_section").style.display = "block";
