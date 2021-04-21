@@ -46,7 +46,7 @@ function login_button(){
 var islogin = localStorage.getItem('login')
 function cart_load(){
       if (islogin!='true'){
-      document.querySelector(".product-space").style.display = "none"
+      document.querySelector(".product-section").style.display = "none"
       document.querySelector(".total-section").style.display = "none";
       document.querySelector(".not-sign-in").style.display = "block";
       document.querySelector(".not-sign_in>h2").style.color = "#ff1493";  
@@ -55,23 +55,24 @@ function cart_load(){
       document.querySelector(".add-to-cart").style.pointerEvents = "none";
     }else{
       if (localStorage.getItem("Dunk Low Black")<=0){
-        document.querySelector(".product-space").style.display = "none";
+        document.querySelector(".product-section").style.display = "none";
         document.querySelector(".total-section").style.display = "none";
         document.querySelector(".not-sign-in").style.display = "none";
         document.querySelector(".coupon-section").style.display = "none";
         document.querySelector(".order-empty").style.display = "block";
         document.querySelector(".order-empty>h2").style.color = "#ff1493";
       }else{
-        document.querySelector(".product-space").style.display = "block";
+        document.querySelector(".product-section").style.display = "block";
         document.querySelector(".total-section").style.display = "block";
         document.querySelector(".order-details").style.display = "block";
+        document.querySelector(".order-details>h2").style.color = "#ff1493";
         document.querySelector(".coupon-section").style.display = "block";
         document.querySelector(".not-sign-in").style.display = "none";
         document.querySelector(".order-empty").style.display = "none";
         
         var item_div_1 = document.createElement("div");
         item_div_1.setAttribute("class","row");
-        document.querySelector(".product-space>div").appendChild(item_div_1)
+        document.querySelector(".product-section>div").appendChild(item_div_1)
 
         var item_div_1_1 = document.createElement("div");
         item_div_1_1.setAttribute("class","col-40");
