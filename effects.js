@@ -33,6 +33,9 @@ function add_to_cart(){
     document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.color = "red"})
     document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.display = "inline"})
     localStorage.setItem("Dunk Low Black",count)
+  }else{
+    document.querySelector(".add-to-cart").setAttribute("href","../myaccount.html")
+    alert("Please login before purchase")
   }
 }
 
@@ -53,7 +56,6 @@ function cart_load(){
       document.querySelector(".not-sign-in>h2").style.color = "#ff1493";  
       document.querySelector(".order-empty").style.display = "none";
       document.querySelector(".coupon-section").style.display = "none";
-      document.querySelector(".add-to-cart").style.pointerEvents = "none";
     }else{
       if (localStorage.getItem("Dunk Low Black")<=0){
         document.querySelector(".product-section").style.display = "none";
