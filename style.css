@@ -844,10 +844,10 @@ textarea {
     display: block;
 }
 
-.HD-apply{
+.HD-apply>p{
     color: green;
 }
-.DI-apply{
+.DI-apply>p{
     color: green;
 }
 
