@@ -61,7 +61,13 @@ function cart_load(){
         document.querySelector(".order-empty").style.display = "block";
         document.querySelector(".order-empty>h2").style.color = "#ff1493";
       }else{
-        document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+        if (localStorage.getItem("coupon")=="HD"){
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
+        }else if (localStorage.getItem("coupon")=="DI"){
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
+        }else{
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+        }
         document.querySelector(".product-section").style.display = "block";
         document.querySelector(".total-section").style.display = "block";
         document.querySelector(".order-details").style.display = "block";
@@ -82,13 +88,7 @@ function cart_load(){
 
         var item_div_1_2 = document.createElement("div");
         item_div_1_2.setAttribute("class","col-20 text-center item-price");
-        if (localStorage.getItem("coupon")=="HD"){
-          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
-        }else if (localStorage.getItem("coupon")=="DI"){
-          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
-        }else{
-          item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
-        }
+        item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
         
         item_div_1.appendChild(item_div_1_2)
 
