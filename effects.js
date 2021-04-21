@@ -52,69 +52,68 @@ function add_to_cart(){
   localStorage.setItem("Dunk Low Black",count)
 }
 
-// var total_price = 0
-// // document.querySelector(".total_money").innerHTML = parseInt(localStorage.getItem("Dunk Low Black"))*130;
-// document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+var total_price = 0
+document.querySelector(".total_money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
 
-// function cart_load(){
-//   if (localStorage.getItem("Dunk Low Black")<=0){
-//     document.querySelector(".product-space").style.display = "none";
-//     document.querySelector(".order_empty").style.display = "block";
-//     document.querySelector(".order_empty").style.color = "#ff1493"
-//     document.querySelector(".total").style.display = "none";
-//   }else{
-//     document.querySelector(".order_empty").style.display = "none";
-//     document.querySelector(".total").style.display = "block";
-//     var item_div_1 = document.createElement("div");
-//     item_div_1.setAttribute("class","row");
-//     document.querySelector(".product-space").appendChild(item_div_1)
+function cart_load(){
+  if (localStorage.getItem("Dunk Low Black")<=0){
+    document.querySelector(".product-space").style.display = "none";
+    document.querySelector(".order_empty").style.display = "block";
+    document.querySelector(".order_empty").style.color = "#ff1493"
+    document.querySelector(".total").style.display = "none";
+  }else{
+    document.querySelector(".order_empty").style.display = "none";
+    document.querySelector(".total").style.display = "block";
+    var item_div_1 = document.createElement("div");
+    item_div_1.setAttribute("class","row");
+    document.querySelector(".product-space").appendChild(item_div_1)
 
-//     var item_div_1_1 = document.createElement("div");
-//     item_div_1_1.setAttribute("class","col-40");
-//     item_div_1.appendChild(item_div_1_1)
+    var item_div_1_1 = document.createElement("div");
+    item_div_1_1.setAttribute("class","col-40");
+    item_div_1.appendChild(item_div_1_1)
 
-//     var item_div_1_2 = document.createElement("div");
-//     item_div_1_2.setAttribute("class","col-20 text-center item-price");
-//     item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
-//     item_div_1.appendChild(item_div_1_2)
+    var item_div_1_2 = document.createElement("div");
+    item_div_1_2.setAttribute("class","col-20 text-center item-price");
+    item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+    item_div_1.appendChild(item_div_1_2)
 
-//     var item_div_1_3 = document.createElement("div");
-//     item_div_1_3.setAttribute("class","col-20");
-//     item_div_1.appendChild(item_div_1_3)
+    var item_div_1_3 = document.createElement("div");
+    item_div_1_3.setAttribute("class","col-20");
+    item_div_1.appendChild(item_div_1_3)
 
-//     var item_div_1_1_1 = document.createElement("div");
-//     item_div_1_1_1.setAttribute("class","container");
-//     item_div_1_1.appendChild(item_div_1_1_1)
+    var item_div_1_1_1 = document.createElement("div");
+    item_div_1_1_1.setAttribute("class","container");
+    item_div_1_1.appendChild(item_div_1_1_1)
 
-//     var item_div_1_1_1_1 = document.createElement("div");
-//     item_div_1_1_1_1.setAttribute("class","row");
-//     item_div_1_1_1.appendChild(item_div_1_1_1_1)
+    var item_div_1_1_1_1 = document.createElement("div");
+    item_div_1_1_1_1.setAttribute("class","row");
+    item_div_1_1_1.appendChild(item_div_1_1_1_1)
 
-//     var item_name = document.createElement("h3");
-//     item_name.innerHTML = "Dunk Low Black Shoes"
-//     item_name.setAttribute("class","text-center")
-//     item_div_1_1_1.appendChild(item_name)
+    var item_name = document.createElement("h3");
+    item_name.innerHTML = "Dunk Low Black Shoes"
+    item_name.setAttribute("class","text-center")
+    item_div_1_1_1.appendChild(item_name)
 
-//     var item_img = new Image();
-//     item_img.src = "images/dunklowblack6.jpg";
-//     item_div_1_1_1_1.appendChild(item_img)
+    var item_img = new Image();
+    item_img.src = "images/dunklowblack6.jpg";
+    item_div_1_1_1_1.appendChild(item_img)
 
-//     var item_div_1_3_1 = document.createElement("div");
-//     item_div_1_3_1.setAttribute("class","row");
-//     item_div_1_3.appendChild(item_div_1_3_1)
+    var item_div_1_3_1 = document.createElement("div");
+    item_div_1_3_1.setAttribute("class","row");
+    item_div_1_3.appendChild(item_div_1_3_1)
 
-//     var input_number = document.createElement("input")
-//     input_number.setAttribute("type","number")
-//     input_number.setAttribute("class","item-qty")
-//     input_number.setAttribute("value",localStorage.getItem('Dunk Low Black'))
-//     input_number.addEventListener("input",function(){
-//       item_div_1_2.innerHTML = (130*parseInt(input_number.value))+"$"
-//       if (typeof(parseInt(input_number.value))=="number"){
-//         localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
-//         total_price=(130*parseInt(input_number.value))
-//         document.querySelector(".total_money").innerHTML = total_price+"$"
-//       }
-//     })
-//     item_div_1_3_1.appendChild(input_number)
-//   }
-// }
+    var input_number = document.createElement("input")
+    input_number.setAttribute("type","number")
+    input_number.setAttribute("class","item-qty")
+    input_number.setAttribute("value",localStorage.getItem('Dunk Low Black'))
+    input_number.addEventListener("input",function(){
+      item_div_1_2.innerHTML = (130*parseInt(input_number.value))+"$"
+      if (typeof(parseInt(input_number.value))=="number"){
+        localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
+        total_price=(130*parseInt(input_number.value))
+        document.querySelector(".total_money").innerHTML = total_price+"$"
+      }
+    })
+    item_div_1_3_1.appendChild(input_number)
+  }
+}
