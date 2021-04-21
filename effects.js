@@ -22,15 +22,15 @@ function myFunction(){
   localStorage.setItem('cookie-consent',true);
 }
 
-// var count = 0
-// function add_to_cart(){
-//   count+=parseInt(document.querySelector(".shoe-qty").value)
-//   var result = count.toString()
-//   document.querySelector(".cart-qty").innerHTML = result
-//   document.querySelector(".cart-qty").style.color = "red"
-//   document.querySelector(".cart-qty").style.display = "inline"
-//   localStorage.setItem("Dunk Low Black",count)
-// }
+var count = 0
+function add_to_cart(){
+  count+=parseInt(document.querySelector(".shoe-qty").value)
+  var result = count.toString()
+  document.querySelector(".cart-qty").innerHTML = result
+  document.querySelector(".cart-qty").style.color = "red"
+  document.querySelector(".cart-qty").style.display = "inline"
+  localStorage.setItem("Dunk Low Black",count)
+}
 
 // document.querySelector(".total_money").innerHTML = parseInt(localStorage.getItem("Dunk Low Black"))*130;
 // function cart_load(){
