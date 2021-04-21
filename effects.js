@@ -28,9 +28,9 @@ var count = 0
 function add_to_cart(){
   count+=parseInt(document.querySelector(".shoe-qty").value)
   var result = count.toString()
-  document.querySelector(".cart-qty").innerHTML = result
-  document.querySelector(".cart-qty").style.color = "red"
-  document.querySelector(".cart-qty").style.display = "inline"
+  document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.innerHTML = result})
+  document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.color = "red"})
+  document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.display = "inline"})
   localStorage.setItem("Dunk Low Black",count)
 }
 
