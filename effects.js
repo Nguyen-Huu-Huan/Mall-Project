@@ -127,12 +127,12 @@ function cart_load(){
     }
 }
 function coupon_apply(){
-//   if (document.querySelector("input[name="coupon"]").value=="COSC2430-HD"){
-//     total_price *=0.8
-//   }else if (document.querySelector("input[name="coupon"]").value=="COSC2430-DI"){
-//     total_price*=0.9
-//   }else{
-//     alert("The coupon does not exist")
-//   }
-  console.log(document.querySelector("input[name='coupon']").value)
+  if (document.querySelector("input[name='coupon']").value=="COSC2430-HD"){
+    total_price *=0.8
+  }else if (document.querySelector("input[name='coupon']").value=="COSC2430-DI"){
+    total_price*=0.9
+  }else{
+    alert("The coupon does not exist")
+  }
+
 }
