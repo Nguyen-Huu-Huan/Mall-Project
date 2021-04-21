@@ -48,7 +48,7 @@ function login_button(){
   return true
 }
 var islogin = localStorage.getItem('login')
-function cart_load(){
+function cart_load(item){
       if (islogin!='true'){
       document.querySelector(".product-section").style.display = "none"
       document.querySelector(".total-section").style.display = "none";
@@ -57,7 +57,7 @@ function cart_load(){
       document.querySelector(".order-empty").style.display = "none";
       document.querySelector(".coupon-section").style.display = "none";
     }else{
-      if (localStorage.getItem("Dunk Low Black")<=0){
+      if (localStorage.getItem(item)<=0){
         document.querySelector(".product-section").style.display = "none";
         document.querySelector(".total-section").style.display = "none";
         document.querySelector(".not-sign-in").style.display = "none";
@@ -66,15 +66,15 @@ function cart_load(){
         document.querySelector(".order-empty>h2").style.color = "#ff1493";
       }else{
         if (localStorage.getItem("coupon")=="HD"){
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem(item))*130*0.8)+"$";
           document.querySelector(".DI-apply").style.display = "none"
           document.querySelector(".HD-apply").style.display = "block"
         }else if (localStorage.getItem("coupon")=="DI"){
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem(item))*130*0.9)+"$";
           document.querySelector(".DI-apply").style.display = "block"
           document.querySelector(".HD-apply").style.display = "none"
         }else{
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem(item))*130)+"$";
           document.querySelector(".DI-apply").style.display = "none"
           document.querySelector(".HD-apply").style.display = "none"
         }
@@ -98,7 +98,7 @@ function cart_load(){
 
         var item_div_1_2 = document.createElement("div");
         item_div_1_2.setAttribute("class","col-20 text-center item-price");
-        item_div_1_2.innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+        item_div_1_2.innerHTML = (parseInt(localStorage.getItem(item))*130)+"$";
         
         item_div_1.appendChild(item_div_1_2)
 
@@ -115,12 +115,16 @@ function cart_load(){
         item_div_1_1_1.appendChild(item_div_1_1_1_1)
 
         var item_name = document.createElement("h3");
-        item_name.innerHTML = "Dunk Low Black Shoes"
+        item_name.innerHTML = item + "Shoes"
         item_name.setAttribute("class","text-center")
         item_div_1_1_1.appendChild(item_name)
 
         var item_img = new Image();
-        item_img.src = "images/dunklowblack6.jpg";
+        if (item=="Dunk Low Black"){
+          item_img.src = "images/dunklowblack6.jpg";
+        }else if (item=="Air Force One"){
+          item_img.src = "images/dunklowblack1-2.jpg";
+        }
         item_div_1_1_1_1.appendChild(item_img)
 
         var item_div_1_3_1 = document.createElement("div");
@@ -130,11 +134,11 @@ function cart_load(){
         var input_number = document.createElement("input")
         input_number.setAttribute("type","number")
         input_number.setAttribute("class","item-qty")
-        input_number.setAttribute("value",localStorage.getItem('Dunk Low Black'))
+        input_number.setAttribute("value",localStorage.getItem(item))
         input_number.addEventListener("input",function(){
           item_div_1_2.innerHTML = (130*parseInt(input_number.value))+"$"
           if (typeof(parseInt(input_number.value))=="number"){
-            localStorage.setItem('Dunk Low Black',parseInt(input_number.value))
+            localStorage.setItem(item,parseInt(input_number.value))
             total_price=(130*parseInt(input_number.value))
             if (localStorage.getItem("coupon")=="HD"){
               document.querySelector(".total-money").innerHTML = total_price*0.8+"$";
