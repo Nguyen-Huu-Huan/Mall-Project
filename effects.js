@@ -66,6 +66,7 @@ function cart_load(){
           var HD_apply = document.createElement("p");
           HD_apply.innerHTML = "&#10004; COSC2430-HD has been applied! You received 20% off"
           HD_apply.setAttribute("class","text-medium")
+          console.log(HD_apply.value);
         }else if (localStorage.getItem("coupon")=="DI"){
           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
           var DI_apply = document.createElement("p");
