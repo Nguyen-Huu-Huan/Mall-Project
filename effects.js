@@ -25,14 +25,14 @@ function myFunction(){
 
 /* add_to_cart button*/
 var count = 0
-function add_to_cart(){
+function add_to_cart(item){
   if (islogin=='true'){
     count+=parseInt(document.querySelector(".shoe-qty").value)
     var result = count.toString()
     document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.innerHTML = result})
     document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.color = "red"})
     document.querySelectorAll(".cart-qty").forEach((p_tag)=>{p_tag.style.display = "inline"})
-    localStorage.setItem("Dunk Low Black",count)
+    localStorage.setItem(item,count)
   }else{
     document.querySelector(".add-to-cart").setAttribute("href","../myaccount.html")
     alert("Please login before purchase")
@@ -57,7 +57,7 @@ function cart_load(){
       document.querySelector(".order-empty").style.display = "none";
       document.querySelector(".coupon-section").style.display = "none";
     }else{
-      if (localStorage.getItem("Dunk Low Black")<=0){
+      if (localStorage.getItem("Dunk Low Black")+localStorage.getItem("Air Force One")<=0){
         document.querySelector(".product-section").style.display = "none";
         document.querySelector(".total-section").style.display = "none";
         document.querySelector(".not-sign-in").style.display = "none";
@@ -66,15 +66,15 @@ function cart_load(){
         document.querySelector(".order-empty>h2").style.color = "#ff1493";
       }else{
         if (localStorage.getItem("coupon")=="HD"){
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.8)+"$";
+          document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)*0.8)+"$";
           document.querySelector(".DI-apply").style.display = "none"
           document.querySelector(".HD-apply").style.display = "block"
         }else if (localStorage.getItem("coupon")=="DI"){
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130*0.9)+"$";
+          document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)*0.9)+"$";
           document.querySelector(".DI-apply").style.display = "block"
           document.querySelector(".HD-apply").style.display = "none"
         }else{
-          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130)+"$";
+          document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147))+"$";
           document.querySelector(".DI-apply").style.display = "none"
           document.querySelector(".HD-apply").style.display = "none"
         }
