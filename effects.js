@@ -21,7 +21,7 @@ function myFunction(){
   console.log("You have agreed to the cookie policy")
   localStorage.setItem('cookie-consent',true);
 }
-
+localStorage.setItem('login',false)
 function login_button(){
   localStorage.setItem('login',true)
   return true
