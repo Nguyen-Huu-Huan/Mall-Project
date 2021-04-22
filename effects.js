@@ -177,7 +177,7 @@ function coupon_apply(){
   }else{
     document.querySelector(".HD-apply").style.display = "none"
     document.querySelector(".DI-apply").style.display = "none"
-    if ((localStorage.get("coupon")=="DI") || (localStorage.get("coupon")=="HD"){
+    if ((localStorage.get("coupon")=="DI") || (localStorage.get("coupon")=="HD")){
       localStorage.removeItem("coupon")
     }
     alert("The coupon does not exist")
