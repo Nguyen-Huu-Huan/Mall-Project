@@ -52,19 +52,19 @@ function login_button() {
 var login = localStorage.getItem('login')
 
 // Change all href of "My Account" menu item to logged-in.html when logged in
-if (login == 'true') {
-    document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
-    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
-}
-// If not logged in, redirect to login page when try to access to account info
-if (login !== 'true') {
+// if (login == 'true') {
+//     document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
+//     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
+// }
+// // If not logged in, redirect to login page when try to access to account info
+// if (login !== 'true') {
 
-    if (document.querySelector('body').classList.contains('logged-in')) {
-        window.location.href = 'myaccount.html'
-    }
-    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'none' })
+//     if (document.querySelector('body').classList.contains('logged-in')) {
+//         window.location.href = 'myaccount.html'
+//     }
+//     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'none' })
 
-}
+// }
 
 // Display logged in email in logged-in.html
 var login_email = localStorage.getItem('login_email')
