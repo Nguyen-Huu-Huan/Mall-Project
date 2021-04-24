@@ -54,7 +54,7 @@ function login_button() {
 }
 if (islogin!=true){
     document.querySelector('.logout').style.display = 'none'
-    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
+//     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
 // }else{
