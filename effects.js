@@ -57,7 +57,7 @@ function logged_in(){
 if (document.querySelector('.logout')!= null){
     if (localStorage.getItem('login')=='true'){
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
-        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button)=>{button.color = 'red'})        
+        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button)=>{button.style.display = 'none'})        
     }else{
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'none'})
     }
