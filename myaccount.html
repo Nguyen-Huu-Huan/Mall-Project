@@ -21,16 +21,18 @@
 
 <body class="index">
     <div class="cookie">
-      <div class="container">
-        <h1 class="text-extra text-center">Cookie Consent</h1>
-      </div>
-      <div class="container">
-        <p class="text-big text-center">Please consent to our cookie policy</p>
-      </div>
-      <div class="container row">
-        <input type="submit" name="" value="Agree" class="btn col-40 agree text-medium" onclick="myFunction()">
-        <a href="#" class="col-30 learn-more"><p class="text-big text-medium">Learn more</p></a>
-      </div>
+        <div class="container">
+            <h1 class="text-extra text-center">Cookie Consent</h1>
+        </div>
+        <div class="container">
+            <p class="text-big text-center">Please consent to our cookie policy</p>
+        </div>
+        <div class="container row">
+            <input type="submit" name="" value="Agree" class="btn col-40 agree text-medium" onclick="myFunction()">
+            <a href="#" class="col-30 learn-more">
+                <p class="text-big text-medium">Learn more</p>
+            </a>
+        </div>
     </div>
     <input type="checkbox" id="hamburger">
     <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
@@ -130,15 +132,15 @@
                         <form action="logged-in.html">
                             <label for="fname">Email or User name</label>
                             <br>
-                            <input type="text" id="fname" name="fname" value="" required placeholder="*required">
+                            <input type="text" id="email" name="email" value="" required placeholder="*required">
                             <br>
                             <label for="lname">Password</label>
                             <br>
-                            <input type="password" id="lname" name="lname" value="" required placeholder="*required" pattern="password">
+                            <input type="password" id="password" name="password" value="" required placeholder="*required" pattern="password">
                             <br>
                             <a href="forgot-password.html">Forgot password</a>
                             <br>
-                            <div class="text-center"> 
+                            <div class="text-center">
                                 <input type="submit" name="" value="Login" class="small-container btn text-medium" onclick="return login_button()">
                                 <h1 class="text-medium">Not a member yet? <a href="register.html" class="text-medium">Sign up here</a></h1>
                             </div>
@@ -175,4 +177,5 @@
         </div>
 </body>
 <script type="text/javascript" src="effects.js"></script>
+
 </html>
