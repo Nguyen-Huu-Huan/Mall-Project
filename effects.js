@@ -25,7 +25,7 @@ function myFunction() {
 
 /* add_to_cart button*/
 var count = 0
-
+var islogin = localStorage.getItem('login')
 function add_to_cart() {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
@@ -47,10 +47,15 @@ var total_price = 0
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#email").value)
+    document.querySelector('#email').innerHTML = localStorage.setItem('login_email')
+    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
     return true
 }
 var login = localStorage.getItem('login')
 
+if (login==false){
+    document.querySelector('.logout').style.display = 'none'
+}
 // Change all href of "My Account" menu item to logged-in.html when logged in
 // if (login == 'true') {
 //     document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
@@ -69,14 +74,10 @@ var login = localStorage.getItem('login')
 // Display logged in email in logged-in.html
 var login_email = localStorage.getItem('login_email')
 
-if (document.querySelector('body').classList.contains('logged-in')) {
-    document.querySelector("#email").innerHTML = login_email
-}
-
 // Log out button function
 function logOut() {
     localStorage.removeItem('login_email')
-    localStorage.removeItem('login')
+    localStorage.setItem('login',false)
 }
 
 function cart_load() {
