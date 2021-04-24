@@ -27,9 +27,7 @@ function myFunction() {
 
 var count = 0
 var islogin = localStorage.getItem('login')
-// if (islogin!=true){
-//     document.querySelector('.logout').style.display = 'none'
-// }
+
 function add_to_cart() {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
@@ -50,12 +48,14 @@ function add_to_cart() {
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
-//     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
     console.log(document.querySelector('#user-email'))
     document.querySelector('.logout').style.display = 'inline-block' 
     return true
 }
-
+if (islogin!=true){
+    document.querySelector('.logout').style.display = 'none'
+    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
+}
 
 // }else{
 //     document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
