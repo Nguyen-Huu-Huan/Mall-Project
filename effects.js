@@ -88,12 +88,11 @@ if (document.querySelector('.logout')!= null){
 // var login_email = localStorage.getItem('login_email')
 
 // // Log out button function
-// function logOut() {
-//     localStorage.removeItem('login_email')
-//     document.querySelector('.logout').style.display = 'none'
-// //     localStorage.removeItem('login')
-//     localStorage.setItem('login',false)
-// }
+function logOut() {
+    localStorage.removeItem('login_email')
+    document.querySelector('.logout').style.display = 'none'
+    localStorage.removeItem('login')
+}
 
 /*Cart price update*/
 var total_price = 0
