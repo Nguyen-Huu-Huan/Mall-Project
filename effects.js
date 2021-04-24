@@ -47,13 +47,13 @@ var total_price = 0
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#email").value)
-    document.querySelector('#email').innerHTML = localStorage.setItem('login_email')
+    document.querySelectorAll('#email')forEach((email)=>{email.innerHTML = localStorage.setItem('login_email')})
     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
     return true
 }
 var login = localStorage.getItem('login')
 
-if (login==false){
+if (login!=true){
     document.querySelector('.logout').style.display = 'none'
 }
 // Change all href of "My Account" menu item to logged-in.html when logged in
@@ -78,9 +78,10 @@ var login_email = localStorage.getItem('login_email')
 function logOut() {
     localStorage.removeItem('login_email')
     document.querySelector('.logout').style.display = 'none'
-    localStorage.setItem('login',false)
+    localStorage.removeItem('login')
 }
 
+// Cart load function
 function cart_load() {
     if (islogin != 'true') {
         document.querySelector(".product-section").style.display = "none"
