@@ -77,6 +77,7 @@ var login_email = localStorage.getItem('login_email')
 // Log out button function
 function logOut() {
     localStorage.removeItem('login_email')
+    document.querySelector('.logout').style.display = 'none'
     localStorage.setItem('login',false)
 }
 
