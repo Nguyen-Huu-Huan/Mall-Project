@@ -55,9 +55,10 @@ var login = localStorage.getItem('login')
 
 if (login!=true){
     document.querySelector('.logout').style.display = 'none'
-}else{
-    document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
 }
+// }else{
+//     document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
+// }
 // Change all href of "My Account" menu item to logged-in.html when logged in
 // if (login == 'true') {
 //     document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
