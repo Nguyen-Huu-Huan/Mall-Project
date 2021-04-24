@@ -21,16 +21,18 @@
 
 <body class="index">
     <div class="cookie">
-      <div class="container">
-        <h1 class="text-extra text-center">Cookie Consent</h1>
-      </div>
-      <div class="container">
-        <p class="text-big text-center">Please consent to our cookie policy</p>
-      </div>
-      <div class="container row">
-        <input type="submit" name="" value="Agree" class="btn col-40 agree text-medium" onclick="myFunction()">
-        <a href="#" class="col-30 learn-more"><p class="text-big text-medium">Learn more</p></a>
-      </div>
+        <div class="container">
+            <h1 class="text-extra text-center">Cookie Consent</h1>
+        </div>
+        <div class="container">
+            <p class="text-big text-center">Please consent to our cookie policy</p>
+        </div>
+        <div class="container row">
+            <input type="submit" name="" value="Agree" class="btn col-40 agree text-medium" onclick="myFunction()">
+            <a href="#" class="col-30 learn-more">
+                <p class="text-big text-medium">Learn more</p>
+            </a>
+        </div>
     </div>
     <input type="checkbox" id="hamburger">
     <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
@@ -72,6 +74,7 @@
             </li>
             <li><a class="text-bold" href="faq.html">FAQs</a></li>
             <li><a class="text-bold" href="contact.html">Contact</a></li>
+            <li class="logout text-bold"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
             <li>
                 <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -115,6 +118,7 @@
                             </li>
                             <li><a href="faq.html">FAQs</a></li>
                             <li><a href="contact.html">Contact</a></li>
+                            <li class="logout"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
                         </ul>
                         <a href="order-placement.html"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -515,6 +519,7 @@
                             <li><a href="copyright.html">Copyright</a></li>
                             <li><a href="faq.html">FAQs</a></li>
                             <li><a href="contact.html">Contact</a></li>
+                            <li class="logout"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -525,4 +530,5 @@
         </div>
 </body>
 <script type="text/javascript" src="effects.js"></script>
+
 </html>

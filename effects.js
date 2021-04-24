@@ -53,14 +53,17 @@ var login = localStorage.getItem('login')
 
 // Change all href of "My Account" menu item to logged-in.html when logged in
 if (login == 'true') {
-    console.log('hesdsfk')
     document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
+    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
 }
 // If not logged in, redirect to login page when try to access to account info
-if (login == 'false') {
+if (login !== 'true') {
+
     if (document.querySelector('body').classList.contains('logged-in')) {
         window.location.href = 'myaccount.html'
     }
+    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'none' })
+
 }
 
 // Display logged in email in logged-in.html
@@ -73,7 +76,7 @@ if (document.querySelector('body').classList.contains('logged-in')) {
 // Log out button function
 function logOut() {
     localStorage.removeItem('login_email')
-    localStorage.setItem('login', 'false')
+    localStorage.removeItem('login')
 }
 
 function cart_load() {
