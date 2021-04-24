@@ -57,7 +57,7 @@ if (document.querySelector('.logout')!= null){
     if (localStorage.getItem('login')=='true'){
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
         
-        console.log(document.querySelectorAll("a[href='myaccount.html']:not(.logout)"))
+        console.log(document.querySelectorAll("a[href='myaccount.html']:not(a.logout)"))
     }else{
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'none'})
     }
