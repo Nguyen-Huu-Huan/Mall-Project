@@ -81,7 +81,8 @@ var login_email = localStorage.getItem('login_email')
 function logOut() {
     localStorage.removeItem('login_email')
     document.querySelector('.logout').style.display = 'none'
-    localStorage.removeItem('login')
+//     localStorage.removeItem('login')
+    localStorage.setItem('login',false)
 }
 
 // Cart load function
