@@ -46,15 +46,17 @@ var total_price = 0
 // Check login status and get email from form input
 function login_button() {
     localStorage.setItem('login', true)
-    localStorage.setItem('login_email', document.querySelector("#email").value)
-//     document.querySelectorAll('#email')forEach((email)=>{email.innerHTML = localStorage.setItem('login_email')})
-    document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
+    localStorage.setItem('login_email', document.querySelector("#login-email").value)
+    document.querySelector('user-email').innerHTML = localStorage.setItem('login_email')
+    document.querySelector('.logout').style.display = 'inline-block' 
     return true
 }
 var login = localStorage.getItem('login')
 
 if (login!=true){
     document.querySelector('.logout').style.display = 'none'
+}else{
+    document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
 }
 // Change all href of "My Account" menu item to logged-in.html when logged in
 // if (login == 'true') {
