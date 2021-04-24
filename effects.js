@@ -55,10 +55,10 @@ function logged_in(){
 } 
 if (document.querySelector('.logout')!= null){
     if (localStorage.getItem('login')==true){
-        document.querySelector('.logout').style.display = 'inline-block'
+        document.querySelector('.logout text-bold').style.display = 'inline-block'
         document.querySelector(a[href="myaccount.html"]).setAttribute('href','logged-in.html')
     }else{
-        document.querySelector('.logout').style.display = 'none'
+        document.querySelector('.logout text-bold').style.display = 'none'
     }
 }
 // if (islogin!=true){
