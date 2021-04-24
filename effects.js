@@ -54,7 +54,7 @@ function logged_in(){
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 } 
 if (document.querySelector('.logout')!= null){
-    if (localStorage.getItem('login')==true){
+    if (localStorage.getItem('login')=='true'){
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
         document.querySelector(a[href="myaccount.html"]).setAttribute('href','logged-in.html')
     }else{
