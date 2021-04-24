@@ -43,7 +43,7 @@ function add_to_cart() {
 /*Cart price update*/
 var total_price = 0
 
-// Check login status and get email
+// Check login status and get email from form input
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#email").value)
@@ -51,17 +51,29 @@ function login_button() {
 }
 var login = localStorage.getItem('login')
 
-if (login = true) {
-    if (document.querySelector('a').getAttribute('href') == 'myaccount.html') {
-        document.querySelectorAll('a').setAttribute('href', 'logged-in.html')
-        console.log("hello")
+// Change all href of "My Account" menu item to logged-in.html when logged in
+if (login == 'true') {
+    console.log('hesdsfk')
+    document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
+}
+// If not logged in, redirect to login page when try to access to account info
+if (login == 'false') {
+    if (document.querySelector('body').classList.contains('logged-in')) {
+        window.location.href = 'myaccount.html'
     }
 }
 
+// Display logged in email in logged-in.html
 var login_email = localStorage.getItem('login_email')
 
 if (document.querySelector('body').classList.contains('logged-in')) {
     document.querySelector("#email").innerHTML = login_email
+}
+
+// Log out button function
+function logOut() {
+    localStorage.removeItem('login_email')
+    localStorage.setItem('login', 'false')
 }
 
 function cart_load() {
