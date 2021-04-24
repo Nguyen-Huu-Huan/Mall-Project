@@ -47,7 +47,7 @@ var total_price = 0
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#email").value)
-    document.querySelectorAll('#email')forEach((email)=>{email.innerHTML = localStorage.setItem('login_email')})
+//     document.querySelectorAll('#email')forEach((email)=>{email.innerHTML = localStorage.setItem('login_email')})
     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
     return true
 }
