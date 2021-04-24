@@ -56,7 +56,7 @@ function logged_in(){
 if (document.querySelector('.logout')!= null){
     if (localStorage.getItem('login')=='true'){
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
-        document.querySelector(a[href="myaccount.html"]).setAttribute('href','logged-in.html')
+        document.querySelector("a[href="myaccount.html"]").setAttribute('href','logged-in.html')
     }else{
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'none'})
     }
