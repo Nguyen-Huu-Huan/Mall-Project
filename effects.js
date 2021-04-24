@@ -53,42 +53,18 @@ function login_button() {
 function logged_in(){
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 } 
+
 if (document.querySelector('.logout')!= null){
     if (localStorage.getItem('login')=='true'){
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
         
-        console.log(document.querySelectorAll("a[href='myaccount.html']:not(a.logout)"))
+        console.log(document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])"))
     }else{
         document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'none'})
     }
 }
-// if (islogin!=true){
-//     document.querySelector('.logout').style.display = 'none'
-// //     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
-// }
 
-// }else{
-//     document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
-// }
-// Change all href of "My Account" menu item to logged-in.html when logged in
-// if (login == 'true') {
-//     document.querySelectorAll('a[href="myaccount.html"]').forEach((link) => { link.setAttribute('href', 'logged-in.html') })
-//     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'inline-block' })
-// }
-// // If not logged in, redirect to login page when try to access to account info
-// if (login !== 'true') {
-
-//     if (document.querySelector('body').classList.contains('logged-in')) {
-//         window.location.href = 'myaccount.html'
-//     }
-//     document.querySelectorAll('.logout').forEach((link) => { link.style.display = 'none' })
-
-// }
-
-// // Display logged in email in logged-in.html
-// var login_email = localStorage.getItem('login_email')
-
-// // Log out button function
+// Log out button function
 function logOut() {
     localStorage.removeItem('login_email')
     document.querySelector('.logout').style.display = 'none'
