@@ -53,7 +53,7 @@ function login_button() {
 function logged_in(){
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 } 
-document.querySelector('.logout').style.display = 'none'
+console.log(document.querySelector('.logout'))
 // if (islogin!=true){
 //     document.querySelector('.logout').style.display = 'none'
 // //     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
