@@ -48,9 +48,11 @@ function add_to_cart() {
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
-    document.querySelector('.logout').style.display = 'inline-block' 
     return true
 }
+function logged_in(){
+    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
+} 
 // if (islogin!=true){
 //     document.querySelector('.logout').style.display = 'none'
 // //     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
