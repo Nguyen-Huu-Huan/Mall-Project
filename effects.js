@@ -24,8 +24,12 @@ function myFunction() {
 }
 
 /* add_to_cart button*/
+
 var count = 0
 var islogin = localStorage.getItem('login')
+if (islogin!=true){
+    document.querySelector('.logout').style.display = 'none'
+}
 function add_to_cart() {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
@@ -40,8 +44,7 @@ function add_to_cart() {
     }
 }
 
-/*Cart price update*/
-var total_price = 0
+
 
 // Check login status and get email from form input
 function login_button() {
@@ -51,11 +54,8 @@ function login_button() {
     document.querySelector('.logout').style.display = 'inline-block' 
     return true
 }
-var login = localStorage.getItem('login')
 
-if (login!=true){
-    document.querySelector('.logout').style.display = 'none'
-}
+
 // }else{
 //     document.querySelectorAll('a[href="myaccount.html"]:not(.add-to-cart)').forEach((link) =>{link.setAttribute('href','logged-in.html')})
 // }
@@ -74,16 +74,19 @@ if (login!=true){
 
 // }
 
-// Display logged in email in logged-in.html
-var login_email = localStorage.getItem('login_email')
+// // Display logged in email in logged-in.html
+// var login_email = localStorage.getItem('login_email')
 
-// Log out button function
-function logOut() {
-    localStorage.removeItem('login_email')
-    document.querySelector('.logout').style.display = 'none'
-//     localStorage.removeItem('login')
-    localStorage.setItem('login',false)
-}
+// // Log out button function
+// function logOut() {
+//     localStorage.removeItem('login_email')
+//     document.querySelector('.logout').style.display = 'none'
+// //     localStorage.removeItem('login')
+//     localStorage.setItem('login',false)
+// }
+
+/*Cart price update*/
+var total_price = 0
 
 // Cart load function
 function cart_load() {
