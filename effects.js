@@ -27,9 +27,9 @@ function myFunction() {
 
 var count = 0
 var islogin = localStorage.getItem('login')
-if (islogin!=true){
-    document.querySelector('.logout').style.display = 'none'
-}
+// if (islogin!=true){
+//     document.querySelector('.logout').style.display = 'none'
+// }
 function add_to_cart() {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
