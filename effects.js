@@ -50,7 +50,7 @@ function add_to_cart() {
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
-    document.querySelector('#user-email>span').innerHTML = localStorage.getItem('login_email')
+//     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
     document.querySelector('.logout').style.display = 'inline-block' 
     return true
 }
