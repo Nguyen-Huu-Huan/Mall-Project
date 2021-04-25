@@ -124,77 +124,77 @@ function cart_load() {
         document.querySelector(".not-sign-in").style.display = "none";
         document.querySelector(".order-empty").style.display = "none";
 
-//         for (items in cart_item){
+        for (items in cart_item){
 
-//             var item_div_1 = document.createElement("div");
-//             item_div_1.setAttribute("class", "row");
-//             document.querySelector(".product-section>div").appendChild(item_div_1)
+            var item_div_1 = document.createElement("div");
+            item_div_1.setAttribute("class", "row");
+            document.querySelector(".product-section>div").appendChild(item_div_1)
 
-//             var item_div_1_1 = document.createElement("div");
-//             item_div_1_1.setAttribute("class", "col-40");
-//             item_div_1.appendChild(item_div_1_1)
+            var item_div_1_1 = document.createElement("div");
+            item_div_1_1.setAttribute("class", "col-40");
+            item_div_1.appendChild(item_div_1_1)
 
-//             var item_div_1_2 = document.createElement("div");
-//             item_div_1_2.setAttribute("class", "col-20 text-center item-price");
-//             item_div_1_2.innerHTML = cart_item[items][0] + "$";
-//             item_div_1.appendChild(item_div_1_2)
+            var item_div_1_2 = document.createElement("div");
+            item_div_1_2.setAttribute("class", "col-20 text-center item-price");
+            item_div_1_2.innerHTML = cart_item[items][0] + "$";
+            item_div_1.appendChild(item_div_1_2)
 
-//             var item_div_1_3 = document.createElement("div");
-//             item_div_1_3.setAttribute("class", "col-20");
-//             item_div_1.appendChild(item_div_1_3)
+            var item_div_1_3 = document.createElement("div");
+            item_div_1_3.setAttribute("class", "col-20");
+            item_div_1.appendChild(item_div_1_3)
 
-//             var item_div_1_1_1 = document.createElement("div");
-//             item_div_1_1_1.setAttribute("class", "container");
-//             item_div_1_1.appendChild(item_div_1_1_1)
+            var item_div_1_1_1 = document.createElement("div");
+            item_div_1_1_1.setAttribute("class", "container");
+            item_div_1_1.appendChild(item_div_1_1_1)
 
-//             var item_div_1_1_1_1 = document.createElement("div");
-//             item_div_1_1_1_1.setAttribute("class", "row");
-//             item_div_1_1_1.appendChild(item_div_1_1_1_1)
+            var item_div_1_1_1_1 = document.createElement("div");
+            item_div_1_1_1_1.setAttribute("class", "row");
+            item_div_1_1_1.appendChild(item_div_1_1_1_1)
 
-//             var item_name = document.createElement("h3");
-//             item_name.innerHTML = items + " Shoes"
-//             item_name.setAttribute("class", "text-center")
-//             item_div_1_1_1.appendChild(item_name)
+            var item_name = document.createElement("h3");
+            item_name.innerHTML = items + " Shoes"
+            item_name.setAttribute("class", "text-center")
+            item_div_1_1_1.appendChild(item_name)
 
-//             var item_img = new Image();
-//             item_img.src = cart_item[items][2]
-//             item_div_1_1_1_1.appendChild(item_img)
+            var item_img = new Image();
+            item_img.src = cart_item[items][2]
+            item_div_1_1_1_1.appendChild(item_img)
 
-//             var item_div_1_3_1 = document.createElement("div");
-//             item_div_1_3_1.setAttribute("class", "row");
-//             item_div_1_3.appendChild(item_div_1_3_1)
+            var item_div_1_3_1 = document.createElement("div");
+            item_div_1_3_1.setAttribute("class", "row");
+            item_div_1_3.appendChild(item_div_1_3_1)
 
-//             var input_number = document.createElement("input")
-//             input_number.setAttribute("type", "number")
-//             input_number.setAttribute("class", "item-qty")
-//             input_number.setAttribute("value", cart_item[items][1])
-//             input_number.addEventListener("input", function() {
-//                 item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
-//                 if (typeof(parseInt(input_number.value)) == "number") {
-//                     localStorage.setItem(items, parseInt(input_number.value))
-//                     total_price = (cart_item[items][0] * parseInt(input_number.value))
-//                     if (localStorage.getItem("coupon") == "HD") {
-//                         document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
-//                         document.querySelector(".HD-apply").style.display = "block"
-//                         document.querySelector(".DI-apply").style.display = "none"
-//                         document.querySelector(".non-apply").style.display = "none"
-//                     } else if (localStorage.getItem("coupon") == "DI") {
-//                         document.querySelector(".total-money").innerHTML = total_price * 0.9 + "$"
-//                         document.querySelector(".DI-apply").style.display = "block"
-//                         document.querySelector(".HD-apply").style.display = "none"
-//                         document.querySelector(".non-apply").style.display = "none"
-//                     } else {
-//                         document.querySelector(".total-money").innerHTML = total_price + "$"
-//                         document.querySelector(".DI-apply").style.display = "none"
-//                         document.querySelector(".HD-apply").style.display = "none"
-//                         document.querySelector(".non-apply").style.display = "block"
-//                     }
-//                 }
-//             })
-//             item_div_1_3_1.appendChild(input_number)
-//         }
-//     }
-// }
+            var input_number = document.createElement("input")
+            input_number.setAttribute("type", "number")
+            input_number.setAttribute("class", "item-qty")
+            input_number.setAttribute("value", cart_item[items][1])
+            input_number.addEventListener("input", function() {
+                item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
+                if (typeof(parseInt(input_number.value)) == "number") {
+                    localStorage.setItem(items, parseInt(input_number.value))
+                    total_price = (cart_item[items][0] * parseInt(input_number.value))
+                    if (localStorage.getItem("coupon") == "HD") {
+                        document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
+                        document.querySelector(".HD-apply").style.display = "block"
+                        document.querySelector(".DI-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "none"
+                    } else if (localStorage.getItem("coupon") == "DI") {
+                        document.querySelector(".total-money").innerHTML = total_price * 0.9 + "$"
+                        document.querySelector(".DI-apply").style.display = "block"
+                        document.querySelector(".HD-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "none"
+                    } else {
+                        document.querySelector(".total-money").innerHTML = total_price + "$"
+                        document.querySelector(".DI-apply").style.display = "none"
+                        document.querySelector(".HD-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "block"
+                    }
+                }
+            })
+            item_div_1_3_1.appendChild(input_number)
+        }
+    }
+}
 
 function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
