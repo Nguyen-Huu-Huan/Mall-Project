@@ -138,7 +138,7 @@ function cart_load() {
 
                 var item_div_1_2 = document.createElement("div");
                 item_div_1_2.setAttribute("class", "col-20 text-center item-price");
-                item_div_1_2.innerHTML = cart_item[items][0] * cart_item[items][1] + "$";
+                item_div_1_2.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                 item_div_1.appendChild(item_div_1_2)
 
                 var item_div_1_3 = document.createElement("div");
