@@ -27,7 +27,6 @@ function myFunction() {
 
 var count = 0
 var islogin = localStorage.getItem('login')
-var cart_item = {}
 function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
@@ -71,11 +70,16 @@ function logOut() {
 }
 
 /*Cart price update*/
-// var total_price = 0
+var total_price = 0
 
-// var dunklowblack_qty = localStorage.getItem("Dunk Low Black")
-// var airforceone_qty = localStorage.getItem("Air Force One")
-// // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
+var dunklowblack_qty = JSON.parse(localStorage.getItem("Dunk Low Black"))
+var airforceone_qty = JSON.parse(localStorage.getItem("Air Force One"))
+if (airforceone_qty==null){
+    console.log("Air force one does not exist")
+}else{
+    console.log("It does exist")
+}
+// Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // const cart_item = {"Dunk Low Black":[130, dunklowblack_qty, "images/dunklowblack6.jpg"],
 //                    "Air Force One":[147,airforceone_qty, "images/air-force-1-3.png"]}
 // // Cart load function
