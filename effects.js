@@ -176,7 +176,7 @@ function cart_load() {
                 input_number.addEventListener("input", function() {
                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                     localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
-                    total_price = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147)
+                    total_price = ((parseInt((JSON.parse(localStorage.getItem('Dunk Low Black'))[1]||0))||0) * 130 + (parseInt((JSON.parse(localStorage.getItem('Air Force One'))[1]||0))||0) * 147)
                     if (localStorage.getItem("coupon") == "HD") {
                         document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                         document.querySelector(".HD-apply").style.display = "block"
