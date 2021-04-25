@@ -77,7 +77,7 @@ var airforceone_qty = JSON.parse(localStorage.getItem('Air Force One'))[1]
 
 for (var i = 0;i<localStorage.length;i++){
     var key = localStorage.key(i)
-    if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')){
+    if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')&&(key!='coupon')){
         cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
