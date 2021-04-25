@@ -37,12 +37,12 @@ function add_to_cart(item) {
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
         localStorage.setItem(item, count)
         cart_item[item] = [document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent, count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]
-        console.log(cart_item)
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
         alert("Please login before purchase")
     }
 }
+console.log(cart_item)
 
 
 
