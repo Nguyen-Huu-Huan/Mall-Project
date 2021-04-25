@@ -89,7 +89,7 @@ function cart_load() {
         document.querySelector(".not-sign-in>div>h2").style.color = "#ff1493";
         document.querySelector(".order-empty").style.display = "none";
         document.querySelector(".coupon-section").style.display = "none";
-    }
+    
     } else {
     if (Object.keys(cart_item).length==0) {
         document.querySelector(".product-section").style.display = "none";
