@@ -134,25 +134,24 @@ function cart_load() {
                 var item_div_1_2 = document.createElement("div");
                 item_div_1_2.setAttribute("class", "col-20 text-center item-price");
                 item_div_1_2.innerHTML = (parseInt(items) * cart_item[items][0]) + "$";
-
                 item_div_1.appendChild(item_div_1_2)
 
-                var item_div_1_3 = document.createElement("div");
-                item_div_1_3.setAttribute("class", "col-20");
-                item_div_1.appendChild(item_div_1_3)
+//                 var item_div_1_3 = document.createElement("div");
+//                 item_div_1_3.setAttribute("class", "col-20");
+//                 item_div_1.appendChild(item_div_1_3)
 
-                var item_div_1_1_1 = document.createElement("div");
-                item_div_1_1_1.setAttribute("class", "container");
-                item_div_1_1.appendChild(item_div_1_1_1)
+//                 var item_div_1_1_1 = document.createElement("div");
+//                 item_div_1_1_1.setAttribute("class", "container");
+//                 item_div_1_1.appendChild(item_div_1_1_1)
 
-                var item_div_1_1_1_1 = document.createElement("div");
-                item_div_1_1_1_1.setAttribute("class", "row");
-                item_div_1_1_1.appendChild(item_div_1_1_1_1)
+//                 var item_div_1_1_1_1 = document.createElement("div");
+//                 item_div_1_1_1_1.setAttribute("class", "row");
+//                 item_div_1_1_1.appendChild(item_div_1_1_1_1)
 
-                var item_name = document.createElement("h3");
-                item_name.innerHTML = cart_item[items][1] + " Shoes"
-                item_name.setAttribute("class", "text-center")
-                item_div_1_1_1.appendChild(item_name)
+//                 var item_name = document.createElement("h3");
+//                 item_name.innerHTML = cart_item[items][1] + " Shoes"
+//                 item_name.setAttribute("class", "text-center")
+//                 item_div_1_1_1.appendChild(item_name)
 
 //                 var item_img = new Image();
 //                 item_img.src = cart_item[items][2]
