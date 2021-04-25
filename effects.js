@@ -223,7 +223,7 @@ function coupon_apply() {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "block"
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1])||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1])||0))* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
         document.querySelector(".total-money").innerHTML = total_price + "$"
         localStorage.removeItem('coupon')
     }
