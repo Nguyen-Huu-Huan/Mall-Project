@@ -97,16 +97,19 @@ function cart_load() {
                 document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130) * 0.8) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "block"
+                document.querySelector(".non-apply").style.display = "none"
             } else if (localStorage.getItem("coupon") == "DI") {
                 //           document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)*0.9)+"$";
                 document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130) * 0.9) + "$"
                 document.querySelector(".DI-apply").style.display = "block"
                 document.querySelector(".HD-apply").style.display = "none"
+                document.querySelector(".non-apply").style.display = "none"
             } else {
                 //           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)+"$";
                 document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black")) * 130) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "none"
+                document.querySelector(".non-apply").style.display = "none"
             }
             document.querySelector(".product-section").style.display = "block";
             document.querySelector(".total-section").style.display = "block";
@@ -170,14 +173,17 @@ function cart_load() {
                         document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                         document.querySelector(".HD-apply").style.display = "block"
                         document.querySelector(".DI-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "none"
                     } else if (localStorage.getItem("coupon") == "DI") {
                         document.querySelector(".total-money").innerHTML = total_price * 0.9 + "$"
                         document.querySelector(".DI-apply").style.display = "block"
                         document.querySelector(".HD-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "none"
                     } else {
                         document.querySelector(".total-money").innerHTML = total_price + "$"
                         document.querySelector(".DI-apply").style.display = "none"
                         document.querySelector(".HD-apply").style.display = "none"
+                        document.querySelector(".non-apply").style.display = "block"
                     }
                 }
             })
@@ -190,6 +196,7 @@ function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
         document.querySelector(".HD-apply").style.display = "block"
         document.querySelector(".DI-apply").style.display = "none"
+        document.querySelector(".non-apply").style.display = "none"
         localStorage.setItem("coupon", "HD")
         total_price = (parseInt(localStorage.getItem("Dunk Low Black")) * 130)
         total_price *= 0.8
@@ -197,6 +204,7 @@ function coupon_apply() {
     } else if (document.querySelector("input[name='coupon']").value == "COSC2430-DI") {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "block"
+        document.querySelector(".DI-apply").style.display = "none"
         localStorage.setItem("coupon", "DI")
         total_price = (parseInt(localStorage.getItem("Dunk Low Black")) * 130)
         total_price *= 0.9
@@ -204,6 +212,7 @@ function coupon_apply() {
     } else {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "none"
+        document.querySelector(".non-apply").style.display = "block"
         alert("The coupon does not exist")
     }
 }
