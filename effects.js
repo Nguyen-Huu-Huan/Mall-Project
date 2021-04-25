@@ -128,7 +128,8 @@ function cart_load() {
             document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
             
-
+            var item_div_1_2_dunklowblack
+            var item_div_1_2_airforceone
             for (items in cart_item){
                 
                 var item_div_1 = document.createElement("div");
@@ -140,12 +141,12 @@ function cart_load() {
                 item_div_1.appendChild(item_div_1_1)
 
                 if (items=="Dunk Low Black"){
-                    var item_div_1_2_dunklowblack = document.createElement("div");
+                    item_div_1_2_dunklowblack = document.createElement("div");
                     item_div_1_2_dunklowblack.setAttribute("class", "col-20 text-center item-price");
                     item_div_1_2_dunklowblack.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                     item_div_1.appendChild(item_div_1_2_dunklowblack)
                 }else if (items=="Air Force One"){
-                    var item_div_1_2_airforceone = document.createElement("div");
+                    item_div_1_2_airforceone = document.createElement("div");
                     item_div_1_2_airforceone.setAttribute("class", "col-20 text-center item-price");
                     item_div_1_2_airforceone.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                     item_div_1.appendChild(item_div_1_2_airforceone)
