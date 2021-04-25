@@ -213,6 +213,7 @@ function coupon_apply() {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "block"
-        alert("The coupon does not exist")
+        total_price = (parseInt(localStorage.getItem("Dunk Low Black")) * 130)
+        document.querySelector(".total-money").innerHTML = total_price + "$"
     }
 }
