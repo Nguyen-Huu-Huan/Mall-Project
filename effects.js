@@ -94,19 +94,19 @@ function cart_load() {
         } else {
             if (localStorage.getItem("coupon") == "HD") {
                 //           document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)*0.8)+"$";
-                document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130) * 0.8) + "$"
+                document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130 + parseInt(localStorage.getItem("Dunk Low Black")) * 147) * 0.8) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "block"
                 document.querySelector(".non-apply").style.display = "none"
             } else if (localStorage.getItem("coupon") == "DI") {
                 //           document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)*0.9)+"$";
-                document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130) * 0.9) + "$"
+                document.querySelector(".total-money").innerHTML = ((parseInt(localStorage.getItem("Dunk Low Black")) * 130 + parseInt(localStorage.getItem("Dunk Low Black")) * 147) * 0.9) + "$"
                 document.querySelector(".DI-apply").style.display = "block"
                 document.querySelector(".HD-apply").style.display = "none"
                 document.querySelector(".non-apply").style.display = "none"
             } else {
                 //           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)+"$";
-                document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black")) * 130) + "$"
+                document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black")) * 130 + parseInt(localStorage.getItem("Dunk Low Black")) * 147) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "none"
                 document.querySelector(".non-apply").style.display = "none"
