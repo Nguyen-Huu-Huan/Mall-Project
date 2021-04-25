@@ -184,8 +184,8 @@ function cart_load() {
                 }
                 
             }
-            [dunklowblack_input,airforceone_input].forEach((input)=>{
-                input.addEventListener("input", function() {
+            [dunklowblack_input,airforceone_input].forEach((input_number)=>{
+                input_number.addEventListener("input", function() {
                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                     localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
                     total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
