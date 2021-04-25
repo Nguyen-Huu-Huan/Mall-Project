@@ -34,7 +34,7 @@ function add_to_cart(item) {
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result })
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red" })
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
-        localStorage.setItem(item, JSON.stringify([document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent, count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
+        sessionStorage.setItem(item, JSON.stringify([document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent, count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
         alert("Please login before purchase")
@@ -72,11 +72,9 @@ function logOut() {
 /*Cart price update*/
 var total_price = 0
 
-var dunklowblack_qty = JSON.parse(localStorage.getItem("Dunk Low Black"))
-var airforceone_qty = JSON.parse(localStorage.getItem("Air Force One"))
-for (items in localStorage){
-    console.log(items)
-}
+var dunklowblack_qty = JSON.parse(sessionStorage.getItem("Dunk Low Black"))
+var airforceone_qty = JSON.parse(sessionStorage.getItem("Air Force One"))
+
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // const cart_item = {"Dunk Low Black":[130, dunklowblack_qty, "images/dunklowblack6.jpg"],
 //                    "Air Force One":[147,airforceone_qty, "images/air-force-1-3.png"]}
