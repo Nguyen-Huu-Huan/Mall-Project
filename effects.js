@@ -36,8 +36,8 @@ function add_to_cart(item) {
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red" })
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
         localStorage.setItem(item, count)
-        console.log(document.querySelector(".dunklowblack>div>div").childNodes[2].value)
-        cart_item[item] = [document.querySelector(".dunklowblack>div>div").childNodes[2].value, count, document.querySelector(".dunklowblack>div>div>div>img").getAttribute('href')]
+        console.log(document.querySelector(".dunklowblack>div>div").children[1].value)
+        cart_item[item] = [document.querySelector(".dunklowblack>div>div").children[1].value, count, document.querySelector(".dunklowblack>div>div>div>img").getAttribute('href')]
         console.log(cart_item)
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
