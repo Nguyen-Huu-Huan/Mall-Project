@@ -72,6 +72,9 @@ function logOut() {
 /*Cart price update*/
 var total_price = 0
 var cart_item = {}
+var dunklowblack_qty = JSON.parse(localStorage.getItem('Dunk Low Black'))[1]
+var airforceone_qty = JSON.parse(localStorage.getItem('Air Force One'))[1]
+
 for (var i = 0;i<localStorage.length;i++){
     var key = localStorage.key(i)
     if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')){
