@@ -93,6 +93,7 @@ function cart_load() {
         document.querySelector(".order-empty").style.display = "none";
         document.querySelector(".coupon-section").style.display = "none";
     } else {
+        console.log(Object.keys(cart_item).length)
         if (Object.keys(cart_item).length==0) {
             document.querySelector(".product-section").style.display = "none";
             document.querySelector(".total-section").style.display = "none";
