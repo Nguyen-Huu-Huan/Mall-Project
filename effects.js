@@ -195,29 +195,29 @@ function cart_load() {
     }
 }
 
-function coupon_apply() {
-    if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
-        document.querySelector(".HD-apply").style.display = "block"
-        document.querySelector(".DI-apply").style.display = "none"
-        document.querySelector(".non-apply").style.display = "none"
-        localStorage.setItem("coupon", "HD")
-        total_price = (parseInt(dunklowblack_qty) * 130)
-        total_price *= 0.8
-        document.querySelector(".total-money").innerHTML = total_price + "$"
-    } else if (document.querySelector("input[name='coupon']").value == "COSC2430-DI") {
-        document.querySelector(".HD-apply").style.display = "none"
-        document.querySelector(".DI-apply").style.display = "block"
-        document.querySelector(".DI-apply").style.display = "none"
-        localStorage.setItem("coupon", "DI")
-        total_price = (parseInt(dunklowblack_qty) * 130)
-        total_price *= 0.9
-        document.querySelector(".total-money").innerHTML = total_price + "$"
-    } else {
-        document.querySelector(".HD-apply").style.display = "none"
-        document.querySelector(".DI-apply").style.display = "none"
-        document.querySelector(".non-apply").style.display = "block"
-        total_price = (parseInt(dunklowblack_qty) * 130)
-        document.querySelector(".total-money").innerHTML = total_price + "$"
-        localStorage.removeItem('coupon')
-    }
-}
+// function coupon_apply() {
+//     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
+//         document.querySelector(".HD-apply").style.display = "block"
+//         document.querySelector(".DI-apply").style.display = "none"
+//         document.querySelector(".non-apply").style.display = "none"
+//         localStorage.setItem("coupon", "HD")
+//         total_price = (parseInt(dunklowblack_qty) * 130)
+//         total_price *= 0.8
+//         document.querySelector(".total-money").innerHTML = total_price + "$"
+//     } else if (document.querySelector("input[name='coupon']").value == "COSC2430-DI") {
+//         document.querySelector(".HD-apply").style.display = "none"
+//         document.querySelector(".DI-apply").style.display = "block"
+//         document.querySelector(".DI-apply").style.display = "none"
+//         localStorage.setItem("coupon", "DI")
+//         total_price = (parseInt(dunklowblack_qty) * 130)
+//         total_price *= 0.9
+//         document.querySelector(".total-money").innerHTML = total_price + "$"
+//     } else {
+//         document.querySelector(".HD-apply").style.display = "none"
+//         document.querySelector(".DI-apply").style.display = "none"
+//         document.querySelector(".non-apply").style.display = "block"
+//         total_price = (parseInt(dunklowblack_qty) * 130)
+//         document.querySelector(".total-money").innerHTML = total_price + "$"
+//         localStorage.removeItem('coupon')
+//     }
+// }
