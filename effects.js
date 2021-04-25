@@ -76,8 +76,8 @@ var total_price = 0
 var dunklowblack_qty = localStorage.getItem("Dunk Low Black")
 var airforceone_qty = localStorage.getItem("Air Force One")
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
-const cart_item = {dunklowblack_qty:[130, 'Dunk Low Black', "images/dunklowblack6.jpg"]
-                   airforceone_qty:[147,'Air Force One', "images/air-force-1-3.png"}
+const cart_item = {dunklowblack_qty:[130, 'Dunk Low Black', "images/dunklowblack6.jpg"],
+                   airforceone_qty:[147,'Air Force One', "images/air-force-1-3.png"]}
 // Cart load function
 function cart_load() {
     if (islogin != 'true') {
