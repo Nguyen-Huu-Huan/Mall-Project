@@ -144,6 +144,18 @@ function cart_load() {
                 item_div_1_2.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                 item_div_1.appendChild(item_div_1_2)
 
+                if (items=="Dunk Low Black"){
+                    var item_div_1_2_dunklowblack = document.createElement("div");
+                    item_div_1_2_dunklowblack.setAttribute("class", "col-20 text-center item-price");
+                    item_div_1_2_dunklowblack.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
+                    item_div_1.appendChild(item_div_1_2_dunklowblack)
+                }else if (items=="Air Force One"){
+                    var item_div_1_2_airforceone = document.createElement("div");
+                    item_div_1_2_airforceone.setAttribute("class", "col-20 text-center item-price");
+                    item_div_1_2_airforceone.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
+                    item_div_1.appendChild(item_div_1_2_airforceone)
+                }
+                
                 var item_div_1_3 = document.createElement("div");
                 item_div_1_3.setAttribute("class", "col-20");
                 item_div_1.appendChild(item_div_1_3)
@@ -186,8 +198,10 @@ function cart_load() {
             }
             [dunklowblack_input,airforceone_input].forEach((input_number)=>{
                 input_number.addEventListener("input", function() {
-                    item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
-                    localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
+                    item_div_1_2_dunklowblack.innerHTML = (((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) + "$"
+                    item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)) + "$"
+                    localStorage.setItem(items, JSON.stringify("Dunk Low Black", parseInt(input_number.value), ((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[2]||0)]))
+                    localStorage.setItem(items, JSON.stringify("Air Force One", parseInt(input_number.value), ((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
                     total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
                     if (localStorage.getItem("coupon") == "HD") {
                         document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
