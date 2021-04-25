@@ -164,7 +164,7 @@ function cart_load() {
             var input_number = document.createElement("input")
             input_number.setAttribute("type", "number")
             input_number.setAttribute("class", "item-qty")
-            input_number.setAttribute("value", dunklowblack_qty)
+            input_number.setAttribute("value", localStorage.getItem("Dunk Low Black"))
             input_number.addEventListener("input", function() {
                 item_div_1_2.innerHTML = (130 * parseInt(input_number.value)) + "$"
                 if (typeof(parseInt(input_number.value)) == "number") {
