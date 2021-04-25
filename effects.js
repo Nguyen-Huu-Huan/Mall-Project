@@ -95,7 +95,6 @@ function cart_load() {
             document.querySelector(".order-empty>h2").style.color = "#ff1493";
         } else {
             if (localStorage.getItem("coupon") == "HD") {
-                if 
                 document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) * 0.8) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "block"
@@ -106,7 +105,6 @@ function cart_load() {
                 document.querySelector(".HD-apply").style.display = "none"
                 document.querySelector(".non-apply").style.display = "none"
             } else {
-                //           document.querySelector(".total-money").innerHTML = (parseInt(localStorage.getItem("Dunk Low Black"))*130+parseInt(localStorage.getItem("Air Force One"))*147)+"$";
                 document.querySelector(".total-money").innerHTML = (parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "none"
