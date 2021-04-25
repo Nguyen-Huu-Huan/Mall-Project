@@ -191,7 +191,7 @@ function cart_load() {
 //                 })
 //                 item_div_1_3_1.appendChild(input_number)
 //             }
-//         }
+        }
     }
 }
 
