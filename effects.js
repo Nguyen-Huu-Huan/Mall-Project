@@ -88,7 +88,6 @@ function cart_load() {
         document.querySelector(".order-empty").style.display = "none";
         document.querySelector(".coupon-section").style.display = "none";
     } else {
-        
         for (items in cart_item){
             if (items<=0) {
                 document.querySelector(".product-section").style.display = "none";
@@ -163,10 +162,10 @@ function cart_load() {
                 item_div_1_3_1.setAttribute("class", "row");
                 item_div_1_3.appendChild(item_div_1_3_1)
 
-                var input_number = document.createElement("input")
-                input_number.setAttribute("type", "number")
-                input_number.setAttribute("class", "item-qty")
-                input_number.setAttribute("value", items)
+//                 var input_number = document.createElement("input")
+//                 input_number.setAttribute("type", "number")
+//                 input_number.setAttribute("class", "item-qty")
+//                 input_number.setAttribute("value", items)
 //                 input_number.addEventListener("input", function() {
 //                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
 //                     if (typeof(parseInt(input_number.value)) == "number") {
