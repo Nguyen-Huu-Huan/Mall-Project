@@ -28,14 +28,14 @@ function myFunction() {
 var count = 0
 var islogin = localStorage.getItem('login')
 
-function add_to_cart() {
+function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result })
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red" })
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
-        localStorage.setItem("Dunk Low Black", count)
+        localStorage.setItem(item, count)
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
         alert("Please login before purchase")
