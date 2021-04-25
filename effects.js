@@ -84,7 +84,7 @@ function cart_load() {
         document.querySelector(".coupon-section").style.display = "none";
     } else {
         //       if (localStorage.getItem("Dunk Low Black")+localStorage.getItem("Air Force One")<=0){
-        if (localStorage.getItem("Dunk Low Black") <= 0) {
+        if ((localStorage.getItem("Dunk Low Black") <= 0)&&(localStorage.getItem("Air Force One") <= 0)) {
             document.querySelector(".product-section").style.display = "none";
             document.querySelector(".total-section").style.display = "none";
             document.querySelector(".not-sign-in").style.display = "none";
