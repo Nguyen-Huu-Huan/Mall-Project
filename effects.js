@@ -195,7 +195,7 @@ function cart_load() {
                     document.querySelector(".total-money").innerHTML = total_price + "$"
                     document.querySelector(".DI-apply").style.display = "none"
                     document.querySelector(".HD-apply").style.display = "none"
-                    document.querySelector(".non-apply").style.display = "block"
+                    document.querySelector(".non-apply").style.display = "none"
                 }
             })
         }
