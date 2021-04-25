@@ -154,13 +154,13 @@ function cart_load() {
                 item_name.setAttribute("class", "text-center")
                 item_div_1_1_1.appendChild(item_name)
 
-                var item_img = new Image();
-                item_img.src = cart_item[items][2]
-                item_div_1_1_1_1.appendChild(item_img)
+//                 var item_img = new Image();
+//                 item_img.src = cart_item[items][2]
+//                 item_div_1_1_1_1.appendChild(item_img)
                 
-                var item_div_1_3_1 = document.createElement("div");
-                item_div_1_3_1.setAttribute("class", "row");
-                item_div_1_3.appendChild(item_div_1_3_1)
+//                 var item_div_1_3_1 = document.createElement("div");
+//                 item_div_1_3_1.setAttribute("class", "row");
+//                 item_div_1_3.appendChild(item_div_1_3_1)
 
 //                 var input_number = document.createElement("input")
 //                 input_number.setAttribute("type", "number")
