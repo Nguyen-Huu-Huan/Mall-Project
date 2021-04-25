@@ -70,7 +70,6 @@ function logOut() {
 }
 
 /*Cart price update*/
-var total_price = 0
 var cart_item = {}
 var dunklowblack_qty = JSON.parse(localStorage.getItem('Dunk Low Black'))[1]
 var airforceone_qty = JSON.parse(localStorage.getItem('Air Force One'))[1]
@@ -126,7 +125,7 @@ function cart_load() {
             document.querySelector(".coupon-section").style.display = "block";
             document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
-
+            var total_price = 0
             for (items in cart_item){
 
                 var item_div_1 = document.createElement("div");
@@ -139,7 +138,7 @@ function cart_load() {
 
                 var item_div_1_2 = document.createElement("div");
                 item_div_1_2.setAttribute("class", "col-20 text-center item-price");
-                item_div_1_2.innerHTML = cart_item[items][0] + "$";
+                item_div_1_2.innerHTML = cart_item[items][0] * cart_item[items][1] + "$";
                 item_div_1.appendChild(item_div_1_2)
 
                 var item_div_1_3 = document.createElement("div");
@@ -174,8 +173,8 @@ function cart_load() {
                 input_number.addEventListener("input", function() {
                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                     if (typeof(parseInt(input_number.value)) == "number") {
-                        localStorage.setItem(items, parseInt(input_number.value))
-                        total_price = (cart_item[items][0] * parseInt(input_number.value))
+                        localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
+                        total_price += (cart_item[items][0] * parseInt(input_number.value))
                         if (localStorage.getItem("coupon") == "HD") {
                             document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                             document.querySelector(".HD-apply").style.display = "block"
