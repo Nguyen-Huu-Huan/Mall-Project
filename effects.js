@@ -174,13 +174,15 @@ function cart_load() {
                     dunklowblack_input.setAttribute("type", "number")
                     dunklowblack_input.setAttribute("class", "item-qty")
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
+                    item_div_1_3_1.appendChild(dunklowblack_input)
                 }else if (items=="Air Force One"){
                     var airforceone_input = document.createElement("input")
                     airforceone_input.setAttribute("type", "number")
                     airforceone_input.setAttribute("class", "item-qty")
                     airforceone_input.setAttribute("value", cart_item[items][1])
+                    item_div_1_3_1.appendChild(airforceone_input)
                 }
-                item_div_1_3_1.appendChild(input_number)
+                
             }
             [dunklowblack_input,airforceone_input].forEach((input)=>{
                 input.addEventListener("input", function() {
