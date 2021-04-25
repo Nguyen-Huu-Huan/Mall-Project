@@ -89,39 +89,40 @@ function cart_load() {
         document.querySelector(".coupon-section").style.display = "none";
     } else {
         for (items in cart_item){
-            if (items<=0) {
-                document.querySelector(".product-section").style.display = "none";
-                document.querySelector(".total-section").style.display = "none";
-                document.querySelector(".not-sign-in").style.display = "none";
-                document.querySelector(".coupon-section").style.display = "none";
-                document.querySelector(".order-empty").style.display = "block";
-                document.querySelector(".order-empty>h2").style.color = "#ff1493";
-            } else {
-                if (localStorage.getItem("coupon") == "HD") {
-                    document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) * 0.8) + "$"
-                    document.querySelector(".DI-apply").style.display = "none"
-                    document.querySelector(".HD-apply").style.display = "block"
-                    document.querySelector(".non-apply").style.display = "none"
-                } else if (localStorage.getItem("coupon") == "DI") {
-                    document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) * 0.9) + "$"
-                    document.querySelector(".DI-apply").style.display = "block"
-                    document.querySelector(".HD-apply").style.display = "none"
-                    document.querySelector(".non-apply").style.display = "none"
-                } else {
-                    document.querySelector(".total-money").innerHTML = (parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) + "$"
-                    document.querySelector(".DI-apply").style.display = "none"
-                    document.querySelector(".HD-apply").style.display = "none"
-                    document.querySelector(".non-apply").style.display = "none"
-                }
-                document.querySelector(".product-section").style.display = "block";
-                document.querySelector(".total-section").style.display = "block";
-                document.querySelector(".order-details").style.display = "block";
-                document.querySelector(".order-details>h2").style.color = "#ff1493";
-                document.querySelector(".coupon-code").style.display = "block";
-                document.querySelector(".coupon-code>h2").style.color = "#ff1493";
-                document.querySelector(".coupon-section").style.display = "block";
-                document.querySelector(".not-sign-in").style.display = "none";
-                document.querySelector(".order-empty").style.display = "none";
+            console.log(items)
+//             if (items<=0) {
+//                 document.querySelector(".product-section").style.display = "none";
+//                 document.querySelector(".total-section").style.display = "none";
+//                 document.querySelector(".not-sign-in").style.display = "none";
+//                 document.querySelector(".coupon-section").style.display = "none";
+//                 document.querySelector(".order-empty").style.display = "block";
+//                 document.querySelector(".order-empty>h2").style.color = "#ff1493";
+//             } else {
+//                 if (localStorage.getItem("coupon") == "HD") {
+//                     document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) * 0.8) + "$"
+//                     document.querySelector(".DI-apply").style.display = "none"
+//                     document.querySelector(".HD-apply").style.display = "block"
+//                     document.querySelector(".non-apply").style.display = "none"
+//                 } else if (localStorage.getItem("coupon") == "DI") {
+//                     document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) * 0.9) + "$"
+//                     document.querySelector(".DI-apply").style.display = "block"
+//                     document.querySelector(".HD-apply").style.display = "none"
+//                     document.querySelector(".non-apply").style.display = "none"
+//                 } else {
+//                     document.querySelector(".total-money").innerHTML = (parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147) + "$"
+//                     document.querySelector(".DI-apply").style.display = "none"
+//                     document.querySelector(".HD-apply").style.display = "none"
+//                     document.querySelector(".non-apply").style.display = "none"
+//                 }
+//                 document.querySelector(".product-section").style.display = "block";
+//                 document.querySelector(".total-section").style.display = "block";
+//                 document.querySelector(".order-details").style.display = "block";
+//                 document.querySelector(".order-details>h2").style.color = "#ff1493";
+//                 document.querySelector(".coupon-code").style.display = "block";
+//                 document.querySelector(".coupon-code>h2").style.color = "#ff1493";
+//                 document.querySelector(".coupon-section").style.display = "block";
+//                 document.querySelector(".not-sign-in").style.display = "none";
+//                 document.querySelector(".order-empty").style.display = "none";
 
 //                 var item_div_1 = document.createElement("div");
 //                 item_div_1.setAttribute("class", "row");
