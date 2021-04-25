@@ -81,7 +81,6 @@ for (var i = 0;i<localStorage.length;i++){
         cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
-console.log(Object.keys(cart_item).length)
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // Cart load function
 function cart_load() {
@@ -181,7 +180,7 @@ function cart_load() {
                 
                 item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                 localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
-                total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)* 147)
+                total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
                 if (localStorage.getItem("coupon") == "HD") {
                     document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                     document.querySelector(".HD-apply").style.display = "block"
@@ -209,7 +208,7 @@ function coupon_apply() {
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "none"
         localStorage.setItem("coupon", "HD")
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
         total_price *= 0.8
         document.querySelector(".total-money").innerHTML = total_price + "$"
     } else if (document.querySelector("input[name='coupon']").value == "COSC2430-DI") {
@@ -217,14 +216,14 @@ function coupon_apply() {
         document.querySelector(".DI-apply").style.display = "block"
         document.querySelector(".non-apply").style.display = "none"
         localStorage.setItem("coupon", "DI")
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
         total_price *= 0.9
         document.querySelector(".total-money").innerHTML = total_price + "$"
     } else {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "block"
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1])||0) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1])||0)* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1])||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1])||0))* 147)
         document.querySelector(".total-money").innerHTML = total_price + "$"
         localStorage.removeItem('coupon')
     }
