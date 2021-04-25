@@ -123,18 +123,18 @@ function cart_load() {
                 document.querySelector(".not-sign-in").style.display = "none";
                 document.querySelector(".order-empty").style.display = "none";
 
-                var item_div_1 = document.createElement("div");
-                item_div_1.setAttribute("class", "row");
-                document.querySelector(".product-section>div").appendChild(item_div_1)
+//                 var item_div_1 = document.createElement("div");
+//                 item_div_1.setAttribute("class", "row");
+//                 document.querySelector(".product-section>div").appendChild(item_div_1)
 
-                var item_div_1_1 = document.createElement("div");
-                item_div_1_1.setAttribute("class", "col-40");
-                item_div_1.appendChild(item_div_1_1)
+//                 var item_div_1_1 = document.createElement("div");
+//                 item_div_1_1.setAttribute("class", "col-40");
+//                 item_div_1.appendChild(item_div_1_1)
 
-                var item_div_1_2 = document.createElement("div");
-                item_div_1_2.setAttribute("class", "col-20 text-center item-price");
-                item_div_1_2.innerHTML = (parseInt(items) * cart_item[items][0]) + "$";
-                item_div_1.appendChild(item_div_1_2)
+//                 var item_div_1_2 = document.createElement("div");
+//                 item_div_1_2.setAttribute("class", "col-20 text-center item-price");
+//                 item_div_1_2.innerHTML = (parseInt(items) * cart_item[items][0]) + "$";
+//                 item_div_1.appendChild(item_div_1_2)
 
 //                 var item_div_1_3 = document.createElement("div");
 //                 item_div_1_3.setAttribute("class", "col-20");
