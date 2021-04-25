@@ -78,50 +78,51 @@ for (var i = 0;i<localStorage.length;i++){
         cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
-// Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
-// Cart load function
-// function cart_load() {
-//     if (islogin != 'true') {
-//         document.querySelector(".product-section").style.display = "none"
-//         document.querySelector(".total-section").style.display = "none";
-//         document.querySelector(".not-sign-in").style.display = "block";
-//         document.querySelector(".not-sign-in>div>h2").style.color = "#ff1493";
-//         document.querySelector(".order-empty").style.display = "none";
-//         document.querySelector(".coupon-section").style.display = "none";
-//     } else {
-//     if (cart_item.length==0) {
-//         document.querySelector(".product-section").style.display = "none";
-//         document.querySelector(".total-section").style.display = "none";
-//         document.querySelector(".not-sign-in").style.display = "none";
-//         document.querySelector(".coupon-section").style.display = "none";
-//         document.querySelector(".order-empty").style.display = "block";
-//         document.querySelector(".order-empty>h2").style.color = "#ff1493";
-//     } else {
-//         if (localStorage.getItem("coupon") == "HD") {
-// //             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.8) + "$"
-//             document.querySelector(".DI-apply").style.display = "none"
-//             document.querySelector(".HD-apply").style.display = "block"
-//             document.querySelector(".non-apply").style.display = "none"
-//         } else if (localStorage.getItem("coupon") == "DI") {
-// //             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.9) + "$"
-//             document.querySelector(".DI-apply").style.display = "block"
-//             document.querySelector(".HD-apply").style.display = "none"
-//             document.querySelector(".non-apply").style.display = "none"
-//         } else {
-// //             document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) + "$"
-//             document.querySelector(".DI-apply").style.display = "none"
-//             document.querySelector(".HD-apply").style.display = "none"
-//             document.querySelector(".non-apply").style.display = "none"
-//         }
-//         document.querySelector(".product-section").style.display = "block";
-//         document.querySelector(".total-section").style.display = "block";
-//         document.querySelector(".order-details").style.display = "block";
-//         document.querySelector(".order-details>h2").style.color = "#ff1493";
-//         document.querySelector(".coupon-code").style.display = "block";
-//         document.querySelector(".coupon-code>h2").style.color = "#ff1493";
-//         document.querySelector(".coupon-section").style.display = "block";
-//         document.querySelector(".not-sign-in").style.display = "none";
-//         document.querySelector(".order-empty").style.display = "none";
+
+Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
+Cart load function
+function cart_load() {
+    if (islogin != 'true') {
+        document.querySelector(".product-section").style.display = "none"
+        document.querySelector(".total-section").style.display = "none";
+        document.querySelector(".not-sign-in").style.display = "block";
+        document.querySelector(".not-sign-in>div>h2").style.color = "#ff1493";
+        document.querySelector(".order-empty").style.display = "none";
+        document.querySelector(".coupon-section").style.display = "none";
+    } else {
+    if (Object.keys(cart_item).length==0) {
+        document.querySelector(".product-section").style.display = "none";
+        document.querySelector(".total-section").style.display = "none";
+        document.querySelector(".not-sign-in").style.display = "none";
+        document.querySelector(".coupon-section").style.display = "none";
+        document.querySelector(".order-empty").style.display = "block";
+        document.querySelector(".order-empty>h2").style.color = "#ff1493";
+    } else {
+        if (localStorage.getItem("coupon") == "HD") {
+//             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.8) + "$"
+            document.querySelector(".DI-apply").style.display = "none"
+            document.querySelector(".HD-apply").style.display = "block"
+            document.querySelector(".non-apply").style.display = "none"
+        } else if (localStorage.getItem("coupon") == "DI") {
+//             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.9) + "$"
+            document.querySelector(".DI-apply").style.display = "block"
+            document.querySelector(".HD-apply").style.display = "none"
+            document.querySelector(".non-apply").style.display = "none"
+        } else {
+//             document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) + "$"
+            document.querySelector(".DI-apply").style.display = "none"
+            document.querySelector(".HD-apply").style.display = "none"
+            document.querySelector(".non-apply").style.display = "none"
+        }
+        document.querySelector(".product-section").style.display = "block";
+        document.querySelector(".total-section").style.display = "block";
+        document.querySelector(".order-details").style.display = "block";
+        document.querySelector(".order-details>h2").style.color = "#ff1493";
+        document.querySelector(".coupon-code").style.display = "block";
+        document.querySelector(".coupon-code>h2").style.color = "#ff1493";
+        document.querySelector(".coupon-section").style.display = "block";
+        document.querySelector(".not-sign-in").style.display = "none";
+        document.querySelector(".order-empty").style.display = "none";
 
 //         for (items in cart_item){
 
