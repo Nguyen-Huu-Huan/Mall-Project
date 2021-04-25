@@ -177,7 +177,7 @@ function cart_load() {
                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                     if (typeof(parseInt(input_number.value)) == "number") {
                         localStorage.setItem(items, JSON.stringify([cart_item[items][0], parseInt(input_number.value), cart_item[items][2]]))
-                        total_price += (cart_item[items][0] * parseInt(input_number.value))
+                        total_price = (parseInt(dunklowblack_qty) * 130 + parseInt(airforceone_qty) * 147)
                         if (localStorage.getItem("coupon") == "HD") {
                             document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                             document.querySelector(".HD-apply").style.display = "block"
