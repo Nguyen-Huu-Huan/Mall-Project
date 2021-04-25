@@ -75,7 +75,7 @@ var cart_item = {}
 for (var i = 0;i<localStorage.length;i++){
     var key = localStorage.key(i)
     if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')){
-        cart_item[key] = JSON.parse(localStorage.getItem(key))
+        cart_item[key] = localStorage.getItem(key)
     }
 }
 console.log(cart_item)
