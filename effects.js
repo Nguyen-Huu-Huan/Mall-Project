@@ -71,8 +71,13 @@ function logOut() {
 
 /*Cart price update*/
 var total_price = 0
-
-
+var cart_item = {}
+for (items in localStorage){
+    if ((items!='login')&&(items!='login_email')&&(items!='cookie-consent')){
+        cart_item[items] = JSON.parse(localStorage.getItem(items))
+    }
+}
+console.log(cart_item)
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // // Cart load function
 // function cart_load() {
