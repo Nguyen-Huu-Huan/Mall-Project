@@ -81,7 +81,7 @@ for (var i = 0;i<localStorage.length;i++){
         cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
-
+console.log(Object.keys(cart_item).length)
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // Cart load function
 function cart_load() {
