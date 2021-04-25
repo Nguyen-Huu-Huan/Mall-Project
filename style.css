@@ -844,11 +844,11 @@ textarea {
     display: block;
 }
 
-.HD-apply>p{
+.HD-apply>p, .DI-apply>p{
     color: green;
 }
-.DI-apply>p{
-    color: green;
+.non-apply>p{
+    color: red;
 }
 
 /*-----nike store---*/
