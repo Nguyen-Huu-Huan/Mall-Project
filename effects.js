@@ -73,11 +73,11 @@ function logOut() {
 var total_price = 0
 var cart_item = {}
 for (var i = 0;i<localStorage.length;i++){
-    if ((localStorage.key(i)!='login')&&(localStorage.key(i)!='login_email')&&(localStorage.key(i)!='cookie-consent')){
-        cart_item[localStorage.key(i)] = JSON.parse(localStorage.getItem(localStorage.key(i)))
+    var key = localStorage.key(i)
+    if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')){
+        cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
-
 console.log(cart_item)
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
 // // Cart load function
