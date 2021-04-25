@@ -98,17 +98,17 @@ function cart_load() {
         document.querySelector(".order-empty>h2").style.color = "#ff1493";
     } else {
         if (localStorage.getItem("coupon") == "HD") {
-            document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.8) + "$"
+//             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.8) + "$"
             document.querySelector(".DI-apply").style.display = "none"
             document.querySelector(".HD-apply").style.display = "block"
             document.querySelector(".non-apply").style.display = "none"
         } else if (localStorage.getItem("coupon") == "DI") {
-            document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.9) + "$"
+//             document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.9) + "$"
             document.querySelector(".DI-apply").style.display = "block"
             document.querySelector(".HD-apply").style.display = "none"
             document.querySelector(".non-apply").style.display = "none"
         } else {
-            document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) + "$"
+//             document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) + "$"
             document.querySelector(".DI-apply").style.display = "none"
             document.querySelector(".HD-apply").style.display = "none"
             document.querySelector(".non-apply").style.display = "none"
