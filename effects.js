@@ -73,10 +73,11 @@ function logOut() {
 /*Cart price update*/
 var total_price = 0
 
-var dunklowblack_qty = localStorage.getItem("Dunk Low Black")
-var airforceone_qty = localStorage.getItem("Air Force One")
+
 // Cart load function
 function cart_load() {
+    var dunklowblack_qty = localStorage.getItem("Dunk Low Black")
+    var airforceone_qty = localStorage.getItem("Air Force One")
     if (islogin != 'true') {
         document.querySelector(".product-section").style.display = "none"
         document.querySelector(".total-section").style.display = "none";
