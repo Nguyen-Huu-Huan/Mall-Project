@@ -76,8 +76,8 @@ var total_price = 0
 var dunklowblack_qty = localStorage.getItem("Dunk Low Black")
 var airforceone_qty = localStorage.getItem("Air Force One")
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
-const cart_item = {dunklowblack_qty:[130, "Dunk Low Black", "images/dunklowblack6.jpg"],
-                   airforceone_qty:[147,"Air Force One", "images/air-force-1-3.png"]}
+const cart_item = {"Dunk Low Black":[130, dunklowblack_qty, "images/dunklowblack6.jpg"],
+                   "Air Force One":[147,airforceone_qty, "images/air-force-1-3.png"]}
 // Cart load function
 function cart_load() {
     if (islogin != 'true') {
@@ -89,7 +89,7 @@ function cart_load() {
         document.querySelector(".coupon-section").style.display = "none";
     } else {
         for (items in cart_item){
-            if (items<=0) {
+            if (cart_item[items][1]<=0) {
                 document.querySelector(".product-section").style.display = "none";
                 document.querySelector(".total-section").style.display = "none";
                 document.querySelector(".not-sign-in").style.display = "none";
@@ -149,7 +149,7 @@ function cart_load() {
                 item_div_1_1_1.appendChild(item_div_1_1_1_1)
 
                 var item_name = document.createElement("h3");
-                item_name.innerHTML = cart_item[items][1] + " Shoes"
+                item_name.innerHTML = items + " Shoes"
                 item_name.setAttribute("class", "text-center")
                 item_div_1_1_1.appendChild(item_name)
 
@@ -164,11 +164,11 @@ function cart_load() {
                 var input_number = document.createElement("input")
                 input_number.setAttribute("type", "number")
                 input_number.setAttribute("class", "item-qty")
-                input_number.setAttribute("value", items)
+                input_number.setAttribute("value", cart_item[items][1])
                 input_number.addEventListener("input", function() {
                     item_div_1_2.innerHTML = (cart_item[items][0] * parseInt(input_number.value)) + "$"
                     if (typeof(parseInt(input_number.value)) == "number") {
-                        localStorage.setItem(cart_item[items][1], parseInt(input_number.value))
+                        localStorage.setItem(items, parseInt(input_number.value))
                         total_price = (cart_item[items][0] * parseInt(input_number.value))
                         if (localStorage.getItem("coupon") == "HD") {
                             document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
