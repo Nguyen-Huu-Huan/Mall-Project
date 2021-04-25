@@ -72,12 +72,9 @@ function logOut() {
 /*Cart price update*/
 var total_price = 0
 
-var dunklowblack_qty = JSON.parse(sessionStorage.getItem("Dunk Low Black"))
-var airforceone_qty = JSON.parse(sessionStorage.getItem("Air Force One"))
 
 // Create a dictionary for iteration. The items in the array are price, name in localStorage, and image source in order
-// const cart_item = {"Dunk Low Black":[130, dunklowblack_qty, "images/dunklowblack6.jpg"],
-//                    "Air Force One":[147,airforceone_qty, "images/air-force-1-3.png"]}
+for (items in sessionStorage){console.log(items)}
 // // Cart load function
 // function cart_load() {
 //     if (islogin != 'true') {
