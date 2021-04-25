@@ -73,6 +73,7 @@ function logOut() {
 var cart_item = {}
 var dunklowblack_qty = (JSON.parse(localStorage.getItem('Dunk Low Black'))[1]||0)
 var airforceone_qty = (JSON.parse(localStorage.getItem('Air Force One'))[1]||0)
+var total_price = 0
 
 for (var i = 0;i<localStorage.length;i++){
     var key = localStorage.key(i)
@@ -126,7 +127,7 @@ function cart_load() {
             document.querySelector(".coupon-section").style.display = "block";
             document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
-            var total_price = 0
+            
 
             for (items in cart_item){
                 
