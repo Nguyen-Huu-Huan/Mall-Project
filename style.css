@@ -1256,7 +1256,7 @@ input[type=file] {
     }
 }
 /*----modal window----*/
-.Huy-bg-modal{
+.Huy-bg-modal, .Huan-bg-modal, .Nguyen-bg-modal{
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.651);
@@ -1267,31 +1267,10 @@ input[type=file] {
     align-items: center;
     display: none;
 }
-.Huan-bg-modal{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.651);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-.Nguyen-bg-modal{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.651);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
+
 .modal-content{
     text-align: center;
-    width: 40%;
+    width: 60%;
     min-height: 0;
     flex-basis: 30%;
     padding: 2rem 1rem 1.5rem 1rem;
