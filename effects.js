@@ -311,3 +311,4 @@ function coupon_apply() {
 //         blur_everything_not_Nguyen.forEach((div)=>{div.style.opacity = "1"})
 //     });
 // }
+function about_us(){console.log("hello lololo"}
