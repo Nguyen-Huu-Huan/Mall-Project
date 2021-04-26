@@ -814,12 +814,12 @@ textarea {
 
 /*--Order Placement--*/
 .remove_item{
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
 }
 .remove_item:hover{
     cursor: pointer;
     border: 3px solid red; 
+    border-radius: 50%;
 }
 
 /*--Browse dropdown button---*/
