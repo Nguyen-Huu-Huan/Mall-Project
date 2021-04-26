@@ -177,6 +177,11 @@ function cart_load() {
                 item_div_1_3_1.setAttribute("class", "row");
                 item_div_1_3.appendChild(item_div_1_3_1)
                 
+                var remove_item= document.createElement("img");
+                remove_item.setAttribute("src", "images/remove_item.png");
+                remove_item.setAttribute("class", "remove_item");
+                remove_item.style.display = "none";
+                item_div_1_3_1.appendChild(remove_item)
                 if (items=="Dunk Low Black"){
                     var dunklowblack_input = document.createElement("input")
                     dunklowblack_input.setAttribute("type", "number")
@@ -212,12 +217,9 @@ function cart_load() {
                     item_div_1_3_1.appendChild(airforceone_input)
                     airforceone_input.addEventListener("input", function(){
                         if (airforceone_input.value==0){
-                            var remove_item= document.createElement("img");
-                            remove_item.setAttribute("src", "images/remove_item.png");
-                            remove_item.setAttribute("class", "remove_item");
-                            item_div_1_3_1.appendChild(remove_item)
-                            console.log(document.querySelectorAll(".remove_item"))
+                            document.querySelectorAll(".remove_item").style.display = "block"
                         }
+                        document.querySelectorAll(".remove_item").style.display = "none"
 //                         if (item_div_1_3_1.children.includes(remove_item)){console.log('hello')}else{console.log('nothing')}
                         item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
                         localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
