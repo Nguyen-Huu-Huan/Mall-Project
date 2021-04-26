@@ -217,9 +217,9 @@ function cart_load() {
                     item_div_1_3_1.appendChild(airforceone_input)
                     airforceone_input.addEventListener("input", function(){
                         if (airforceone_input.value==0){
-                            document.querySelectorAll(".remove_item").style.display = "block"
+                            remove_item.style.display = "block"
                         }
-                        document.querySelectorAll(".remove_item").style.display = "none"
+                        remove_item.style.display = "none"
 //                         if (item_div_1_3_1.children.includes(remove_item)){console.log('hello')}else{console.log('nothing')}
                         item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
                         localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
