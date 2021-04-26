@@ -213,7 +213,7 @@ function cart_load() {
                     airforceone_input.addEventListener("input", function(){
                         if (airforceone_input.value==0){
                             var remove_item= document.createElement("img");
-                            remove_item.setAttribute("src", "remove_item.png");
+                            remove_item.setAttribute("src", "images/remove_item.png");
                             remove_item.setAttribute("class", "col-30 remove_item");
                             item_div_1_3_1.appendChild(remove_item)
                         }
