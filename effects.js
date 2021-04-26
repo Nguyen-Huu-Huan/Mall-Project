@@ -180,7 +180,7 @@ function cart_load() {
                 var remove_item= document.createElement("img");
                 remove_item.setAttribute("src", "images/remove_item.png");
                 remove_item.setAttribute("class", "remove_item");
-                remove_item.style.display = "none";
+                remove_item.setAttribute("style", "display: none;")
                 item_div_1_3_1.appendChild(remove_item)
                 if (items=="Dunk Low Black"){
                     var dunklowblack_input = document.createElement("input")
