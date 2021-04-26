@@ -277,3 +277,31 @@ function coupon_apply() {
         localStorage.removeItem('coupon')
     }
 }
+//NEW03 modal window
+//modal window's Huy
+document.getElementById("Huy").addEventListener("click", 
+function(){
+    document.querySelector(".Huy-bg-modal").style.display = "flex";
+});
+document.getElementById("Huymodal").addEventListener("click", 
+function(){
+    document.querySelector(".Huy-bg-modal").style.display = "none";
+});
+//modal window's Huan
+document.getElementById("Huan").addEventListener("click", 
+function(){
+    document.querySelector(".Huan-bg-modal").style.display = "flex";
+});
+document.getElementById("Huanmodal").addEventListener("click", 
+function(){
+    document.querySelector(".Huan-bg-modal").style.display = "none";
+});
+//modal window's Nguyen
+document.getElementById("Nguyen").addEventListener("click", 
+function(){
+    document.querySelector(".Nguyen-bg-modal").style.display = "flex";
+});
+document.getElementById("Nguyenmodal").addEventListener("click", 
+function(){
+    document.querySelector(".Nguyen-bg-modal").style.display = "none";
+});
