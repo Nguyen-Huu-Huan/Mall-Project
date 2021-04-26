@@ -191,6 +191,9 @@ function cart_load() {
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(dunklowblack_input)
                     dunklowblack_input.addEventListener("input", function(){
+                        if (dunklowblack_input.value<=0){
+                            remove_item.style.display = "block"
+                        }else{remove_item.style.display = "none"}
                         item_div_1_2_dunklowblack.innerHTML = (((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[0]||0)*dunklowblack_input.value) + "$"
                         localStorage.setItem("Dunk Low Black", JSON.stringify([130, parseInt(dunklowblack_input.value),((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[2]||0)]))
                         total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
@@ -220,7 +223,6 @@ function cart_load() {
                     airforceone_input.addEventListener("input", function(){
                         if (airforceone_input.value<=0){
                             remove_item.style.display = "block"
-                            console.log(remove_item.style.display)
                         }else{remove_item.style.display = "none"}
                         item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
                         localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
