@@ -813,7 +813,10 @@ textarea {
 
 
 /*--Order Placement--*/
-
+.remove_item{
+    width: 0.5vw;
+    height: 0.5vw;
+}
 
 /*--Browse dropdown button---*/
 
