@@ -216,25 +216,27 @@ function cart_load() {
                             remove_item.setAttribute("src","remove_item.png")
                             remove_item.setAttribute("class","col-30")
                             item_div_1_3_1.appendChild(remove_item)
-                        }
-                        item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
-                        localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
-                        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
-                        if (localStorage.getItem("coupon") == "HD") {
-                            document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
-                            document.querySelector(".HD-apply").style.display = "block"
-                            document.querySelector(".DI-apply").style.display = "none"
-                            document.querySelector(".non-apply").style.display = "none"
-                        } else if (localStorage.getItem("coupon") == "DI") {
-                            document.querySelector(".total-money").innerHTML = total_price * 0.9 + "$"
-                            document.querySelector(".DI-apply").style.display = "block"
-                            document.querySelector(".HD-apply").style.display = "none"
-                            document.querySelector(".non-apply").style.display = "none"
-                        } else {
-                            document.querySelector(".total-money").innerHTML = total_price + "$"
-                            document.querySelector(".DI-apply").style.display = "none"
-                            document.querySelector(".HD-apply").style.display = "none"
-                            document.querySelector(".non-apply").style.display = "none"
+                        }else{
+                            if (item_div_1_3_1.children.includes(remove_item)){console.log('hello')}
+                            item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
+                            localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
+                            total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+                            if (localStorage.getItem("coupon") == "HD") {
+                                document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
+                                document.querySelector(".HD-apply").style.display = "block"
+                                document.querySelector(".DI-apply").style.display = "none"
+                                document.querySelector(".non-apply").style.display = "none"
+                            } else if (localStorage.getItem("coupon") == "DI") {
+                                document.querySelector(".total-money").innerHTML = total_price * 0.9 + "$"
+                                document.querySelector(".DI-apply").style.display = "block"
+                                document.querySelector(".HD-apply").style.display = "none"
+                                document.querySelector(".non-apply").style.display = "none"
+                            } else {
+                                document.querySelector(".total-money").innerHTML = total_price + "$"
+                                document.querySelector(".DI-apply").style.display = "none"
+                                document.querySelector(".HD-apply").style.display = "none"
+                                document.querySelector(".non-apply").style.display = "none"
+                            }
                         }
                     })
                 }
