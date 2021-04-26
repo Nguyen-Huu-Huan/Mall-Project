@@ -218,7 +218,7 @@ function cart_load() {
                     airforceone_input.addEventListener("input", function(){
                         if (airforceone_input.value==0){
                             remove_item.style.display = "block"
-                            console.log(remove_item)
+                            console.log(remove_item.style.display)
                         }
                         remove_item.style.display = "none"
 //                         if (item_div_1_3_1.children.includes(remove_item)){console.log('hello')}else{console.log('nothing')}
