@@ -177,13 +177,14 @@ function cart_load() {
                 item_div_1_3_1.setAttribute("class", "row");
                 item_div_1_3.appendChild(item_div_1_3_1)
                 
+                function remove(){item_div_1.style.display = "none"}
                 var remove_item= document.createElement("img");
                 remove_item.setAttribute("src", "images/remove_item.png");
                 remove_item.setAttribute("class", "remove_item");
                 remove_item.setAttribute("onclick", "remove()");
                 remove_item.style.display = "none"
                 item_div_1_3_1.appendChild(remove_item)
-                function remove(){item_div_1.style.display = "none"}
+                
                 if (items=="Dunk Low Black"){
                     var dunklowblack_input = document.createElement("input")
                     dunklowblack_input.setAttribute("type", "number")
