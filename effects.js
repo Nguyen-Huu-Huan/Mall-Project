@@ -217,7 +217,7 @@ function cart_load() {
                             remove_item.setAttribute("class", "col-30 remove_item");
                             item_div_1_3_1.appendChild(remove_item)
                         }
-                        console.log(item_div_1_3_1.children.includes("img.remove_item"))
+                        console.log(item_div_1_3_1.children[1:])
 //                         if (item_div_1_3_1.children.includes(remove_item)){console.log('hello')}else{console.log('nothing')}
                         item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
                         localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
