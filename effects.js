@@ -74,7 +74,8 @@ var cart_item = {}
 var dunklowblack_qty = ((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)
 var airforceone_qty = ((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)
 var total_price = 0
-
+var item_div_1_2_dunklowblack
+var item_div_1_2_airforceone
 for (var i = 0;i<localStorage.length;i++){
     var key = localStorage.key(i)
     if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')&&(key!='coupon')){
@@ -128,8 +129,7 @@ function cart_load() {
             document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
             
-            var item_div_1_2_dunklowblack
-            var item_div_1_2_airforceone
+
             for (items in cart_item){
                 
                 var item_div_1 = document.createElement("div");
