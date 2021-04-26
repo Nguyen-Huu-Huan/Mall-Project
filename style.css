@@ -814,8 +814,12 @@ textarea {
 
 /*--Order Placement--*/
 .remove_item{
-    width: 0.5vw;
-    height: 0.5vw;
+    width: 2vw;
+    height: 2vw;
+}
+.remove_item:hover{
+    cursor: pointer;
+    border: 3px solid red; 
 }
 
 /*--Browse dropdown button---*/
