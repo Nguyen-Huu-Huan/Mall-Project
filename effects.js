@@ -89,7 +89,7 @@ function index_file(){
     document.querySelector('.nowrap').addEventListener('mouseout', function() {
         setInterval(() => {
             if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
-                document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+                document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 0.2, 0)
             }
         }, 20)
     })
