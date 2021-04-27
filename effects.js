@@ -42,8 +42,6 @@ function add_to_cart(item) {
     }
 }
 
-
-
 // Check login status and get email from form input
 function login_button() {
     localStorage.setItem('login', true)
@@ -197,6 +195,14 @@ function cart_load() {
                 item_div_1_3_1.setAttribute("class", "row");
                 item_div_1_3.appendChild(item_div_1_3_1)
 
+                var remove_item = document.createElement("img");
+                remove_item.setAttribute("src", "images/remove_item.png");
+                remove_item.setAttribute("class", "remove_item");
+                remove_item.addEventListener("click", function() { item_div_1.remove();
+                    localStorage.removeItem(items) })
+                remove_item.style.display = "none"
+                item_div_1_3_1.appendChild(remove_item)
+
                 if (items == "Dunk Low Black") {
                     var dunklowblack_input = document.createElement("input")
                     dunklowblack_input.setAttribute("type", "number")
@@ -204,6 +210,9 @@ function cart_load() {
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(dunklowblack_input)
                     dunklowblack_input.addEventListener("input", function() {
+                        if (dunklowblack_input.value <= 0) {
+                            remove_item.style.display = "block"
+                        } else { remove_item.style.display = "none" }
                         item_div_1_2_dunklowblack.innerHTML = (((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[0] || 0) * dunklowblack_input.value) + "$"
                         localStorage.setItem("Dunk Low Black", JSON.stringify([130, parseInt(dunklowblack_input.value), ((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[2] || 0)]))
                         total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
@@ -231,12 +240,9 @@ function cart_load() {
                     airforceone_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(airforceone_input)
                     airforceone_input.addEventListener("input", function() {
-                        if (airforceone_input.value == 0) {
-                            var remove_item = document.createElement("img")
-                            remove_item.setAttribute("src", "remove_item.png")
-                            remove_item.setAttribute("class", "col-30")
-                            item_div_1_3_1.appendChild(remove_item)
-                        }
+                        if (airforceone_input.value <= 0) {
+                            remove_item.style.display = "block"
+                        } else { remove_item.style.display = "none" }
                         item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One')) || 0)[0] || 0) * airforceone_input.value) + "$"
                         localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value), ((JSON.parse(localStorage.getItem('Air Force One')) || 0)[2] || 0)]))
                         total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
@@ -290,3 +296,36 @@ function coupon_apply() {
         localStorage.removeItem('coupon')
     }
 }
+
+// NEW03 modal window
+// modal window's Huy
+var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal,div.Huy-bg-modal>*)")
+var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
+var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
+
+document.getElementById("Huy").addEventListener("click", function() {
+    document.querySelector(".Huy-bg-modal").style.display = "flex";
+    blur_everything_not_Huy.forEach((div) => { div.style.opacity = "0.651" })
+});
+document.getElementById("Huymodal").addEventListener("click", function() {
+    document.querySelector(".Huy-bg-modal").style.display = "none";
+    blur_everything_not_Huy.forEach((div) => { div.style.opacity = "1" })
+});
+// modal window's Huan
+document.getElementById("Huan").addEventListener("click", function() {
+    document.querySelector(".Huan-bg-modal").style.display = "flex";
+    blur_everything_not_Huan.forEach((div) => { div.style.opacity = "0.651" })
+});
+document.getElementById("Huanmodal").addEventListener("click", function() {
+    document.querySelector(".Huan-bg-modal").style.display = "none";
+    blur_everything_not_Huan.forEach((div) => { div.style.opacity = "1" })
+});
+//modal window's Nguyen
+document.getElementById("Nguyen").addEventListener("click", function() {
+    document.querySelector(".Nguyen-bg-modal").style.display = "flex";
+    blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "0.651" })
+});
+document.getElementById("Nguyenmodal").addEventListener("click", function() {
+    document.querySelector(".Nguyen-bg-modal").style.display = "none";
+    blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
+});
