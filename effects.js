@@ -289,7 +289,7 @@ document.getElementById("Huy").addEventListener("click", function(){
 });
 document.getElementById("Huymodal").addEventListener("click", function(){
     document.querySelector(".Huy-bg-modal").style.display = "none";
-    blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "1"})
+//     blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "1"})
 });
 //modal window's Huan
 document.getElementById("Huan").addEventListener("click", function(){
@@ -298,7 +298,7 @@ document.getElementById("Huan").addEventListener("click", function(){
 });
 document.getElementById("Huanmodal").addEventListener("click", function(){
     document.querySelector(".Huan-bg-modal").style.display = "none";
-    blur_everything_not_Huan.forEach((div)=>{div.style.opacity = "1"})
+//     blur_everything_not_Huan.forEach((div)=>{div.style.opacity = "1"})
 });
 //modal window's Nguyen
 document.getElementById("Nguyen").addEventListener("click", function(){
@@ -307,6 +307,6 @@ document.getElementById("Nguyen").addEventListener("click", function(){
 });
 document.getElementById("Nguyenmodal").addEventListener("click", function(){
     document.querySelector(".Nguyen-bg-modal").style.display = "none";
-    blur_everything_not_Nguyen.forEach((div)=>{div.style.opacity = "1"})
+//     blur_everything_not_Nguyen.forEach((div)=>{div.style.opacity = "1"})
 });
 
