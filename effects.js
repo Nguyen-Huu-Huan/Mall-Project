@@ -32,12 +32,12 @@ function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result })
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red" })
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result; p_tag.style.animation = "shaking 0.5s infinite"})
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red"; p_tag.style.animation = "shaking 0.5s infinite"})
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline"; p_tag.style.animation = "shaking 0.5s infinite"})
         localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
         document.querySelector(".cart-icon, .cart-icon+p").style.animation = "shaking 0.5s infinite"
-        document.querySelector(".cart-icon-big, .cart-icon-big+p").style.animation = "shaking 0.5s infinite"
+        document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
         alert("Please login before purchase")
@@ -85,7 +85,6 @@ function index_file(){
             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
         }
     }, 20)
-
 
     document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
 
