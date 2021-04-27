@@ -91,7 +91,7 @@ function index_file(){
             if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
                 document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
             }
-        }, 5)
+        }, 15)
     })
 }
 
