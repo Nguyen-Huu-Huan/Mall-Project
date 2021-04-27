@@ -481,6 +481,7 @@ label {
     position: fixed;
     right: 0.5rem;
     bottom: 0.5rem;
+    margin-right: 2vw;
     z-index: 100;
 }
 
