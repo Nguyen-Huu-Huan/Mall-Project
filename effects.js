@@ -279,7 +279,7 @@ function coupon_apply() {
 }
 // NEW03 modal window
 // modal window's Huy
-var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal, div.Huy-bg-modal>*)")
+var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal, #Huymodal, div.Huy-bg-modal>*)")
 var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal, div.Huan-bg-modal>*)")
 var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal, div.Nguyen-bg-modal>*)")
 
