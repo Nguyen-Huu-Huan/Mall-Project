@@ -481,10 +481,11 @@ label {
     position: fixed;
     right: 0.5rem;
     bottom: 0.5rem;
+    margin-right: 2vw;
     z-index: 100;
 }
 
-.back-to-top>img {
+.cart-icon-big {
     width: 4vw;
     height: 4vw;
 }
@@ -511,7 +512,7 @@ header .btn {
     padding: 0.5rem 2.5rem;
 }
 
-.cart-icon {
+.cart-icon-small {
     width: 0.8rem;
 }
 
