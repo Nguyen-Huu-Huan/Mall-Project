@@ -283,10 +283,10 @@ var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("d
 var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal, div.Huan-bg-modal>*)")
 var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal, div.Nguyen-bg-modal>*)")
 
-// document.getElementById("Huy").addEventListener("click", function(){
-//     document.querySelector(".Huy-bg-modal").forEach()style.display = "flex";
-//     blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "0.651"})
-// });
+document.getElementById("Huy").addEventListener("click", function(){
+    document.querySelector(".Huy-bg-modal").style.display = "flex";
+    blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "0.651"})
+});
 // document.getElementById("Huymodal").addEventListener("click", function(){
 //     document.querySelector(".Huy-bg-modal").style.display = "none";
 // //     blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "1"})
