@@ -286,7 +286,7 @@ var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll
 document.getElementById("Huy").addEventListener("click", function(){
     document.querySelector(".Huy-bg-modal").style.display = "flex";
     blur_everything_not_Huy.forEach((div)=>{div.style.opacity = "0.651"})
-    document.querySelector(".Huy-bg-modal").style.opacity = "1";
+//     document.querySelector(".Huy-bg-modal").style.opacity = "1";
 });
 document.getElementById("Huymodal").addEventListener("click", function(){
     document.querySelector(".Huy-bg-modal").style.display = "none";
