@@ -311,33 +311,35 @@ function coupon_apply() {
 
 // NEW03 modal window
 // modal window's Huy
-var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal,div.Huy-bg-modal>*)")
-var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
-var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
+function about_us(){
+    var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal,div.Huy-bg-modal>*)")
+    var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
+    var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
 
-document.getElementById("Huy").addEventListener("click", function() {
-    document.querySelector(".Huy-bg-modal").style.display = "flex";
-    blur_everything_not_Huy.forEach((div) => { div.style.opacity = "0.651" })
-});
-document.getElementById("Huymodal").addEventListener("click", function() {
-    document.querySelector(".Huy-bg-modal").style.display = "none";
-    blur_everything_not_Huy.forEach((div) => { div.style.opacity = "1" })
-});
-// modal window's Huan
-document.getElementById("Huan").addEventListener("click", function() {
-    document.querySelector(".Huan-bg-modal").style.display = "flex";
-    blur_everything_not_Huan.forEach((div) => { div.style.opacity = "0.651" })
-});
-document.getElementById("Huanmodal").addEventListener("click", function() {
-    document.querySelector(".Huan-bg-modal").style.display = "none";
-    blur_everything_not_Huan.forEach((div) => { div.style.opacity = "1" })
-});
-//modal window's Nguyen
-document.getElementById("Nguyen").addEventListener("click", function() {
-    document.querySelector(".Nguyen-bg-modal").style.display = "flex";
-    blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "0.651" })
-});
-document.getElementById("Nguyenmodal").addEventListener("click", function() {
-    document.querySelector(".Nguyen-bg-modal").style.display = "none";
-    blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
-});
+    document.getElementById("Huy").addEventListener("click", function() {
+        document.querySelector(".Huy-bg-modal").style.display = "flex";
+        blur_everything_not_Huy.forEach((div) => { div.style.opacity = "0.651" })
+    });
+    document.getElementById("Huymodal").addEventListener("click", function() {
+        document.querySelector(".Huy-bg-modal").style.display = "none";
+        blur_everything_not_Huy.forEach((div) => { div.style.opacity = "1" })
+    });
+    // modal window's Huan
+    document.getElementById("Huan").addEventListener("click", function() {
+        document.querySelector(".Huan-bg-modal").style.display = "flex";
+        blur_everything_not_Huan.forEach((div) => { div.style.opacity = "0.651" })
+    });
+    document.getElementById("Huanmodal").addEventListener("click", function() {
+        document.querySelector(".Huan-bg-modal").style.display = "none";
+        blur_everything_not_Huan.forEach((div) => { div.style.opacity = "1" })
+    });
+    //modal window's Nguyen
+    document.getElementById("Nguyen").addEventListener("click", function() {
+        document.querySelector(".Nguyen-bg-modal").style.display = "flex";
+        blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "0.651" })
+    });
+    document.getElementById("Nguyenmodal").addEventListener("click", function() {
+        document.querySelector(".Nguyen-bg-modal").style.display = "none";
+        blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
+    });
+}
