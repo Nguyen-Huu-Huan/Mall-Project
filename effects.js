@@ -32,7 +32,7 @@ function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result; p_tag.style.animation = "shaking 0.5s infinite"})
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result; p_tag.style.fontSize = "30px"})
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red"; p_tag.style.animation = "shaking 0.5s infinite"})
         document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline"; p_tag.style.animation = "shaking 0.5s infinite"})
         localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
