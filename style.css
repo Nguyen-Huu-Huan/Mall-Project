@@ -356,6 +356,7 @@ label {
     overflow-x: hidden;
     overflow-y: hidden;
     padding: 1rem 0;
+    box-sizing: border-box;
 }
 
 .store-thumbnail-wrapper {

@@ -77,13 +77,23 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
-function autoScroll() {
-    self.setInterval(() => {
+
+var autoscroll = setInterval(() => {
+    if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
+        document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+    }
+}, 20)
+
+
+document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
+
+document.querySelector('.nowrap').addEventListener('mouseout', function() {
+    setInterval(() => {
         if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
         }
-    }, 20);
-}
+    }, 20)
+})
 
 
 
@@ -198,8 +208,10 @@ function cart_load() {
                 var remove_item = document.createElement("img");
                 remove_item.setAttribute("src", "images/remove_item.png");
                 remove_item.setAttribute("class", "remove_item");
-                remove_item.addEventListener("click", function() { item_div_1.remove();
-                    localStorage.removeItem(items) })
+                remove_item.addEventListener("click", function() {
+                    item_div_1.remove();
+                    localStorage.removeItem(items)
+                })
                 remove_item.style.display = "none"
                 item_div_1_3_1.appendChild(remove_item)
 
