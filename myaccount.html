@@ -138,8 +138,10 @@
                             <br>
                             <label for="lname">Password</label>
                             <br>
-                            <input type="password" id="password" name="password" value="" required placeholder="*required" pattern="password">
+                            <input type="password" id="password" name="password" value="" required placeholder="*required" pattern="password" oninvalid="wrongPassword()">
                             <br>
+                            <span>
+                            <p class="color-red text-bold wrong-password">Wrong password, please try again</p></span>
                             <a href="forgot-password.html">Forgot password</a>
                             <br>
                             <div class="text-center">

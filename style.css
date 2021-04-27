@@ -12,21 +12,21 @@ body {
     font-family: 'Public Sans', Arial, Helvetica, sans-serif;
 }
 
-.cookie{
-  position: fixed;
-  z-index: 9999;
-  width: 70%;
-  background: white;
-  top: 0;
-  margin: 10% 15% 10% 15%;
-  height: 70%;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 5px 10px #ff007f;
-  padding-top: 8rem;
+.cookie {
+    position: fixed;
+    z-index: 9999;
+    width: 70%;
+    background: white;
+    top: 0;
+    margin: 10% 15% 10% 15%;
+    height: 70%;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 10px #ff007f;
+    padding-top: 8rem;
 }
 
-.cookie>div>a{
-  text-decoration: underline;
+.cookie>div>a {
+    text-decoration: underline;
 }
 
 nav {
@@ -347,6 +347,22 @@ label {
     flex-wrap: wrap;
     justify-content: space-around;
     padding-bottom: 1rem;
+    width: 100%;
+}
+
+.nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 1rem 0;
+}
+
+.store-thumbnail-wrapper {
+    width: 18%;
+    margin-right: 2%;
+    height: 100%;
+    flex: 0 0 auto;
 }
 
 
@@ -466,10 +482,12 @@ label {
     bottom: 0.5rem;
     z-index: 100;
 }
-.back-to-top>img{
+
+.back-to-top>img {
     width: 4vw;
     height: 4vw;
 }
+
 
 /*----------PAGE----------*/
 
@@ -844,12 +862,15 @@ textarea {
     display: block;
 }
 
-.HD-apply>p, .DI-apply>p{
+.HD-apply>p,
+.DI-apply>p {
     color: green;
 }
-.non-apply>p{
+
+.non-apply>p {
     color: red;
 }
+
 
 /*-----nike store---*/
 
@@ -899,6 +920,10 @@ textarea {
     border: none;
     width: 70%;
     cursor: pointer;
+}
+
+.wrong-password {
+    display: none;
 }
 
 

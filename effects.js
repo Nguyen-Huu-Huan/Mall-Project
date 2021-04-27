@@ -27,6 +27,7 @@ function myFunction() {
 
 var count = 0
 var islogin = localStorage.getItem('login')
+
 function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
@@ -49,16 +50,20 @@ function login_button() {
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
     return true
 }
-function logged_in(){
-    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
-} 
 
-if (document.querySelector('.logout')!= null){
-    if (localStorage.getItem('login')=='true'){
-        document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'inline-block'})
-        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button)=>{button.removeAttribute('href');button.setAttribute('href','logged-in.html')})        
-    }else{
-        document.querySelectorAll('.logout').forEach((button)=>{button.style.display = 'none'})
+function logged_in() {
+    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
+}
+
+if (document.querySelector('.logout') != null) {
+    if (localStorage.getItem('login') == 'true') {
+        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
+            button.removeAttribute('href');
+            button.setAttribute('href', 'logged-in.html')
+        })
+    } else {
+        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
     }
 }
 
@@ -69,16 +74,31 @@ function logOut() {
     localStorage.removeItem('login')
 }
 
+// Display wrong password
+function wrongPassword() {
+    document.querySelector('.wrong-password').style.display = 'block'
+}
+
+function autoScroll() {
+    self.setInterval(() => {
+        if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
+            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+        }
+    }, 20);
+}
+
+
+
 /*Cart price update*/
 var cart_item = {}
-var dunklowblack_qty = ((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)
-var airforceone_qty = ((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0)
+var dunklowblack_qty = ((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)
+var airforceone_qty = ((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)
 var total_price = 0
 var item_div_1_2_dunklowblack
 var item_div_1_2_airforceone
-for (var i = 0;i<localStorage.length;i++){
+for (var i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i)
-    if ((key!='login')&&(key!='login_email')&&(key!='cookie-consent')&&(key!='coupon')){
+    if ((key != 'login') && (key != 'login_email') && (key != 'cookie-consent') && (key != 'coupon')) {
         cart_item[key] = JSON.parse(localStorage.getItem(key))
     }
 }
@@ -94,7 +114,7 @@ function cart_load() {
         document.querySelector(".coupon-section").style.display = "none";
     } else {
         console.log(Object.keys(cart_item).length)
-        if (Object.keys(cart_item).length==0) {
+        if (Object.keys(cart_item).length == 0) {
             document.querySelector(".product-section").style.display = "none";
             document.querySelector(".total-section").style.display = "none";
             document.querySelector(".not-sign-in").style.display = "none";
@@ -104,17 +124,17 @@ function cart_load() {
         } else {
 
             if (localStorage.getItem("coupon") == "HD") {
-                document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.8) + "$"
+                document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty) || 0) * 130 + (parseInt(airforceone_qty) || 0) * 147) * 0.8) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "block"
                 document.querySelector(".non-apply").style.display = "none"
             } else if (localStorage.getItem("coupon") == "DI") {
-                document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) * 0.9) + "$"
+                document.querySelector(".total-money").innerHTML = (((parseInt(dunklowblack_qty) || 0) * 130 + (parseInt(airforceone_qty) || 0) * 147) * 0.9) + "$"
                 document.querySelector(".DI-apply").style.display = "block"
                 document.querySelector(".HD-apply").style.display = "none"
                 document.querySelector(".non-apply").style.display = "none"
             } else {
-                document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty)||0) * 130 + (parseInt(airforceone_qty)||0) * 147) + "$"
+                document.querySelector(".total-money").innerHTML = ((parseInt(dunklowblack_qty) || 0) * 130 + (parseInt(airforceone_qty) || 0) * 147) + "$"
                 document.querySelector(".DI-apply").style.display = "none"
                 document.querySelector(".HD-apply").style.display = "none"
                 document.querySelector(".non-apply").style.display = "none"
@@ -128,10 +148,10 @@ function cart_load() {
             document.querySelector(".coupon-section").style.display = "block";
             document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
-            
 
-            for (items in cart_item){
-                
+
+            for (items in cart_item) {
+
                 var item_div_1 = document.createElement("div");
                 item_div_1.setAttribute("class", "row");
                 document.querySelector(".product-section>div").appendChild(item_div_1)
@@ -140,18 +160,18 @@ function cart_load() {
                 item_div_1_1.setAttribute("class", "col-40");
                 item_div_1.appendChild(item_div_1_1)
 
-                if (items=="Dunk Low Black"){
+                if (items == "Dunk Low Black") {
                     item_div_1_2_dunklowblack = document.createElement("div");
                     item_div_1_2_dunklowblack.setAttribute("class", "col-20 text-center item-price");
                     item_div_1_2_dunklowblack.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                     item_div_1.appendChild(item_div_1_2_dunklowblack)
-                }else if (items=="Air Force One"){
+                } else if (items == "Air Force One") {
                     item_div_1_2_airforceone = document.createElement("div");
                     item_div_1_2_airforceone.setAttribute("class", "col-20 text-center item-price");
                     item_div_1_2_airforceone.innerHTML = (cart_item[items][0] * cart_item[items][1]) + "$";
                     item_div_1.appendChild(item_div_1_2_airforceone)
                 }
-                
+
                 var item_div_1_3 = document.createElement("div");
                 item_div_1_3.setAttribute("class", "col-20");
                 item_div_1.appendChild(item_div_1_3)
@@ -176,17 +196,17 @@ function cart_load() {
                 var item_div_1_3_1 = document.createElement("div");
                 item_div_1_3_1.setAttribute("class", "row");
                 item_div_1_3.appendChild(item_div_1_3_1)
-                
-                if (items=="Dunk Low Black"){
+
+                if (items == "Dunk Low Black") {
                     var dunklowblack_input = document.createElement("input")
                     dunklowblack_input.setAttribute("type", "number")
                     dunklowblack_input.setAttribute("class", "item-qty")
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(dunklowblack_input)
-                    dunklowblack_input.addEventListener("input", function(){
-                        item_div_1_2_dunklowblack.innerHTML = (((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[0]||0)*dunklowblack_input.value) + "$"
-                        localStorage.setItem("Dunk Low Black", JSON.stringify([130, parseInt(dunklowblack_input.value),((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[2]||0)]))
-                        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+                    dunklowblack_input.addEventListener("input", function() {
+                        item_div_1_2_dunklowblack.innerHTML = (((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[0] || 0) * dunklowblack_input.value) + "$"
+                        localStorage.setItem("Dunk Low Black", JSON.stringify([130, parseInt(dunklowblack_input.value), ((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[2] || 0)]))
+                        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
                         if (localStorage.getItem("coupon") == "HD") {
                             document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                             document.querySelector(".HD-apply").style.display = "block"
@@ -204,22 +224,22 @@ function cart_load() {
                             document.querySelector(".non-apply").style.display = "none"
                         }
                     })
-                }else if (items=="Air Force One"){
+                } else if (items == "Air Force One") {
                     var airforceone_input = document.createElement("input")
                     airforceone_input.setAttribute("type", "number")
                     airforceone_input.setAttribute("class", "item-qty")
                     airforceone_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(airforceone_input)
-                    airforceone_input.addEventListener("input", function(){
-                        if (airforceone_input.value==0){
+                    airforceone_input.addEventListener("input", function() {
+                        if (airforceone_input.value == 0) {
                             var remove_item = document.createElement("img")
-                            remove_item.setAttribute("src","remove_item.png")
-                            remove_item.setAttribute("class","col-30")
+                            remove_item.setAttribute("src", "remove_item.png")
+                            remove_item.setAttribute("class", "col-30")
                             item_div_1_3_1.appendChild(remove_item)
                         }
-                        item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One'))||0)[0]||0)*airforceone_input.value) + "$"
-                        localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value),((JSON.parse(localStorage.getItem('Air Force One'))||0)[2]||0)]))
-                        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+                        item_div_1_2_airforceone.innerHTML = (((JSON.parse(localStorage.getItem('Air Force One')) || 0)[0] || 0) * airforceone_input.value) + "$"
+                        localStorage.setItem("Air Force One", JSON.stringify([147, parseInt(airforceone_input.value), ((JSON.parse(localStorage.getItem('Air Force One')) || 0)[2] || 0)]))
+                        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
                         if (localStorage.getItem("coupon") == "HD") {
                             document.querySelector(".total-money").innerHTML = total_price * 0.8 + "$";
                             document.querySelector(".HD-apply").style.display = "block"
@@ -238,7 +258,7 @@ function cart_load() {
                         }
                     })
                 }
-                
+
             }
         }
     }
@@ -250,7 +270,7 @@ function coupon_apply() {
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "none"
         localStorage.setItem("coupon", "HD")
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
         total_price *= 0.8
         document.querySelector(".total-money").innerHTML = total_price + "$"
     } else if (document.querySelector("input[name='coupon']").value == "COSC2430-DI") {
@@ -258,14 +278,14 @@ function coupon_apply() {
         document.querySelector(".DI-apply").style.display = "block"
         document.querySelector(".non-apply").style.display = "none"
         localStorage.setItem("coupon", "DI")
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
         total_price *= 0.9
         document.querySelector(".total-money").innerHTML = total_price + "$"
     } else {
         document.querySelector(".HD-apply").style.display = "none"
         document.querySelector(".DI-apply").style.display = "none"
         document.querySelector(".non-apply").style.display = "block"
-        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black'))||0)[1]||0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One'))||0)[1]||0))* 147)
+        total_price = (parseInt(((JSON.parse(localStorage.getItem('Dunk Low Black')) || 0)[1] || 0)) * 130 + parseInt(((JSON.parse(localStorage.getItem('Air Force One')) || 0)[1] || 0)) * 147)
         document.querySelector(".total-money").innerHTML = total_price + "$"
         localStorage.removeItem('coupon')
     }
