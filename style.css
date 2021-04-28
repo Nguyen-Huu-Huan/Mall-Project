@@ -941,23 +941,23 @@ textarea {
 
 /*--My Account Register--*/
 .form-control {
-	margin-bottom: 10px;
-	padding-bottom: 20px;
+	margin-bottom: 0.8;
+	padding-bottom: 1.1rem;
 	position: relative;
 }
 
 .form-control label {
 	display: inline-block;
-	margin-bottom: 5px;
+	margin-bottom: 0.3rem;
 }
 
 .form-control input {
-	border: 2px solid #f0f0f0;
-	border-radius: 4px;
+	border: 0.1rem solid #f0f0f0;
+	border-radius: 0.2rem;
 	display: block;
 	font-family: inherit;
-	font-size: 14px;
-	padding: 10px;
+	font-size: 1rem;
+	padding: 0.7rem;
 	width: 100%;
 }
 
@@ -978,8 +978,8 @@ textarea {
     font-style: normal;
 	visibility: hidden;
 	position: absolute;
-	top: 33px;
-	right: 10px;
+	top: 2rem;
+	right: 0.5rem;
 }
 
 .form-control.success i.correct {
