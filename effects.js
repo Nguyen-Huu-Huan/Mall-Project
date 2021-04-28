@@ -53,7 +53,7 @@ function login_button() {
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
     return true
 }
-
+// Display account email
 function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
@@ -62,9 +62,9 @@ if (document.querySelector('.logout') != null) {
     if (localStorage.getItem('login') == 'true') {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
         document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
-            button.removeAttribute('href');
             button.setAttribute('href', 'logged-in.html')
         })
+
     } else {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
     }
@@ -514,19 +514,19 @@ function isPw(pw) {
 }
 
 function isfirstName(firstName) {
-    return /^\w{3,}$/.test(firstName);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(firstName);
 }
 
 function islastName(lastName) {
-    return /^\w{3,}$/.test(lastName);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(lastName);
 }
 
 function isaddress(address) {
-    return /^\w{3,}$/.test(address);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(address);
 }
 
 function iscity(city) {
-    return /^\w{3,}$/.test(city);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(city);
 }
 
 function isZipcode(zipcode) {
@@ -534,9 +534,9 @@ function isZipcode(zipcode) {
 }
 
 function isbName(bName) {
-    return /^\w{3,}$/.test(bName);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(bName);
 }
 
 function issName(sName) {
-    return /^\w{3,}$/.test(sName);
+    return /^[a-zA-Z0-9 ]{3,}$/.test(sName);
 }
