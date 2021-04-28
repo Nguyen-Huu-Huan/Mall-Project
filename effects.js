@@ -32,10 +32,15 @@ function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result })
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.color = "red" })
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.style.display = "inline" })
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => {
+            p_tag.innerHTML = result;
+            p_tag.style.color = "red";
+            p_tag.style.display = "inline";
+            p_tag.style.animation = "shaking 0.5s infinite";
+        })
         localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
+        document.querySelector(".cart-icon").style.animation = "shaking 0.5s infinite"
+        document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
     } else {
         document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
         alert("Please login before purchase")
@@ -97,6 +102,16 @@ document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', funct
 })
 document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 20) })
 
+
+document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
+
+document.querySelector('.nowrap').addEventListener('mouseout', function() {
+    setInterval(() => {
+        if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
+            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+        }
+    }, 15)
+})
 
 
 
@@ -345,4 +360,183 @@ function about_us() {
         document.querySelector(".Nguyen-bg-modal").style.display = "none";
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
     });
+}
+
+//NEW04 CONTACT FORM
+
+
+//NEW06 REGISTER FORM
+
+const form = document.getElementById('form');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const pw = document.getElementById('pw');
+const confirmPW = document.getElementById('confirmPW');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const address = document.getElementById('address');
+const city = document.getElementById('city');
+const zipcode = document.getElementById('zipcode');
+const bName = document.getElementById('bName');
+const sName = document.getElementById('sName');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    const pwValue = pw.value.trim();
+    const confirmPWValue = confirmPW.value.trim();
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const addressValue = address.value.trim();
+    const cityValue = city.value.trim();
+    const zipcodeValue = zipcode.value.trim();
+    const bNameValue = bName.value.trim();
+    const sNameValue = sName.value.trim();
+
+    if (emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Not a valid email');
+    } else {
+        setSuccessFor(email);
+    }
+
+    if (phoneValue === '') {
+        setErrorFor(phone, 'Phone Number cannot be blank');
+    } else if (!isPhone(phoneValue)) {
+        setErrorFor(phone, 'Not a valid Phone Number');
+    } else {
+        setSuccessFor(phone);
+    }
+    if (pwValue === '') {
+        setErrorFor(pw, 'Password cannot be blank');
+    } else if (!isPw(pwValue)) {
+        setErrorFor(pw, 'Not a valid Password');
+    } else {
+        setSuccessFor(pw);
+    }
+
+    if (confirmPWValue === '') {
+        setErrorFor(confirmPW, 'Confirm Password cannot be blank');
+    } else if (!isPw(pwValue)) {
+        setErrorFor(confirmPW, 'Not a valid Confirm Password');
+    } else if (pwValue !== confirmPWValue) {
+        setErrorFor(confirmPW, 'Passwords does not match');
+    } else {
+        setSuccessFor(confirmPW);
+    }
+    if (firstNameValue === '') {
+        setErrorFor(firstName, 'First name cannot be blank');
+    } else if (!isfirstName(firstNameValue)) {
+        setErrorFor(firstName, 'Not a valid First Name');
+    } else {
+        setSuccessFor(firstName);
+    }
+
+    if (lastNameValue === '') {
+        setErrorFor(lastName, 'Last name cannot be blank');
+    } else if (!islastName(lastNameValue)) {
+        setErrorFor(lastName, 'Not a valid First Name');
+    } else {
+        setSuccessFor(lastName);
+    }
+
+    if (addressValue === '') {
+        setErrorFor(address, 'Address cannot be blank');
+    } else if (!isaddress(addressValue)) {
+        setErrorFor(address, 'Not a valid address');
+    } else {
+        setSuccessFor(address);
+    }
+
+    if (cityValue === '') {
+        setErrorFor(city, 'City name cannot be blank');
+    } else if (!iscity(cityValue)) {
+        setErrorFor(city, 'Not a valid city name');
+    } else {
+        setSuccessFor(city);
+    }
+
+    if (zipcodeValue === '') {
+        setErrorFor(zipcode, 'City name cannot be blank');
+    } else if (!isZipcode(zipcodeValue)) {
+        setErrorFor(zipcode, 'Not a valid city name');
+    } else {
+        setSuccessFor(zipcode);
+    }
+
+    if (bNameValue === '') {
+        setErrorFor(bName, 'Business name cannot be blank');
+    } else if (!isbName(bNameValue)) {
+        setErrorFor(bName, 'Not a valid Business name');
+    } else {
+        setSuccessFor(bName);
+    }
+    if (sNameValue === '') {
+        setErrorFor(sName, 'Store name cannot be blank');
+    } else if (!issName(sNameValue)) {
+        setErrorFor(sName, 'Not a valid Store name');
+    } else {
+        setSuccessFor(sName);
+    }
+}
+
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form-control error';
+    small.innerText = message;
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function isPhone(phone) {
+    return /^\(?([0-9]{1})\)?[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1,3})$/.test(phone);
+}
+
+function isPw(pw) {
+    return /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,20})$/.test(pw);
+}
+
+function isfirstName(firstName) {
+    return /^\w{3,}$/.test(firstName);
+}
+
+function islastName(lastName) {
+    return /^\w{3,}$/.test(lastName);
+}
+
+function isaddress(address) {
+    return /^\w{3,}$/.test(address);
+}
+
+function iscity(city) {
+    return /^\w{3,}$/.test(city);
+}
+
+function isZipcode(zipcode) {
+    return /^[0-9]{4,6}$/.test(zipcode);
+}
+
+function isbName(bName) {
+    return /^\w{3,}$/.test(bName);
+}
+
+function issName(sName) {
+    return /^\w{3,}$/.test(sName);
 }
