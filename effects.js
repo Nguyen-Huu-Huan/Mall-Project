@@ -77,23 +77,26 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
+var scroll = setInterval(autoScroll, 2)
+var element = ``
 
-var autoscroll = setInterval(() => {
+function autoScroll() {
+    if (document.querySelector('.scroll1').scrollLeft !== document.querySelector('.scroll1').scrollWidth) {
+        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
+    } else {
+        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft - 1, 0)
+    }
     if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
         document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
     }
-}, 20)
+}
 
-
-document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
-
-document.querySelector('.nowrap').addEventListener('mouseout', function() {
-    setInterval(() => {
-        if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
-            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
-        }
-    }, 20)
+document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
+    clearInterval(scroll);
+    console.log('stop')
 })
+document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 20) })
+
 
 
 
@@ -311,7 +314,7 @@ function coupon_apply() {
 
 // NEW03 modal window
 // modal window's Huy
-function about_us(){
+function about_us() {
     var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal,div.Huy-bg-modal>*)")
     var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
     var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
