@@ -489,23 +489,23 @@ function isPw(pw) {
     return /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,20})$/.test(pw);
 }
 function isfirstName(firstName) {
-    return /^[a-zA-Z]{3,}$/.test(firstName);
+    return /^\w{3,}$/.test(firstName);
 }
 function islastName(lastName) {
-    return /^[a-zA-Z]{3,}$/.test(lastName);
+    return /^\w{3,}$/.test(lastName);
 }
 function isaddress(address) {
-    return /^[a-zA-Z]{3,}$/.test(address);
+    return /^\w{3,}$/.test(address);
 }
 function iscity(city) {
-    return /^[a-zA-Z]{3,}$/.test(city);
+    return /^\w{3,}$/.test(city);
 }
 function isZipcode(zipcode) {
     return /^[0-9]{4,6}$/.test(zipcode);
 }
 function isbName(bName) {
-    return /^[a-zA-Z]{3,}$/.test(bName);
+    return /^\w{3,}$/.test(bName);
 }
 function issName(sName) {
-    return /^[a-zA-Z]{3,}$/.test(sName);
+    return /^\w{3,}$/.test(sName);
 }
