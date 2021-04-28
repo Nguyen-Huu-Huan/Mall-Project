@@ -381,12 +381,13 @@ const zipcode = document.getElementById('zipcode');
 const bName = document.getElementById('bName');
 const sName = document.getElementById('sName');
 
+if (form != null){
 form.addEventListener('submit', e => {
     e.preventDefault();
 
     checkInputs();
 });
-
+}
 function checkInputs() {
 
     const emailValue = email.value.trim();
