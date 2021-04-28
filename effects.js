@@ -83,8 +83,12 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
-var scroll = setInterval(autoScroll, 1)
+var scroll
 var element = ``
+
+if (document.querySelector('.scroll1,.scroll2') != null) {
+    scroll = setInterval(autoScroll, 1)
+}
 
 function autoScroll() {
     if (document.querySelector('.scroll1').scrollLeft !== document.querySelector('.scroll1').scrollWidth) {
@@ -381,13 +385,14 @@ const zipcode = document.getElementById('zipcode');
 const bName = document.getElementById('bName');
 const sName = document.getElementById('sName');
 
-if (form != null){
-form.addEventListener('submit', e => {
-    e.preventDefault();
+if (form != null) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
 
-    checkInputs();
-});
+        checkInputs();
+    });
 }
+
 function checkInputs() {
 
     const emailValue = email.value.trim();
