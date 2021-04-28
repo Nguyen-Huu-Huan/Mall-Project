@@ -343,6 +343,9 @@ function about_us() {
     });
 }
 
+//NEW04 CONTACT FORM
+
+
 //NEW06 REGISTER FORM
 
 const form = document.getElementById('form');
@@ -509,3 +512,4 @@ function isbName(bName) {
 function issName(sName) {
     return /^\w{3,}$/.test(sName);
 }
+
