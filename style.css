@@ -975,6 +975,7 @@ textarea {
 }
 
 .form-control i {
+    font-style: normal;
 	visibility: hidden;
 	position: absolute;
 	top: 33px;
