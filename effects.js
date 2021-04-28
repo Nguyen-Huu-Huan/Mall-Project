@@ -88,33 +88,24 @@ var element = ``
 
 if (document.querySelector('.scroll1,.scroll2') != null) {
     scroll = setInterval(autoScroll, 1)
-}
 
-function autoScroll() {
-    if (document.querySelector('.scroll1').scrollLeft !== document.querySelector('.scroll1').scrollWidth) {
-        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
-    } else {
-        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft - 1, 0)
+    function autoScroll() {
+        if (document.querySelector('.scroll1').scrollLeft !== document.querySelector('.scroll1').scrollWidth) {
+            document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
+        } else {
+            document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft - 1, 0)
+        }
+
     }
 
+    document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
+        clearInterval(scroll);
+
+    })
+    document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 20) })
+
 }
 
-document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
-    clearInterval(scroll);
-
-})
-document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 20) })
-
-
-// document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
-
-// document.querySelector('.nowrap').addEventListener('mouseout', function() {
-//     setInterval(() => {
-//         if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
-//             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
-//         }
-//     }, 15)
-// })
 
 
 
