@@ -52,7 +52,6 @@ function add_to_cart(item) {
 function login() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
-    window.location.href = "logged-in.html"
 }
 // Display account email
 function logged_in() {
