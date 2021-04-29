@@ -64,6 +64,7 @@ if (document.querySelector('.logout') != null) {
         document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
             button.setAttribute('href', 'logged-in.html')
         })
+        window.open.href = 'logged-in.html'
 
     } else {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
