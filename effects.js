@@ -52,6 +52,7 @@ function add_to_cart(item) {
 function login() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
+    window.open.href = 'logged-in.html'
 }
 // Display account email
 function logged_in() {
@@ -65,7 +66,6 @@ if (document.querySelector('.logout') != null) {
             button.setAttribute('href', 'logged-in.html')
         })
         window.open.href = 'logged-in.html'
-
     } else {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
     }
