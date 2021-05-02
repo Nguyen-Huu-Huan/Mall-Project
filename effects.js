@@ -48,31 +48,28 @@ function add_to_cart(item) {
 }
 
 // Check login status and get email from form input
-
-function login() {
-    preventDefault();
-    console.log("hello1")
-    localStorage.setItem('login', true)
-    localStorage.setItem('login_email', document.querySelector("#login-email").value)
-    console.log("hello2")
-    window.location.href = 'logged-in.html'
-}
-// Display account email
-function logged_in() {
-    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
-}
-
 if (document.querySelector('.logout') != null) {
     if (localStorage.getItem('login') == 'true') {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
         document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
             button.setAttribute('href', 'logged-in.html')
         })
-
+        window.open.href = 'logged-in.html'
     } else {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
     }
 }
+
+function login() {
+    localStorage.setItem('login', true)
+    localStorage.setItem('login_email', document.querySelector("#login-email").value)
+}
+// Display account email
+function logged_in() {
+    document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
+}
+
+
 
 // Log out button function
 function logOut() {
