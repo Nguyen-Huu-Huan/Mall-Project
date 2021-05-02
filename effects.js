@@ -43,37 +43,16 @@ function add_to_cart(item) {
 }
 
 // Check login status and get email from form input
-<<<<<<< Updated upstream
-if (document.querySelector('.logout') != null) {
-    if (localStorage.getItem('login') == 'true') {
-        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
-            button.setAttribute('href', 'logged-in.html')
-        })
-        window.open.href = 'logged-in.html'
-    } else {
-        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
-    }
-}
-
-function login() {
-    localStorage.setItem('login', true)
-    localStorage.setItem('login_email', document.querySelector("#login-email").value)
-=======
 function login_button() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
     return true
->>>>>>> Stashed changes
 }
 
 function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
-<<<<<<< Updated upstream
-
-=======
 if (document.querySelector('.logout') != null) {
     if (localStorage.getItem('login') == 'true') {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
@@ -85,7 +64,6 @@ if (document.querySelector('.logout') != null) {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
     }
 }
->>>>>>> Stashed changes
 
 // Log out button function
 function logOut() {
@@ -99,27 +77,6 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
-<<<<<<< Updated upstream
-function autoScroll() {
-    if (document.querySelector('.scroll1').scrollLeft <
-        document.querySelector('.scroll1').scrollWidth - document.querySelector('.scroll1').clientWidth - 1) {
-        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
-        console.log('hello ' + document.querySelector('.scroll1').scrollLeft)
-    } else {
-        clearInterval(scroll)
-        setTimeout(function() { document.querySelector('.scroll1').scrollTo(0, 0) }, 500)
-        scroll = setInterval(autoScroll, 2)
-    }
-    if (document.querySelector('.scroll2').scrollLeft <
-        document.querySelector('.scroll2').scrollWidth - document.querySelector('.scroll2').clientWidth - 1) {
-        document.querySelector('.scroll2').scrollTo(document.querySelector('.scroll2').scrollLeft + 1, 0)
-        console.log('hello ' + document.querySelector('.scroll2').scrollLeft)
-    } else {
-        clearInterval(scroll)
-        setTimeout(function() { document.querySelector('.scroll2').scrollTo(0, 0) }, 500)
-        scroll = setInterval(autoScroll, 2)
-    }
-=======
 function index_file() {
     var autoscroll = setInterval(() => {
         if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
@@ -128,7 +85,6 @@ function index_file() {
     }, 20)
 
     document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
->>>>>>> Stashed changes
 
     document.querySelector('.nowrap').addEventListener('mouseout', function () {
         setInterval(() => {
@@ -139,48 +95,6 @@ function index_file() {
     })
 }
 
-<<<<<<< Updated upstream
-var scroll = setInterval(autoScroll, 2)
-
-document.querySelector('.scroll1').addEventListener('mouseover', function() {
-    clearInterval(scroll);
-
-})
-document.querySelector('.scroll1').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 2) })
-
-document.querySelector('.scroll2').addEventListener('mouseover', function() {
-    clearInterval(scroll);
-
-})
-document.querySelector('.scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 2) })
-
-// if (document.querySelector('.scroll1,.scroll2') != null) {
-//     scroll = setInterval(autoScroll, 1)
-
-//     function autoScroll() {
-//         if (document.querySelector('.scroll1').scrollLeft < (document.querySelector('.scroll1').scrollWidth - document.querySelector('.scroll1').clientWidth - 2)) {
-//             console.log('autoScroll+')
-//             document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
-//         } else {
-//             clearInterval(scroll);
-//             document.querySelector('.scroll1').scrollTo({ left: 0, behavior: 'smooth' })
-//         }
-//     }
-
-
-
-// document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
-//     clearInterval(scroll);
-
-// })
-// document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 1) })
-
-// }
-
-
-
-=======
->>>>>>> Stashed changes
 
 /*Cart price update*/
 var cart_item = {}
@@ -448,20 +362,11 @@ const bName= document.getElementById('bName');
 const sName= document.getElementById('sName');
 const userName= document.getElementById('userName');
 
-<<<<<<< Updated upstream
-if (form != null) {
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-
-        checkInputs();
-    });
-=======
 if (form != null){
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	checkInputs();
 });
->>>>>>> Stashed changes
 }
 
 function checkInputs() {
