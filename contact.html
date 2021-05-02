@@ -8,14 +8,12 @@
     <title>Mallux Contact| Online Shopping Mall</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
-</noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet"
+            type="text/css" />
+    </noscript>
 </head>
 
 
@@ -35,7 +33,8 @@
         </div>
     </div>
     <input type="checkbox" id="hamburger">
-    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img
+            src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
             <li><a class="text-bold" href="index.html">Home</a></li>
@@ -53,7 +52,8 @@
                         <div class="mobile-menu-dropdown">
                             <ul>
                                 <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
-                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
+                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category
+                                        &#8628;</label>
 
                                     <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
                                         <ul>
@@ -131,73 +131,83 @@
         <!--Contact-->
         <main>
             <section class="contact">
-                <div class="small-container">
+                <div class="row">
+                <div class="small-container col-70">
                     <h1 class="section-title">Contact Form</h1>
                     <form action="contact.html" method="post" class="form" id="formContact">
                         <label for="contact_purpose"><strong>Contact Purpose</strong></label>
                         <br>
                         <select name="purpose">
-                        <option value="open_store">Open a store</option>
-                        <option value="customer_services">Customer Service</option>
-                        <option value="general">General Inquiry</option>
-                    <option value="complaints">Complaints</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="collab">Business Collaboration</option>
-                    <option value="other">Other purpose</option>
-                </select>
+                            <option value="open_store">Open a store</option>
+                            <option value="customer_services">Customer Service</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="complaints">Complaints</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="collab">Business Collaboration</option>
+                            <option value="other">Other purpose</option>
+                        </select>
                         <div class="form-control">
-                        <label for="Name"><strong>Name:</strong></label>
-                        
-                        <input type="text" name="Name" value="" required placeholder="*required" id="email">
-                        <i class="correct">&#10004;</i>
-                        <i class="wrong">&#9888;</i>
-                        <small>Error message</small>
+                            <label for="Name"><strong>Name:</strong></label>
+                            <input type="text" name="Name" value="" required placeholder="*required" id="userName">
+                            <i class="correct">&#10004;</i>
+                            <i class="wrong">&#9888;</i>
+                            <small>Error message</small>
                         </div>
                         <div class="form-control">
-                        <label for="Email"><strong>Email:</strong></label>
-                        
-                        <input type="email" name="Email" value="" required placeholder="*required">
+                            <label for="Email"><strong>Email:</strong></label>
+                            <input type="email" name="Email" value="" required placeholder="*required" id="email">
+                            <i class="correct">&#10004;</i>
+                            <i class="wrong">&#9888;</i>
+                            <small>Error message</small>
                         </div>
                         <div class="form-control">
-                        <label for="Phone"><strong>Phone:</strong></label>
-                        
-                        <input type="tel" name="Phone" value="" required placeholder="0901234567" pattern="0[0-9]{9}">
+                            <label for="Phone"><strong>Phone:</strong></label>
+                            <input type="tel" name="Phone" value="" required placeholder="0901234567"
+                                pattern="0[0-9]{9}" id="phone">
+                            <i class="correct">&#10004;</i>
+                            <i class="wrong">&#9888;</i>
+                            <small>Error message</small>
                         </div>
                         <br>
-                        <div class="other-input">
+                        <div class="form-control">
                             <label for="contact-method "><strong>Prefered Contact Method:</strong></label>
-                            <input type="radio" name="contact" value=" " required>
+                            <input type="radio" name="contact" value=" " required id="option1">
                             <label class="text-thin" for="contact-method">Email</label>
-                            <input type="radio" name="contact" value=" " required>
+                            <input type="radio" name="contact" value=" " required id="option2">
                             <label class="text-thin" for="contact-method">Phone</label>
+                            <i class="correct">&#10004;</i>
+                            <i class="wrong">&#9888;</i>
+                            <small>Select exactly one option!</small>
                         </div>
-                        <br>
-                        <br>
-                        <label for="Contact_days"> <strong>Contact days:</strong> </label>
-                        <div class="other-input">
-                            <label for="monday">Monday</label>
-                            <input type="checkbox" name="contact-day-1" value="yes">
-                            <label for="tuesday">Tuesday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="wednesday">Wednesday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="thursday">Thursday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="friday">Friday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="saturday">Saturday</label>
-                            <input type="checkbox" name="days" value=" ">
-                            <label for="sunday">Sunday</label>
-                            <input type="checkbox" name="days" value=" ">
+                        <div class="other-input ">
+                            <label for="Contact_days"> <strong>Contact days:</strong> </label>
+                            <div class="form-control">
+                                <label for="monday">Monday</label>
+                                <input type="checkbox" name="contact-day-1" value="yes" id="day1">
+                                <label for="tuesday">Tuesday</label>
+                                <input type="checkbox" name="days" value=" " id="day2">
+                                <label for="wednesday">Wednesday</label>
+                                <input type="checkbox" name="days" value=" " id="day3">
+                                <label for="thursday">Thursday</label>
+                                <input type="checkbox" name="days" value=" " id="day4">
+                                <label for="friday">Friday</label>
+                                <input type="checkbox" name="days" value=" " id="day5">
+                                <label for="saturday">Saturday</label>
+                                <input type="checkbox" name="days" value=" " id="day6">
+                                <label for="sunday">Sunday</label>
+                                <input type="checkbox" name="days" value=" " id="day7">
+                                <small>Select at least one option!</small>
+                            </div>
+                        </div >
+                        <br><br><br><br><br><br><br><br><br><br><br>
+                        <textarea name="message" rows="8" cols="80" placeholder="Your Message" spellcheck="false"></textarea>
+                   
+                        <div>
+                            <input class="btn" type="reset" value="Clear">
+                            <input class="btn" type="submit" value="Send" onclick="checkContact()">
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <textarea name="message" rows="8" cols="80" placeholder="Your Message"></textarea>
-                        <br>
-                        <input class="btn" type="reset" value="Clear">
-                        <input class="btn" type="submit" value="Send" onclick="checkInputs()">
                     </form>
+                </div>
                 </div>
             </section>
 

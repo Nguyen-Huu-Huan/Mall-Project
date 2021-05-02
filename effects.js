@@ -342,11 +342,7 @@ function about_us() {
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
     });
 }
-
-//NEW04 CONTACT FORM
-
-
-//NEW06 REGISTER FORM
+//NEW04-06 CONTACT AND REGISTER FORM
 
 const form = document.getElementById('form');
 const email = document.getElementById('email');
@@ -361,14 +357,88 @@ const zipcode= document.getElementById('zipcode');
 const bName= document.getElementById('bName');
 const sName= document.getElementById('sName');
 const userName= document.getElementById('userName');
+const option1= document.getElementById('option1');
+const option2= document.getElementById('option2');
+const day1= document.getElementById('day1');
+const day2= document.getElementById('day2');
+const day3= document.getElementById('day3');
+const day4= document.getElementById('day4');
+const day5= document.getElementById('day5');
+const day6= document.getElementById('day6');
+const day7= document.getElementById('day7');
 
 if (form != null){
 form.addEventListener('submit', e => {
+   
 	e.preventDefault();
 	checkInputs();
 });
 }
+function checkContact(){
+    const userNameValue = userName.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    
+    if(option1.checked==true){
+        setSuccessFor(option1);
+    }
+    else if(option2.checked==true){
+        setSuccessFor(option2);
+    }
+    else {
+        setErrorFor(option2, 'Select exactly one option!');
+    }
+    if(day1.checked==true){
+        setSuccessFor(day1);
+    }
+    else if(day2.checked==true){
+        setSuccessFor(day2);
+    }
+    else if(day3.checked==true){
+        setSuccessFor(day3);
+    }
+    else if(day4.checked==true){
+        setSuccessFor(day4);
+    }
+    else if(day5.checked==true){
+        setSuccessFor(day5);
+    }
+    else if(day6.checked==true){
+        setSuccessFor(day6);
+    }
+    else if(day7.checked==true){
+        setSuccessFor(day7);
+    }
+    else {
+        setErrorFor(day1, 'Select at least one option!');
+    }
 
+    
+
+    if(userNameValue === '') {
+		setErrorFor(userName, ' Name cannot be blank');
+	} else if (!isuserName(userNameValue)) {
+		setErrorFor(userName, 'Not a valid Name');
+	} else {
+		setSuccessFor(userName);
+	}
+    
+    if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+
+    if(phoneValue === '') {
+		setErrorFor(phone, 'Phone Number cannot be blank');
+	} else if (!isPhone(phoneValue)) {
+		setErrorFor(phone, 'Not a valid Phone Number');
+	} else {
+		setSuccessFor(phone);
+	}
+}
 function checkInputs() {
 	// const userNameValue = userName.value.trim();
 	const emailValue = email.value.trim();
@@ -383,13 +453,7 @@ function checkInputs() {
 	const bNameValue = bName.value.trim();
 	const sNameValue = sName.value.trim();
     
-    // if(userNameValue === '') {
-	// 	setErrorFor(userName, 'First name cannot be blank');
-	// } else if (!isuserName(userNameValue)) {
-	// 	setErrorFor(userName, 'Not a valid First Name');
-	// } else {
-	// 	setSuccessFor(userName);
-	// }
+
     if(emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
 	} else if (!isEmail(emailValue)) {
