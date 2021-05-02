@@ -50,9 +50,12 @@ function add_to_cart(item) {
 // Check login status and get email from form input
 
 function login() {
+    preventDefault();
+    console.log("hello1")
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
-    window.location.href = "logged-in.html"
+    console.log("hello2")
+    window.location.href = 'logged-in.html'
 }
 // Display account email
 function logged_in() {
