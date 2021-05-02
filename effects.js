@@ -83,28 +83,64 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
-var scroll
-var element = ``
-
-if (document.querySelector('.scroll1,.scroll2') != null) {
-    scroll = setInterval(autoScroll, 1)
-
-    function autoScroll() {
-        if (document.querySelector('.scroll1').scrollLeft !== document.querySelector('.scroll1').scrollWidth) {
-            document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
-        } else {
-            document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft - 1, 0)
-        }
-
+function autoScroll() {
+    if (document.querySelector('.scroll1').scrollLeft <
+        document.querySelector('.scroll1').scrollWidth - document.querySelector('.scroll1').clientWidth - 1) {
+        document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
+        console.log('hello ' + document.querySelector('.scroll1').scrollLeft)
+    } else {
+        clearInterval(scroll)
+        setTimeout(function() { document.querySelector('.scroll1').scrollTo(0, 0) }, 500)
+        scroll = setInterval(autoScroll, 2)
+    }
+    if (document.querySelector('.scroll2').scrollLeft <
+        document.querySelector('.scroll2').scrollWidth - document.querySelector('.scroll2').clientWidth - 1) {
+        document.querySelector('.scroll2').scrollTo(document.querySelector('.scroll2').scrollLeft + 1, 0)
+        console.log('hello ' + document.querySelector('.scroll2').scrollLeft)
+    } else {
+        clearInterval(scroll)
+        setTimeout(function() { document.querySelector('.scroll2').scrollTo(0, 0) }, 500)
+        scroll = setInterval(autoScroll, 2)
     }
 
-    document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
-        clearInterval(scroll);
-
-    })
-    document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 20) })
-
 }
+
+var scroll = setInterval(autoScroll, 2)
+
+document.querySelector('.scroll1').addEventListener('mouseover', function() {
+    clearInterval(scroll);
+
+})
+document.querySelector('.scroll1').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 2) })
+
+document.querySelector('.scroll2').addEventListener('mouseover', function() {
+    clearInterval(scroll);
+
+})
+document.querySelector('.scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 2) })
+
+// if (document.querySelector('.scroll1,.scroll2') != null) {
+//     scroll = setInterval(autoScroll, 1)
+
+//     function autoScroll() {
+//         if (document.querySelector('.scroll1').scrollLeft < (document.querySelector('.scroll1').scrollWidth - document.querySelector('.scroll1').clientWidth - 2)) {
+//             console.log('autoScroll+')
+//             document.querySelector('.scroll1').scrollTo(document.querySelector('.scroll1').scrollLeft + 1, 0)
+//         } else {
+//             clearInterval(scroll);
+//             document.querySelector('.scroll1').scrollTo({ left: 0, behavior: 'smooth' })
+//         }
+//     }
+
+
+
+// document.querySelector('.scroll1, .scroll2').addEventListener('mouseover', function() {
+//     clearInterval(scroll);
+
+// })
+// document.querySelector('.scroll1, .scroll2').addEventListener('mouseout', function() { scroll = setInterval(autoScroll, 1) })
+
+// }
 
 
 
