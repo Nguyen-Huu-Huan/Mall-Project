@@ -32,12 +32,7 @@ function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => {
-            p_tag.innerHTML = result;
-            p_tag.style.color = "red";
-            p_tag.style.display = "inline";
-            p_tag.style.animation = "shaking 0.5s infinite";
-        })
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result; p_tag.style.color = "red"; p_tag.style.display = "inline"; p_tag.style.animation = "shaking 0.5s infinite";})
         localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
         document.querySelector(".cart-icon").style.animation = "shaking 0.5s infinite"
         document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
@@ -48,6 +43,7 @@ function add_to_cart(item) {
 }
 
 // Check login status and get email from form input
+<<<<<<< Updated upstream
 if (document.querySelector('.logout') != null) {
     if (localStorage.getItem('login') == 'true') {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
@@ -63,13 +59,33 @@ if (document.querySelector('.logout') != null) {
 function login() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
+=======
+function login_button() {
+    localStorage.setItem('login', true)
+    localStorage.setItem('login_email', document.querySelector("#login-email").value)
+    return true
+>>>>>>> Stashed changes
 }
-// Display account email
+
 function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
+<<<<<<< Updated upstream
 
+=======
+if (document.querySelector('.logout') != null) {
+    if (localStorage.getItem('login') == 'true') {
+        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
+            button.removeAttribute('href');
+            button.setAttribute('href', 'logged-in.html')
+        })
+    } else {
+        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
+    }
+}
+>>>>>>> Stashed changes
 
 // Log out button function
 function logOut() {
@@ -83,6 +99,7 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
+<<<<<<< Updated upstream
 function autoScroll() {
     if (document.querySelector('.scroll1').scrollLeft <
         document.querySelector('.scroll1').scrollWidth - document.querySelector('.scroll1').clientWidth - 1) {
@@ -102,9 +119,27 @@ function autoScroll() {
         setTimeout(function() { document.querySelector('.scroll2').scrollTo(0, 0) }, 500)
         scroll = setInterval(autoScroll, 2)
     }
+=======
+function index_file() {
+    var autoscroll = setInterval(() => {
+        if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
+            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+        }
+    }, 20)
 
+    document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll) })
+>>>>>>> Stashed changes
+
+    document.querySelector('.nowrap').addEventListener('mouseout', function () {
+        setInterval(() => {
+            if (document.querySelector('.nowrap').scrollLeft !== document.querySelector('.nowrap').scrollWidth) {
+                document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
+            }
+        }, 15)
+    })
 }
 
+<<<<<<< Updated upstream
 var scroll = setInterval(autoScroll, 2)
 
 document.querySelector('.scroll1').addEventListener('mouseover', function() {
@@ -144,6 +179,8 @@ document.querySelector('.scroll2').addEventListener('mouseout', function() { scr
 
 
 
+=======
+>>>>>>> Stashed changes
 
 /*Cart price update*/
 var cart_item = {}
@@ -256,7 +293,7 @@ function cart_load() {
                 var remove_item = document.createElement("img");
                 remove_item.setAttribute("src", "images/remove_item.png");
                 remove_item.setAttribute("class", "remove_item");
-                remove_item.addEventListener("click", function() {
+                remove_item.addEventListener("click", function () {
                     item_div_1.remove();
                     localStorage.removeItem(items)
                 })
@@ -269,7 +306,7 @@ function cart_load() {
                     dunklowblack_input.setAttribute("class", "item-qty")
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(dunklowblack_input)
-                    dunklowblack_input.addEventListener("input", function() {
+                    dunklowblack_input.addEventListener("input", function () {
                         if (dunklowblack_input.value <= 0) {
                             remove_item.style.display = "block"
                         } else { remove_item.style.display = "none" }
@@ -299,7 +336,7 @@ function cart_load() {
                     airforceone_input.setAttribute("class", "item-qty")
                     airforceone_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(airforceone_input)
-                    airforceone_input.addEventListener("input", function() {
+                    airforceone_input.addEventListener("input", function () {
                         if (airforceone_input.value <= 0) {
                             remove_item.style.display = "block"
                         } else { remove_item.style.display = "none" }
@@ -358,37 +395,35 @@ function coupon_apply() {
 }
 
 // NEW03 modal window
-
-
 // modal window's Huy
 function about_us() {
     var blur_everything_not_Huy = document.querySelector('body').querySelectorAll("div:not(div.Huy-bg-modal,div.Huy-bg-modal>*)")
     var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
     var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
 
-    document.getElementById("Huy").addEventListener("click", function() {
+    document.getElementById("Huy").addEventListener("click", function () {
         document.querySelector(".Huy-bg-modal").style.display = "flex";
         blur_everything_not_Huy.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Huymodal").addEventListener("click", function() {
+    document.getElementById("Huymodal").addEventListener("click", function () {
         document.querySelector(".Huy-bg-modal").style.display = "none";
         blur_everything_not_Huy.forEach((div) => { div.style.opacity = "1" })
     });
     // modal window's Huan
-    document.getElementById("Huan").addEventListener("click", function() {
+    document.getElementById("Huan").addEventListener("click", function () {
         document.querySelector(".Huan-bg-modal").style.display = "flex";
         blur_everything_not_Huan.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Huanmodal").addEventListener("click", function() {
+    document.getElementById("Huanmodal").addEventListener("click", function () {
         document.querySelector(".Huan-bg-modal").style.display = "none";
         blur_everything_not_Huan.forEach((div) => { div.style.opacity = "1" })
     });
     //modal window's Nguyen
-    document.getElementById("Nguyen").addEventListener("click", function() {
+    document.getElementById("Nguyen").addEventListener("click", function () {
         document.querySelector(".Nguyen-bg-modal").style.display = "flex";
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Nguyenmodal").addEventListener("click", function() {
+    document.getElementById("Nguyenmodal").addEventListener("click", function () {
         document.querySelector(".Nguyen-bg-modal").style.display = "none";
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
     });
@@ -404,173 +439,182 @@ const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const pw = document.getElementById('pw');
 const confirmPW = document.getElementById('confirmPW');
-const firstName = document.getElementById('firstName');
-const lastName = document.getElementById('lastName');
-const address = document.getElementById('address');
-const city = document.getElementById('city');
-const zipcode = document.getElementById('zipcode');
-const bName = document.getElementById('bName');
-const sName = document.getElementById('sName');
+const firstName= document.getElementById('firstName');
+const lastName= document.getElementById('lastName');
+const address= document.getElementById('address');
+const city= document.getElementById('city');
+const zipcode= document.getElementById('zipcode');
+const bName= document.getElementById('bName');
+const sName= document.getElementById('sName');
+const userName= document.getElementById('userName');
 
+<<<<<<< Updated upstream
 if (form != null) {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
         checkInputs();
     });
+=======
+if (form != null){
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	checkInputs();
+});
+>>>>>>> Stashed changes
 }
 
 function checkInputs() {
-
-    const emailValue = email.value.trim();
-    const phoneValue = phone.value.trim();
+	// const userNameValue = userName.value.trim();
+	const emailValue = email.value.trim();
+	const phoneValue = phone.value.trim();
     const pwValue = pw.value.trim();
-    const confirmPWValue = confirmPW.value.trim();
+	const confirmPWValue = confirmPW.value.trim();
     const firstNameValue = firstName.value.trim();
     const lastNameValue = lastName.value.trim();
     const addressValue = address.value.trim();
     const cityValue = city.value.trim();
     const zipcodeValue = zipcode.value.trim();
-    const bNameValue = bName.value.trim();
-    const sNameValue = sName.value.trim();
+	const bNameValue = bName.value.trim();
+	const sNameValue = sName.value.trim();
+    
+    // if(userNameValue === '') {
+	// 	setErrorFor(userName, 'First name cannot be blank');
+	// } else if (!isuserName(userNameValue)) {
+	// 	setErrorFor(userName, 'Not a valid First Name');
+	// } else {
+	// 	setSuccessFor(userName);
+	// }
+    if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+    if(phoneValue === '') {
+		setErrorFor(phone, 'Phone Number cannot be blank');
+	} else if (!isPhone(phoneValue)) {
+		setErrorFor(phone, 'Not a valid Phone Number');
+	} else {
+		setSuccessFor(phone);
+	}
+    if(pwValue === '') {
+		setErrorFor(pw, 'Password cannot be blank');
+	} else if (!isPw(pwValue)) {
+		setErrorFor(pw, 'Not a valid Password');
+	} else {
+		setSuccessFor(pw);
+	}
+	
+	if(confirmPWValue === '') {
+		setErrorFor(confirmPW, 'Confirm Password cannot be blank');
+	} else if (!isPw(pwValue)) {
+		setErrorFor(confirmPW, 'Not a valid Confirm Password');
+	} else if(pwValue !== confirmPWValue) {
+		setErrorFor(confirmPW, 'Passwords does not match');
+	} else{
+		setSuccessFor(confirmPW);
+	}
+    if(firstNameValue === '') {
+		setErrorFor(firstName, 'First name cannot be blank');
+	} else if (!isfirstName(firstNameValue)) {
+		setErrorFor(firstName, 'Not a valid First Name');
+	} else {
+		setSuccessFor(firstName);
+	}
 
-    if (emailValue === '') {
-        setErrorFor(email, 'Email cannot be blank');
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'Not a valid email');
-    } else {
-        setSuccessFor(email);
-    }
+    if(lastNameValue === '') {
+		setErrorFor(lastName, 'Last name cannot be blank');
+	} else if (!islastName(lastNameValue)) {
+		setErrorFor(lastName, 'Not a valid First Name');
+	} else {
+		setSuccessFor(lastName);
+	}
 
-    if (phoneValue === '') {
-        setErrorFor(phone, 'Phone Number cannot be blank');
-    } else if (!isPhone(phoneValue)) {
-        setErrorFor(phone, 'Not a valid Phone Number');
-    } else {
-        setSuccessFor(phone);
-    }
-    if (pwValue === '') {
-        setErrorFor(pw, 'Password cannot be blank');
-    } else if (!isPw(pwValue)) {
-        setErrorFor(pw, 'Not a valid Password');
-    } else {
-        setSuccessFor(pw);
-    }
+    if(addressValue === '') {
+		setErrorFor(address, 'Address cannot be blank');
+	} else if (!isaddress(addressValue)) {
+		setErrorFor(address, 'Not a valid address');
+	} else {
+		setSuccessFor(address);
+	}
 
-    if (confirmPWValue === '') {
-        setErrorFor(confirmPW, 'Confirm Password cannot be blank');
-    } else if (!isPw(pwValue)) {
-        setErrorFor(confirmPW, 'Not a valid Confirm Password');
-    } else if (pwValue !== confirmPWValue) {
-        setErrorFor(confirmPW, 'Passwords does not match');
-    } else {
-        setSuccessFor(confirmPW);
-    }
-    if (firstNameValue === '') {
-        setErrorFor(firstName, 'First name cannot be blank');
-    } else if (!isfirstName(firstNameValue)) {
-        setErrorFor(firstName, 'Not a valid First Name');
-    } else {
-        setSuccessFor(firstName);
-    }
+    if(cityValue === '') {
+		setErrorFor(city, 'City name cannot be blank');
+	} else if (!iscity(cityValue)) {
+		setErrorFor(city, 'Not a valid city name');
+	} else {
+		setSuccessFor(city);
+	}
 
-    if (lastNameValue === '') {
-        setErrorFor(lastName, 'Last name cannot be blank');
-    } else if (!islastName(lastNameValue)) {
-        setErrorFor(lastName, 'Not a valid First Name');
-    } else {
-        setSuccessFor(lastName);
-    }
-
-    if (addressValue === '') {
-        setErrorFor(address, 'Address cannot be blank');
-    } else if (!isaddress(addressValue)) {
-        setErrorFor(address, 'Not a valid address');
-    } else {
-        setSuccessFor(address);
-    }
-
-    if (cityValue === '') {
-        setErrorFor(city, 'City name cannot be blank');
-    } else if (!iscity(cityValue)) {
-        setErrorFor(city, 'Not a valid city name');
-    } else {
-        setSuccessFor(city);
-    }
-
-    if (zipcodeValue === '') {
-        setErrorFor(zipcode, 'City name cannot be blank');
-    } else if (!isZipcode(zipcodeValue)) {
-        setErrorFor(zipcode, 'Not a valid city name');
-    } else {
-        setSuccessFor(zipcode);
-    }
-
-    if (bNameValue === '') {
-        setErrorFor(bName, 'Business name cannot be blank');
-    } else if (!isbName(bNameValue)) {
-        setErrorFor(bName, 'Not a valid Business name');
-    } else {
-        setSuccessFor(bName);
-    }
-    if (sNameValue === '') {
-        setErrorFor(sName, 'Store name cannot be blank');
-    } else if (!issName(sNameValue)) {
-        setErrorFor(sName, 'Not a valid Store name');
-    } else {
-        setSuccessFor(sName);
-    }
+    if(zipcodeValue === '') {
+		setErrorFor(zipcode, 'City name cannot be blank');
+	} else if (!isZipcode(zipcodeValue)) {
+		setErrorFor(zipcode, 'Not a valid city name');
+	} else {
+		setSuccessFor(zipcode);
+	}
+    
+    if(bNameValue === '') {
+		setErrorFor(bName, 'Business name cannot be blank');
+	} else if (!isbName(bNameValue)) {
+		setErrorFor(bName, 'Not a valid Business name');
+	} else {
+		setSuccessFor(bName);
+	}
+    if(sNameValue === '') {
+		setErrorFor(sName, 'Store name cannot be blank');
+	} else if (!issName(sNameValue)) {
+		setErrorFor(sName, 'Not a valid Store name');
+	} else {
+		setSuccessFor(sName);
+	}
 }
 
-
 function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
 }
 
 function setSuccessFor(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
 }
-
+	
 function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
 function isPhone(phone) {
-    return /^\(?([0-9]{1})\)?[-. ]?(([0-9])[-. ]?){8}(([0-9]{1})[-. ]?)?([0-9]{1})?$/.test(phone);
+	return /^\(?([0-9]{1})\)?[-. ]?(([0-9])[-. ]?){8}(([0-9]{1})[-. ]?)?([0-9]{1})?$/.test(phone);
 }
-
 function isPw(pw) {
     return /^(?!.* )(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,20})$/.test(pw);
 }
-
 function isfirstName(firstName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(firstName);
 }
-
 function islastName(lastName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(lastName);
 }
-
 function isaddress(address) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(address);
 }
-
 function iscity(city) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(city);
 }
-
 function isZipcode(zipcode) {
     return /^[0-9]{4,6}$/.test(zipcode);
 }
-
 function isbName(bName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(bName);
 }
-
 function issName(sName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(sName);
+}
+function isuserName(userName){
+ return /^[a-zA-Z0-9 ]{3,}$/.test(userName);
 }
