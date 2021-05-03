@@ -91,7 +91,7 @@ function index_file() {
     document.querySelector('.nowrap').addEventListener('mouseover', function() { 
 	clearInterval(timing);
     })
-    document.querySelector('.nowrap').addEventListener('mouseover', function() { 
+    document.querySelector('.nowrap').addEventListener('mouseout', function() { 
 	autoscroll()
     	timing = setInterval(autoscroll, 20)
     })
