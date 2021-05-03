@@ -87,13 +87,13 @@ function index_file() {
         }
     }
     autoscroll()
-    timing = setInterval(autoscroll, 20)
+    timing = setInterval(autoscroll, 15)
     document.querySelector('.nowrap').addEventListener('mouseover', function() { 
 	clearInterval(timing);
     })
     document.querySelector('.nowrap').addEventListener('mouseout', function() { 
 	autoscroll()
-    	timing = setInterval(autoscroll, 20)
+    	timing = setInterval(autoscroll, 15)
     })
 
 }
