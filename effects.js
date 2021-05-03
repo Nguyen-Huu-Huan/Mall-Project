@@ -82,7 +82,7 @@ function index_file() {
         if (document.querySelector('.nowrap').scrollLeft <= document.querySelector('.nowrap').scrollWidth-document.querySelector('.nowrap').clientWidth-1) {
             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
         }else{
-	    console.log('Hi')
+	    document.querySelector('.nowrap').scrollTo(0, 0)
 	}
     }, 20)
 
@@ -93,7 +93,7 @@ function index_file() {
             if (document.querySelector('.nowrap').scrollLeft != document.querySelector('.nowrap').scrollWidth-document.querySelector('.nowrap').clientWidth-1) {
                 document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
             }else{
-	    	console.log('Hi')
+	    	document.querySelector('.nowrap').scrollTo(0, 0)
 	    }
         }, 15)
     })
