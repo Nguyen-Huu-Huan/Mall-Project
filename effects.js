@@ -81,7 +81,9 @@ function index_file() {
     var autoscroll = setInterval(() => {
         if (document.querySelector('.nowrap').scrollLeft != document.querySelector('.nowrap').scrollWidth) {
             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
-        }
+        }else{
+	    document.querySelector('.nowrap').scrollTo(0,0)
+	}
     }, 20)
 
     document.querySelector('.nowrap').addEventListener('mouseover', function() { clearInterval(autoscroll); console.log('hello'); })
@@ -90,7 +92,9 @@ function index_file() {
         setInterval(() => {
             if (document.querySelector('.nowrap').scrollLeft != document.querySelector('.nowrap').scrollWidth) {
                 document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0)
-            }
+            }else{
+	    	document.querySelector('.nowrap').scrollTo(0,0)
+	    }
         }, 15)
     })
 }
