@@ -78,20 +78,21 @@ function wrongPassword() {
 }
 
 function index_file() {
-    var autoscroll = setInterval(() => {
+    var timing
+    function autoscroll(){
         if (document.querySelector('.nowrap').scrollLeft <= document.querySelector('.nowrap').scrollWidth-document.querySelector('.nowrap').clientWidth-1) {
-            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0);
+	    document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0);
         }else{
 	    document.querySelector('.nowrap').scrollTo(0, 0)
-	}
-    }, 15)
-    console.log(autoscroll)
+        }
+    }
     document.querySelector('.nowrap').addEventListener('mouseover', function() { 
-	clearInterval(autoscroll);
+	clearInterval(timing);
     })
-//     document.querySelector('.nowrap').addEventListener('mouseout', function () {
-//         setInterval(autoscroll)
-//     })
+    document.querySelector('.nowrap').addEventListener('mouseout', function () {
+        autoscroll()
+	timing = setInterval(autoscroll, 20)
+    })
 }
 
 
