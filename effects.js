@@ -377,7 +377,6 @@ form.addEventListener('submit', e => {
 	checkInputs();
 });
 }
-var countSuccess = 0
 function checkContact(){
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
@@ -385,42 +384,33 @@ function checkContact(){
   
     if(option1.checked==true){
         setSuccessFor(option1);
-	countSuccess+=1
     }
     else if(option2.checked==true){
         setSuccessFor(option2);
-        countSuccess+=1
     }
     else {
         setErrorFor(option2, 'Select exactly one option!');
     }
     if(day1.checked==true){
         setSuccessFor(day1);
-        countSuccess+=1
     }
     else if(day2.checked==true){
         setSuccessFor(day2);
-	countSuccess+=1
     }
     else if(day3.checked==true){
         setSuccessFor(day3);
-	countSuccess+=1
     }
     else if(day4.checked==true){
         setSuccessFor(day4);
-	countSuccess+=1
     }
     else if(day5.checked==true){
         setSuccessFor(day5);
-	countSuccess+=1
     }
     else if(day6.checked==true){
         setSuccessFor(day6);
-	countSuccess+=1
     }
     else if(day7.checked==true){
         setSuccessFor(day7);
-        countSuccess+=1
     }
     else {
         setErrorFor(day1, 'Select at least one option!');
@@ -434,7 +424,6 @@ function checkContact(){
 	setErrorFor(userName, 'Not a valid Name');
     } else {
 	setSuccessFor(userName);
-	countSuccess+=1
     }
     
     if(emailValue === '') {
@@ -443,7 +432,6 @@ function checkContact(){
 	setErrorFor(email, 'Not a valid email');
     } else {
 	setSuccessFor(email);
-	countSuccess+=1
     }
 
     if(phoneValue === '') {
@@ -452,111 +440,123 @@ function checkContact(){
 	setErrorFor(phone, 'Not a valid Phone Number');
     } else {
 	setSuccessFor(phone);
-	countSuccess+=1
     }
-    console.log(countSuccess)
 }
+var countSuccess = 0
 function checkInputs() {
-	// const userNameValue = userName.value.trim();
-	const emailValue = email.value.trim();
-	const phoneValue = phone.value.trim();
+    // const userNameValue = userName.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
     const pwValue = pw.value.trim();
-	const confirmPWValue = confirmPW.value.trim();
+    const confirmPWValue = confirmPW.value.trim();
     const firstNameValue = firstName.value.trim();
     const lastNameValue = lastName.value.trim();
     const addressValue = address.value.trim();
     const cityValue = city.value.trim();
     const zipcodeValue = zipcode.value.trim();
-	const bNameValue = bName.value.trim();
-	const sNameValue = sName.value.trim();
+    const bNameValue = bName.value.trim();
+    const sNameValue = sName.value.trim();
     
 
     if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
-	} else {
-		setSuccessFor(email);
-	}
+	setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+	setErrorFor(email, 'Not a valid email');
+    } else {
+	setSuccessFor(email);
+        countSuccess+=1
+    }
 	
     if(phoneValue === '') {
-		setErrorFor(phone, 'Phone Number cannot be blank');
-	} else if (!isPhone(phoneValue)) {
-		setErrorFor(phone, 'Not a valid Phone Number');
-	} else {
-		setSuccessFor(phone);
-	}
+	setErrorFor(phone, 'Phone Number cannot be blank');
+    } else if (!isPhone(phoneValue)) {
+	setErrorFor(phone, 'Not a valid Phone Number');
+    } else {
+	setSuccessFor(phone);
+        countSuccess+=1
+
+    }
     if(pwValue === '') {
-		setErrorFor(pw, 'Password cannot be blank');
-	} else if (!isPw(pwValue)) {
-		setErrorFor(pw, 'Not a valid Password');
-	} else {
-		setSuccessFor(pw);
-	}
+	setErrorFor(pw, 'Password cannot be blank');
+    } else if (!isPw(pwValue)) {
+	setErrorFor(pw, 'Not a valid Password');
+    } else {
+	setSuccessFor(pw);
+	countSuccess+=1
+    }
 	
-	if(confirmPWValue === '') {
-		setErrorFor(confirmPW, 'Confirm Password cannot be blank');
-	} else if (!isPw(pwValue)) {
-		setErrorFor(confirmPW, 'Not a valid Confirm Password');
-	} else if(pwValue !== confirmPWValue) {
-		setErrorFor(confirmPW, 'Passwords does not match');
-	} else{
-		setSuccessFor(confirmPW);
-	}
+    if(confirmPWValue === '') {
+	setErrorFor(confirmPW, 'Confirm Password cannot be blank');
+    } else if (!isPw(pwValue)) {
+	setErrorFor(confirmPW, 'Not a valid Confirm Password');
+    } else if(pwValue !== confirmPWValue) {
+	setErrorFor(confirmPW, 'Passwords does not match');
+    } else{
+	setSuccessFor(confirmPW);
+	countSuccess+=1
+    }
     if(firstNameValue === '') {
-		setErrorFor(firstName, 'First name cannot be blank');
-	} else if (!isfirstName(firstNameValue)) {
-		setErrorFor(firstName, 'Not a valid First Name');
-	} else {
-		setSuccessFor(firstName);
-	}
+	setErrorFor(firstName, 'First name cannot be blank');
+    } else if (!isfirstName(firstNameValue)) {
+	setErrorFor(firstName, 'Not a valid First Name');
+    } else {
+	setSuccessFor(firstName);
+        countSuccess+=1
+    }
 
     if(lastNameValue === '') {
-		setErrorFor(lastName, 'Last name cannot be blank');
-	} else if (!islastName(lastNameValue)) {
-		setErrorFor(lastName, 'Not a valid First Name');
-	} else {
-		setSuccessFor(lastName);
-	}
+  	setErrorFor(lastName, 'Last name cannot be blank');
+    } else if (!islastName(lastNameValue)) {
+	setErrorFor(lastName, 'Not a valid First Name');
+    } else {
+	setSuccessFor(lastName);
+	countSuccess+=1
+    }
 
     if(addressValue === '') {
-		setErrorFor(address, 'Address cannot be blank');
-	} else if (!isaddress(addressValue)) {
-		setErrorFor(address, 'Not a valid address');
-	} else {
-		setSuccessFor(address);
-	}
+	setErrorFor(address, 'Address cannot be blank');
+    } else if (!isaddress(addressValue)) {
+	setErrorFor(address, 'Not a valid address');
+    } else {
+	setSuccessFor(address);
+        countSuccess+=1
+    }
 
     if(cityValue === '') {
-		setErrorFor(city, 'City name cannot be blank');
-	} else if (!iscity(cityValue)) {
-		setErrorFor(city, 'Not a valid city name');
-	} else {
-		setSuccessFor(city);
-	}
+	setErrorFor(city, 'City name cannot be blank');
+    } else if (!iscity(cityValue)) {
+	setErrorFor(city, 'Not a valid city name');
+    } else {
+	setSuccessFor(city);
+        countSuccess+=1
+    }
 
     if(zipcodeValue === '') {
-		setErrorFor(zipcode, 'City name cannot be blank');
-	} else if (!isZipcode(zipcodeValue)) {
-		setErrorFor(zipcode, 'Not a valid city name');
-	} else {
-		setSuccessFor(zipcode);
-	}
-    
+	setErrorFor(zipcode, 'City name cannot be blank');
+    } else if (!isZipcode(zipcodeValue)) {
+	setErrorFor(zipcode, 'Not a valid city name');
+    } else {
+	setSuccessFor(zipcode);
+        countSuccess+=1
+    }
+    if 
     if(bNameValue === '') {
-		setErrorFor(bName, 'Business name cannot be blank');
-	} else if (!isbName(bNameValue)) {
-		setErrorFor(bName, 'Not a valid Business name');
-	} else {
-		setSuccessFor(bName);
-	}
+	setErrorFor(bName, 'Business name cannot be blank');
+    } else if (!isbName(bNameValue)) {
+	setErrorFor(bName, 'Not a valid Business name');
+    } else {
+	setSuccessFor(bName);
+    }
     if(sNameValue === '') {
-		setErrorFor(sName, 'Store name cannot be blank');
-	} else if (!issName(sNameValue)) {
-		setErrorFor(sName, 'Not a valid Store name');
-	} else {
-		setSuccessFor(sName);
-	}
+	setErrorFor(sName, 'Store name cannot be blank');
+    } else if (!issName(sNameValue)) {
+	setErrorFor(sName, 'Not a valid Store name');
+    } else {
+	setSuccessFor(sName);
+    }
+    if (countSuccess==9){
+    	window.open('account.html')
+    }
 }
 
 function setErrorFor(input, message) {
