@@ -539,7 +539,6 @@ function checkInputs() {
 	setSuccessFor(zipcode);
         countSuccess+=1
     }
-    if 
     if(bNameValue === '') {
 	setErrorFor(bName, 'Business name cannot be blank');
     } else if (!isbName(bNameValue)) {
