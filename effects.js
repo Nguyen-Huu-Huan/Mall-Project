@@ -377,40 +377,50 @@ form.addEventListener('submit', e => {
 	checkInputs();
 });
 }
+var countSuccess = 0
 function checkContact(){
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
-    
+  
     if(option1.checked==true){
         setSuccessFor(option1);
+	countSuccess+=1
     }
     else if(option2.checked==true){
         setSuccessFor(option2);
+        countSuccess+=1
     }
     else {
         setErrorFor(option2, 'Select exactly one option!');
     }
     if(day1.checked==true){
         setSuccessFor(day1);
+        countSuccess+=1
     }
     else if(day2.checked==true){
         setSuccessFor(day2);
+	countSuccess+=1
     }
     else if(day3.checked==true){
         setSuccessFor(day3);
+	countSuccess+=1
     }
     else if(day4.checked==true){
         setSuccessFor(day4);
+	countSuccess+=1
     }
     else if(day5.checked==true){
         setSuccessFor(day5);
+	countSuccess+=1
     }
     else if(day6.checked==true){
         setSuccessFor(day6);
+	countSuccess+=1
     }
     else if(day7.checked==true){
         setSuccessFor(day7);
+        countSuccess+=1
     }
     else {
         setErrorFor(day1, 'Select at least one option!');
@@ -419,28 +429,32 @@ function checkContact(){
     
 
     if(userNameValue === '') {
-		setErrorFor(userName, ' Name cannot be blank');
-	} else if (!isuserName(userNameValue)) {
-		setErrorFor(userName, 'Not a valid Name');
-	} else {
-		setSuccessFor(userName);
-	}
+	setErrorFor(userName, ' Name cannot be blank');
+    } else if (!isuserName(userNameValue)) {
+	setErrorFor(userName, 'Not a valid Name');
+    } else {
+	setSuccessFor(userName);
+	countSuccess+=1
+    }
     
     if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
-	} else {
-		setSuccessFor(email);
-	}
+	setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+	setErrorFor(email, 'Not a valid email');
+    } else {
+	setSuccessFor(email);
+	countSuccess+=1
+    }
 
     if(phoneValue === '') {
-		setErrorFor(phone, 'Phone Number cannot be blank');
-	} else if (!isPhone(phoneValue)) {
-		setErrorFor(phone, 'Not a valid Phone Number');
-	} else {
-		setSuccessFor(phone);
-	}
+	setErrorFor(phone, 'Phone Number cannot be blank');
+    } else if (!isPhone(phoneValue)) {
+	setErrorFor(phone, 'Not a valid Phone Number');
+    } else {
+	setSuccessFor(phone);
+	countSuccess+=1
+    }
+    console.log(countSuccess)
 }
 function checkInputs() {
 	// const userNameValue = userName.value.trim();
