@@ -539,22 +539,23 @@ function checkInputs() {
 	setSuccessFor(zipcode);
         countSuccess+=1
     }
-//     if (document.querySelectorAll("input[name='account']").querySelector('')
-    if(bNameValue === '') {
-	setErrorFor(bName, 'Business name cannot be blank');
-    } else if (!isbName(bNameValue)) {
-	setErrorFor(bName, 'Not a valid Business name');
-    } else {
-	setSuccessFor(bName);
+    if (document.querySelector("#owner-checked").checked==true){
+	    if(bNameValue === '') {
+		setErrorFor(bName, 'Business name cannot be blank');
+	    } else if (!isbName(bNameValue)) {
+		setErrorFor(bName, 'Not a valid Business name');
+	    } else {
+		setSuccessFor(bName);
+	    }
+	    if(sNameValue === '') {
+		setErrorFor(sName, 'Store name cannot be blank');
+	    } else if (!issName(sNameValue)) {
+		setErrorFor(sName, 'Not a valid Store name');
+	    } else {
+		setSuccessFor(sName);
+	    }
     }
-    if(sNameValue === '') {
-	setErrorFor(sName, 'Store name cannot be blank');
-    } else if (!issName(sNameValue)) {
-	setErrorFor(sName, 'Not a valid Store name');
-    } else {
-	setSuccessFor(sName);
-    }
-    if (countSuccess==9){
+    if (countSuccess>=9){
     	window.open('myaccount.html')
     }
 }
