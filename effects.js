@@ -442,7 +442,7 @@ function checkContact(){
 	setSuccessFor(phone);
     }
 }
-
+var countSuccess = 0
 function checkInputs() {
     // const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
@@ -456,7 +456,7 @@ function checkInputs() {
     const zipcodeValue = zipcode.value.trim();
     const bNameValue = bName.value.trim();
     const sNameValue = sName.value.trim();
-    var countSuccess = 0
+    countSuccess = 0
 
     if(emailValue === '') {
 	setErrorFor(email, 'Email cannot be blank');
