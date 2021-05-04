@@ -782,6 +782,7 @@ textarea {
 }
 
 
+
 /*--FAQs--*/
 
 .faqs {
@@ -955,7 +956,7 @@ textarea {
     margin-bottom: 0.3rem;
 }
 
-.form-control input {
+.form-control input,textarea {
     border: 0.1rem solid #f0f0f0;
     border-radius: 0.2rem;
     display: block;
