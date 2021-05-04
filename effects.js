@@ -539,6 +539,7 @@ function checkInputs() {
 	setSuccessFor(zipcode);
         countSuccess+=1
     }
+//     if (document.querySelectorAll("input[name='account']").querySelector('')
     if(bNameValue === '') {
 	setErrorFor(bName, 'Business name cannot be blank');
     } else if (!isbName(bNameValue)) {
@@ -554,7 +555,7 @@ function checkInputs() {
 	setSuccessFor(sName);
     }
     if (countSuccess==9){
-    	window.open('account.html')
+    	window.open('myaccount.html')
     }
 }
 
