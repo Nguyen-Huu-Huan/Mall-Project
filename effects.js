@@ -457,89 +457,92 @@ function checkInputs() {
     const bNameValue = bName.value.trim();
     const sNameValue = sName.value.trim();
     countSuccess = 0
-
-    if(emailValue === '') {
-	setErrorFor(email, 'Email cannot be blank');
-    } else if (!isEmail(emailValue)) {
-	setErrorFor(email, 'Not a valid email');
-    } else {
-	setSuccessFor(email);
-        countSuccess+=1
-    }
-	
-    if(phoneValue === '') {
-	setErrorFor(phone, 'Phone Number cannot be blank');
-    } else if (!isPhone(phoneValue)) {
-	setErrorFor(phone, 'Not a valid Phone Number');
-    } else {
-	setSuccessFor(phone);
-        countSuccess+=1
-
-    }
-    if(pwValue === '') {
-	setErrorFor(pw, 'Password cannot be blank');
-    } else if (!isPw(pwValue)) {
-	setErrorFor(pw, 'Not a valid Password');
-    } else {
-	setSuccessFor(pw);
-	countSuccess+=1
-    }
-	
-    if(confirmPWValue === '') {
-	setErrorFor(confirmPW, 'Confirm Password cannot be blank');
-    } else if (!isPw(pwValue)) {
-	setErrorFor(confirmPW, 'Not a valid Confirm Password');
-    } else if(pwValue !== confirmPWValue) {
-	setErrorFor(confirmPW, 'Passwords does not match');
-    } else{
-	setSuccessFor(confirmPW);
-	countSuccess+=1
-    }
-    if(firstNameValue === '') {
-	setErrorFor(firstName, 'First name cannot be blank');
-    } else if (!isfirstName(firstNameValue)) {
-	setErrorFor(firstName, 'Not a valid First Name');
-    } else {
-	setSuccessFor(firstName);
-        countSuccess+=1
-    }
-
-    if(lastNameValue === '') {
-  	setErrorFor(lastName, 'Last name cannot be blank');
-    } else if (!islastName(lastNameValue)) {
-	setErrorFor(lastName, 'Not a valid First Name');
-    } else {
-	setSuccessFor(lastName);
-	countSuccess+=1
-    }
-
-    if(addressValue === '') {
-	setErrorFor(address, 'Address cannot be blank');
-    } else if (!isaddress(addressValue)) {
-	setErrorFor(address, 'Not a valid address');
-    } else {
-	setSuccessFor(address);
-        countSuccess+=1
-    }
-
-    if(cityValue === '') {
-	setErrorFor(city, 'City name cannot be blank');
-    } else if (!iscity(cityValue)) {
-	setErrorFor(city, 'Not a valid city name');
-    } else {
-	setSuccessFor(city);
-        countSuccess+=1
-    }
-
-    if(zipcodeValue === '') {
-	setErrorFor(zipcode, 'City name cannot be blank');
-    } else if (!isZipcode(zipcodeValue)) {
-	setErrorFor(zipcode, 'Not a valid city name');
-    } else {
-	setSuccessFor(zipcode);
-        countSuccess+=1
-    }
     if (document.querySelector("#owner-checked").checked==true){
+	    if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	    } else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	    } else {
+		setSuccessFor(email);
+		countSuccess+=1
+	    }
+
+	    if(phoneValue === '') {
+		setErrorFor(phone, 'Phone Number cannot be blank');
+	    } else if (!isPhone(phoneValue)) {
+		setErrorFor(phone, 'Not a valid Phone Number');
+	    } else {
+		setSuccessFor(phone);
+		countSuccess+=1
+
+	    }
+	    if(pwValue === '') {
+		setErrorFor(pw, 'Password cannot be blank');
+	    } else if (!isPw(pwValue)) {
+		setErrorFor(pw, 'Not a valid Password');
+	    } else {
+		setSuccessFor(pw);
+		countSuccess+=1
+	    }
+
+	    if(confirmPWValue === '') {
+		setErrorFor(confirmPW, 'Confirm Password cannot be blank');
+	    } else if (!isPw(pwValue)) {
+		setErrorFor(confirmPW, 'Not a valid Confirm Password');
+	    } else if(pwValue !== confirmPWValue) {
+		setErrorFor(confirmPW, 'Passwords does not match');
+	    } else{
+		setSuccessFor(confirmPW);
+		countSuccess+=1
+	    }
+	    if(firstNameValue === '') {
+		setErrorFor(firstName, 'First name cannot be blank');
+	    } else if (!isfirstName(firstNameValue)) {
+		setErrorFor(firstName, 'Not a valid First Name');
+	    } else {
+		setSuccessFor(firstName);
+		countSuccess+=1
+	    }
+
+	    if(lastNameValue === '') {
+		setErrorFor(lastName, 'Last name cannot be blank');
+	    } else if (!islastName(lastNameValue)) {
+		setErrorFor(lastName, 'Not a valid First Name');
+	    } else {
+		setSuccessFor(lastName);
+		countSuccess+=1
+	    }
+
+	    if(addressValue === '') {
+		setErrorFor(address, 'Address cannot be blank');
+	    } else if (!isaddress(addressValue)) {
+		setErrorFor(address, 'Not a valid address');
+	    } else {
+		setSuccessFor(address);
+		countSuccess+=1
+	    }
+
+	    if(cityValue === '') {
+		setErrorFor(city, 'City name cannot be blank');
+	    } else if (!iscity(cityValue)) {
+		setErrorFor(city, 'Not a valid city name');
+	    } else {
+		setSuccessFor(city);
+		countSuccess+=1
+	    }
+
+	    if(zipcodeValue === '') {
+		setErrorFor(zipcode, 'City name cannot be blank');
+	    } else if (!isZipcode(zipcodeValue)) {
+		setErrorFor(zipcode, 'Not a valid city name');
+	    } else {
+		setSuccessFor(zipcode);
+		countSuccess+=1
+	    }
+	    if (countSuccess==9){
+    		window.open('myaccount.html')
+    	    }
+    }else{
 	    if(bNameValue === '') {
 		setErrorFor(bName, 'Business name cannot be blank');
 	    } else if (!isbName(bNameValue)) {
@@ -560,9 +563,7 @@ function checkInputs() {
     		window.open('myaccount.html')
             }
     }
-    if (countSuccess==9){
-    	window.open('myaccount.html')
-    }
+
 }
 
 function setErrorFor(input, message) {
