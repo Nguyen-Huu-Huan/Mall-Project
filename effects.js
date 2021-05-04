@@ -371,7 +371,7 @@ const day4 = document.getElementById('day4');
 const day5 = document.getElementById('day5');
 const day6 = document.getElementById('day6');
 const day7 = document.getElementById('day7');
-const message = document.getElementById('message');
+
 
 if (form != null) {
     form.addEventListener('submit', e => {
@@ -386,13 +386,6 @@ function checkContact() {
     const phoneValue = phone.value.trim();
     const messageValue = message.value.trim();
 
-    if (messageValue < '50') {
-        setErrorFor(message, ' You can type more letters!');
-    } else if (!isuserName(messageValue)) {
-        setErrorFor(message, 'Not a valid Name');
-    } else {
-        setSuccessFor(message);
-    }
  
 
     if (option1.checked == true) {
