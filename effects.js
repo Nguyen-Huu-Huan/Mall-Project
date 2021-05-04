@@ -546,6 +546,7 @@ function checkInputs() {
 		setErrorFor(bName, 'Not a valid Business name');
 	    } else {
 		setSuccessFor(bName);
+		countSuccess+=1
 	    }
 	    if(sNameValue === '') {
 		setErrorFor(sName, 'Store name cannot be blank');
@@ -553,9 +554,13 @@ function checkInputs() {
 		setErrorFor(sName, 'Not a valid Store name');
 	    } else {
 		setSuccessFor(sName);
+		countSuccess+=1
 	    }
+	    if (countSuccess==11){
+    		window.open('myaccount.html')
+            }
     }
-    if (countSuccess>=9){
+    if (countSuccess==9){
     	window.open('myaccount.html')
     }
 }
