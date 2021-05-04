@@ -350,7 +350,6 @@ label {
     width: 100%;
 }
 
-
 .nowrap {
     display: flex;
     flex-wrap: nowrap;
@@ -713,7 +712,6 @@ ul {
 }
 
 
-
 /*---fees----*/
 
 .fees-category {
@@ -780,7 +778,6 @@ ul {
 textarea {
     max-width: 100%;
 }
-
 
 
 /*--FAQs--*/
@@ -956,7 +953,8 @@ textarea {
     margin-bottom: 0.3rem;
 }
 
-.form-control input,textarea {
+.form-control input,
+textarea {
     border: 0.1rem solid #f0f0f0;
     border-radius: 0.2rem;
     display: block;

@@ -32,7 +32,12 @@ function add_to_cart(item) {
     if (islogin == 'true') {
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => { p_tag.innerHTML = result; p_tag.style.color = "red"; p_tag.style.display = "inline"; p_tag.style.animation = "shaking 0.5s infinite"; })
+        document.querySelectorAll(".cart-qty").forEach((p_tag) => {
+            p_tag.innerHTML = result;
+            p_tag.style.color = "red";
+            p_tag.style.display = "inline";
+            p_tag.style.animation = "shaking 0.5s infinite";
+        })
         localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
         document.querySelector(".cart-icon").style.animation = "shaking 0.5s infinite"
         document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
@@ -43,7 +48,7 @@ function add_to_cart(item) {
 }
 
 // Check login status and get email from form input
-function login_button() {
+function login() {
     localStorage.setItem('login', true)
     localStorage.setItem('login_email', document.querySelector("#login-email").value)
     return true
@@ -79,6 +84,7 @@ function wrongPassword() {
 
 function index_file() {
     var timing
+
     function autoscroll() {
         if (document.querySelector('.nowrap').scrollLeft <= document.querySelector('.nowrap').scrollWidth - document.querySelector('.nowrap').clientWidth - 1) {
             document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0);
@@ -88,10 +94,10 @@ function index_file() {
     }
     autoscroll()
     timing = setInterval(autoscroll, 15)
-    document.querySelector('.nowrap').addEventListener('mouseover', function () {
+    document.querySelector('.nowrap').addEventListener('mouseover', function() {
         clearInterval(timing);
     })
-    document.querySelector('.nowrap').addEventListener('mouseout', function () {
+    document.querySelector('.nowrap').addEventListener('mouseout', function() {
         autoscroll()
         timing = setInterval(autoscroll, 15)
     })
@@ -210,7 +216,7 @@ function cart_load() {
                 var remove_item = document.createElement("img");
                 remove_item.setAttribute("src", "images/remove_item.png");
                 remove_item.setAttribute("class", "remove_item");
-                remove_item.addEventListener("click", function () {
+                remove_item.addEventListener("click", function() {
                     item_div_1.remove();
                     localStorage.removeItem(items)
                 })
@@ -223,7 +229,7 @@ function cart_load() {
                     dunklowblack_input.setAttribute("class", "item-qty")
                     dunklowblack_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(dunklowblack_input)
-                    dunklowblack_input.addEventListener("input", function () {
+                    dunklowblack_input.addEventListener("input", function() {
                         if (dunklowblack_input.value <= 0) {
                             remove_item.style.display = "block"
                         } else { remove_item.style.display = "none" }
@@ -253,7 +259,7 @@ function cart_load() {
                     airforceone_input.setAttribute("class", "item-qty")
                     airforceone_input.setAttribute("value", cart_item[items][1])
                     item_div_1_3_1.appendChild(airforceone_input)
-                    airforceone_input.addEventListener("input", function () {
+                    airforceone_input.addEventListener("input", function() {
                         if (airforceone_input.value <= 0) {
                             remove_item.style.display = "block"
                         } else { remove_item.style.display = "none" }
@@ -318,29 +324,29 @@ function about_us() {
     var blur_everything_not_Huan = document.querySelector('body').querySelectorAll("div:not(div.Huan-bg-modal,div.Huan-bg-modal>*)")
     var blur_everything_not_Nguyen = document.querySelector('body').querySelectorAll("div:not(div.Nguyen-bg-modal,div.Nguyen-bg-modal>*)")
 
-    document.getElementById("Huy").addEventListener("click", function () {
+    document.getElementById("Huy").addEventListener("click", function() {
         document.querySelector(".Huy-bg-modal").style.display = "flex";
         blur_everything_not_Huy.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Huymodal").addEventListener("click", function () {
+    document.getElementById("Huymodal").addEventListener("click", function() {
         document.querySelector(".Huy-bg-modal").style.display = "none";
         blur_everything_not_Huy.forEach((div) => { div.style.opacity = "1" })
     });
     // modal window's Huan
-    document.getElementById("Huan").addEventListener("click", function () {
+    document.getElementById("Huan").addEventListener("click", function() {
         document.querySelector(".Huan-bg-modal").style.display = "flex";
         blur_everything_not_Huan.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Huanmodal").addEventListener("click", function () {
+    document.getElementById("Huanmodal").addEventListener("click", function() {
         document.querySelector(".Huan-bg-modal").style.display = "none";
         blur_everything_not_Huan.forEach((div) => { div.style.opacity = "1" })
     });
     //modal window's Nguyen
-    document.getElementById("Nguyen").addEventListener("click", function () {
+    document.getElementById("Nguyen").addEventListener("click", function() {
         document.querySelector(".Nguyen-bg-modal").style.display = "flex";
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "0.651" })
     });
-    document.getElementById("Nguyenmodal").addEventListener("click", function () {
+    document.getElementById("Nguyenmodal").addEventListener("click", function() {
         document.querySelector(".Nguyen-bg-modal").style.display = "none";
         blur_everything_not_Nguyen.forEach((div) => { div.style.opacity = "1" })
     });
@@ -371,7 +377,53 @@ const day4 = document.getElementById('day4');
 const day5 = document.getElementById('day5');
 const day6 = document.getElementById('day6');
 const day7 = document.getElementById('day7');
+const contactMessage = document.getElementById('contact-message');
+var typed = 0
 
+// Thông báo của Contact Message
+if (contactMessage != null) {
+    // Chạy function mỗi lần có 1 chữ type vô
+    contactMessage.addEventListener('input', function() {
+        // Độ dài chữ đã typed không bao gồm dấu cách
+        typed = contactMessage.value.replace(/\s+/g, '').length
+
+        // 1) <50 CHỮ
+        if (typed < 50) {
+            document.getElementById('contact-error').style.color = '#e74c3c';
+            // nếu còn 1 chữ thì là letter chứ k phải LETTERS
+            if ((50 - typed) == 1) {
+                setErrorFor(contactMessage, (50 - typed) + ' more letter are needed');
+            } else {
+                setErrorFor(contactMessage, (50 - typed) + ' more letters are needed');
+            }
+        }
+
+        // 2) >=50 VÀ <500 CHỮ
+        if (typed >= 50 && typed < 500) {
+            document.getElementById('contact-error').style.color = 'gray';
+            if ((500 - typed) == 1) {
+                setErrorFor(contactMessage, 'You can type ' + (500 - typed) + ' more letter');
+            } else {
+                setErrorFor(contactMessage, 'You can type ' + (500 - typed) + ' more letters');
+            }
+        }
+
+        // 3) >500 CHỮ
+        if (typed > 500) {
+            document.getElementById('contact-error').style.color = '#e74c3c';
+            if ((typed - 500) == 1) {
+                setErrorFor(contactMessage, 'Deleting ' + (typed - 500) + ' letter is needed ');
+            } else {
+                setErrorFor(contactMessage, 'Deleting ' + (typed - 500) + ' letters is needed ');
+            }
+        }
+
+        // 4) 500 CHỮ
+        if (typed == 500) {
+            setErrorFor(contactMessage, '');
+        }
+    })
+}
 
 if (form != null) {
     form.addEventListener('submit', e => {
@@ -380,45 +432,35 @@ if (form != null) {
         checkInputs();
     });
 }
+
 function checkContact() {
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
-    const messageValue = message.value.trim();
 
- 
 
     if (option1.checked == true) {
         setSuccessFor(option1);
-    }
-    else if (option2.checked == true) {
+    } else if (option2.checked == true) {
         setSuccessFor(option2);
-    }
-    else {
+    } else {
         setErrorFor(option2, 'Select exactly one option!');
     }
     if (day1.checked == true) {
         setSuccessFor(day1);
-    }
-    else if (day2.checked == true) {
+    } else if (day2.checked == true) {
         setSuccessFor(day2);
-    }
-    else if (day3.checked == true) {
+    } else if (day3.checked == true) {
         setSuccessFor(day3);
-    }
-    else if (day4.checked == true) {
+    } else if (day4.checked == true) {
         setSuccessFor(day4);
-    }
-    else if (day5.checked == true) {
+    } else if (day5.checked == true) {
         setSuccessFor(day5);
-    }
-    else if (day6.checked == true) {
+    } else if (day6.checked == true) {
         setSuccessFor(day6);
-    }
-    else if (day7.checked == true) {
+    } else if (day7.checked == true) {
         setSuccessFor(day7);
-    }
-    else {
+    } else {
         setErrorFor(day1, 'Select at least one option!');
     }
 
@@ -447,8 +489,10 @@ function checkContact() {
     } else {
         setSuccessFor(phone);
     }
+
 }
 var countSuccess = 0
+
 function checkInputs() {
     // const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
@@ -587,35 +631,43 @@ function setSuccessFor(input) {
 function isEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
 function isPhone(phone) {
     return /^\(?([0-9]{1})\)?[-. ]?(([0-9])[-. ]?){8}(([0-9]{1})[-. ]?)?([0-9]{1})?$/.test(phone);
 }
+
 function isPw(pw) {
     return /^(?!.* )(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,20})$/.test(pw);
 }
+
 function isfirstName(firstName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(firstName);
 }
+
 function islastName(lastName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(lastName);
 }
+
 function isaddress(address) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(address);
 }
+
 function iscity(city) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(city);
 }
+
 function isZipcode(zipcode) {
     return /^[0-9]{4,6}$/.test(zipcode);
 }
+
 function isbName(bName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(bName);
 }
+
 function issName(sName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(sName);
 }
+
 function isuserName(userName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(userName);
 }
-
-
