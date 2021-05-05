@@ -380,14 +380,10 @@ const day7 = document.getElementById('day7');
 const contactMessage = document.getElementById('contact-message');
 var typed = 0
 
-// Thông báo của Contact Message
 if (contactMessage != null) {
-    // Chạy function mỗi lần có 1 chữ type vô
     contactMessage.addEventListener('input', function() {
-        // Độ dài chữ đã typed không bao gồm dấu cách
         typed = contactMessage.value.replace(/\s+/g, '').length
 
-        // 1) <50 CHỮ
         if (typed < 50) {
             document.getElementById('contact-error').style.color = '#e74c3c';
             // nếu còn 1 chữ thì là letter chứ k phải LETTERS
@@ -398,7 +394,6 @@ if (contactMessage != null) {
             }
         }
 
-        // 2) >=50 VÀ <500 CHỮ
         if (typed >= 50 && typed < 500) {
             document.getElementById('contact-error').style.color = 'gray';
             if ((500 - typed) == 1) {
@@ -408,7 +403,6 @@ if (contactMessage != null) {
             }
         }
 
-        // 3) >500 CHỮ
         if (typed > 500) {
             document.getElementById('contact-error').style.color = '#e74c3c';
             if ((typed - 500) == 1) {
@@ -418,7 +412,6 @@ if (contactMessage != null) {
             }
         }
 
-        // 4) 500 CHỮ
         if (typed == 500) {
             setErrorFor(contactMessage, '');
         }
