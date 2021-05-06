@@ -1155,6 +1155,10 @@ input[type=file] {
 /*--PHONE--*/
 
 @media (max-width: 767px) {
+    .thumbnail-wrapper-stores,
+    .thumbnail-wrapper-products {
+        width: 40%;
+    }
     html {
         font-size: 10px;
     }
