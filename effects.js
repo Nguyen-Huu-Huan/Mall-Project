@@ -31,7 +31,9 @@ var islogin = localStorage.getItem('login')
 function add_to_cart(item, e) {
     if (islogin == 'true') {
         e.preventDefault()
-        setTimeout(function(){ document.querySelector('.flash-message').style.display = "block"; }, 2000);
+        var flash_message = document.querySelector('.flash-message')
+        flash_message.style.display = "block"
+        setTimeout(function(){ flash_message.style.display = "none"; }, 2000);
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
         document.querySelectorAll(".cart-qty").forEach((p_tag) => {
