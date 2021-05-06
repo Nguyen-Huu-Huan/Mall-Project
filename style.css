@@ -1157,7 +1157,7 @@ input[type=file] {
     margin: 5% 30% 5% 30%;
     height: auto;
     border-radius: 10px 10px 10px 10px;
-    opacity: 0;
+    display: none;
 }
 /* .cart-icon{} */
 
