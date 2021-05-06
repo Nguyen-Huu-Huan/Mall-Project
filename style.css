@@ -858,6 +858,7 @@ textarea {
     display: block;
     font-family: inherit;
     font-size: 1rem;
+    padding: 0.7rem;
 }
 
 .order-placement input:focus {
