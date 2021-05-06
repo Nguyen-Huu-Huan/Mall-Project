@@ -28,8 +28,9 @@ function myFunction() {
 var count = 0
 var islogin = localStorage.getItem('login')
 
-function add_to_cart(item) {
+function add_to_cart(item, e) {
     if (islogin == 'true') {
+        e.preventDefault()
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
         document.querySelectorAll(".cart-qty").forEach((p_tag) => {
