@@ -33,7 +33,7 @@ function add_to_cart(item, e) {
         e.preventDefault()
         var flash_message = document.querySelector('.flash-message')
         flash_message.style.display = "block"
-        setTimeout(function(){ flash_message.style.display = "none"; flash_message.style.display.opacity="0"}, 2000);
+        setTimeout(function(){flash_message.style.display.opacity="0"}, 2000);
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
         document.querySelectorAll(".cart-qty").forEach((p_tag) => {
