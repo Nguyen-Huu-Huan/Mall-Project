@@ -358,7 +358,15 @@ label {
     padding: 1rem 0;
 }
 
-.thumbnail-wrapper {
+.thumbnail-wrapper-stores {
+    width: 16%;
+    margin-right: 2%;
+    height: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.thumbnail-wrapper-products {
     width: 16%;
     margin-right: 2%;
     height: 100%;

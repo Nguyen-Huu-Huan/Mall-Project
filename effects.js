@@ -82,27 +82,71 @@ function wrongPassword() {
     document.querySelector('.wrong-password').style.display = 'block'
 }
 
-function index_file() {
-    var timing
 
-    function autoscroll() {
-        if (document.querySelector('.nowrap').scrollLeft <= document.querySelector('.nowrap').scrollWidth - document.querySelector('.nowrap').clientWidth - 1) {
-            document.querySelector('.nowrap').scrollTo(document.querySelector('.nowrap').scrollLeft + 1, 0);
-        } else {
-            document.querySelector('.nowrap').scrollTo(0, 0)
+// AUTOSCROLL
+
+const scrollStoresElement = document.querySelector('.scroll-stores');
+const scrollStoresFirstElement = '.scroll-stores .thumbnail-wrapper-stores'
+var scrollStoresLoop
+
+const scrollProductsElement = document.querySelector('.scroll-products');
+const scrollProductsFirstElement = '.scroll-products .thumbnail-wrapper-products'
+var scrollProductsLoop
+
+function inView(element) {
+    var bounding = element.getBoundingClientRect();
+    return bounding.right > 0;
+}
+
+function index_file() {
+
+    //Scroll function
+    function autoScroll(scrollElement, first) {
+        const firstElement = document.querySelector(first)
+
+        if (!inView(firstElement)) {
+            scrollElement.appendChild(firstElement);
+            scrollElement.scrollTo(scrollElement.scrollLeft - firstElement.offsetWidth - 21, 0);
+        }
+        if (scrollElement.scrollLeft !== scrollElement.scrollWidth) {
+            scrollElement.scrollTo(scrollElement.scrollLeft + 1, 0);
         }
     }
-    autoscroll()
-    timing = setInterval(autoscroll, 15)
-    document.querySelector('.nowrap').addEventListener('mouseover', function() {
-        clearInterval(timing);
-    })
-    document.querySelector('.nowrap').addEventListener('mouseout', function() {
-        autoscroll()
-        timing = setInterval(autoscroll, 15)
+
+    function autoScrollStores() {
+        autoScroll(scrollStoresElement, scrollStoresFirstElement)
+    }
+
+    function autoScrollProducts() {
+        autoScroll(scrollProductsElement, scrollProductsFirstElement)
+    }
+
+    scrollStoresLoop = setInterval(autoScrollStores, 1)
+    scrollProductsLoop = setInterval(autoScrollProducts, 1)
+
+    //Mouse listener for Stores
+    scrollStoresElement.addEventListener('mouseover', function() {
+        clearInterval(scrollStoresLoop);
     })
 
+    scrollStoresElement.addEventListener('mouseout', function() {
+        autoScrollStores()
+        scrollStoresLoop = setInterval(autoScrollStores, 1)
+    })
+
+    //Mouse listener for Products
+    scrollProductsElement.addEventListener('mouseover', function() {
+        clearInterval(scrollProductsLoop);
+    })
+
+    scrollProductsElement.addEventListener('mouseout', function() {
+        autoScrollProducts()
+        scrollProductsLoop = setInterval(autoScrollProducts, 1)
+    })
 }
+
+
+
 
 
 /*Cart price update*/
