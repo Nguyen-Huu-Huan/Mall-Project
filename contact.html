@@ -133,7 +133,7 @@
                 <div class="row">
                     <div class="small-container col-70">
                         <h1 class="section-title">Contact Form</h1>
-                        <form action="contact.html" method="post" class="form" id="formContact">
+                        <form action="contact.html" method="post" class="form" id="formContact" onsubmit="return checkContact()">
                             <label for="contact_purpose"><strong>Contact Purpose</strong></label>
                             <br>
                             <select name="purpose">
@@ -195,13 +195,18 @@
                                     <input type="checkbox" name="days" value=" " id="day6">
                                     <label for="sunday">Sunday</label>
                                     <input type="checkbox" name="days" value=" " id="day7">
+                                    <i class="correct">&#10004;</i>
+                                    <i class="wrong">&#9888;</i>
                                     <small>Select at least one option!</small>
                                 </div>
                             </div>
                             <br><br><br><br><br><br><br><br><br><br><br><br><br>
                             <div class="form-control">
                                 <textarea name="message" rows="8" cols="80" placeholder="Your Message" spellcheck="false" id="contact-message"></textarea>
-                                <small id=contact-error>Select exactly one option!</small>
+
+                                <small id="message-error">Select exactly one option!</small>
+                                <i class="correct" id="message-correct">&#10004;</i>
+                                <i class="wrong" id="message-wrong">&#9888;</i>
                             </div>
                             <div>
                                 <input class="btn" type="reset" value="Clear">

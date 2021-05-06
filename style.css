@@ -1015,6 +1015,20 @@ textarea {
     visibility: visible;
 }
 
+#message-correct,
+#message-wrong {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    top: 0;
+    float: right;
+}
+
+#message-error {
+    position: relative;
+    display: inline-block;
+}
+
 legend {
     text-align: right;
     padding-right: 2vw;

@@ -443,8 +443,9 @@ if (contactMessage != null) {
         typed = contactMessage.value.replace(/\s+/g, '').length
 
         if (typed < 50) {
-            document.getElementById('contact-error').style.color = '#e74c3c';
-            // nếu còn 1 chữ thì là letter chứ k phải LETTERS
+            document.getElementById('message-error').style.color = '#e74c3c';
+            document.querySelector('#message-correct').style.visibility = "hidden"
+            document.querySelector('#message-wrong').style.visibility = "visible"
             if ((50 - typed) == 1) {
                 setErrorFor(contactMessage, (50 - typed) + ' more letter are needed');
             } else {
@@ -453,7 +454,10 @@ if (contactMessage != null) {
         }
 
         if (typed >= 50 && typed < 500) {
-            document.getElementById('contact-error').style.color = 'gray';
+            document.getElementById('message-error').style.color = 'gray';
+            document.querySelector('#message-correct').style.visibility = "visible"
+            document.querySelector('#message-correct').style.color = "#2ecc71"
+            document.querySelector('#message-wrong').style.visibility = "hidden"
             if ((500 - typed) == 1) {
                 setErrorFor(contactMessage, 'You can type ' + (500 - typed) + ' more letter');
             } else {
@@ -462,7 +466,9 @@ if (contactMessage != null) {
         }
 
         if (typed > 500) {
-            document.getElementById('contact-error').style.color = '#e74c3c';
+            document.getElementById('message-error').style.color = '#e74c3c';
+            document.querySelector('#message-correct').style.visibility = "hidden"
+            document.querySelector('#message-wrong').style.visibility = "visible"
             if ((typed - 500) == 1) {
                 setErrorFor(contactMessage, 'Deleting ' + (typed - 500) + ' letter is needed ');
             } else {
@@ -484,6 +490,7 @@ if (form != null) {
     });
 }
 
+
 function checkContact() {
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
@@ -492,30 +499,37 @@ function checkContact() {
 
     if (option1.checked == true) {
         setSuccessFor(option1);
+
     } else if (option2.checked == true) {
         setSuccessFor(option2);
+
     } else {
         setErrorFor(option2, 'Select exactly one option!');
     }
     if (day1.checked == true) {
         setSuccessFor(day1);
+
     } else if (day2.checked == true) {
         setSuccessFor(day2);
+
     } else if (day3.checked == true) {
         setSuccessFor(day3);
+
     } else if (day4.checked == true) {
         setSuccessFor(day4);
+
     } else if (day5.checked == true) {
         setSuccessFor(day5);
+
     } else if (day6.checked == true) {
         setSuccessFor(day6);
+
     } else if (day7.checked == true) {
         setSuccessFor(day7);
+
     } else {
         setErrorFor(day1, 'Select at least one option!');
     }
-
-
 
     if (userNameValue === '') {
         setErrorFor(userName, ' Name cannot be blank');
@@ -523,6 +537,7 @@ function checkContact() {
         setErrorFor(userName, 'Not a valid Name');
     } else {
         setSuccessFor(userName);
+
     }
 
     if (emailValue === '') {
@@ -531,6 +546,7 @@ function checkContact() {
         setErrorFor(email, 'Not a valid email');
     } else {
         setSuccessFor(email);
+
     }
 
     if (phoneValue === '') {
@@ -539,8 +555,12 @@ function checkContact() {
         setErrorFor(phone, 'Not a valid Phone Number');
     } else {
         setSuccessFor(phone);
+
     }
 
+    if (typed >= 50 && typed <= 500) {
+        setSuccessFor(contactMessage)
+    }
 }
 var countSuccess = 0
 
