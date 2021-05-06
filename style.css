@@ -1150,7 +1150,9 @@ input[type=file] {
     position: fixed;
     z-index: 9999;
     width: 40%;
-    background-image: linear-gradient(to right, #D3CCE3, #E9E4F0);
+    background: white;
+    border-color: black;
+    border-style: dashed;
     bottom: 0;
     margin: 10% 30% 10% 30%;
     height: 20%;
