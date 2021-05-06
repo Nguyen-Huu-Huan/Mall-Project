@@ -32,8 +32,8 @@ function add_to_cart(item, e) {
     if (islogin == 'true') {
         e.preventDefault()
         var flash_message = document.querySelector('.flash-message')
-        flash_message.style.display.opacity = "1"
-        setTimeout(function(){flash_message.style.display.opacity="0"}, 2000);
+        flash_message.style.display = "block"
+        setTimeout(function(){flash_message.style.display="none"}, 2000);
         count += parseInt(document.querySelector(".shoe-qty").value)
         var result = count.toString()
         document.querySelectorAll(".cart-qty").forEach((p_tag) => {
