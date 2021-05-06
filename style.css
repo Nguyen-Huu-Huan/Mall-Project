@@ -852,7 +852,20 @@ textarea {
     border: 3px solid red;
     border-radius: 50%;
 }
+.order-placement input {
+    border: 0.1rem solid #f0f0f0;
+    border-radius: 0.2rem;
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
 
+.order-placement input:focus {
+    outline: 0;
+    border-color: #777;
+}
+.not-sign-in>h2>a:hover{text-decoration: underline;text-decoration-color: red;text-decoration-thickness: 0.3rem; margin-top: 0.6rem; transition: 1s}
 
 /*--Browse dropdown button---*/
 
