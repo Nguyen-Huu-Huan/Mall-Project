@@ -865,7 +865,7 @@ textarea {
     outline: 0;
     border-color: #777;
 }
-.not-sign-in>h2>a:hover{text-decoration: underline;text-decoration-color: red;text-decoration-thickness: 0.3rem; margin-bottom: 2rem; transition: 0.5s}
+.not-sign-in>h2>a:hover{text-decoration: underline;text-decoration-color: red;text-decoration-thickness: 0.2rem; text-underline-offset: 0.25rem; transition: 0.5s}
 
 /*--Browse dropdown button---*/
 
