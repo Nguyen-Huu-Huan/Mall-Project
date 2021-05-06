@@ -85,6 +85,19 @@ function wrongPassword() {
 
 
 // AUTOSCROLL
+var scrollOffset = 21
+setInterval(() => {
+    if (window.innerWidth > 1023) {
+        scrollOffset = 21
+    }
+    if (window.innerWidth <= 1023 && window.innerWidth > 767) {
+        scrollOffset = 13
+    }
+    if (window.innerWidth <= 767) {
+        scrollOffset = 8
+    }
+}, 1);
+
 
 const scrollStoresElement = document.querySelector('.scroll-stores');
 const scrollStoresFirstElement = '.scroll-stores .thumbnail-wrapper-stores'
@@ -107,7 +120,7 @@ function index_file() {
 
         if (!inView(firstElement)) {
             scrollElement.appendChild(firstElement);
-            scrollElement.scrollTo(scrollElement.scrollLeft - firstElement.offsetWidth - 21, 0);
+            scrollElement.scrollTo(scrollElement.scrollLeft - firstElement.offsetWidth - scrollOffset, 0);
         }
         if (scrollElement.scrollLeft !== scrollElement.scrollWidth) {
             scrollElement.scrollTo(scrollElement.scrollLeft + 1, 0);
@@ -122,8 +135,8 @@ function index_file() {
         autoScroll(scrollProductsElement, scrollProductsFirstElement)
     }
 
-    scrollStoresLoop = setInterval(autoScrollStores, 1)
-    scrollProductsLoop = setInterval(autoScrollProducts, 1)
+    scrollStoresLoop = setInterval(autoScrollStores, 8)
+    scrollProductsLoop = setInterval(autoScrollProducts, 8)
 
     //Mouse listener for Stores
     scrollStoresElement.addEventListener('mouseover', function() {
@@ -132,7 +145,7 @@ function index_file() {
 
     scrollStoresElement.addEventListener('mouseout', function() {
         autoScrollStores()
-        scrollStoresLoop = setInterval(autoScrollStores, 1)
+        scrollStoresLoop = setInterval(autoScrollStores, 8)
     })
 
     //Mouse listener for Products
@@ -142,7 +155,7 @@ function index_file() {
 
     scrollProductsElement.addEventListener('mouseout', function() {
         autoScrollProducts()
-        scrollProductsLoop = setInterval(autoScrollProducts, 1)
+        scrollProductsLoop = setInterval(autoScrollProducts, 8)
     })
 }
 
