@@ -1126,6 +1126,9 @@ input[type=file] {
 /*--TABLET--*/
 
 @media (max-width: 1023px) and (min-width: 767px) {
+    .thumbnail-wrapper-stores {
+        width: 20%;
+    }
     html {
         font-size: 14px;
     }
