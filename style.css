@@ -19,10 +19,9 @@ body {
     background: white;
     top: 0;
     margin: 10% 15% 10% 15%;
-    height: 70%;
     border-radius: 10px 10px 10px 10px;
-    box-shadow: 5px 10px #ff007f;
-    padding-top: 8rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 0 1.1rem -0.4rem rgb(49, 49, 49);
 }
 
 .cookie>div>a {
