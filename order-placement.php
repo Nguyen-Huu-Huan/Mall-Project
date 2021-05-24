@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start()?>
-
+<?php 
+    if (isset($_POST['order'])){
+        if(isset($_SESSION['logged-in'])&&($_SESSION['logged-in']==true)){
+            header("location:order-completed.php");
+        }else{
+            header("location:myaccount.php");
+        }
+    }
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -183,16 +190,7 @@
                     </div>
                     <div class="col-30">
                         <?php
-                        echo "<form action=\"order-completed.php\" method='post'>
-                            <button class=\"btn hover-shadow img\" id=\"order-button\" name='order-button' onclick=\"order_successful()\">Order</button>
-                        </form>";
-                        if (isset($_POST['order-button'])){
-                            if(isset($_SESSION['logged-in'])&&($_SESSION['logged-in']==true)){
-                                header.location('order-completed.php');
-                            }else{
-                                header.location('myaccount.php');
-                            }
-                        }
+                        echo "<form method='POST'><input type='submit' class=\"btn hover-shadow img\" id=\"order-button\" name='order' onclick=\"order_successful()\" value='Order'></form>";
                         ?>
                     </div>
                     <!-- href="order-completed.html" -->
