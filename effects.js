@@ -753,4 +753,3 @@ function mytable(){
     document.querySelector('#featured_products');
     console.log('fwefew');
 }
-console.log('ewfewfweofjewfjio');
