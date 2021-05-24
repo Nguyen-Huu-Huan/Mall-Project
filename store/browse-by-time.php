@@ -104,7 +104,6 @@
                             <input type="submit" name="" class='col-10 text-big btn hover-shadow img' id='order-button'>
                         </form>
                     </div>
-
                 <?php 
                 $file = '../CSV_files/products.txt';
                 $product_csv_file = fopen($file, "r");
@@ -119,12 +118,7 @@
                     $created_time[$time_conversion] = $line;
                     $stores_array[] = $line;
                 }
-                if ((isset($_SESSION['sort']))&&($_SESSION['sort']=='newest')){
-                    ksort($created_time);
-                }else if (($_SESSION['sort'])&&($_SESSION['sort']=='oldest')){
-                    krsort($created_time);
-                }
-                $created_time = array_slice($created_time,-count($created_time));
+
                 function new_products_display($item){
                     $formatted_time = str_replace("Z","",$item[3]);
                     echo "
@@ -151,13 +145,20 @@
                     }else if ($_POST["sort_order"]=='oldest_first'){
                         $_SESSION['sort'] = 'oldest';
                     }
+                    if ((isset($_SESSION['sort']))&&($_SESSION['sort']=='newest')){
+                        ksort($created_time);
+                    }else if (($_SESSION['sort'])&&($_SESSION['sort']=='oldest')){
+                        krsort($created_time);
+                    }
+                    // print_r($created_time);
+                    $created_time = array_slice($created_time,-count($created_time));
+                    echo "<h1>".$_SESSION['sort']."</h1>";
+
                     echo "<div class='row'>";
                     new_products_display($created_time[0], $new_product_images[1]);
                     new_products_display($created_time[1], $new_product_images[1]);
                     echo "</div>";
-                    echo "<form action='' method='POST'><input type='submit' name='next' id='myAnchor' value='See more'></form>";
-                }else{
-                    $_SESSION['sort'] = '';
+                    echo "<form action='' method='POST'><input type='submit' name='next' value='See more'></form>";
                 }
                 if (isset($_POST['next'])||isset($_POST['previous'])){
                     $i = $_SESSION['start_display_position']+2;
@@ -170,7 +171,7 @@
                     if (($_SESSION['start_display_position']>=0)&&($_SESSION['start_display_position']<=998)){
                         echo "<h1>".$_SESSION['start_display_position']."</h1>";
                         if ($_SESSION['start_display_position']>0){
-                            echo "<form action='' method='POST'><input type='submit' id='myAnchor' name='previous' value='See previous'></form>";
+                            echo "<form action='' method='POST'><input type='submit' name='previous' value='See previous'></form>";
                         }
                         echo "<div class='row'>";
                         for ($j = 0; $j<2;$j+=1){
@@ -196,48 +197,57 @@
                         }
                         echo "</div>";
                         if ($_SESSION['start_display_position']<998){
-                            echo "<form action='' method='POST'><input type='submit' id='myAnchor' name='next' value='See more'></form>";
+                            echo "<form action='' method='POST'><input type='submit' name='next' value='See more'></form>";
                         }
                         echo "</div>";
+
                     }
-                }
-                
+                }     
                 echo "</div>";
-                // echo '<script type="text/javascript">';
-                // echo "document.getElementById('myAnchor').addEventListener('click', function(event){
-                //     console.log('start_display_position');
-                //   });";
-                
-                // echo '</script>';
-                // if (($_SESSION["sort"]=='newest')||($_SESSION["sort"]=='oldest')){
-                    echo "<div class='tiny-container'>";
-                    echo "<table rules='all' class='text-center'>";
+                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all products</a>";
+                echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_products(){
+                    document.querySelector('.see_all').style.display='block';
+                    document.querySelector('#collapse').style.display='block';
+                    document.querySelector('#display').style.display='none';
+                    document.querySelector('#collapse').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function product_disappear(){
+                    document.querySelector('.see_all').style.display='none';
+                    document.querySelector('#collapse').style.display='none';
+                    document.querySelector('#display').style. display='block';
+                    document.querySelector('#display').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+
+                echo "<div class='tiny-container see_all' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Index</th><th>ID</th><th>Name</th><th>Price</th><th>Created time</th><th>Store ID</th><th>Featured in store</th><th>Featured in mall</th>";
+                echo "</tr>";
+                foreach ($created_time as $key => $value){
                     echo "<tr>";
-                    echo "<th>Index</th><th>ID</th><th>Name</th><th>Price</th><th>Created time</th><th>Store ID</th><th>Featured in store</th><th>Featured in mall</th>";
-                    echo "</tr>";
-                    foreach ($created_time as $key => $value){
-                        echo "<tr>";
-                        echo "<td>$key</td>";
-                        for($i = 0 ; $i<count($value);$i+=1){
-                            if ($key==$_SESSION['start_display_position']){
-                                // $end_position = $i+1;
-                                echo "<td>";
-                                echo "<strong style='color:red;'>".$value[$i].str_repeat('&nbsp',3)."</strong>";
-                                echo "</td>";
-                                // echo "<strong style='color:red;'>".$end_position.str_repeat('&nbsp',3)."</strong>";
-                            }else{
-                                echo "<td>";
-                                echo $value[$i];
-                                echo "</td>";
-                            }
+                    echo "<td>$key</td>";
+                    for($i = 0 ; $i<count($value);$i+=1){
+                        if ($key==$_SESSION['start_display_position']){
+                            // $end_position = $i+1;
+                            echo "<td>";
+                            echo "<strong style='color:red;'>".$value[$i].str_repeat('&nbsp',3)."</strong>";
+                            echo "</td>";
+                            // echo "<strong style='color:red;'>".$end_position.str_repeat('&nbsp',3)."</strong>";
+                        }else{
+                            echo "<td>";
+                            echo $value[$i];
+                            echo "</td>";
                         }
-                        echo "</tr>";
-
                     }
-                    echo "</table>";
+                    echo "</tr>";
 
-                    echo "</div>";
-                // }
+                }
+                echo "</table>";
+                echo "</div>";
+
 
             ?>
             </section>
