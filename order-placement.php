@@ -130,9 +130,6 @@
             <div class="order-empty">
                 <h2 class="text-big text-center">Looks like your cart is empty</h2>
             </div>
-            <div class="row not-sign-in">
-                <h2 class="text-medium text-center">Please login to access your shopping cart &emsp; <a href="myaccount.html">Login here</a></h2>
-            </div>
             <section class="order-placement product-section">
                 <div class="medium-container">
                     <div class="order-details">
