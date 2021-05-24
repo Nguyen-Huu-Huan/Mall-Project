@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start()?>
 
 <head>
     <meta charset="UTF-8">
@@ -184,9 +185,18 @@
                         <a href="">&#8592; Continue Shopping</a>
                     </div>
                     <div class="col-30">
-                        <form action="order-completed.php" method='post'>
-                            <button class="btn hover-shadow img" id="order-button" onclick="order_successful()">Order</button>
-                        </form>
+                        <?php
+                        echo "<form action=\"order-completed.php\" method='post'>
+                            <button class=\"btn hover-shadow img\" id=\"order-button\" name='order-button' onclick=\"order_successful()\">Order</button>
+                        </form>";
+                        if (isset($_POST['order-button'])){
+                            if(isset($_SESSION['logged-in'])&&($_SESSION['logged-in']==true)){
+                                header.location('order-completed.php');
+                            }else{
+                                header.location('myaccount.php');
+                            }
+                        }
+                        ?>
                     </div>
                     <!-- href="order-completed.html" -->
                 </div>
