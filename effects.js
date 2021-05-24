@@ -749,3 +749,8 @@ function issName(sName) {
 function isuserName(userName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(userName);
 }
+function mytable(){
+    document.querySelector('#featured_products');
+    console.log('fwefew');
+}
+console.log('ewfewfweofjewfjio');

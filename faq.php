@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mallux Order Placement| Online Shopping Mall</title>
+    <title>Mallux FaQ| Online Shopping Mall</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -18,7 +18,8 @@
 </noscript>
 </head>
 
-<body class="index" onload="cart_load()">
+
+<body class="index">
     <div class="cookie">
         <div class="container">
             <h1 class="text-extra text-center">Cookie Consent</h1>
@@ -123,70 +124,48 @@
                     </nav>
                     <div class="res-index-space1 col-70"></div>
                 </div>
+            </div>
         </header>
-        <main class="order-placement">
-            <h1 class="section-title">ORDER SUMMARY</h1>
-            <div class="order-empty">
-                <h2 class="text-big text-center">Looks like your cart is empty</h2>
-            </div>
-            <div class="row not-sign-in">
-                <h2 class="text-medium text-center">Please login to access your shopping cart &emsp; <a href="myaccount.html">Login here</a></h2>
-            </div>
-            <section class="order-placement product-section">
-                <div class="medium-container">
-                    <div class="order-details">
-                        <h2 class="text-medium">1. Order Details</h2>
+        <main>
+            <h1 class="section-title">FAQs</h1>
+            <section class="faqs">
+                <div class="small-container">
+                    <div class="faqs-container">
+                        <input id="tab-1" type="checkbox">
+                        <label for="tab-1">Does return policy apply for VIP customers?</label>
+                        <div class="faqs-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
                     </div>
-                    <br>
-                    <div class="row">
-                        <h4 class="col-40 text-center">Products' Names</th>
-                            <h4 class="col-20 text-center">Price</th>
-                                <h4 class="col-20 text-center">Quantity</th>
+
+                    <div class="faqs-container">
+                        <input id="tab-2" type="checkbox">
+                        <label for="tab-2">What are usually the sale seasons?</label>
+                        <div class="faqs-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
                     </div>
-                    <hr>
-                    <br>
-                </div>
-            </section>
-            <section class="coupon-section">
-                <div class="medium-container">
-                    <div class="coupon-code">
-                        <h2 class="text-medium">2. Coupon Code</h2>
+
+                    <div class="faqs-container">
+                        <input id="tab-3" type="checkbox">
+                        <label for="tab-3">How does COVID impact Mallux Delivery Service?</label>
+                        <div class="faqs-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
                     </div>
-                    <div class="row">
-                        <label for="coupon" class="col-30">Coupon code</label>
-                        <input type="text" name="coupon" class="col-50">
-                        <input type="button" value="Apply" class="btn hover-shadow img" id="order-button" onclick="coupon_apply()">
-                    </div>
-                    <div class="HD-apply">
-                        <p class="text-medium text-center">"&#10004; COSC2430-HD has been applied! You received 20% off"</h2>
-                    </div>
-                    <div class="DI-apply">
-                        <p class="text-medium text-center">"&#10004; COSC2430-DI has been applied! You received 10% off"</h2>
-                    </div>
-                    <div class="non-apply">
-                        <p class="text-medium text-center">&#10060; Sorry, your coupon code is invalid.</h2>
+                    <div class="faqs-container">
+                        <input id="tab-4" type="checkbox">
+                        <label for="tab-4">How to open a store  ?</label>
+                        <div class="faqs-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <section class="total-section">
-                <div class="row">
-                    <div class="col-45">
-                        <p style="color: white;">fwifowief</p>
-                    </div>
-                    <div class="col-30">
-                        <h1 class="text-center">Total</h1>
-                        <hr>
-                        <p class="text-big text-center total-money">0$</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-45">
-                        <a href="">&#8592; Continue Shopping</a>
-                    </div>
-                    <div class="col-30">
-                        <a href="order-completed.html" class="btn hover-shadow img" id="order-button" onclick="order_successful()">Order</a>
-                    </div>
-                </div>
+
             </section>
         </main>
         <footer class="footer">
@@ -213,7 +192,7 @@
                 <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
         </footer>
-        </div>
+    </div>
 </body>
 <script type="text/javascript" src="effects.js"></script>
 
