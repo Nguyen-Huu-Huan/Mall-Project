@@ -185,8 +185,6 @@ function cart_load() {
     if (islogin != 'true') {
         document.querySelector(".product-section").style.display = "none"
         document.querySelector(".total-section").style.display = "none";
-        document.querySelector(".not-sign-in").style.display = "block";
-        document.querySelector(".not-sign-in>h2").style.color = "#ff1493";
         document.querySelector(".order-empty").style.display = "none";
         document.querySelector(".coupon-section").style.display = "none";
     } else {
@@ -194,7 +192,6 @@ function cart_load() {
         if (Object.keys(cart_item).length == 0) {
             document.querySelector(".product-section").style.display = "none";
             document.querySelector(".total-section").style.display = "none";
-            document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".coupon-section").style.display = "none";
             document.querySelector(".order-empty").style.display = "block";
             document.querySelector(".order-empty>h2").style.color = "#ff1493";
@@ -223,7 +220,6 @@ function cart_load() {
             document.querySelector(".coupon-code").style.display = "block";
             document.querySelector(".coupon-code>h2").style.color = "#ff1493";
             document.querySelector(".coupon-section").style.display = "block";
-            document.querySelector(".not-sign-in").style.display = "none";
             document.querySelector(".order-empty").style.display = "none";
 
 
