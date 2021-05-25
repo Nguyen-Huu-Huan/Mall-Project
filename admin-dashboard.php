@@ -26,7 +26,7 @@ str_replace('&#xFEFF', " asd", $texts[0]);
       <div class="row">
         <div class="col-100">
         <label for="copyright-text">Copyright Texts</label>
-        <textarea name="copyright-text" placeholder=""><?php echo str_replace('"', '', $texts[0]); ?></textarea>
+        <textarea class="ad-textarea" name="copyright-text" placeholder=""><?php echo str_replace('"', '', $texts[0]); ?></textarea>
         </div>
         <div class="col-30">
         </div>
