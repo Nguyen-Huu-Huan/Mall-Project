@@ -1174,7 +1174,8 @@ input[type=file] {
 /* admin dashboard*/
 
 .ad-textarea {
-    font-size: 2rem !important;
+    font-weight: 300;
+    font-size: 1rem !important;
     min-height: 10rem !important;
 }
 
