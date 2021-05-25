@@ -1,9 +1,6 @@
 <?php
 $file = fopen("data.csv","r");
-while(! feof($file))
-  {
-  print_r(fgetcsv($file));
-  }
+  $result = array_column(array_map('str_getcsv', file('data.csv')), 1, 0);
 fclose($file);
-  print_r($file['Copyright'])
+echo nl2br ($result['ToS']);
 ?>
