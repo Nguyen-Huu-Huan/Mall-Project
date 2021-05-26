@@ -36,7 +36,7 @@
                         <input style="width: 100%;" type="text" name="admin-username" required><br><br>
                         <label for="admin-password">Password</label><br>
                         <input style="width: 100%;" type="password" name="admin-password" required><br><br>
-                        <button class="btn" style="width: 30%;" type="submit" name="admin-reg" value="login">Submit</button>
+                        <button class="btn" style="width: 30%;" type="submit" name="admin-reg">Submit</button>
                     </form>
                 </div>
             </div>
