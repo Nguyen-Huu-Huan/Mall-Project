@@ -1,3 +1,7 @@
+<?php 
+# Don't delete, PHP01
+if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,25 +137,16 @@
             <main>
                 <h1 class="section-title">Copyright</h1>
                 <div class="container">
-                    <p>In erat augue, hendrerit vitae quam quis, dictum congue libero. Fusce enim dolor, sollicitudin id porttitor quis, posuere non justo. Vestibulum sollicitudin tincidunt velit, vitae maximus arcu facilisis et. Ut tincidunt accumsan metus
-                        et tincidunt. Curabitur porta vulputate molestie. Nullam venenatis, velit in tincidunt condimentum, tortor elit malesuada justo, eu dignissim risus tellus ut sem. Donec vel elit dignissim, aliquet quam non, lacinia justo. Curabitur
-                        tincidunt dapibus nisi mattis molestie.
+                    <p>
+                    <?php 
+                    $fp = fopen('data.csv', 'r');
+                    while ($line = fgets($fp)) {
+                      $texts[] = $line;
+                    };
+                    echo $texts[0];
+                    ?>
                     </p>
-                    <br>
-                    <p>Cras scelerisque, arcu ac egestas iaculis, justo felis maximus neque, vitae aliquet lorem felis at quam. Suspendisse semper nulla ac consectetur eleifend. Ut ut urna tristique, aliquam eros vitae, pretium neque. Sed malesuada lorem
-                        et est consectetur aliquam. Vestibulum facilisis purus ut gravida laoreet. Maecenas nisl odio, pretium ut libero vitae, commodo porttitor elit. Cras non tortor eu purus auctor mollis. Nulla leo mi, sollicitudin in justo tempus,
-                        dapibus condimentum nibh. Ut consequat quis nulla id malesuada. Pellentesque purus nisl, iaculis et tincidunt at, aliquet at eros. Duis vulputate accumsan sapien at varius. Aliquam id orci nec erat vulputate ultrices ut sed tellus.
-                        Sed ut sagittis est.
-                    </p>
-                    <br>
-                    <p>Quisque efficitur at diam eget fringilla. Phasellus placerat sagittis metus, ac sollicitudin ex convallis consectetur. Etiam cursus ultricies ex sed congue. Maecenas ullamcorper tincidunt lorem, in molestie lorem vehicula vitae. Suspendisse
-                        at sagittis sapien. Vestibulum vel imperdiet eros. Cras tempor porta ligula, imperdiet rutrum neque auctor et. Vestibulum at suscipit tellus. Etiam eget ultrices sem, non efficitur sem. Donec ac pretium massa, ac viverra tortor.
-                        Etiam sit amet dictum libero, id eleifend velit. Nulla sodales dignissim gravida. Sed ullamcorper nec quam at cursus. Quisque eu leo massa. Integer varius tempus leo, id dignissim est suscipit ac.
-                    </p>
-                    <br>
-                    <p>Praesent varius laoreet enim at faucibus. Curabitur vestibulum semper magna, ac varius dui efficitur eget. Quisque dolor augue, egestas vel ex vitae, maximus molestie urna. Donec mollis, nisi ac mattis lacinia, augue risus fringilla
-                        tortor, at ullamcorper erat mauris ut nibh. Aenean urna metus, pellentesque finibus sodales eget, malesuada et lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
+                    <br><br>
                 </div>
             </main>
             <footer class="footer">

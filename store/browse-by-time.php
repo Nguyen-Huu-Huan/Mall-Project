@@ -1,5 +1,9 @@
 <?php session_start()?>
 
+<?php 
+# Don't delete, PHP01
+if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
