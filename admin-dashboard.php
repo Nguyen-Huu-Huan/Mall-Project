@@ -1,20 +1,22 @@
 <?php
+
 $fp = fopen('data.csv', 'r');
 while ($line = fgets($fp)) {
   $texts[] = $line;
 };
 
+print_r($texts);
+
 if (isset($_POST['admin-dashboard'])) {
+  $fp = fopen('data.csv', 'w');
   $copyright = $_POST['copyright-text'];
   $tos = $_POST['tos-text'];
   $privacy = $_POST['privacy-text'];
-  flock($fp, LOCK_SH);
-  $datafile = fopen('data .csv', 'w');
-  
-  fwrite($datafile,$copyright . "\n");
-  fwrite($datafile,$tos."\n");
-  fwrite($datafile,$privacy."\n");
+  fwrite($fp,str_replace("\n","<br>",(rtrim($copyright,"\n"))). "\n") ;
+  fwrite($fp,str_replace("\n","<br>",(rtrim($tos,"\n"))). "\n") ;
+  fwrite($fp,str_replace("\n","<br>",(rtrim($privacy,"\n"))). "\n") ;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -40,19 +42,19 @@ if (isset($_POST['admin-dashboard'])) {
     <div class="container">
       <div class="row">
         <div class="col-100">
-          <form method="post" name="admin-dashboard-form">
+          <form method="post" name="admin-dashboard-form" action="<?php $_SERVER["PHP_SELF"]?>">
           <div style="margin:0 35%">
           <button class="btn" style="width: 100%;" type="submit" name="admin-dashboard">Save</button><br>
 
           </div>
             <label class="text-big" for="copyright-text">Copyright Texts</label>
-            <textarea class="ad-textarea" name="copyright-text" placeholder=""><?php echo (str_replace('"', "", $texts[0])) ?></textarea><br>
+            <textarea class="ad-textarea" name="copyright-text" placeholder=""><?php echo $texts[0] ?></textarea><br>
 
             <label class="text-big" for="tos-text">Term Of Services</label>
-            <textarea class="ad-textarea" name="tos-text" placeholder=""><?php echo (str_replace('"', "", $texts[1])) ?></textarea><br>
+            <textarea class="ad-textarea" name="tos-text" placeholder=""><?php echo $texts[1] ?></textarea><br>
 
             <label class="text-big" for="cprivacy-text">Privacy Policy</label>
-            <textarea class="ad-textarea" name="privacy-text" placeholder=""><?php echo (str_replace('"', "", $texts[2])) ?></textarea><br>
+            <textarea class="ad-textarea" name="privacy-text" placeholder=""><?php echo $texts[2] ?></textarea><br>
           </form>
         </div>
       </div>
