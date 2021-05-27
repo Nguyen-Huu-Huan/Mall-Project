@@ -122,7 +122,20 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $created_time[$time_conversion] = $line;
                     $stores_array[] = $line;
                 }
-
+                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='newest_first'))||($_SESSION['sort']=='newest')){
+                    if(array_keys($created_time) !== range(0, count($created_time) - 1)){
+                        ksort($created_time);
+                    }
+                }
+                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='oldest_first'))||($_SESSION['sort']=='oldest')){
+                    if(array_keys($created_time) !== range(0, count($created_time) - 1)){
+                        krsort($created_time);
+                        echo "hello world";
+                    }else{
+                        array_reverse($created_time);
+                    }
+                }
+                $created_time = array_slice($created_time,-count($created_time));
                 function new_products_display($item){
                     $formatted_time = str_replace("Z","",$item[3]);
                     echo "
@@ -149,18 +162,11 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }else if ($_POST["sort_order"]=='oldest_first'){
                         $_SESSION['sort'] = 'oldest';
                     }
-                    if ((isset($_SESSION['sort']))&&($_SESSION['sort']=='newest')){
-                        ksort($created_time);
-                    }else if (($_SESSION['sort'])&&($_SESSION['sort']=='oldest')){
-                        krsort($created_time);
-                    }
-                    // print_r($created_time);
-                    $created_time = array_slice($created_time,-count($created_time));
                     echo "<h1>".$_SESSION['sort']."</h1>";
 
                     echo "<div class='row'>";
-                    new_products_display($created_time[0], $new_product_images[1]);
-                    new_products_display($created_time[1], $new_product_images[1]);
+                    new_products_display($created_time[0]);
+                    new_products_display($created_time[1]);
                     echo "</div>";
                     echo "<form action='' method='POST'><input type='submit' name='next' value='See more'></form>";
                 }
@@ -182,18 +188,18 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             if (isset($_POST['previous'])){
                                 if (($k+$j)<count($created_time)){
                                     if (isset($_SESSION['sort'])){
-                                        if ($_SESSION['sort']=='oldest'){
-                                            array_reverse($created_time);
-                                        }
+                                        // if ($_SESSION['sort']=='oldest'){
+                                        //     array_reverse($created_time);
+                                        // }
                                     }
                                     new_products_display($created_time[$k+$j]);
                                 }
                             }else if (isset($_POST['next'])){
                                 if (($i+$j)<count($created_time)){
                                     if (isset($_SESSION['sort'])){
-                                        if ($_SESSION['sort']=='oldest'){
-                                            array_reverse($created_time);
-                                        }
+                                        // if ($_SESSION['sort']=='oldest'){
+                                        //     array_reverse($created_time);
+                                        // }
                                     }
                                     new_products_display($created_time[$i+$j]);
                                 }
@@ -239,7 +245,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             echo "<td>";
                             echo "<strong style='color:red;'>".$value[$i].str_repeat('&nbsp',3)."</strong>";
                             echo "</td>";
-                            // echo "<strong style='color:red;'>".$end_position.str_repeat('&nbsp',3)."</strong>";
                         }else{
                             echo "<td>";
                             echo $value[$i];
