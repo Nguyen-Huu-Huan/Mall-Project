@@ -175,16 +175,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <?php
                 $file = 'CSV_files/stores.txt';
                 $store_csv_file = fopen($file, "r");
-                $stores_array = array();
                 $created_time = array();
-                $new_stores = array();
-                $product_array[] = fgetcsv($product_csv_file, 1000);
-                while ($line = fgetcsv($product_csv_file, 1000)) {
+                $product_array[] = fgetcsv($store_csv_file, 1000);
+                while ($line = fgetcsv($store_csv_file, 1000)) {
                     $time_str = $line[3];
                     $time_str = str_replace("Z","",$time_str);
                     $time_conversion = strtotime($time_str);
                     $created_time[$time_conversion] = $line;
-                    $stores_array[] = $line;
                 }
                 ksort($created_time);
                 $created_time = array_slice($created_time,-10);
