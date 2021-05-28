@@ -173,7 +173,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             <section class="new-stores ">
                 <h2 class="section-title ">New Stores</h2>
                 <?php
-                $file = '../CSV_files/stores.txt';
+                $file = 'CSV_files/stores.txt';
                 $store_csv_file = fopen($file, "r");
                 $stores_array = array();
                 $created_time = array();
