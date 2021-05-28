@@ -6,6 +6,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 <html lang="en">
 <?php 
     if (isset($_POST['order'])){
+        echo isset($_SESSION['logged-in']);
+        echo $_SESSION['logged-in'];
         if(isset($_SESSION['logged-in'])&&($_SESSION['logged-in']==true)){
             header("location:order-completed.php");
         }else{
