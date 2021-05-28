@@ -209,7 +209,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 echo "</div>
                 </div>";
                 foreach($created_time as $store){
-                    echo $store[1].nl2br("\n");
+                    echo $store[1].nl2br("\t\t").$store[3].nl2br("\n");
                 }
                 ?>
             </section>
