@@ -208,9 +208,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                foreach($created_time as $store){
-                    echo $store[1].nl2br("\t\t").$store[3].nl2br("\n");
-                }
                 echo "<a href='#' id='display' onclick='see_products()'>Click here to see all stores</a>";
                 echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_products(){
