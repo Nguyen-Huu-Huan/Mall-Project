@@ -198,9 +198,14 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         </a>
                     </div>";
                 }
+                echo "                
+                <div class="container">
+                    <div class="nowrap scroll-stores">";
                 for ($i = 0; $i<count($created_time); $i+=1){
                     new_stores_display($created_time[$i]);
                 }
+                echo "</div>
+                </div>";
                 print_r($created_time);
                 ?>
                 <div class="container">
