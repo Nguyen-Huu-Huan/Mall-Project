@@ -5,7 +5,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start()?>
-<?php $_SESSION['logged-in'] = true;?>
+<?php $_SESSION['logged-in'] = true; echo $_SESSION['logged-in']; ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
