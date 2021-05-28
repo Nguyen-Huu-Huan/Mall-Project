@@ -5,10 +5,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 <!DOCTYPE html>
 <html lang="en">
 <?php 
+    echo isset($_SESSION['logged-in']);
+    echo $_SESSION['logged-in'];
     if (isset($_POST['order'])){
-        echo isset($_SESSION['logged-in']);
-        echo $_SESSION['logged-in'];
-        if(isset($_SESSION['logged-in'])&&($_SESSION['logged-in']==true)){
+        if((isset($_SESSION['logged-in']))&&($_SESSION['logged-in']==true)){
             header("location:order-completed.php");
         }else{
             header("location:register.php");
