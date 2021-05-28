@@ -122,6 +122,17 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $created_time[$time_conversion] = $line;
                     $stores_array[] = $line;
                 }
+                if ((!isset($_POST['sort_order']))&&(!isset($_SESSION['order']))){
+                    if ((!isset($_POST['next']))&&(!isset($_POST['previous']))){
+                        echo "<div class='container'><h2 class='color-pink text-center'>Please submit the sorting order</h2></div>";
+                        echo "<div class='container'><p class='text-center'>Please submit the sorting order</p></div>";                
+                    }
+                }
+                if ((isset($_POST['sort_order']))&&($_POST["sort_order"]=='newest_first')){
+                    $_SESSION['sort'] = 'newest';
+                }else if ((isset($_POST['sort_order']))&&($_POST["sort_order"]=='oldest_first')){
+                    $_SESSION['sort'] = 'oldest';
+                }
                 if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='newest_first'))||($_SESSION['sort']=='newest')){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
                         ksort($created_time);
@@ -130,7 +141,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='oldest_first'))||($_SESSION['sort']=='oldest')){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
                         krsort($created_time);
-                        echo "hello world";
                     }else{
                         array_reverse($created_time);
                     }
@@ -157,12 +167,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 echo "<div class='small-container'>";
                 if (isset($_POST['sort_order'])){
                     $_SESSION['start_display_position'] = 0;
-                    if ($_POST["sort_order"]=='newest_first'){
-                        $_SESSION['sort'] = 'newest';
-                    }else if ($_POST["sort_order"]=='oldest_first'){
-                        $_SESSION['sort'] = 'oldest';
-                    }
-                    echo "<h1>".$_SESSION['sort']."</h1>";
+
+                    echo "<h1>"."Sort by: ".$_SESSION['sort']."</h1>";
 
                     echo "<div class='row'>";
                     new_products_display($created_time[0]);
@@ -179,7 +185,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         $_SESSION['start_display_position'] = $i;
                     }
                     if (($_SESSION['start_display_position']>=0)&&($_SESSION['start_display_position']<=998)){
-                        echo "<h1>".$_SESSION['start_display_position']."</h1>";
+                        echo "<h1>"."Start index: ".$_SESSION['start_display_position']."</h1>";
                         if ($_SESSION['start_display_position']>0){
                             echo "<form action='' method='POST'><input type='submit' name='previous' value='See previous'></form>";
                         }
@@ -187,20 +193,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         for ($j = 0; $j<2;$j+=1){
                             if (isset($_POST['previous'])){
                                 if (($k+$j)<count($created_time)){
-                                    if (isset($_SESSION['sort'])){
-                                        // if ($_SESSION['sort']=='oldest'){
-                                        //     array_reverse($created_time);
-                                        // }
-                                    }
                                     new_products_display($created_time[$k+$j]);
                                 }
                             }else if (isset($_POST['next'])){
                                 if (($i+$j)<count($created_time)){
-                                    if (isset($_SESSION['sort'])){
-                                        // if ($_SESSION['sort']=='oldest'){
-                                        //     array_reverse($created_time);
-                                        // }
-                                    }
                                     new_products_display($created_time[$i+$j]);
                                 }
                             }
@@ -230,7 +226,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-
                 echo "<div class='tiny-container see_all' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
@@ -256,8 +251,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</table>";
                 echo "</div>";
-
-
             ?>
             </section>
             <footer class="footer">
