@@ -29,26 +29,21 @@ var count = 0
 var islogin = localStorage.getItem('login')
 
 function add_to_cart(item, e) {
-    if (islogin == 'true') {
-        e.preventDefault()
-        var flash_message = document.querySelector('.flash-message')
-        flash_message.style.display = "block"
-        setTimeout(function(){flash_message.style.display="none"}, 2000);
-        count += parseInt(document.querySelector(".shoe-qty").value)
-        var result = count.toString()
-        document.querySelectorAll(".cart-qty").forEach((p_tag) => {
-            p_tag.innerHTML = result;
-            p_tag.style.color = "red";
-            p_tag.style.display = "inline";
-            p_tag.style.animation = "shaking 0.5s infinite";
-        })
-        localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
-        document.querySelector(".cart-icon").style.animation = "shaking 0.5s infinite"
-        document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
-    } else {
-        document.querySelector(".add-to-cart").setAttribute("href", "../myaccount.html")
-        alert("Please login before purchase")
-    }
+    e.preventDefault()
+    var flash_message = document.querySelector('.flash-message')
+    flash_message.style.display = "block"
+    setTimeout(function(){flash_message.style.display="none"}, 2000);
+    count += parseInt(document.querySelector(".shoe-qty").value)
+    var result = count.toString()
+    document.querySelectorAll(".cart-qty").forEach((p_tag) => {
+        p_tag.innerHTML = result;
+        p_tag.style.color = "red";
+        p_tag.style.display = "inline";
+        p_tag.style.animation = "shaking 0.5s infinite";
+    })
+    localStorage.setItem(item, JSON.stringify([parseInt(document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[1].children[1].textContent.substring(1)), count, document.querySelector(".mobile-menu-opened>section").querySelector("div>div").children[0].children[0].getAttribute('src')]))
+    document.querySelector(".cart-icon").style.animation = "shaking 0.5s infinite"
+    document.querySelector(".cart-icon-big").style.animation = "shaking 0.5s infinite"
 }
 
 // Check login status and get email from form input
