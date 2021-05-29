@@ -145,8 +145,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         $stores_by_category_array = array();
         $store_counter = 1;
         while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
-            if ($line[2]==$store_counter){echo "this is equal";}
-            $stores_by_category_array[$line[2]] = $line[1];
+            $store_array = array();
+            if ($line[2]==$store_counter){$store_array[] = $line[1]}
+            $stores_by_category_array[$line[2]] = $store_array;
             echo $line[1].nl2br("\t").$line[2].nl2br("\n");
         }    
         print_r($stores_by_category_array);
@@ -165,17 +166,19 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         echo "<div class='row'>";
         foreach ($stores_by_category_array as $category => $store){            
             if ($category==$_POST['category']){
-                echo "<div class='col-20'>
-                        <div class='new-products-wrapper hover-shadow'>
-                            <figure class='new-products-img-wrapper'>
-                                <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
-                                <img class='new-products-brand' src='images/nike.jpg'>
-                            </figure>
-                            <p class='text-center text-small color-gray'>$store</p>
-                            <p class='text-center text-medium color-black'>Shirt</p>
-                            <h2 class='text-center text-medium'>$category</h2>
-                        </div>
-                    </div>";
+                foreach ($store as $item){
+                    echo "<div class='col-20'>
+                            <div class='new-products-wrapper hover-shadow'>
+                                <figure class='new-products-img-wrapper'>
+                                    <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
+                                    <img class='new-products-brand' src='images/nike.jpg'>
+                                </figure>
+                                <p class='text-center text-small color-gray'>$item</p>
+                                <p class='text-center text-medium color-black'>Shirt</p>
+                                <h2 class='text-center text-medium'>$category</h2>
+                            </div>
+                        </div>";
+                }
 //                 echo "hello world";
             }
         } 
