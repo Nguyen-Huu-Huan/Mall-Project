@@ -184,6 +184,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
             }            
             sort($stores_array);
+            print_r($stores_array);
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='$letter'>$letter</h1>
