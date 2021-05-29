@@ -182,7 +182,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         echo strpos($line[1], strtoupper($letter));
                     }
                 }
-//                 echo $line[1];
+//                 echo $line[1].nl2br("\n");
             }
 //             sort($stores_array);
 //             print_r($stores_array);
