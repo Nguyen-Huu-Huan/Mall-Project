@@ -174,15 +174,15 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             $file = 'CSV_files/stores.txt';
             $store_csv_file = fopen($file, "r");
             $stores_array = array();
-            $product_array[] = fgetcsv($store_csv_file, 1000);
             while ($line = fgetcsv($store_csv_file, 1000)) {
-                if ((startsWith($line[1])==strtoupper($letter))||(startsWith($line[1])==strtolower($letter))){
-                    $stores_array[] = $line[1];
-                    echo $line[1];
-                }
+//                 if ((startsWith($line[1])==strtoupper($letter))||(startsWith($line[1])==strtolower($letter))){
+//                     $stores_array[] = $line[1];
+//                     echo $line[1];
+//                 }
+                echo $line[1];
             }
 //             sort($stores_array);
-            print_r($stores_array);
+//             print_r($stores_array);
 //             echo "<div class='container'>";
 //             echo "<div class='text-start' class='row'>
 //                     <h1 id='$letter'>$letter</h1>
