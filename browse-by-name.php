@@ -181,7 +181,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 //                         echo $line[1];
 //                     }
 //                 }
-                echo startsWith($line[1], strtoupper($letter));
+                echo strpos($line[1], strtoupper($letter));
 //                 echo $line[1];
             }
 //             sort($stores_array);
