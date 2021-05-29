@@ -180,6 +180,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }
                 }
             }    
+            $stores_array = array_slice($stores_array, 1, count($stores_array));
             $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
             $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
                            'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
