@@ -184,8 +184,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
             }            
             sort($stores_array);
-            print_r($stores_array);
-            echo $stores_array[0];
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='$letter'>$letter</h1>
@@ -202,7 +200,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </a>";
             }
             for ($i = 0;$i<count($stores_array);$i+=1){
-                store_display_by_name($stores_array[i]);
+                store_display_by_name($stores_array[$i]);
                 echo $stores_array[i];
             }
             echo "</div>";
