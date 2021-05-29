@@ -138,38 +138,38 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
                 <h2 class="text-center">
                     <form action="" method="post">
-                        <input type="submit" value="A">
-                        <input type="submit" value="B">
-                        <input type="submit" value="C">
-                        <input type="submit" value="D">
-                        <input type="submit" value="E">
-                        <input type="submit" name="bla" value="F">
-                        <input type="submit" value="G">
-                        <input type="submit" value="H">
-                        <input type="submit" value="I">
-                        <input type="submit" value="J">
-                        <input type="submit" value="K">
-                        <input type="submit" value="L">
-                        <input type="submit" value="M">
-                        <input type="submit" value="N">
-                        <input type="submit" value="N">
-                        <input type="submit" value="O">
-                        <input type="submit" value="P">
-                        <input type="submit" value="Q">
-                        <input type="submit" value="R">
-                        <input type="submit" value="S">
-                        <input type="submit" value="T">
-                        <input type="submit" value="U">
-                        <input type="submit" value="V">
-                        <input type="submit" value="W">
-                        <input type="submit" value="X">
-                        <input type="submit" value="Y">
-                        <input type="submit" value="Z">
+                        <input type="submit" name="letter" value="A">
+                        <input type="submit" name="letter" value="B">
+                        <input type="submit" name="letter" value="C">
+                        <input type="submit" name="letter" value="D">
+                        <input type="submit" name="letter" value="E">
+                        <input type="submit" name="letter" value="F">
+                        <input type="submit" name="letter" value="G">
+                        <input type="submit" name="letter" value="H">
+                        <input type="submit" name="letter" value="I">
+                        <input type="submit" name="letter" value="J">
+                        <input type="submit" name="letter" value="K">
+                        <input type="submit" name="letter" value="L">
+                        <input type="submit" name="letter" value="M">
+                        <input type="submit" name="letter" value="N">
+                        <input type="submit" name="letter" value="N">
+                        <input type="submit" name="letter" value="O">
+                        <input type="submit" name="letter" value="P">
+                        <input type="submit" name="letter" value="Q">
+                        <input type="submit" name="letter" value="R">
+                        <input type="submit" name="letter" value="S">
+                        <input type="submit" name="letter" value="T">
+                        <input type="submit" name="letter" value="U">
+                        <input type="submit" name="letter" value="V">
+                        <input type="submit" name="letter" value="W">
+                        <input type="submit" name="letter" value="X">
+                        <input type="submit" name="letter" value="Y">
+                        <input type="submit" name="letter" value="Z">
                     </form>
                 </h2>
             </div>
             <?php
-            $letter = $_POST['bla'];
+            $letter = $_POST['letter'];
             echo $letter.nl2br("\n");
             $file = 'CSV_files/stores.txt';
             $store_csv_file = fopen($file, "r");
@@ -185,7 +185,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
             }            
             sort($stores_array);
-            echo $stores_array[0];
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='$letter'>$letter</h1>
