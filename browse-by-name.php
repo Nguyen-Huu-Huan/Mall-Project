@@ -169,7 +169,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </h2>
             </div>
             <?php
-            $letter = $_POST['browse-name']
+            $letter = $_POST['browse-name'];
+            echo $letter;
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='A'>A</h1>
