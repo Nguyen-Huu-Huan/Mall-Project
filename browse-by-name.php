@@ -182,20 +182,20 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }
                 }
             }    
-            $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-            $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
-                           'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
-                           'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
-                           'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg''images/pacson.jpg',
-                           'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
-                           'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
-                           'images/yankee_candle.jpg', 'images/zara.jpg'];
+//             $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//             $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
+//                            'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
+//                            'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
+//                            'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg''images/pacson.jpg',
+//                            'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
+//                            'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
+//                            'images/yankee_candle.jpg', 'images/zara.jpg'];
             $image_select = '';
-            for ($i = 0;$i<count($alphabet_letter);$i+=1){
-                if ($letter==$alphabet_letter[$i]){
-                    $image_select = $link_image[$i];
-                }
-            }
+//             for ($i = 0;$i<count($alphabet_letter);$i+=1){
+//                 if ($letter==strtoupper($alphabet_letter[$i])){
+//                     $image_select = $link_image[$i];
+//                 }
+//             }
             sort($stores_array);
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
