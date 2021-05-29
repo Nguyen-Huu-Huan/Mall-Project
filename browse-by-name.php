@@ -137,13 +137,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <h2 class="section-title" id="top">Stores by names</h2>
 
                 <h2 class="text-center">
-                    <form action="" method="post" name="browse-name">
+                    <form action="" method="post">
                         <input type="submit" value="A">
                         <input type="submit" value="B">
                         <input type="submit" value="C">
                         <input type="submit" value="D">
                         <input type="submit" value="E">
-                        <input type="submit" value="F">
+                        <input type="submit" name="bla" value="F">
                         <input type="submit" value="G">
                         <input type="submit" value="H">
                         <input type="submit" value="I">
@@ -169,7 +169,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </h2>
             </div>
             <?php
-            $letter = $_POST['browse-name'];
+            $letter = $_POST['bla'];
             echo $letter;
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
