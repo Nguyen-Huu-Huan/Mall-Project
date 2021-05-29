@@ -40,17 +40,17 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
-            <li><a class="text-bold" href="index.html">Home</a></li>
-            <li><a class="text-bold" href="about-us.html">About us</a></li>
-            <li><a class="text-bold" href="fees.html">Fees</a></li>
-            <li><a class="text-bold" href="myaccount.html">My Account</a></li>
+            <li><a class="text-bold" href="index.php">Home</a></li>
+            <li><a class="text-bold" href="about-us.php">About us</a></li>
+            <li><a class="text-bold" href="fees.php">Fees</a></li>
+            <li><a class="text-bold" href="myaccount.php">My Account</a></li>
             <li>
                 <div class="mobile-menu-dropdown">
                     <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
                     <label for="menu-drop" class="text-bold">Browse Stores &#8628;</label>
                     <div class="mobile-menu-dropdown-content">
                         <ul>
-                            <li><a class="text-bold" href="browse-by-name.html">Browse stores by names</a></li>
+                            <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
                         </ul>
                         <div class="mobile-menu-dropdown">
                             <ul>
@@ -60,9 +60,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
                                     <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
                                         <ul>
-                                            <li><a href="fashion.html">Fashion</a></li>
-                                            <li><a href="electronics.html">Electronics and technology</a></li>
-                                            <li><a href="beauty.html">Beauty</a></li>
+                                            <li><a href="fashion.php">Fashion</a></li>
+                                            <li><a href="electronics.php">Electronics and technology</a></li>
+                                            <li><a href="beauty.php">Beauty</a></li>
                                         </ul>
 
                                     </div>
@@ -75,16 +75,16 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                 </div>
             </li>
-            <li><a class="text-bold" href="faq.html">FAQs</a></li>
-            <li><a class="text-bold" href="contact.html">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
+            <li><a class="text-bold" href="faq.php">FAQs</a></li>
+            <li><a class="text-bold" href="contact.php">Contact</a></li>
+            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
             <li>
-                <a href="order-placement.html"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
+                <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
             <br>
-            <li><a href="term-of-service.html">Term of Service</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="copyright.html">Copyright</a></li>
+            <li><a href="term-of-service.php">Term of Service</a></li>
+            <li><a href="privacy-policy.php">Privacy Policy</a></li>
+            <li><a href="copyright.php">Copyright</a></li>
         </ul>
 
     </nav>
@@ -94,26 +94,26 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             <div class="container">
                 <div class="row">
                     <div class="col-30">
-                        <a href="index.html"> <img class="header-logo" src="images/logo.png" alt="mallux logo">
+                        <a href="index.php"> <img class="header-logo" src="images/logo.png" alt="mallux logo">
                         </a>
                     </div>
                     <nav class="col-70 menu">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about-us.html">About us</a></li>
-                            <li><a href="fees.html">Fees</a></li>
-                            <li><a href="myaccount.html">My Account</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="about-us.php">About us</a></li>
+                            <li><a href="fees.php">Fees</a></li>
+                            <li><a href="myaccount.php">My Account</a></li>
                             <li>
                                 <div class="dropdown">
                                     <a>Browse &#8628;</a>
                                     <div class="dropdown-content">
-                                        <a href="browse-by-name.html">Browse stores by names</a>
+                                        <a href="browse-by-name.php">Browse stores by names</a>
                                         <div class="dropdown">
                                             <a>Browse store by category &#8628;</a>
                                             <div class="dropdown-content dropdown-category">
-                                                <a href="fashion.html">Fashion</a>
-                                                <a href="electronics.html">Electronics and technology</a>
-                                                <a href="beauty.html">Beauty</a>
+                                                <a href="fashion.php">Fashion</a>
+                                                <a href="electronics.php">Electronics and technology</a>
+                                                <a href="beauty.php">Beauty</a>
                                             </div>
                                             </a>
                                         </div>
@@ -121,11 +121,11 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="logout"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
+                            <li><a href="faq.php">FAQs</a></li>
+                            <li><a href="contact.php">Contact</a></li>
+                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
                         </ul>
-                        <a href="order-placement.html"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
+                        <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
                     <div class="res-index-space1 col-70"></div>
                 </div>
@@ -137,7 +137,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
                     <div class="small-container col-70">
                         <h1 class="section-title">Contact Form</h1>
-                        <form action="contact.html" method="post" class="form" id="formContact" onsubmit="return checkContact()">
+                        <form action="contact.php" method="post" class="form" id="formContact" onsubmit="return checkContact()">
                             <label for="contact_purpose"><strong>Contact Purpose</strong></label>
                             <br>
                             <select name="purpose">
@@ -232,13 +232,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <h3>Useful Links</h3>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="term-of-service.html">Term of Service</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="copyright.html">Copyright</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="logout"><a href="myaccount.html" onclick="logOut()">Log out</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="term-of-service.php">Term of Service</a></li>
+                            <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                            <li><a href="copyright.php">Copyright</a></li>
+                            <li><a href="faq.php">FAQs</a></li>
+                            <li><a href="contact.php">Contact</a></li>
+                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
                         </ul>
                     </div>
                 </div>

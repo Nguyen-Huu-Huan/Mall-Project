@@ -60,9 +60,9 @@ function logged_in() {
 if (document.querySelector('.logout') != null) {
     if (localStorage.getItem('login') == 'true') {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-        document.querySelectorAll("a[href='myaccount.html']:not(a[onclick='logOut()'])").forEach((button) => {
+        document.querySelectorAll("a[href='myaccount.php']:not(a[onclick='logOut()'])").forEach((button) => {
             button.removeAttribute('href');
-            button.setAttribute('href', 'logged-in.html')
+            button.setAttribute('href', 'logged-in.php')
         })
     } else {
         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
@@ -668,11 +668,11 @@ function checkInputs() {
 
     if (document.querySelector("#owner-checked").checked == true) {
         if (countSuccess == 11) {
-            window.open('myaccount.html')
+            window.open('myaccount.php')
         }
     } else {
         if (countSuccess == 9) {
-            window.open('myaccount.html')
+            window.open('myaccount.php')
         }
     }
 }

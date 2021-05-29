@@ -1196,7 +1196,7 @@ input[type=file] {
     html {
         font-size: 14px;
     }
-    /*--index.html--*/
+    /*--index.php--*/
     .container {
         width: 95%;
     }
@@ -1237,7 +1237,7 @@ input[type=file] {
     .text-medium {
         font-size: 1.5rem;
     }
-    /*--index.html--*/
+    /*--index.php--*/
     .col-50 {
         flex-basis: 100%;
     }
@@ -1302,14 +1302,14 @@ input[type=file] {
     .new-products .row {
         margin-bottom: -10px;
     }
-    /*--fashion.html--*/
+    /*--fashion.php--*/
     .fashion-stores .col-20,
     .electronics-stores .col-20,
     .beauty-stores .col-20 {
         flex-basis: 45%;
         margin: 0.3rem;
     }
-    /*--browse-by-name.html--*/
+    /*--browse-by-name.php--*/
     .browse-by-name .col-20 {
         flex-basis: 45%;
         margin: 0.3rem;
@@ -1350,14 +1350,14 @@ input[type=file] {
         width: 60%;
         max-width: 10rem;
     }
-    /*--about-us.html--*/
+    /*--about-us.php--*/
     .about-us .col-30 {
         min-height: 0;
         flex-basis: 100%;
         padding: 2rem 1rem 1.5rem 1rem;
         margin-bottom: 2rem;
     }
-    /*--fees.html--*/
+    /*--fees.php--*/
     .fees-desktop {
         display: none !important;
     }
@@ -1395,7 +1395,7 @@ input[type=file] {
         font-size: 3rem;
         font-weight: 800;
     }
-    /*--STORE/about-us.html--*/
+    /*--STORE/about-us.php--*/
     .store-browse-by-time .col-20,
     .store-browse-by-category .col-20 {
         margin: 1rem;
@@ -1409,11 +1409,11 @@ input[type=file] {
     .store-browse-by-category .col-20 h3 {
         font-size: 1.5rem;
     }
-    /*--STORE/about-us.html--*/
+    /*--STORE/about-us.php--*/
     .store-contact * {
         font-size: 1.5rem;
     }
-    /*--STORE/store-home.html--*/
+    /*--STORE/store-home.php--*/
     .store-home .col-20 {
         margin: 0.5rem;
         flex-basis: 40%;
@@ -1429,7 +1429,7 @@ input[type=file] {
     .store-footer .store-logo {
         width: 60%;
     }
-    /*--order-placement.html--*/
+    /*--order-placement.php--*/
     .order-placement .medium-container {
         width: 96%;
     }
