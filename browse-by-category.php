@@ -143,14 +143,15 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         $file = 'CSV_files/stores.txt';
         $stores_by_category_csv_file = fopen($file, "r");
         $stores_by_category_array = array();
-        $store_counter = 1;
-        while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
+        $store_counter = 0;
+        foreach($categories_array as $category){
             $store_array = array();
-            if ($line[2]==$store_counter){$store_array[] = $line[1];}
-            $stores_by_category_array[$line[2]] = $store_array;
-            echo $line[1].nl2br("\t").$line[2].nl2br("\n");
+            while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
+                if ($line[2]==$store_counter){$store_array[] = $line[1];}
+            }    
+            $stores_by_category_array[$store_counter] = $store_array;
             $store_counter+=1;
-        }    
+        }
         print_r($stores_by_category_array);
         $categories_array = array_slice($categories_array, 1,count($categories_array));
         echo "<section class='new-products'>
