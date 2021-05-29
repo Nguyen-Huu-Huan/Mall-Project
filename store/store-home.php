@@ -147,7 +147,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         <div class='thumbnail-wrapper-stores'>
                             <div class='row'>
                                 <div class='col-80'>
-                                    <img src'$image' class='offer-img'>
+                                    <img src=$image class='offer-img'>
                                 </div>
                             </div>
                             <div class='row'>
