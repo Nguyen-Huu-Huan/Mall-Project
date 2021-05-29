@@ -198,10 +198,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </figcaption>
                         </figure>
                 </a>";
-                echo $store;
             }
             for ($i = 0;$i<count($stores_array);$i+=1){
                 store_display_by_name($stores_array[i]);
+                echo $stores_array[i];
             }
             echo "</div>";
             ?>
