@@ -115,7 +115,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 function new_products_display($item, $image){
                     echo "
                     <div class='col-17'>
-                        <a href='product-details-dunklowblack.php'>
+                        <a href='product-details-airforceone.php'>
                             <div class='new-products-wrapper hover-shadow'>
                                 <figure class='new-products-img-wrapper'>
                                     <img class='new-products-img' src=$image alt='$item[1]'>
