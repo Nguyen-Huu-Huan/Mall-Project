@@ -140,19 +140,45 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             $categories_array[] = $line[1];                     
         }    
         $categories_array = array_slice($categories_array, 1,count($categories_array));
+        $file = 'CSV_files/stores.txt';
+        $stores_by_category_csv_file = fopen($file, "r");
+        $stores_by_category_array = array();
+        while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
+            $stores_by_category_array[$line[2]] = $line[1];                     
+        }    
+        
+        $categories_array = array_slice($categories_array, 1,count($categories_array));
         echo "<section class='new-products'>
             <div class='small-container'>
-                <h2 class='section-title'>Products</h2>
+                <h2 class='section-title'>Store Categories</h2>
                 <form action='' method='post' class='row'>
-                    <select class='col-70'>";
+                    <select name='category' class='col-70'>";
         for ($i = 0; $i<count($categories_array);$i+=1){
             echo "<option value='$categories_array[$i]'>$categories_array[$i]</option>";
         }
         echo "</select>
              <input type='submit' class='col-10 text-big btn hover-shadow img' id='order-button'>
-            </form>
+            </form>";
+        echo "<div class='row'>"
+        foreach ($stores_by_category_array as $category => $store){
+            if ($_POST['category']==$category){
+                echo "<div class='col-20'>
+                        <div class='new-products-wrapper hover-shadow'>
+                            <figure class='new-products-img-wrapper'>
+                                <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
+                                <img class='new-products-brand' src='images/nike.jpg'>
+                            </figure>
+                            <p class='text-center text-small color-gray'>$store</p>
+                            <p class='text-center text-medium color-black'>Shirt</p>
+                            <h2 class='text-center text-medium'>$category</h2>
+                        </div>
+                    </div>";
+            }
+        } 
+        echo"</div>
           </div>
         </section>";
+    
         ?>
         <section class="new-products">
             <div class="small-container">
