@@ -180,7 +180,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 //                         $stores_array[] = $line[1];
                         echo $line[1].nl2br("\n");
 //                         echo (strpos($line[1], strtoupper($letter))).nl2br("\n");
-                        echo (strpos($line[1], "F")==0).nl2br("\n")
+//                         echo (strpos($line[1], "F")==0).nl2br("\n")
                     }
                 }
 //                 echo $line[1].nl2br("\n");
