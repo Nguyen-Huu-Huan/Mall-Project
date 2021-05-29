@@ -143,38 +143,27 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </section>";
                 $feature_product_images = [];
                 function feature_products_display($item, $image){
-//                     echo "
-//                         <div class='thumbnail-wrapper-stores'>
-//                             <div class='row'>
-//                                 <div class='col-80'>
-//                                     <img src='../images/nikefeature-dunklowblack.png' class='offer-img'>
-//                                 </div>
-//                             </div>
-//                             <div class='row'>
-//                                 <div class='col-90'>
-//                                     <h1>$item</h1>
-//                                     <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
-//                                     <a href='product-details-dunklowblack.php' class='btn btnnike'>See details &#10147; </a>
-//                                 </div>
-//                             </div>
-//                         </div>";
                     echo "
-                    <div class='thumbnail-wrapper-stores'>
-                        <a href='store/store-home.php'>
-                            <figure class='hover-shadow'>
-                                <img src='../images/givenchy.jpg' alt='givenchy'>
-                                <figcaption class='text-center'>
-                                    <a href='store/store-home.php' class='text-medium text-bold'>$item[1]</a>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>";
+                        <div class='thumbnail-wrapper-stores'>
+                            <div class='row'>
+                                <div class='col-80'>
+                                    <img src'$image' class='offer-img'>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-90'>
+                                    <h1>$item</h1>
+                                    <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
+                                    <a href='product-details-dunklowblack.php' class='btn btnnike'>See details &#10147; </a>
+                                </div>
+                            </div>
+                        </div>";
                 }
                 echo "<h2 class='section-title'>Featured Products</h2>";
                 echo "<div class='container'>";
                 echo "<div class='nowrap scroll-stores'>";
                 for ($i = 0; $i<count($feature_products); $i+=1){
-                    feature_products_display($feature_products[$i][1], $new_product_images);
+                    feature_products_display($feature_products[$i][1], $new_product_images[$i%5]);
                 }
                 echo "</div>";
                 echo "</div>";
