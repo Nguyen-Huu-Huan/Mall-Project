@@ -143,7 +143,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         $file = 'CSV_files/stores.txt';
         $stores_by_category_csv_file = fopen($file, "r");
         $stores_by_category_array = array();
+        $store_counter = 1;
         while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
+            if ($line[2]==$store_counter){echo "this is equal";}
             $stores_by_category_array[$line[2]] = $line[1];
             echo $line[1].nl2br("\t").$line[2].nl2br("\n");
         }    
