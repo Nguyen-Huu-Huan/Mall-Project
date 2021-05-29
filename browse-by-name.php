@@ -171,20 +171,33 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             <?php
             $letter = $_POST['bla'];
             echo $letter;
-            echo "<div class='container'>";
-            echo "<div class='text-start' class='row'>
-                    <h1 id='$letter'>$letter</h1>
-                </div>";
-            echo "<div class='row'>";
-            echo "<a class='store-thumbnail' href='store/store-home.php'>
-                        <figure class='col-20 hover-shadow'>
-                            <img src='images/adidas.jpg' alt='adidas'>
-                            <figcaption class='text-center'>
-                                <a href='store/store-home.php' class='text-medium text-bold' alt='adidas'>BlaBla</a>
-                            </figcaption>
-                        </figure>
-                </a>";
-            echo "</div>";
+            $file = 'CSV_files/stores.txt';
+            $store_csv_file = fopen($file, "r");
+            $stores_array = array();
+            $product_array[] = fgetcsv($product_csv_file, 1000);
+            while ($line = fgetcsv($product_csv_file, 1000)) {
+                if ((startsWith($line[1])==strtoupper($letter))||(startsWith($line[1])==strtolower($letter))){
+                    $stores_array[] = $line[1];
+                }
+            }
+            sort($stores_array);
+            print_r($stores_array);
+//             echo "<div class='container'>";
+//             echo "<div class='text-start' class='row'>
+//                     <h1 id='$letter'>$letter</h1>
+//                 </div>";
+//             echo "<div class='row'>";
+//             function store_display_by_name(){
+//                 echo "<a class='store-thumbnail' href='store/store-home.php'>
+//                         <figure class='col-20 hover-shadow'>
+//                             <img src='images/adidas.jpg' alt='adidas'>
+//                             <figcaption class='text-center'>
+//                                 <a href='store/store-home.php' class='text-medium text-bold' alt='adidas'>BlaBla</a>
+//                             </figcaption>
+//                         </figure>
+//                 </a>";
+//             }
+//             echo "</div>";
             ?>
             <div class="container">
                 <div class="text-start" class="row">
