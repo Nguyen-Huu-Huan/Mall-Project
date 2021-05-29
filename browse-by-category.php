@@ -159,7 +159,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         echo "</select>
              <input type='submit' class='col-10 text-big btn hover-shadow img' id='order-button'>
             </form>";
-        echo "<div class='row'>"
+        echo "<div class='row'>";
         foreach ($stores_by_category_array as $category => $store){
             if ($_POST['category']==$category){
 //                 echo "<div class='col-20'>
