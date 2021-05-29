@@ -179,10 +179,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $compare = stripos($line[1],$letter);
 //                     echo ($compare_upper==0).nl2br("\n");
 //                     echo 
-                    if ($compare!==false){
+                    if ($compare===0){
 //                         $stores_array[] = $line[1];
                         echo $line[1].nl2br("\n");
-                        echo "hello world";
 //                         echo (strpos($line[1], strtoupper($letter))).nl2br("\n");
 //                         echo (strpos($line[1], "F")==0).nl2br("\n")
 //                         echo (strpos($line[1],strtoupper($letter))).nl2br("\n");
