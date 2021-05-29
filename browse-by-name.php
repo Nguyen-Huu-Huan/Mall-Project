@@ -176,7 +176,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             $stores_array = array();
             while ($line = fgetcsv($store_csv_file, 1000)) {
                 if (isset($letter)){
-                    if ((startsWith($line[1])==strtoupper($letter))||(startsWith($line[1])==strtolower($letter))){
+                    if ((startsWith($line[1], strtoupper($letter)))||(startsWith($line[1],strtolower($letter)))){
                         $stores_array[] = $line[1];
                         echo $line[1];
                     }
