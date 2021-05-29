@@ -173,8 +173,18 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             echo $letter;
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
-                    <h1 id='A'>A</h1>
-                </div>"
+                    <h1 id='$letter'>$letter</h1>
+                </div>";
+            echo "<div class='row'>";
+            echo "<a class='store-thumbnail' href='store/store-home.php'>
+                        <figure class='col-20 hover-shadow'>
+                            <img src='images/adidas.jpg' alt='adidas'>
+                            <figcaption class='text-center'>
+                                <a href='store/store-home.php' class='text-medium text-bold' alt='adidas'>BlaBla</a>
+                            </figcaption>
+                        </figure>
+                </a>";
+            echo "</div>";
             ?>
             <div class="container">
                 <div class="text-start" class="row">
