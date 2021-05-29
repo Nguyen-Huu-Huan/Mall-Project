@@ -132,15 +132,37 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         </header>
 
         <!----NEW PRODUCTS--->
+        <?php 
+        $file = 'CSV_files/categories.txt';
+        $categories_csv_file = fopen($file, "r");
+        $categories_array = array();
+        while ($line = fgetcsv($categories_csv_file, 1000)) {
+            $categories_array[] = $line[1];                     
+        }    
+        $categories_array = array_slice($categories_array, 1,count($categories_array));
+        echo "<section class='new-products'>
+            <div class='small-container'>
+                <h2 class='section-title'>Products</h2>
+                <form action='' method='post' class='row'>
+                    <select class='col-70'>";
+        for ($i = 0; $i<count($categories_array);$i+=1){
+            echo "<option value='$categories_array[$i]'>$categories_array[$i]</option>";
+        }
+        echo "</select>
+             <input type='submit' class='col-10 text-big btn hover-shadow img' id='order-button'>
+            </form>
+          </div>
+        </section>";
+        ?>
         <section class="new-products">
             <div class="small-container">
                 <h2 class="section-title">Products</h2>
                 <select>
-                <option>Select category</option>
-                <option>Shirt</option>
-                <option>Hoodie</option>
-                <option>Pant</option>
-            </select>
+                    <option>Select category</option>
+                    <option>Shirt</option>
+                    <option>Hoodie</option>
+                    <option>Pant</option>
+                </select>
                 <div class="row">
                     <div class="col-20">
                         <div class="new-products-wrapper hover-shadow">
