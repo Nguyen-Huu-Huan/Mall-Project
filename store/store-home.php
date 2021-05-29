@@ -90,7 +90,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                 </div>
             </header>
-<!--             <?php 
+            <?php 
                 $file = '../CSV_files/products.txt';
                 $product_csv_file = fopen($file, "r");
                 $products_array = array();
@@ -196,7 +196,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</table>";
 
-            ?> -->
+            ?>
         
         </main>
         <footer class="footer">
