@@ -178,9 +178,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             while ($line = fgetcsv($product_csv_file, 1000)) {
                 if ((startsWith($line[1])==strtoupper($letter))||(startsWith($line[1])==strtolower($letter))){
                     $stores_array[] = $line[1];
+                    echo $line[1];
                 }
             }
-            sort($stores_array);
+//             sort($stores_array);
             print_r($stores_array);
 //             echo "<div class='container'>";
 //             echo "<div class='text-start' class='row'>
