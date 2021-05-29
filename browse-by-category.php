@@ -162,17 +162,18 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         echo "<div class='row'>"
         foreach ($stores_by_category_array as $category => $store){
             if ($_POST['category']==$category){
-                echo "<div class='col-20'>
-                        <div class='new-products-wrapper hover-shadow'>
-                            <figure class='new-products-img-wrapper'>
-                                <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
-                                <img class='new-products-brand' src='images/nike.jpg'>
-                            </figure>
-                            <p class='text-center text-small color-gray'>$store</p>
-                            <p class='text-center text-medium color-black'>Shirt</p>
-                            <h2 class='text-center text-medium'>$category</h2>
-                        </div>
-                    </div>";
+//                 echo "<div class='col-20'>
+//                         <div class='new-products-wrapper hover-shadow'>
+//                             <figure class='new-products-img-wrapper'>
+//                                 <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
+//                                 <img class='new-products-brand' src='images/nike.jpg'>
+//                             </figure>
+//                             <p class='text-center text-small color-gray'>$store</p>
+//                             <p class='text-center text-medium color-black'>Shirt</p>
+//                             <h2 class='text-center text-medium'>$category</h2>
+//                         </div>
+//                     </div>";
+                echo "hello world";
             }
         } 
         echo"</div>
