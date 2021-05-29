@@ -2,6 +2,10 @@
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
 ?>
+<?php 
+    session_start(); 
+    $_SESSION['logged-in'] = false;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
