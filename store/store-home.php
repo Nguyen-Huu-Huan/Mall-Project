@@ -129,18 +129,18 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 # An array with new products' image links
                 $new_product_images = ['../images/kits.jpg','../images/red_lobster.jpg','../images/solprole.png','../images/starbucks.jpg','../images/doritos.jpg'];
-                echo "            
-                <section class='new-products'>
-                    <div class='medium-container'>
-                        <h2 class='section-title'>New Products</h2>
-                        <div class='row'>";
-                for ($i = 0; $i<count($created_time); $i+=1){
-                    new_products_display($created_time[$i], $new_product_images[$i]);
-                }
-                echo "
-                        </div>
-                    </div>
-                </section>";
+//                 echo "            
+//                 <section class='new-products'>
+//                     <div class='medium-container'>
+//                         <h2 class='section-title'>New Products</h2>
+//                         <div class='row'>";
+//                 for ($i = 0; $i<count($created_time); $i+=1){
+//                     new_products_display($created_time[$i], $new_product_images[$i]);
+//                 }
+//                 echo "
+//                         </div>
+//                     </div>
+//                 </section>";
 //                 $feature_product_images = [];
 //                 function feature_products_display($item, $image){
 // //                     echo "
