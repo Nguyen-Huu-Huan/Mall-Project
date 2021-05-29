@@ -156,7 +156,34 @@ function index_file() {
         scrollProductsLoop = setInterval(autoScrollProducts, 8)
     })
 }
+function store_file() {
 
+    //Scroll function
+    function autoScroll(scrollElement, first) {
+        const firstElement = document.querySelector(first)
+
+        if (!inView(firstElement)) {
+            scrollElement.appendChild(firstElement);
+            scrollElement.scrollTo(scrollElement.scrollLeft - firstElement.offsetWidth - scrollOffset, 0);
+        }
+        if (scrollElement.scrollLeft !== scrollElement.scrollWidth) {
+            scrollElement.scrollTo(scrollElement.scrollLeft + 1, 0);
+        }
+    }
+    function autoScrollProducts() {
+        autoScroll(scrollProductsElement, scrollProductsFirstElement)
+    }
+    scrollProductsLoop = setInterval(autoScrollProducts, 8)
+    //Mouse listener for Products
+    scrollProductsElement.addEventListener('mouseover', function() {
+        clearInterval(scrollProductsLoop);
+    })
+
+    scrollProductsElement.addEventListener('mouseout', function() {
+        autoScrollProducts()
+        scrollProductsLoop = setInterval(autoScrollProducts, 8)
+    })
+}
 
 
 
