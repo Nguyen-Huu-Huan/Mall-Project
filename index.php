@@ -183,7 +183,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $time_conversion = strtotime($time_str);
                     $created_time[$time_conversion] = $line;
                 }
-                ksort($created_time);
+                krsort($created_time);
                 if (sizeof($created_time)>=10){
                     $created_time = array_slice($created_time,0,10);
                 }
