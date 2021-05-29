@@ -138,33 +138,33 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
                 <h2 class="text-center">
                     <form action="" method="post" name="browse-name">
-                        <input type="submit" value="A"</input>
-                        <input type="submit" value="B"</input>
-                        <input type="submit" value="C"</input>
-                        <input type="submit" value="D"</input>
-                        <input type="submit" value="E"</input>
-                        <input type="submit" value="F"</input>
-                        <input type="submit" value="G"</input>
-                        <input type="submit" value="H"</input>
-                        <input type="submit" value="I"</input>
-                        <input type="submit" value="J"</input>
-                        <input type="submit" value="K"</input>
-                        <input type="submit" value="L"</input>
-                        <input type="submit" value="M"</input>
-                        <input type="submit" value="N"</input>
-                        <input type="submit" value="N"</input>
-                        <input type="submit" value="O"</input>
-                        <input type="submit" value="P"</input>
-                        <input type="submit" value="Q"</input>
-                        <input type="submit" value="R"</input>
-                        <input type="submit" value="S"</input>
-                        <input type="submit" value="T"</input>
-                        <input type="submit" value="U"</input>
-                        <input type="submit" value="V"</input>
-                        <input type="submit" value="W"</input>
-                        <input type="submit" value="X"</input>
-                        <input type="submit" value="Y"</input>
-                        <input type="submit" value="Z"</input>
+                        <input type="submit" value="A">
+                        <input type="submit" value="B">
+                        <input type="submit" value="C">
+                        <input type="submit" value="D">
+                        <input type="submit" value="E">
+                        <input type="submit" value="F">
+                        <input type="submit" value="G">
+                        <input type="submit" value="H">
+                        <input type="submit" value="I">
+                        <input type="submit" value="J">
+                        <input type="submit" value="K">
+                        <input type="submit" value="L">
+                        <input type="submit" value="M">
+                        <input type="submit" value="N">
+                        <input type="submit" value="N">
+                        <input type="submit" value="O">
+                        <input type="submit" value="P">
+                        <input type="submit" value="Q">
+                        <input type="submit" value="R">
+                        <input type="submit" value="S">
+                        <input type="submit" value="T">
+                        <input type="submit" value="U">
+                        <input type="submit" value="V">
+                        <input type="submit" value="W">
+                        <input type="submit" value="X">
+                        <input type="submit" value="Y">
+                        <input type="submit" value="Z">
                     </form>
                 </h2>
             </div>
