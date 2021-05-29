@@ -170,44 +170,42 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </div>
             <?php
             $letter = $_POST['bla'];
-            echo $letter;
+            echo $letter.nl2br("\n");
             $file = 'CSV_files/stores.txt';
             $store_csv_file = fopen($file, "r");
             $stores_array = array();
             while ($line = fgetcsv($store_csv_file, 1000)) {
                 if (isset($letter)){
                     $compare = stripos($line[1],$letter);
-//                     echo ($compare_upper==0).nl2br("\n");
-//                     echo 
                     if ($compare===0){
-//                         $stores_array[] = $line[1];
+                        $stores_array[] = $line[1];
                         echo $line[1].nl2br("\n");
-//                         echo (strpos($line[1], strtoupper($letter))).nl2br("\n");
-//                         echo (strpos($line[1], "F")==0).nl2br("\n")
-//                         echo (strpos($line[1],strtoupper($letter))).nl2br("\n");
+                        
                     }
                 }
-//                 echo $line[1].nl2br("\n");
             }
             
-//             sort($stores_array);
+            sort($stores_array);
 //             print_r($stores_array);
-//             echo "<div class='container'>";
-//             echo "<div class='text-start' class='row'>
-//                     <h1 id='$letter'>$letter</h1>
-//                 </div>";
-//             echo "<div class='row'>";
-//             function store_display_by_name(){
-//                 echo "<a class='store-thumbnail' href='store/store-home.php'>
-//                         <figure class='col-20 hover-shadow'>
-//                             <img src='images/adidas.jpg' alt='adidas'>
-//                             <figcaption class='text-center'>
-//                                 <a href='store/store-home.php' class='text-medium text-bold' alt='adidas'>BlaBla</a>
-//                             </figcaption>
-//                         </figure>
-//                 </a>";
-//             }
-//             echo "</div>";
+            echo "<div class='container'>";
+            echo "<div class='text-start' class='row'>
+                    <h1 id='$letter'>$letter</h1>
+                </div>";
+            echo "<div class='row'>";
+            function store_display_by_name($store){
+                echo "<a class='store-thumbnail' href='store/store-home.php'>
+                        <figure class='col-20 hover-shadow'>
+                            <img src='images/adidas.jpg' alt='adidas'>
+                            <figcaption class='text-center'>
+                                <a href='store/store-home.php' class='text-medium text-bold' alt='$store'>$store</a>
+                            </figcaption>
+                        </figure>
+                </a>";
+            }
+            for ($i = 0;$i<count($stores_array);$i+=1){
+                store_display_by_name($stores_array[i]);
+            }
+            echo "</div>";
             ?>
             <div class="container">
                 <div class="text-start" class="row">
