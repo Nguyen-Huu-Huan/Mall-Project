@@ -182,7 +182,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }
                 }
             }            
-            $link_image = ($letter=='A')? 'images/adidas.jpg':'';
+            $link_image = ($letter=='A')?'images/adidas.jpg':'';
             $link_image = ($letter=='B')? 'images/babylon.jpg':'';
             $link_image = ($letter=='C')? 'images/chanel.jpg':'';
             $link_image = ($letter=='D')? 'images/drmartens.jpg':'';
