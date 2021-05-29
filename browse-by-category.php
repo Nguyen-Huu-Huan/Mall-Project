@@ -151,10 +151,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $store_array[] = $line[1];
                 }
             }    
+            echo $category.nl2br("\n");
             $stores_by_category_array[$category_id] = $store_array;
             $category_id+=1;
         }
-        print_r($stores_by_category_array);
         echo "<section class='new-products'>
             <div class='small-container'>
                 <h2 class='section-title'>Store Categories</h2>
@@ -182,7 +182,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </div>
                         </div>";
                 }
-//                 echo "hello world";
             }
         } 
         echo"</div>
