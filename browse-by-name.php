@@ -177,8 +177,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             while ($line = fgetcsv($store_csv_file, 1000)) {
                 if (isset($letter)){
                     if ((strpos($line[1], strtoupper($letter))==0)||(strpos($line[1], strtolower($letter))==0)){
-                        $stores_array[] = $line[1];
-                        echo $line[1].nl2br("\n");
+//                         $stores_array[] = $line[1];
+//                         echo $line[1].nl2br("\n");
+                        echo strpos($line[1], strtoupper($letter);
                     }
                 }
 //                 echo $line[1];
