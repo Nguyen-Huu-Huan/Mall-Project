@@ -181,34 +181,36 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         
                     }
                 }
-            }            
-            $link_image = ($letter=='A')?'images/adidas.jpg':'';
-            $link_image = ($letter=='B')? 'images/babylon.jpg':'';
-            $link_image = ($letter=='C')? 'images/chanel.jpg':'';
-            $link_image = ($letter=='D')? 'images/drmartens.jpg':'';
-            $link_image = ($letter=='E')? 'images/ecco.jpg':'';
-            $link_image = ($letter=='F')? 'images/footlocker.jpg':'';
-            $link_image = ($letter=='G')? 'images/givenchy.jpg':'';
-            $link_image = ($letter=='H')? 'images/harrolds.jpg':'';
-            $link_image = ($letter=='I')? 'images/indigo.jpg':'';
-            $link_image = ($letter=='J')? 'images/jbhifi.jpg':'';
-            $link_image = ($letter=='K')? 'images/kookai.jpg':'';
-            $link_image = ($letter=='L')? 'images/lg-logo.jpg':'';
-            $link_image = ($letter=='M')? 'images/mjbale.jpg':'';
-            $link_image = ($letter=='N')? 'images/nike.jpg':'';
-            $link_image = ($letter=='O')? 'images/offwhite.jpg':'';
-            $link_image = ($letter=='P')? 'images/pacson.jpg':'';
-            $link_image = ($letter=='Q')? 'images/qatar.jpg':'';
-            $link_image = ($letter=='R')? 'images/reebok.jpg':'';
-            $link_image = ($letter=='S')? 'images/saintlaurent.jpg':'';
-            $link_image = ($letter=='T')? 'images/tde.jpg':'';
-            $link_image = ($letter=='U')? 'images/uniqlo.jpg':'';
-            $link_image = ($letter=='V')? 'images/victoria.jpg':'';
-            $link_image = ($letter=='W')? 'images/western.jpg':'';
-            $link_image = ($letter=='X')? 'images/xfinity.jpg':'';
-            $link_image = ($letter=='Y')? 'images/yankee_candle.jpg':'';
-            $link_image = ($letter=='Z')? 'images/zara.jpg':'';
-
+            }    
+            $link_image = 'dummy_variable';
+            while ($link_image!=''){
+                $link_image = ($letter=='A')?'images/adidas.jpg':'';
+                $link_image = ($letter=='B')? 'images/babylon.jpg':'';
+                $link_image = ($letter=='C')? 'images/chanel.jpg':'';
+                $link_image = ($letter=='D')? 'images/drmartens.jpg':'';
+                $link_image = ($letter=='E')? 'images/ecco.jpg':'';
+                $link_image = ($letter=='F')? 'images/footlocker.jpg':'';
+                $link_image = ($letter=='G')? 'images/givenchy.jpg':'';
+                $link_image = ($letter=='H')? 'images/harrolds.jpg':'';
+                $link_image = ($letter=='I')? 'images/indigo.jpg':'';
+                $link_image = ($letter=='J')? 'images/jbhifi.jpg':'';
+                $link_image = ($letter=='K')? 'images/kookai.jpg':'';
+                $link_image = ($letter=='L')? 'images/lg-logo.jpg':'';
+                $link_image = ($letter=='M')? 'images/mjbale.jpg':'';
+                $link_image = ($letter=='N')? 'images/nike.jpg':'';
+                $link_image = ($letter=='O')? 'images/offwhite.jpg':'';
+                $link_image = ($letter=='P')? 'images/pacson.jpg':'';
+                $link_image = ($letter=='Q')? 'images/qatar.jpg':'';
+                $link_image = ($letter=='R')? 'images/reebok.jpg':'';
+                $link_image = ($letter=='S')? 'images/saintlaurent.jpg':'';
+                $link_image = ($letter=='T')? 'images/tde.jpg':'';
+                $link_image = ($letter=='U')? 'images/uniqlo.jpg':'';
+                $link_image = ($letter=='V')? 'images/victoria.jpg':'';
+                $link_image = ($letter=='W')? 'images/western.jpg':'';
+                $link_image = ($letter=='X')? 'images/xfinity.jpg':'';
+                $link_image = ($letter=='Y')? 'images/yankee_candle.jpg':'';
+                $link_image = ($letter=='Z')? 'images/zara.jpg':'';
+            }
             sort($stores_array);
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
