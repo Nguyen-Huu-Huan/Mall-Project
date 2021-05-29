@@ -191,13 +191,11 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                            'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
                            'images/yankee_candle.jpg', 'images/zara.jpg'];
             $image_select = '';
-            echo count($link_image);
-//             for ($i = 0;$i<count($alphabet_letter);$i+=1){
-//                 if ($letter==strtoupper($alphabet_letter[$i])){
-// //                     $image_select = $link_image[$i];
-//                     echo "hello world";
-//                 }
-//             }
+            for ($i = 0;$i<count($alphabet_letter);$i+=1){
+                if ($letter==strtoupper($alphabet_letter[$i])){
+                    $image_select = $link_image[$i];
+                }
+            }
             sort($stores_array);
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
