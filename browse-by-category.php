@@ -144,7 +144,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         $stores_by_category_csv_file = fopen($file, "r");
         $stores_by_category_array = array();
         while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
-            $stores_by_category_array[$line[2]] = $line[1];                     
+            $stores_by_category_array[$line[2]] = $line[1];
+            echo $line[1].nl2br("\t").$line[2].nl2br("\n");
         }    
         print_r($stores_by_category_array);
         $categories_array = array_slice($categories_array, 1,count($categories_array));
