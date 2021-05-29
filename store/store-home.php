@@ -23,7 +23,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </noscript>
 </head>
 
-<body class="store-home" >
+<body class="store-home" onload="store_file()">
     <div class="cookie">
       <div class="container">
         <h1 class="text-extra text-center">Cookie Consent</h1>
@@ -144,7 +144,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 $feature_product_images = [];
                 function feature_products_display($item, $image){
                     echo "
-                        <div class='thumbnail-wrapper-stores'>
+                        <div class='thumbnail-wrapper-products'>
                             <div class='row'>
                                 <div class='col-80'>
                                     <img src=$image class='offer-img'>
@@ -161,7 +161,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "<h2 class='section-title'>Featured Products</h2>";
                 echo "<div class='container'>";
-                echo "<div class='nowrap scroll-stores'>";
+                echo "<div class='nowrap scroll-products'>";
                 for ($i = 0; $i<count($feature_products); $i+=1){
                     feature_products_display($feature_products[$i][1], $new_product_images[$i%5]);
                 }
