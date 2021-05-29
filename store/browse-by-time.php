@@ -135,12 +135,12 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='newest_first'))||($_SESSION['sort']=='newest')){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
-                        ksort($created_time);
+                        krsort($created_time);
                     }
                 }
                 if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='oldest_first'))||($_SESSION['sort']=='oldest')){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
-                        krsort($created_time);
+                        ksort($created_time);
                     }else{
                         array_reverse($created_time);
                     }
