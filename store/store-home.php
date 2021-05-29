@@ -171,13 +171,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>";
                 }
                 echo "<h2 class='section-title'>Featured Products</h2>";
-                echo "<div class='container'>";
-                echo "<div class='nowrap scroll-stores'>";
-                for ($i = 0; $i<count($feature_products); $i+=1){
-                    feature_products_display($feature_products[$i][1], $new_product_images);
-                }
-                echo "</div>";
-                echo "</div>";
+//                 echo "<div class='container'>";
+//                 echo "<div class='nowrap scroll-stores'>";
+//                 for ($i = 0; $i<count($feature_products); $i+=1){
+//                     feature_products_display($feature_products[$i][1], $new_product_images);
+//                 }
+//                 echo "</div>";
+//                 echo "</div>";
                 echo "<a href='#' id='display' onclick='see_products()'>Click here to see all products</a>";
                 echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_products(){
