@@ -334,7 +334,7 @@ function cart_load() {
     }
 }
 function order_successful(){
-    if (localStorage.getItem('islogin')==true){
+    if (localStorage.getItem('login')==true){
         localStorage.removeItem('Dunk Low Black');
         localStorage.removeItem('Air Force One');
         localStorage.removeItem('coupon');
