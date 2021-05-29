@@ -137,37 +137,39 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <h2 class="section-title" id="top">Stores by names</h2>
 
                 <h2 class="text-center">
-                    <form action="" method="post">
-                        <input type="submit">A</input>
-                        <input type="submit">B</input>
-                        <input type="submit">C</input>
-                        <input type="submit">D</input>
-                        <input type="submit">E</input>
-                        <input type="submit">F</input>
-                        <input type="submit">G</input>
-                        <input type="submit">H</input>
-                        <input type="submit">I</input>
-                        <input type="submit">J</input>
-                        <input type="submit">K</input>
-                        <input type="submit">L</input>
-                        <input type="submit">M</input>
-                        <input type="submit">N</input>
-                        <input type="submit">O</input>
-                        <input type="submit">P</input>
-                        <input type="submit">Q</input>
-                        <input type="submit">R</input>
-                        <input type="submit">S</input>
-                        <input type="submit">T</input>
-                        <input type="submit">U</input>
-                        <input type="submit">V</input>
-                        <input type="submit">W</input>
-                        <input type="submit">X</input>
-                        <input type="submit">Y</input>
-                        <input type="submit">Z</input>
+                    <form action="" method="post" name="browse-name">
+                        <input type="submit" value="A"</input>
+                        <input type="submit" value="B"</input>
+                        <input type="submit" value="C"</input>
+                        <input type="submit" value="D"</input>
+                        <input type="submit" value="E"</input>
+                        <input type="submit" value="F"</input>
+                        <input type="submit" value="G"</input>
+                        <input type="submit" value="H"</input>
+                        <input type="submit" value="I"</input>
+                        <input type="submit" value="J"</input>
+                        <input type="submit" value="K"</input>
+                        <input type="submit" value="L"</input>
+                        <input type="submit" value="M"</input>
+                        <input type="submit" value="N"</input>
+                        <input type="submit" value="N"</input>
+                        <input type="submit" value="O"</input>
+                        <input type="submit" value="P"</input>
+                        <input type="submit" value="Q"</input>
+                        <input type="submit" value="R"</input>
+                        <input type="submit" value="S"</input>
+                        <input type="submit" value="T"</input>
+                        <input type="submit" value="U"</input>
+                        <input type="submit" value="V"</input>
+                        <input type="submit" value="W"</input>
+                        <input type="submit" value="X"</input>
+                        <input type="submit" value="Y"</input>
+                        <input type="submit" value="Z"</input>
                     </form>
                 </h2>
             </div>
             <?php
+            $letter = $_POST['browse-name']
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='A'>A</h1>
