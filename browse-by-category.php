@@ -154,7 +154,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <form action='' method='post' class='row'>
                     <select name='category' class='col-70'>";
         for ($i = 0; $i<count($categories_array);$i+=1){
-            echo "<option value='$categories_array[$i]'>$categories_array[$i]</option>";
+            echo "<option value='$i'>$categories_array[$i]</option>";
         }
         echo "</select>
              <input type='submit' class='col-10 text-big btn hover-shadow img' id='order-button'>
