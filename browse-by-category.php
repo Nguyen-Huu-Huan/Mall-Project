@@ -161,6 +161,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </form>";
         echo "<div class='row'>";
         foreach ($stores_by_category_array as $category => $store){
+            
+            echo $_POST['category']; 
             if ($_POST['category']==$category){
 //                 echo "<div class='col-20'>
 //                         <div class='new-products-wrapper hover-shadow'>
