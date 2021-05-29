@@ -149,6 +149,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             if ($line[2]==$store_counter){$store_array[] = $line[1]}
             $stores_by_category_array[$line[2]] = $store_array;
             echo $line[1].nl2br("\t").$line[2].nl2br("\n");
+            $store_counter+=1;
         }    
         print_r($stores_by_category_array);
         $categories_array = array_slice($categories_array, 1,count($categories_array));
