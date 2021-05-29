@@ -108,22 +108,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     $created_time[$time_conversion] = $line;
                     $stores_array[] = $line;
                 }
-                // echo "<h1> Feature products </h1>";
-                // foreach($feature_products as $items){
-                //     echo "$items[1]".nl2br("\t");
-                // }
-                // echo "<h1> 5 most recently added products only </h1>".nl2br("\n");
                 ksort($created_time);
-                // print_r($created_time);
-
                 $created_time = array_slice($created_time,-5);
-                // foreach ($created_time as $key => $value){
-                //     echo "<strong>$key</strong>".str_repeat('&nbsp',10);
-                //     foreach($value as $item){
-                //         echo "$item".str_repeat('&nbsp',3);
-                //     }
-                //     echo "<br>";
-                // }
                 fclose($product_csv_file);
                 # Function to display each of the 5 most recently added item with its image
                 function new_products_display($item, $image){
@@ -157,21 +143,32 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </section>";
                 $feature_product_images = [];
                 function feature_products_display($item, $image){
+//                     echo "
+//                         <div class='thumbnail-wrapper-stores'>
+//                             <div class='row'>
+//                                 <div class='col-80'>
+//                                     <img src='../images/nikefeature-dunklowblack.png' class='offer-img'>
+//                                 </div>
+//                             </div>
+//                             <div class='row'>
+//                                 <div class='col-90'>
+//                                     <h1>$item</h1>
+//                                     <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
+//                                     <a href='product-details-dunklowblack.php' class='btn btnnike'>See details &#10147; </a>
+//                                 </div>
+//                             </div>
+//                         </div>";
                     echo "
-                        <div class='thumbnail-wrapper-stores'>
-                            <div class='row'>
-                                <div class='col-80'>
-                                    <img src='../images/nikefeature-dunklowblack.png' class='offer-img'>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='col-90'>
-                                    <h1>$item</h1>
-                                    <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
-                                    <a href='product-details-dunklowblack.php' class='btn btnnike'>See details &#10147; </a>
-                                </div>
-                            </div>
-                        </div>";
+                    <div class='thumbnail-wrapper-stores'>
+                        <a href='store/store-home.php'>
+                            <figure class='hover-shadow'>
+                                <img src='../images/givenchy.jpg' alt='givenchy'>
+                                <figcaption class='text-center'>
+                                    <a href='store/store-home.php' class='text-medium text-bold'>$item[1]</a>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>";
                 }
                 echo "<h2 class='section-title'>Featured Products</h2>";
                 echo "<div class='container'>";
