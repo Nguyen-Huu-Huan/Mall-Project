@@ -185,6 +185,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
 //                 echo $line[1].nl2br("\n");
             }
+            echo strpos("abcdefgh","f");
 //             sort($stores_array);
 //             print_r($stores_array);
 //             echo "<div class='container'>";
