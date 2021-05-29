@@ -182,34 +182,19 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }
                 }
             }    
-            $link_image = 'dummy_variable';
-            while ($link_image!=''){
-                $link_image = ($letter=='A')?'images/adidas.jpg':'';
-                $link_image = ($letter=='B')? 'images/babylon.jpg':'';
-                $link_image = ($letter=='C')? 'images/chanel.jpg':'';
-                $link_image = ($letter=='D')? 'images/drmartens.jpg':'';
-                $link_image = ($letter=='E')? 'images/ecco.jpg':'';
-                $link_image = ($letter=='F')? 'images/footlocker.jpg':'';
-                $link_image = ($letter=='G')? 'images/givenchy.jpg':'';
-                $link_image = ($letter=='H')? 'images/harrolds.jpg':'';
-                $link_image = ($letter=='I')? 'images/indigo.jpg':'';
-                $link_image = ($letter=='J')? 'images/jbhifi.jpg':'';
-                $link_image = ($letter=='K')? 'images/kookai.jpg':'';
-                $link_image = ($letter=='L')? 'images/lg-logo.jpg':'';
-                $link_image = ($letter=='M')? 'images/mjbale.jpg':'';
-                $link_image = ($letter=='N')? 'images/nike.jpg':'';
-                $link_image = ($letter=='O')? 'images/offwhite.jpg':'';
-                $link_image = ($letter=='P')? 'images/pacson.jpg':'';
-                $link_image = ($letter=='Q')? 'images/qatar.jpg':'';
-                $link_image = ($letter=='R')? 'images/reebok.jpg':'';
-                $link_image = ($letter=='S')? 'images/saintlaurent.jpg':'';
-                $link_image = ($letter=='T')? 'images/tde.jpg':'';
-                $link_image = ($letter=='U')? 'images/uniqlo.jpg':'';
-                $link_image = ($letter=='V')? 'images/victoria.jpg':'';
-                $link_image = ($letter=='W')? 'images/western.jpg':'';
-                $link_image = ($letter=='X')? 'images/xfinity.jpg':'';
-                $link_image = ($letter=='Y')? 'images/yankee_candle.jpg':'';
-                $link_image = ($letter=='Z')? 'images/zara.jpg':'';
+            $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+            $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
+                           'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
+                           'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
+                           'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg''images/pacson.jpg',
+                           'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
+                           'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
+                           'images/yankee_candle.jpg', 'images/zara.jpg']
+            $image_select = ''
+            for ($i = 0;$i<count($alphabet_letter);$i+=1){
+                if ($letter==$alphabet_letter[$i]){
+                    $image_select = $link_image[$i];
+                }
             }
             sort($stores_array);
             echo "<div class='container'>";
@@ -228,7 +213,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </a>";
             }
             for ($i = 0;$i<count($stores_array);$i+=1){
-                store_display_by_name($stores_array[$i], $link_image);
+                store_display_by_name($stores_array[$i], $image_select);
             }
             echo "</div>";
             ?>
