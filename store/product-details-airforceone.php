@@ -37,7 +37,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </a>
         </div>
     </div>
-    <a href="../order-placement.html" class="back-to-top">
+    <a href="../order-placement.php" class="back-to-top">
         <img src="../images/cart.png" alt="cart" class="cart-icon-big">
         <p class="cart-qty"></p>
     </a>
@@ -55,23 +55,23 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="../images/mobile-nav-black.svg"></label>
     <nav class="mobile-menu">
         <ul>
-            <li><a href="store-home.html" class="text-bold">Home</a></li>
-            <li><a href="about-us.html" class="text-bold">About us</a></li>
+            <li><a href="store-home.php" class="text-bold">Home</a></li>
+            <li><a href="about-us.php" class="text-bold">About us</a></li>
             <li>
                 <div class="mobile-menu-dropdown">
                     <input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-drop">
                     <label for="menu-drop" class="text-bold">Products &#8628;</label>
                     <div class="mobile-menu-dropdown-content">
                         <ul>
-                            <li><a href="browse-by-category.html" class="text-bold">Browse Products by Category</a></li>
-                            <li><a href="browse-by-time.html" class="text-bold">Browse Products by Created Time</a></li>
+                            <li><a href="browse-by-category.php" class="text-bold">Browse Products by Category</a></li>
+                            <li><a href="browse-by-time.php" class="text-bold">Browse Products by Created Time</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li><a class="text-bold" href="contact-nike.html">Contact</a></li>
+            <li><a class="text-bold" href="contact-nike.php">Contact</a></li>
             <li>
-                <a href="../order-placement.html"><img class="mobile-cart-icon" src="../images/cart.png" alt="cart"></a>
+                <a href="../order-placement.php"><img class="mobile-cart-icon" src="../images/cart.png" alt="cart"></a>
             </li>
         </ul>
 
@@ -85,20 +85,20 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                     <nav class="col-90 menu">
                         <ul>
-                            <li><a href="store-home.html">Home</a></li>
-                            <li><a href="about-us.html">About us</a></li>
+                            <li><a href="store-home.php">Home</a></li>
+                            <li><a href="about-us.php">About us</a></li>
                             <li>
                                 <div class="dropdown">
                                     <a>Products &#8628;</a>
                                     <div class="dropdown-content">
-                                        <a href="browse-by-category.html">Browse Products by Category</a>
-                                        <a href="browse-by-time.html">Browse Products by Created Time</a>
+                                        <a href="browse-by-category.php">Browse Products by Category</a>
+                                        <a href="browse-by-time.php">Browse Products by Created Time</a>
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="contact-nike.html">Contact</a></li>
+                            <li><a href="contact-nike.php">Contact</a></li>
                             <li>
-                                <a href="../order-placement.html">
+                                <a href="../order-placement.php">
                                     <img alt="cart" class="cart-icon" src="../images/cart.png">
                                     <p class="cart-qty"></p>
                                 </a>
@@ -145,7 +145,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </select><br>
                         <input type="number" value="1" class="shoe-qty">
                         <h3> <a href="#" class="btnnike btn add-to-cart" onclick="add_to_cart('Air Force One', event)">Add to cart</a>
-                            <a href="../order-placement.html" class="btnnike btn">Buy Now</a>
+                            <a href="../order-placement.php" class="btnnike btn">Buy Now</a>
                         </h3>
                         <h3>Product details</h3>
                         <p>Refresh your look and step into a new AF-1 world with the Nike Air Force 1 React. It fuses modern design with iconic b-ball style for a big, bold look. The oversized Swoosh, large "AIR" on the midsole and new sole pattern let you
@@ -162,9 +162,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <div class="new-products-wrapper hover-shadow">
                             <figure class="new-products-img-wrapper">
-                                <a href="product-details-dunklowblack.html"><img class="new-products-img" src="../images/air-force-1.jpg" alt="Nike Air Force 1 is unavailable"></a>
+                                <a href="product-details-dunklowblack.php"><img class="new-products-img" src="../images/air-force-1.jpg" alt="Nike Air Force 1 is unavailable"></a>
                             </figure>
-                            <a href="product-details-dunklowblack.html">
+                            <a href="product-details-dunklowblack.php">
                                 <h2 class="text-medium">Air Force 1</h2>
                             </a>
                             <h3 class="text-normal color-red">$120.50</h3>
@@ -174,9 +174,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <div class="new-products-wrapper hover-shadow">
                             <figure class="new-products-img-wrapper">
-                                <a href="product-details-dunklowblack.html"><img class="new-products-img" src="../images/pantnike.png" alt="Black Pants"></a>
+                                <a href="product-details-dunklowblack.php"><img class="new-products-img" src="../images/pantnike.png" alt="Black Pants"></a>
                             </figure>
-                            <a href="product-details-dunklowblack.html">
+                            <a href="product-details-dunklowblack.php">
                                 <h2 class="text-medium">Long Black Pants</h2>
                             </a>
                             <h3 class="text-normal color-red">$30.50</h3>
@@ -186,9 +186,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <div class="new-products-wrapper hover-shadow">
                             <figure class="new-products-img-wrapper">
-                                <a href="product-details-dunklowblack.html"><img class="new-products-img" src="../images/shirtnike2.png" alt="Black Pants"></a>
+                                <a href="product-details-dunklowblack.php"><img class="new-products-img" src="../images/shirtnike2.png" alt="Black Pants"></a>
                             </figure>
-                            <a href="product-details-dunklowblack.html">
+                            <a href="product-details-dunklowblack.php">
                                 <h2 class="text-medium">Sport Loose Tee</h2>
                             </a>
                             <h3 class="text-normal color-red">$45.00</h3>
@@ -198,9 +198,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <div class="new-products-wrapper hover-shadow">
                             <figure class="new-products-img-wrapper">
-                                <a href="product-details-dunklowblack.html"><img class="new-products-img" src="../images/shirtnike1.png" alt="Black Pants"></a>
+                                <a href="product-details-dunklowblack.php"><img class="new-products-img" src="../images/shirtnike1.png" alt="Black Pants"></a>
                             </figure>
-                            <a href="product-details-dunklowblack.html">
+                            <a href="product-details-dunklowblack.php">
                                 <h2 class="text-medium">Fit Tee</h2>
                             </a>
                             <h3 class="text-normal color-red">$23.00</h3>
@@ -220,10 +220,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="col-20">
                         <h3>Useful Links</h3>
                         <ul>
-                            <li><a href="store-home.html">Home</a></li>
-                            <li><a href="term-of-service.html">Term of Service</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="copyright.html">Copyright</a></li>
+                            <li><a href="store-home.php">Home</a></li>
+                            <li><a href="term-of-service.php">Term of Service</a></li>
+                            <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                            <li><a href="copyright.php">Copyright</a></li>
                         </ul>
                     </div>
                 </div>
