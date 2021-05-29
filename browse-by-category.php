@@ -146,7 +146,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         while ($line = fgetcsv($stores_by_category_csv_file, 1000)) {
             $stores_by_category_array[$line[2]] = $line[1];                     
         }    
-        
+        print_r($stores_by_category_array);
         $categories_array = array_slice($categories_array, 1,count($categories_array));
         echo "<section class='new-products'>
             <div class='small-container'>
@@ -161,7 +161,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </form>";
         echo "<div class='row'>";
         foreach ($stores_by_category_array as $category => $store){            
-            if ($_POST['category']==$category){
+            if ($category==$_POST['category']){
                 echo "<div class='col-20'>
                         <div class='new-products-wrapper hover-shadow'>
                             <figure class='new-products-img-wrapper'>
