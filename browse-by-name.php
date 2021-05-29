@@ -137,34 +137,42 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <h2 class="section-title" id="top">Stores by names</h2>
 
                 <h2 class="text-center">
-                    <a href="#A">A</a>
-                    <a href="#B">B</a>
-                    <a href="#C">C</a>
-                    <a href="#D">D</a>
-                    <a href="#E">E</a>
-                    <a href="#F">F</a>
-                    <a href="#G">G</a>
-                    <a href="#H">H</a>
-                    <a href="#I">I</a>
-                    <a href="#J">J</a>
-                    <a href="#K">K</a>
-                    <a href="#L">L</a>
-                    <a href="#M">M</a>
-                    <a href="#N">N</a>
-                    <a href="#O">O</a>
-                    <a href="#P">P</a>
-                    <a href="#Q">Q</a>
-                    <a href="#R">R</a>
-                    <a href="#S">S</a>
-                    <a href="#T">T</a>
-                    <a href="#U">U</a>
-                    <a href="#V">V</a>
-                    <a href="#W">W</a>
-                    <a href="#X">X</a>
-                    <a href="#Y">Y</a>
-                    <a href="#Z">Z</a>
+                    <form action="" method="post">
+                        <input type="submit"><a href="">A</a></input>
+                        <input type="submit"><a href="">B</a></input>
+                        <input type="submit"><a href="">C</a></input>
+                        <input type="submit"><a href="">D</a></input>
+                        <input type="submit"><a href="">E</a></input>
+                        <input type="submit"><a href="">F</a></input>
+                        <input type="submit"><a href="">G</a></input>
+                        <input type="submit"><a href="">H</a></input>
+                        <input type="submit"><a href="">I</a></input>
+                        <input type="submit"><a href="">J</a></input>
+                        <input type="submit"><a href="">K</a></input>
+                        <input type="submit"><a href="">L</a></input>
+                        <input type="submit"><a href="">M</a></input>
+                        <input type="submit"><a href="">N</a></input>
+                        <input type="submit"><a href="">O</a></input>
+                        <input type="submit"><a href="">P</a></input>
+                        <input type="submit"><a href="">Q</a></input>
+                        <input type="submit"><a href="">R</a></input>
+                        <input type="submit"><a href="">S</a></input>
+                        <input type="submit"><a href="">T</a></input>
+                        <input type="submit"><a href="">U</a></input>
+                        <input type="submit"><a href="">V</a></input>
+                        <input type="submit"><a href="">W</a></input>
+                        <input type="submit"><a href="">X</a></input>
+                        <input type="submit"><a href="">Y</a></input>
+                        <input type="submit"><a href="">Z</a></input>
+                    </form>
                 </h2>
             </div>
+            <?php ?>
+            echo "<div class='container'>";
+            echo "<div class='text-start' class='row'>
+                    <h1 id='A'>A</h1>
+                </div>"
+            ?>
             <div class="container">
                 <div class="text-start" class="row">
                     <h1 id="A">A</h1>
