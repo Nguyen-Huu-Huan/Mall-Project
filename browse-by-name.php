@@ -152,7 +152,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                         <input type="submit" name="letter" value="L">
                         <input type="submit" name="letter" value="M">
                         <input type="submit" name="letter" value="N">
-                        <input type="submit" name="letter" value="N">
                         <input type="submit" name="letter" value="O">
                         <input type="submit" name="letter" value="P">
                         <input type="submit" name="letter" value="Q">
@@ -183,25 +182,53 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     }
                 }
             }            
+            $link_image = '';
+            ($letter=='A')?$link_image = "images/adidas.jpg";
+            ($letter=='B')?$link_image = "images/babylon.jpg";
+            ($letter=='C')?$link_image = "images/chanel.jpg";
+            ($letter=='D')?$link_image = "images/drmartens.jpg";
+            ($letter=='E')?$link_image = "images/ecco.jpg";
+            ($letter=='F')?$link_image = "images/footlocker.jpg";
+            ($letter=='G')?$link_image = "images/givenchy.jpg";
+            ($letter=='H')?$link_image = "images/harrolds.jpg";
+            ($letter=='I')?$link_image = "images/indigo.jpg";
+            ($letter=='J')?$link_image = "images/jbhifi.jpg";
+            ($letter=='K')?$link_image = "images/kookai.jpg";
+            ($letter=='L')?$link_image = "images/lg-logo.jpg";
+            ($letter=='M')?$link_image = "images/mjbale.jpg";
+            ($letter=='N')?$link_image = "images/nike.jpg";
+            ($letter=='O')?$link_image = "images/offwhite.jpg";
+            ($letter=='P')?$link_image = "images/pacson.jpg";
+            ($letter=='Q')?$link_image = "images/qatar.jpg";
+            ($letter=='R')?$link_image = "images/reebok.jpg";
+            ($letter=='S')?$link_image = "images/saintlaurent.jpg";
+            ($letter=='T')?$link_image = "images/tde.jpg";
+            ($letter=='U')?$link_image = "images/uniqlo.jpg";
+            ($letter=='V')?$link_image = "images/victoria.jpg";
+            ($letter=='W')?$link_image = "images/western.jpg";
+            ($letter=='X')?$link_image = "images/xfinity.jpg";
+            ($letter=='Y')?$link_image = "images/yankee_candle.jpg";
+            ($letter=='Z')?$link_image = "images/zara.jpg";
+
+
             sort($stores_array);
             echo "<div class='container'>";
             echo "<div class='text-start' class='row'>
                     <h1 id='$letter'>$letter</h1>
                 </div>";
             echo "<div class='row'>";
-            function store_display_by_name($store){
+            function store_display_by_name($store, $image){
                 echo "<a class='store-thumbnail' href='store/store-home.php'>
                         <figure class='col-20 hover-shadow'>
-                            <img src='images/adidas.jpg' alt='adidas'>
+                            <img src=$image alt='$store'>
                             <figcaption class='text-center'>
-                                <a href='store/store-home.php' class='text-medium text-bold' alt='$store'>$store</a>
+                                <a href='store/store-home.php' class='text-medium text-bold'>$store</a>
                             </figcaption>
                         </figure>
                 </a>";
             }
             for ($i = 0;$i<count($stores_array);$i+=1){
-                store_display_by_name($stores_array[$i]);
-                echo $stores_array[i];
+                store_display_by_name($stores_array[$i], $link_image);
             }
             echo "</div>";
             ?>
