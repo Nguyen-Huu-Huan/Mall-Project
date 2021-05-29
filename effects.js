@@ -334,9 +334,11 @@ function cart_load() {
     }
 }
 function order_successful(){
-    localStorage.removeItem('Dunk Low Black');
-    localStorage.removeItem('Air Force One');
-    localStorage.removeItem('coupon');
+    if (localStorage.getItem('islogin')==true){
+        localStorage.removeItem('Dunk Low Black');
+        localStorage.removeItem('Air Force One');
+        localStorage.removeItem('coupon');
+    }
 }
 function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
