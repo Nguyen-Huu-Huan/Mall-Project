@@ -112,21 +112,21 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 $created_time = array_slice($created_time,-5);
                 fclose($product_csv_file);
                 # Function to display each of the 5 most recently added item with its image
-                function new_products_display($item, $image){
-                    echo "
-                    <div class='col-17'>
-                        <a href='product-details-dunklowblack.php'>
-                            <div class='new-products-wrapper hover-shadow'>
-                                <figure class='new-products-img-wrapper'>
-                                    <img class='new-products-img' src=$image alt='$item[1]'>
-                                </figure>
-                                <p class='text-center text-small color-gray'>$item[1]</p>
-                                <h2 class='text-center text-medium'>$item[1]</h2>
-                                <h3 class='text-center text-normal color-red'>$$item[2]</h3>
-                            </div>
-                        </a>
-                    </div>";
-                }
+//                 function new_products_display($item, $image){
+//                     echo "
+//                     <div class='col-17'>
+//                         <a href='product-details-dunklowblack.php'>
+//                             <div class='new-products-wrapper hover-shadow'>
+//                                 <figure class='new-products-img-wrapper'>
+//                                     <img class='new-products-img' src=$image alt='$item[1]'>
+//                                 </figure>
+//                                 <p class='text-center text-small color-gray'>$item[1]</p>
+//                                 <h2 class='text-center text-medium'>$item[1]</h2>
+//                                 <h3 class='text-center text-normal color-red'>$$item[2]</h3>
+//                             </div>
+//                         </a>
+//                     </div>";
+//                 }
                 # An array with new products' image links
                 $new_product_images = ['../images/kits.jpg','../images/red_lobster.jpg','../images/solprole.png','../images/starbucks.jpg','../images/doritos.jpg'];
 //                 echo "            
