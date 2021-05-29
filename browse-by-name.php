@@ -176,9 +176,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 if (isset($letter)){
                     $compare = stripos($line[1],$letter);
                     if ($compare===0){
-                        $stores_array[] = $line[1];
-                        echo $line[1].nl2br("\n");
-                        
+                        $stores_array[] = $line[1];                     
                     }
                 }
             }    
