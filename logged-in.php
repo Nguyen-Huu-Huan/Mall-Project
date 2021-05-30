@@ -1,11 +1,32 @@
-<?php 
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+print_r($_SESSION['validate']);
+
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+}
+if ($_SESSION['validate'] === TRUE) {
+    echo "<script>document.getElementById('logout').style.display = 'inline-block' 
+   </script>";
+} else if ($_SESSION['validate'] === FALSE) {
+    echo "<script>document.getElementById('logout').style.display = 'none' 
+   </script>";
+}
+?>
+<?php
 # Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+if (file_exists('install.php') === TRUE) {
+    die('Error, the file install.php is still exists');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start()?>
-<?php $_SESSION['logged-in'] = true;?>
+
+<?php $_SESSION['logged-in'] = true; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,12 +36,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
-</noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet" type="text/css" />
+    </noscript>
 </head>
 
 
@@ -79,7 +96,11 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+            <li id="logout" class="logout text-bold">
+                <form method="POST">
+                    <input type="submit" name="logout1" value="Log Out">
+                </form>
+            </li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -123,7 +144,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li id="logout" class="logout">
+                                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+                            </li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -168,7 +191,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
         </footer>
-        </div>
+    </div>
 </body>
 <script type="text/javascript " src="effects.js "></script>
 

@@ -1,3 +1,18 @@
+<?php
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
+        button.removeAttribute('href');
+        button.setAttribute('href', 'logged-in.php')</script>";
+    }
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
@@ -78,7 +93,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -122,13 +137,30 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
                     <div class="res-index-space1 col-70"></div>
                 </div>
         </header>
+         
+        <?php
+
+    if( isset($_POST['register'])){
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $address = $_POST["address"];
+        $city = $_POST["city"];
+        $pass = $_POST["pass"];
+        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
+        $userfile = fopen('../userfile.txt', 'a');
+        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
+    }else{
+    }
+?>
 
         <main class="login-wrapper">
             <h1 class="section-title">Register</h1>
@@ -136,7 +168,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
 
                     <div class="col-100">
-                        <form    class="form" id="form" action="register_submit.php" method="POST">
+                        <form    class="form" id="form" method="POST">
                             <fieldset class="shopper-fieldset">
                                 <br>
                                 <div class="row">
@@ -539,9 +571,14 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </fieldset>
                             <br>
                             <br>
+                            <?php
+                                    if(isset($_POST['register'])){
+                                        echo"<p style='color-red'>Register successful!</p>";
+                                    }
 
+                            ?>
                             <div class="row">
-                                <input type="submit" onclick="checkInputs()" name="" value="Register"
+                                <input type="submit" onclick="checkInputs()" name="register" value="Register"
                                     class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
@@ -572,7 +609,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                     </div>
                 </div>

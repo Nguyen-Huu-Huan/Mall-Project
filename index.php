@@ -1,8 +1,21 @@
 <?php
-# Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {
-    die('Error, the file install.php is still exists');
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
+        button.removeAttribute('href');
+        button.setAttribute('href', 'logged-in.php')</script>";
+    }
+?>
+<?php 
+# Don't delete, PHP01
+if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1476,3 +1476,6 @@ input[type=file] {
     background-color: white;
     opacity: 1;
 }
+.logout{
+    display: none;
+}
