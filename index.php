@@ -314,8 +314,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display' onclick='see_nstore()'>Click here to see all new stores</a>";
-                echo "<a href='#' id='collapse' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<a href='#' id='display_nstore' onclick='see_nstore()'>Click here to see all new stores</a>";
+                echo "<a href='#' id='collapse_nstore' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_nstore(){
                     document.querySelector('.see_all_nstore').style.display='block';
                     document.querySelector('#collapse_nstore').style.display='block';
