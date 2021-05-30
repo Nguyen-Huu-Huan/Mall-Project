@@ -136,7 +136,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
 
                     <div class="col-100">
-                        <form class="form" id="form" action="myaccount.php">
+                        <form    class="form" id="form" action="register_submit.php" method="POST">
                             <fieldset class="shopper-fieldset">
                                 <br>
                                 <div class="row">
