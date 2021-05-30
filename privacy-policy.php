@@ -23,7 +23,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </head>
 
 
-<body class="index">
+<body class="store-privacy">
     <div class="cookie">
         <div class="container">
             <h1 class="text-extra text-center">Cookie Consent</h1>
@@ -133,26 +133,20 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                 </div>
             </header>
+            <!--Contact-->
             <main>
                 <h1 class="section-title">Privacy Policy</h1>
                 <div class="container">
-                    <p>Pellentesque vitae eros dui. Nam sollicitudin commodo congue. Sed sapien neque, feugiat non pharetra a, suscipit vel felis. Aenean suscipit nunc eu nulla posuere, ac rhoncus eros viverra. In facilisis tincidunt mi, sit amet bibendum
-                        est tempus eget. Duis in nisi eros. Donec consectetur tempus sapien. Morbi at viverra tortor, eu fermentum elit. </p>
-                    <br>
-                    <p>Proin mattis mollis dui quis consequat. Ut ut blandit est, at porta magna. Aliquam ac libero non nulla dapibus accumsan id ut metus. Etiam fringilla sed eros ac sodales. In venenatis auctor tincidunt. Mauris a nisl purus. Duis placerat
-                        dui ac ligula consequat, ut tristique nibh porttitor. Aenean accumsan enim a nulla dictum vestibulum. Nam fermentum et nisi vitae consequat. Aliquam nulla urna, congue vel ex sit amet, laoreet tincidunt tellus. Cras ac magna dignissim
-                        velit commodo sagittis. Donec viverra sit amet erat at malesuada. Morbi dapibus egestas dolor, non ullamcorper lectus posuere et. Nunc nisl nunc, blandit ut hendrerit quis, mattis vitae magna.
+                    <p>
+                    <?php 
+                    $fp = fopen('data.csv', 'r');
+                    while ($line = fgets($fp)) {
+                      $texts[] = $line;
+                    };
+                    echo $texts[2];
+                    ?>
                     </p>
-                    <br>
-                    <p> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean turpis sem, aliquet sed felis ut, elementum blandit nunc. Etiam nec ligula ante. Vivamus euismod auctor nibh ut dictum. Nam vitae lobortis
-                        eros, id rhoncus quam. In condimentum imperdiet pharetra. Duis ligula magna, congue quis tellus non, lacinia hendrerit tortor. Sed eleifend commodo lorem, at posuere urna facilisis non. Maecenas interdum condimentum nibh, at fermentum
-                        turpis vestibulum sed. Maecenas iaculis elementum facilisis. Mauris suscipit laoreet mauris a finibus. Nullam posuere sem lectus, ut faucibus sem pellentesque eget. Donec volutpat interdum ante, vitae semper neque pulvinar eu.
-                    </p>
-                    <br>
-                    <p>Donec tellus justo, lobortis at nulla vitae, viverra lacinia neque. Suspendisse tempor arcu et eros pulvinar hendrerit. Duis lacinia blandit varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam ut nunc volutpat, condimentum felis in, sodales ex. Vestibulum nec nisi at dolor vehicula venenatis non vel orci. Mauris ac augue elit.
-                        Integer dolor dolor, consectetur et semper ut, imperdiet vestibulum ante. Nullam id eleifend mauris, id volutpat lorem. Nunc est quam, cursus id egestas vitae, tristique in enim.
-                    </p>
+                    <br><br>
                 </div>
             </main>
             <footer class="footer">

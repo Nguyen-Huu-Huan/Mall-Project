@@ -56,7 +56,8 @@ if (isset($_POST['logout'])) {
 
 ?>
 <?php
-    if (isset($_SESSION['valid'])== false|| $_SESSION['valid'] == false) { echo"
+if (isset($_SESSION['valid']) == false || $_SESSION['valid'] == false) {
+  echo "
 <section class='admin-reg'>
   <h1 class='section-title'>Admin login</h1>
   <div class='small-container'>
@@ -67,78 +68,156 @@ if (isset($_POST['logout'])) {
           <input style='width: 100%;' type='text' name='admin-username' required><br><br>
           <label for='admin-password'>Password</label><br>
           <input style='width: 100%;' type='password' name='admin-password' id='password' required>";
-    }
-          
+}
 
-          if (isset($_POST['admin-login'])) {
-            if (
-              $_POST['admin-username'] != $admin[0] || password_verify($_POST['admin-password'], $admin[1]) === false
-            ) {
-              $_SESSION['valid'] = false;
-            }
-            if (
-              $_POST['admin-username'] = $admin[0] && password_verify($_POST['admin-password'], $admin[1])
-            ) {
-              $_SESSION['valid'] = true;
-              echo "<meta http-equiv='refresh' content='0'>";
-            }
-          }
-          if (isset($_SESSION['valid'])== false|| $_SESSION['valid'] == false) { echo"
+
+if (isset($_POST['admin-login'])) {
+  if (
+    $_POST['admin-username'] != $admin[0] || password_verify($_POST['admin-password'], $admin[1]) === false
+  ) {
+    $_SESSION['valid'] = false;
+  }
+  if (
+    $_POST['admin-username'] = $admin[0] && password_verify($_POST['admin-password'], $admin[1])
+  ) {
+    $_SESSION['valid'] = true;
+    echo "<meta http-equiv='refresh' content='0'>";
+  }
+}
+if (isset($_SESSION['valid']) == false || $_SESSION['valid'] == false) {
+  echo "
           <br>
           <button id='submit' class='btn' style='width: 30%;' type='submit' name='admin-login'>Submit</button>
         </form>
       </div>
     </div>
   </div>
-</section>";}
+</section>";
+}
 ?>
 <?php
-if (isset($_SESSION['valid'])){
-    if ($_SESSION['valid'] == true) {
-      echo "
+if (isset($_SESSION['valid'])) {
+  if ($_SESSION['valid'] == true) {
+    echo "
 <body>
   <section class='admin-dashboard'>
     <h1 class='section-title'>Admin Dashboard</h1>
-    <p class='color-red text-center'>Use &ltbr&gt for line break and remember to click save after editing.</p>
-    <br>
+    <p class='text-center color-red' >Hard refresh on affected page(s) to see changes</p>
     <div class='container'>
       <div class='row'>
         <div class='col-100'>
-          <form method='post' name='admin-dashboard-form' action=''>
+          <form method='post' name='admin-dashboard-form' action='' enctype='multipart/form-data'>
             <label class='text-big' for='copyright-text'>Copyright</label>
             <textarea class='ad-textarea' name='copyright-text' placeholder=''>";
-      echo str_replace("<br>", "", $texts[0]);
-      echo "</textarea><br>
+    echo str_replace("<br>", "", $texts[0]);
+    echo "</textarea><br>
 
             <label class='text-big' for='tos-text'>Term Of Services</label>
             <textarea class='ad-textarea' name='tos-text' placeholder=''>";
-      echo str_replace("<br>", "", $texts[1]);
-      echo "</textarea><br>
+    echo str_replace("<br>", "", $texts[1]);
+    echo "</textarea><br>
 
             <label class='text-big' for='cprivacy-text'>Privacy Policy</label>
             <textarea class='ad-textarea' name='privacy-text' placeholder=''>";
-      echo str_replace("<br>", "", $texts[2]);
-      echo "</textarea><br>
+    echo str_replace("<br>", "", $texts[2]);
+    echo "</textarea><br>
             <div style='margin:0 35%'>
-            <form method='post'>
+
             <button style='width: 45%;' class='btn bg-color-black' type='submit' name='logout'>Logout</button>
-</form>
+
             
               <button class='btn' style='width: 45%;' type='submit' name='admin-dashboard'>Save</button><br>
 
             </div>
           
-        </div>
-        <input type='file' id='myFile' name='filename'>
-        </form>
+        </div>        
       </div>
-      <h1 class='section-title'>About Us Portraits</h1>
+      <h2 class='section-title'>About Us Portraits</h2>
       <div class='row'>
+        <div class='col-20'>
+        <h3 class='text-center'>Huy</h3>
+        <br>
+        <img src='images/Huy.jpg'><br>
+        <p class='text-center'>Upload new image:</p>
+        <input type='file' name='Huy'>
+        </div>
+        <div class='col-20'>
+        <h3 class='text-center'>Huan</h3>
+        <br>
+        <img src='images/Huan.jpg'><br>
+        <p class='text-center'>Upload new image:</p>
+        <input type='file' name='Huan'>
+        </div>
+        <div class='col-20'>
+        <h3 class='text-center'>Nguyen</h3>
+        <br>
+        <img src='images/Nguyen.jpg'><br>
+        <p class='text-center'>Upload new image:</p>
+        <input type='file' name='Nguyen'>
+        </div>
+      </div>
+      <div style='margin:0 35%'>
+
+      <button style='width: 45%;' class='btn bg-color-black' type='submit' name='logout'>Logout</button>
+
       
+        <button class='btn' style='width: 45%;' type='submit' name='admin-dashboard'>Save</button><br>
+
       </div>
     </div>
+    </form>
   </section>
 </body>";
-}} ?>
+  }
+} ?>
+
+<?php
+function checkUpload($name){
+  $changeName = "images/" . $name.'.'. pathinfo($_FILES[$name]["name"] ,PATHINFO_EXTENSION); //get the file extension and append it to the new file name
+  $uploadSuccess = 1;
+  $ext = pathinfo($_FILES[$name]["name"] ,PATHINFO_EXTENSION);
+  // Check file size
+if ($_FILES["$name"]["size"] > 8000000) {
+  echo "<script type='text/javascript'>alert('Sorry, your $name file is too large.');</script>";
+    $uploadSuccess = 0;
+}
+
+// Allow certain file formats
+if($ext != "jpg") {
+  echo "<script type='text/javascript'>alert('Only upload JPG for $name');</script>";
+    $uploadSuccess = 0;
+}
+// Check if $uploadSuccess is set to 0 by an error
+if ($uploadSuccess == 0) {
+  echo "<script type='text/javascript'>alert('Upload failed for $name');</script>";
+// if everything is ok, try to upload file
+} else {
+  unlink($name . ".png");
+  unlink($name . ".jpeg");
+  unlink($name . ".jpg");
+    if (move_uploaded_file($_FILES["$name"]["tmp_name"],  $changeName)) {
+      echo "<script type='text/javascript'>alert('$name portrait uploaded');</script>";
+    }
+}
+
+}
+
+if (isset($_POST['admin-dashboard'])){
+  
+  if (file_exists($_FILES['Nguyen']['tmp_name']) || is_uploaded_file($_FILES['Nguyen']['tmp_name'])){
+    checkUpload('Nguyen');
+  }
+  if (file_exists($_FILES['Huan']['tmp_name']) || is_uploaded_file($_FILES['Nguyen']['tmp_name'])){
+    checkUpload('Huan');
+  }
+  if (file_exists($_FILES['Huy']['tmp_name']) || is_uploaded_file($_FILES['Nguyen']['tmp_name'])){
+    checkUpload('Huy');
+  }
+  
+}
+
+
+
+?>
 
 </html>

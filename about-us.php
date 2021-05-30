@@ -1,6 +1,8 @@
-<?php 
+<?php
 # Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+if (file_exists('install.php') === TRUE) {
+    die('Error, the file install.php is still exists');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +14,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <title>Mallux About us | Online Shopping Mall</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet"
-            type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet" type="text/css" />
     </noscript>
 </head>
 
@@ -37,8 +37,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         </div>
     </div>
     <input type="checkbox" id="hamburger">
-    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img
-            src="images/mobile-nav.svg"></label>
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
             <li><a class="text-bold" href="index.php">Home</a></li>
@@ -144,19 +143,29 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
                     <!--Huy short info-->
                     <div id="Huy" class="col-30 shadow hover-shadow">
-                        <img src="images/Huy.jpg">
+                        <?php
+                        $files = glob("images/Huy.*");
+                        echo '<img src="' . $files[0] . '">';
+                        ?>
+
                         <h3>Quach Nhat Huy</h3>
                     </div>
 
                     <!--Huan short info-->
                     <div id="Huan" class="col-30  shadow hover-shadow">
-                        <img src="images/Huan.jpg">
+                        <?php
+                        $files = glob("images/Huan.*");
+                        echo '<img src="' . $files[0] . '">';
+                        ?>
                         <h3>Nguyen Huu Huan</h3>
                     </div>
 
                     <!--Nguyen short info-->
                     <div id="Nguyen" class="col-30  shadow hover-shadow">
-                        <img src="images/Nguyen.jpg">
+                        <?php
+                        $files = glob("images/Nguyen.*");
+                        echo '<img src="' . $files[0] . '">';
+                        ?>
                         <h3>Vo Tran Cong Nguyen</h3>
                     </div>
                 </div>
@@ -191,7 +200,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <!--Huy long info in modal-->
     <div id="Huymodal" class="Huy-bg-modal">
         <div class="modal-content shadow hover-shadow">
-            <img src="images/Huy.jpg">
+            <?php
+            $files = glob("images/Huy.*");
+            echo '<img src="' . $files[0] . '">';
+            ?>
             <h3>Quach Nhat Huy</h3>
             <p>After graduating Year 12 in my hometown, I studied abroad in Australia for 2 year. After
                 much
@@ -209,7 +221,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <!--Huan long info in modal-->
     <div id="Huanmodal" class="Huan-bg-modal">
         <div class="modal-content shadow hover-shadow">
-            <img src="images/Huan.jpg">
+            <?php
+            $files = glob("images/Huan.*");
+            echo '<img src="' . $files[0] . '">';
+            ?>
             <h3>Nguyen Huu Huan</h3>
             <p>I had had 2 years studying abroad in Canada but due to Covid 19, I had to come back to
                 Vietnam. Right now I'm a new IT student in RMIT. Everything has been so great with me
@@ -220,7 +235,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <!--Nguyen long info in modal-->
     <div id="Nguyenmodal" class="Nguyen-bg-modal">
         <div class="modal-content shadow hover-shadow">
-            <img src="images/Nguyen.jpg">
+        <?php 
+                    $files = glob("images/Nguyen.*");
+                    echo '<img src="'.$files[0].'">';
+                    ?>
             <h3>Vo Tran Cong Nguyen</h3>
             <p>I moved to Australia for high school four years ago for high school, but I came back
                 after 4

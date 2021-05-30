@@ -23,7 +23,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </head>
 
 
-<body class="index">
+<body class="store-tos">
     <div class="cookie">
         <div class="container">
             <h1 class="text-extra text-center">Cookie Consent</h1>
@@ -91,91 +91,89 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     </nav>
 
     <div class="mobile-menu-opened">
-        <header class="bg-gradient-light small-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-30">
-                        <a href="index.php"> <img class="header-logo" src="images/logo.png" alt="mallux logo">
-                        </a>
-                    </div>
-                    <nav class="col-70 menu">
-                        <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="about-us.php">About us</a></li>
-                            <li><a href="fees.php">Fees</a></li>
-                            <li><a href="myaccount.php">My Account</a></li>
-                            <li>
-                                <div class="dropdown">
-                                    <a>Browse &#8628;</a>
-                                    <div class="dropdown-content">
-                                        <a href="browse-by-name.php">Browse stores by names</a>
-                                        <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
-                                            <div class="dropdown-content dropdown-category">
-                                                <a href="fashion.php">Fashion</a>
-                                                <a href="electronics.php">Electronics and technology</a>
-                                                <a href="beauty.php">Beauty</a>
-                                            </div>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li><a href="faq.php">FAQs</a></li>
-                            <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
-                        </ul>
-                        <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
-                    </nav>
-                    <div class="res-index-space1 col-70"></div>
-                </div>
-            </div>
-        </header>
         <main>
-            <h1 class="section-title">Term Of Service</h1>
-            <div class="container">
-                <p>Duis laoreet diam at nunc tempor, at venenatis urna aliquam. Mauris a felis eget massa scelerisque cursus. Aliquam faucibus suscipit elit convallis suscipit. Nam at egestas velit. Duis interdum libero ut mi eleifend finibus. Curabitur
-                    faucibus id quam ut dictum. Maecenas imperdiet, sem id accumsan sollicitudin, augue lectus scelerisque purus, sed maximus eros quam rhoncus nibh. Quisque ornare efficitur neque, ut faucibus purus rhoncus vel. In leo neque, consequat
-                    ac quam ullamcorper, volutpat molestie nisi.
-                </p>
-                <br>
-                <p>Curabitur eget libero ante. Mauris vitae orci et nulla tincidunt sollicitudin ut et velit. Morbi nulla massa, viverra et justo vitae, ornare tempor dui. Morbi vitae imperdiet elit. Aliquam erat volutpat. Sed nec scelerisque arcu. Vivamus
-                    lacinia sem libero, a blandit sapien maximus ac. Integer pulvinar ipsum sed pharetra sodales. Etiam vehicula sapien vehicula congue varius. Pellentesque vulputate tellus finibus, dapibus tellus nec, ullamcorper odio. Donec eu metus
-                    rutrum, sollicitudin tortor ut, ullamcorper justo.
-                </p>
-                <br>
-                <p>Quisque posuere semper ante eu euismod. Suspendisse ullamcorper gravida felis at facilisis. Donec blandit quam in tempus semper. Nam lorem quam, aliquam eget risus vitae, sollicitudin hendrerit lacus. Quisque et efficitur dolor. Maecenas
-                    mi dolor, viverra sit amet fringilla a, ornare eget arcu. Suspendisse interdum sed ante lobortis facilisis. Sed bibendum et ligula a iaculis. Aenean ornare cursus arcu, sollicitudin condimentum odio rutrum vel. Integer ac augue non
-                    justo elementum accumsan et at arcu. Etiam tincidunt sit amet massa in auctor. Vestibulum fermentum, nunc et vulputate dapibus, ipsum erat semper elit, sed lacinia nisi justo et augue.
-                </p>
-            </div>
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-20">
-                        <img class="footer-logo " src="images/logo-dark.png">
-                        <p>Thank you for shopping with us</p>
-                    </div>
-                    <div class="col-20">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="term-of-service.php">Term of Service</a></li>
-                            <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                            <li><a href="copyright.php">Copyright</a></li>
-                            <li><a href="faq.php">FAQs</a></li>
-                            <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
-                        </ul>
+            <header class="bg-gradient-light small-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-30">
+                            <a href="index.php"> <img class="header-logo" src="images/logo.png" alt="mallux logo">
+                            </a>
+                        </div>
+                        <nav class="col-70 menu">
+                            <ul>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about-us.php">About us</a></li>
+                                <li><a href="fees.php">Fees</a></li>
+                                <li><a href="myaccount.php">My Account</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <a>Browse &#8628;</a>
+                                        <div class="dropdown-content">
+                                            <a href="browse-by-name.php">Browse stores by names</a>
+                                            <div class="dropdown">
+                                                <a>Browse store by category &#8628;</a>
+                                                <div class="dropdown-content dropdown-category">
+                                                    <a href="fashion.php">Fashion</a>
+                                                    <a href="electronics.php">Electronics and technology</a>
+                                                    <a href="beauty.php">Beauty</a>
+                                                </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="faq.php">FAQs</a></li>
+                                <li><a href="contact.php">Contact</a></li>
+                                <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            </ul>
+                            <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
+                        </nav>
+                        <div class="res-index-space1 col-70"></div>
                     </div>
                 </div>
-                <hr>
-                <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
-            </div>
-        </footer>
-
+            </header>
+            <!--Contact-->
+            <main>
+                <h1 class="section-title">Term Of Service</h1>
+                <div class="container">
+                    <p>
+                    <?php 
+                    $fp = fopen('data.csv', 'r');
+                    while ($line = fgets($fp)) {
+                      $texts[] = $line;
+                    };
+                    echo $texts[1];
+                    ?>
+                    </p>
+                    <br><br>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-20">
+                            <img class="footer-logo " src="images/logo-dark.png">
+                            <p>Thank you for shopping with us</p>
+                        </div>
+                        <div class="col-20">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="term-of-service.php">Term of Service</a></li>
+                                <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                <li><a href="copyright.php">Copyright</a></li>
+                                <li><a href="faq.php">FAQs</a></li>
+                                <li><a href="contact.php">Contact</a></li>
+                                <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
+                </div>
+            </footer>
+        </main>
     </div>
 
 </body>
