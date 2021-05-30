@@ -673,7 +673,7 @@ function checkInputs() {
     if (zipcodeValue === '') {
         setErrorFor(zipcode, 'City name cannot be blank');
     } else if (!isZipcode(zipcodeValue)) {
-        setErrorFor(zipcode, 'Not a valid city name');
+        setErrorFor(zipcode, 'Not a valid zipcode');
     } else {
         setSuccessFor(zipcode);
         countSuccess += 1
