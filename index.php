@@ -434,8 +434,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display_nproduct').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<a href='#' id='display_nproduct' onclick='see_nproduct()'>Click here to see the 10 latest new products</a>";
-                echo "<a href='#' id='collapse_nproduct' onclick='nproduct_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<a id='display_nproduct' onclick='see_nproduct()'>Click here to see the 10 latest new products</a>";
+                echo "<a id='collapse_nproduct' onclick='nproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<div class='tiny-container see_all_nproduct' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
