@@ -1,6 +1,8 @@
-<?php 
+<?php
 # Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+if (file_exists('install.php') === TRUE) {
+    die('Error, the file install.php is still exists');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +16,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
-</noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet" type="text/css" />
+    </noscript>
 </head>
 
 
@@ -147,47 +145,142 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </header>
 
             <!----FEATURED STORES--->
-            <section class="featured-stores ">
-                <div class="container ">
-                    <h2 class="section-title ">Featured Stores</h2>
-                    <div class="row ">
-                        <div class="col-45 ">
-                            <div class="featured-stores-wrapper ">
-                                <figure>
-                                    <a href="store/store-home.php ">
-                                        <img class="hover-shadow " src="images/lg.jpg " alt="LG logo ">
-                                    </a>
-                                </figure>
-                            </div>
-                        </div>
-                        <figure class="col-45 ">
-                            <a href="store/store-home.php ">
-                                <img class="hover-shadow " src="images/locklock.jpg " alt="Lock&Lock logo ">
-                            </a>
-                        </figure>
-                    </div>
-                </div>
+            <section class="new-stores ">
+                <h2 class="section-title color-purple">Featured Stores</h2>
+                <?php
+                $file = 'CSV_files/stores.csv';
+                $store_csv_file = fopen($file, "r");
+                $created_time = array();
+                $product_array[] = fgetcsv($store_csv_file, 1000);
+                while ($line = fgetcsv($store_csv_file, 1000)) {
+                    if ($line[4] == "TRUE") {
+                        $time_str = $line[3];
+                        $time_str = str_replace("Z", "", $time_str);
+                        $time_conversion = strtotime($time_str);
+                        $created_time[$time_conversion] = $line;
+                    }
+                }
+                krsort($created_time);
+                if (sizeof($created_time) >= 10) {
+                    $created_time = array_slice($created_time, 0, 10);
+                }
+                function featured_stores_display($item)
+                {
+                    echo "
+                    <div class='thumbnail-wrapper-stores'>
+                        <a href='store/store-home.php'>
+                            <figure class='hover-shadow'>
+                                <img src='images/zara.jpg' alt='givenchy'>
+                                <figcaption class='text-center'>
+                                    <a href='store/store-home.php' class='text-medium text-bold color-purple'>$item[1]</a>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>";
+                }
+                echo "                
+                <div class='container'>
+                    <div class='nowrap scroll-stores'>";
+                for ($i = 0; $i < count($created_time); $i += 1) {
+                    featured_stores_display($created_time[$i]);
+                }
+                echo "</div>
+                </div>";
+                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all stores</a>";
+                echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_products(){
+                    document.querySelector('.see_all').style.display='block';
+                    document.querySelector('#collapse').style.display='block';
+                    document.querySelector('#display').style.display='none';
+                    document.querySelector('#collapse').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function product_disappear(){
+                    document.querySelector('.see_all').style.display='none';
+                    document.querySelector('#collapse').style.display='none';
+                    document.querySelector('#display').style. display='block';
+                    document.querySelector('#display').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<div class='tiny-container see_all' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Products' names</th><th>Created time</th>";
+                echo "</tr>";
+                foreach ($created_time as $stores) {
+                    echo "<tr>";
+                    echo "<td>$stores[1]</td>";
+                    echo "<td>$stores[3]</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
+                ?>
             </section>
 
+            <!----FEATURED PRODUCTS--->
+            <section class="featured-products ">
+                <h2 class="section-title color-purple">Featured Products</h2>
+                <?php
+                $file = 'CSV_files/products.csv';
+                $store_csv_file = fopen($file, "r");
+                $created_time = array();
+                $product_array[] = fgetcsv($store_csv_file, 1000);
+                while ($line = fgetcsv($store_csv_file, 1000)) {
+                    if ($line[5] == "TRUE") {
+                        $time_str = $line[3];
+                        $time_str = str_replace("Z", "", $time_str);
+                        $time_conversion = strtotime($time_str);
+                        $created_time[$time_conversion] = $line;
+                    }
+                }
+                krsort($created_time);
+                if (sizeof($created_time) >= 10) {
+                    $created_time = array_slice($created_time, 0, 10);
+                }
+                function featured_products_display($item)
+                {
+                    echo "
+                    <div class='thumbnail-wrapper-products hover-shadow '>
+                            <figure class='new-products-img-wrapper '>
+                                <a href='store/store-home.php '><img class='new-products-brand hover-shadow ' src='images/nike.jpg ' id='brand-hover '></a>
+                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img ' src='images/shirtnike1.png ' alt='Red Shirt '></a>
+                            </figure>
+                            <a href='store/store-home.php ' class='text-center text-small color-gray '>Store $item[4]</a>
+                            <a href='store/product-details-dunklowblack.php '>
+                                <h2 class='text-medium color-purple'>$item[1]</h2>
+                            </a>
+                            <h3 class='text-normal color-red '>$$item[2]</h3>
+                        </div>";
+                }
+                echo "                
+                <div class='container'>
+                    <div class='nowrap scroll-products1'>";
+                for ($i = 0; $i < count($created_time); $i += 1) {
+                    featured_products_display($created_time[$i]);
+                }
+                ?>
+            </section>
             <!----NEW STORES--->
             <section class="new-stores ">
                 <h2 class="section-title ">New Stores</h2>
                 <?php
-                $file = 'CSV_files/stores.txt';
+                $file = 'CSV_files/stores.csv';
                 $store_csv_file = fopen($file, "r");
                 $created_time = array();
                 $product_array[] = fgetcsv($store_csv_file, 1000);
                 while ($line = fgetcsv($store_csv_file, 1000)) {
                     $time_str = $line[3];
-                    $time_str = str_replace("Z","",$time_str);
+                    $time_str = str_replace("Z", "", $time_str);
                     $time_conversion = strtotime($time_str);
                     $created_time[$time_conversion] = $line;
                 }
                 krsort($created_time);
-                if (sizeof($created_time)>=10){
-                    $created_time = array_slice($created_time,0,10);
+                if (sizeof($created_time) >= 10) {
+                    $created_time = array_slice($created_time, 0, 10);
                 }
-                function new_stores_display($item){
+                function new_stores_display($item)
+                {
                     echo "
                     <div class='thumbnail-wrapper-stores'>
                         <a href='store/store-home.php'>
@@ -202,8 +295,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "                
                 <div class='container'>
-                    <div class='nowrap scroll-stores'>";
-                for ($i = 0; $i<count($created_time); $i+=1){
+                    <div class='nowrap scroll-stores1'>";
+                for ($i = 0; $i < count($created_time); $i += 1) {
                     new_stores_display($created_time[$i]);
                 }
                 echo "</div>
@@ -229,7 +322,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 echo "<tr>";
                 echo "<th>Products' names</th><th>Created time</th>";
                 echo "</tr>";
-                foreach ($created_time as $stores){
+                foreach ($created_time as $stores) {
                     echo "<tr>";
                     echo "<td>$stores[1]</td>";
                     echo "<td>$stores[3]</td>";
@@ -240,148 +333,48 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 ?>
             </section>
 
-            <!----FEATURED PRODUCTS--->
-
-            <section class="offer bg-gradient-light ">
-                <h2 class="section-title ">Featured Products</h2>
-                <div class="container ">
-
-                    <div class="row ">
-                        <div class="col-50 ">
-                            <img src="images/offer1.png " class="offer-img " alt="Tivi LG ">
-                        </div>
-                        <div class="col-40 offer-des ">
-                            <h1 class="text-big ">Smart Tivi LED LG</h1>
-                            <h3 class="text-medium color-red ">$25.99</h3>
-                            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas eligendi debitis ex commodi ducimus asperiores vitae dolorem at nobis excepturi ipsum praesentium, quos labore quod illo rem tempore aliquam unde! </p>
-                            <a href="store/product-details-dunklowblack.php " class="btn ">Product Details &#10148; </a>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-50 ">
-                            <img src="images/ac.png " class="offer-img " alt="AC Inverter LG ">
-                        </div>
-                        <div class="col-40 offer-des ">
-                            <h1 class="text-big "> LG AC Inverter 1 HP</h1>
-                            <h3 class="text-medium color-red ">$25.99</h3>
-                            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas eligendi debitis ex commodi ducimus asperiores vitae dolorem at nobis excepturi ipsum praesentium, quos labore quod illo rem tempore aliquam unde! </p>
-                            <a href="store/product-details-dunklowblack.php " class="btn ">Product Details &#10148; </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!----NEW PRODUCTS--->
             <section class="new-products ">
-                <div class="container ">
-                    <h2 class="section-title ">New Products</h2>
-                    <div class="nowrap scroll-products">
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/shirtnike1.png " alt="Red Shirt "></a>
+                <h2 class="section-title ">New Products</h2>
+                <?php
+                $file = 'CSV_files/products.csv';
+                $store_csv_file = fopen($file, "r");
+                $created_time = array();
+                $product_array[] = fgetcsv($store_csv_file, 1000);
+                while ($line = fgetcsv($store_csv_file, 1000)) {
+
+                    $time_str = $line[3];
+                    $time_str = str_replace("Z", "", $time_str);
+                    $time_conversion = strtotime($time_str);
+                    $created_time[$time_conversion] = $line;
+                }
+                krsort($created_time);
+                if (sizeof($created_time) >= 10) {
+                    $created_time = array_slice($created_time, 0, 10);
+                }
+                function new_products_display($item)
+                {
+                    echo "
+                    <div class='thumbnail-wrapper-products hover-shadow '>
+                            <figure class='new-products-img-wrapper '>
+                                <a href='store/store-home.php '><img class='new-products-brand hover-shadow ' src='images/nike.jpg ' id='brand-hover '></a>
+                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img ' src='images/shirtnike1.png ' alt='Red Shirt '></a>
                             </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Red Shirt</h2>
+                            <a href='store/store-home.php ' class='text-center text-small color-gray '>Store $item[4]</a>
+                            <a href='store/product-details-dunklowblack.php '>
+                                <h2 class='text-medium '>$item[1]</h2>
                             </a>
-                            <h3 class="text-normal color-red ">$20.50</h3>
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/product1.png " alt="Grey Hoodie "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Grey Hoodie</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$29.99</h3>
-
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/shirtnike2.png " alt="Black Shirt "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Black Shirt</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$17.99</h3>
-
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/pantnike.png " alt="Black Pants "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Long Black Pants</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$30.50</h3>
-
-                        </div>
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/shirtnike1.png " alt="Red Shirt "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Red Shirt</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$20.50</h3>
-
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/product1.png " alt="Grey Hoodie "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Grey Hoodie</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$29.99</h3>
-
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/shirtnike2.png " alt="Black Shirt "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Black Shirt</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$17.99</h3>
-
-                        </div>
-
-                        <div class="thumbnail-wrapper-products hover-shadow ">
-                            <figure class="new-products-img-wrapper ">
-                                <a href="store/store-home.php "><img class="new-products-brand hover-shadow " src="images/nike.jpg " id="brand-hover "></a>
-                                <a href="store/product-details-dunklowblack.php "><img class="new-products-img " src="images/pantnike.png " alt="Black Pants "></a>
-                            </figure>
-                            <a href="store/store-home.php " class="text-center text-small color-gray ">Nike</a>
-                            <a href="store/product-details-dunklowblack.php ">
-                                <h2 class="text-medium ">Long Black Pants</h2>
-                            </a>
-                            <h3 class="text-normal color-red ">$30.50</h3>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
+                            <h3 class='text-normal color-red '>$$item[2]</h3>
+                        </div>";
+                }
+                echo "                
+                <div class='container'>
+                    <div class='nowrap scroll-products'>";
+                for ($i = 0; $i < count($created_time); $i += 1) {
+                    new_products_display($created_time[$i]);
+                }
+                ?>
             </section>
 
 

@@ -32,7 +32,7 @@ function add_to_cart(item, e) {
     e.preventDefault()
     var flash_message = document.querySelector('.flash-message')
     flash_message.style.display = "block"
-    setTimeout(function(){flash_message.style.display="none"}, 2000);
+    setTimeout(function() { flash_message.style.display = "none" }, 2000);
     count += parseInt(document.querySelector(".shoe-qty").value)
     var result = count.toString()
     document.querySelectorAll(".cart-qty").forEach((p_tag) => {
@@ -101,9 +101,18 @@ const scrollStoresElement = document.querySelector('.scroll-stores');
 const scrollStoresFirstElement = '.scroll-stores .thumbnail-wrapper-stores'
 var scrollStoresLoop
 
+const scrollStores1Element = document.querySelector('.scroll-stores1');
+const scrollStores1FirstElement = '.scroll-stores1 .thumbnail-wrapper-stores'
+var scrollStores1Loop
+
 const scrollProductsElement = document.querySelector('.scroll-products');
 const scrollProductsFirstElement = '.scroll-products .thumbnail-wrapper-products'
 var scrollProductsLoop
+
+const scrollProducts1Element = document.querySelector('.scroll-products1');
+const scrollProducts1FirstElement = '.scroll-products1 .thumbnail-wrapper-products'
+var scrollProducts1Loop
+
 
 function inView(element) {
     var bounding = element.getBoundingClientRect();
@@ -125,16 +134,26 @@ function index_file() {
         }
     }
 
+    function autoScrollStores1() {
+        autoScroll(scrollStores1Element, scrollStores1FirstElement)
+    }
+
     function autoScrollStores() {
         autoScroll(scrollStoresElement, scrollStoresFirstElement)
+    }
+
+    function autoScrollProducts1() {
+        autoScroll(scrollProducts1Element, scrollProducts1FirstElement)
     }
 
     function autoScrollProducts() {
         autoScroll(scrollProductsElement, scrollProductsFirstElement)
     }
 
+    scrollStores1Loop = setInterval(autoScrollStores1, 8)
     scrollStoresLoop = setInterval(autoScrollStores, 8)
     scrollProductsLoop = setInterval(autoScrollProducts, 8)
+    scrollProducts1Loop = setInterval(autoScrollProducts1, 8)
 
     //Mouse listener for Stores
     scrollStoresElement.addEventListener('mouseover', function() {
@@ -146,6 +165,16 @@ function index_file() {
         scrollStoresLoop = setInterval(autoScrollStores, 8)
     })
 
+    //Mouse listener for Stores1
+    scrollStores1Element.addEventListener('mouseover', function() {
+        clearInterval(scrollStores1Loop);
+    })
+
+    scrollStores1Element.addEventListener('mouseout', function() {
+        autoScrollStores1()
+        scrollStores1Loop = setInterval(autoScrollStores1, 8)
+    })
+
     //Mouse listener for Products
     scrollProductsElement.addEventListener('mouseover', function() {
         clearInterval(scrollProductsLoop);
@@ -155,7 +184,18 @@ function index_file() {
         autoScrollProducts()
         scrollProductsLoop = setInterval(autoScrollProducts, 8)
     })
+
+    //Mouse listener for Products1
+    scrollProducts1Element.addEventListener('mouseover', function() {
+        clearInterval(scrollProducts1Loop);
+    })
+
+    scrollProducts1Element.addEventListener('mouseout', function() {
+        autoScrollProducts1()
+        scrollProducts1Loop = setInterval(autoScrollProducts1, 8)
+    })
 }
+
 function store_file() {
 
     //Scroll function
@@ -170,11 +210,12 @@ function store_file() {
             scrollElement.scrollTo(scrollElement.scrollLeft + 1, 0);
         }
     }
+
     function autoScrollProducts() {
         autoScroll(scrollProductsElement, scrollProductsFirstElement)
     }
     scrollProductsLoop = setInterval(autoScrollProducts, 8)
-    //Mouse listener for Products
+        //Mouse listener for Products
     scrollProductsElement.addEventListener('mouseover', function() {
         clearInterval(scrollProductsLoop);
     })
@@ -360,13 +401,15 @@ function cart_load() {
         }
     }
 }
-function order_successful(){
-    if (localStorage.getItem('login')=='true'){
+
+function order_successful() {
+    if (localStorage.getItem('login') == 'true') {
         localStorage.removeItem('Dunk Low Black');
         localStorage.removeItem('Air Force One');
         localStorage.removeItem('coupon');
     }
 }
+
 function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
         document.querySelector(".HD-apply").style.display = "block"
@@ -761,7 +804,8 @@ function issName(sName) {
 function isuserName(userName) {
     return /^[a-zA-Z0-9 ]{3,}$/.test(userName);
 }
-function mytable(){
+
+function mytable() {
     document.querySelector('#featured_products');
     console.log('fwefew');
 }

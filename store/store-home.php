@@ -152,7 +152,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </div>
                             <div class='row'>
                                 <div class='col-90'>
-                                    <h1>$item</h1>
+                                    <h1 class='text-medium'>$item</h1>
                                     <p>There is a Dunk for everyone. Our latest drop of new and old-school colors are coming soon.</p>
                                     <a href='product-details-dunklowblack.php' class='btn btnnike'>See details &#10147; </a>
                                 </div>
