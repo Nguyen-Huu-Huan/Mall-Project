@@ -183,7 +183,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </form>";
         echo "<div class='row'>";
         $o = 0;
-        if (isset($_POST['letter'])){
+        if (isset($_POST['category'])){
             foreach ($stores_by_category_array as $category => $store){            
                 if ($category==$_POST['category']){
                     foreach ($store as $item){
