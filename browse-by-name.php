@@ -183,7 +183,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </h2>
             </div>
             <?php
-            if (isset($_POST['letter']){
+            if (isset($_POST['letter'])){
                 $letter = $_POST['letter'];
                 $file = 'CSV_files/stores.txt';
                 $store_csv_file = fopen($file, "r");
