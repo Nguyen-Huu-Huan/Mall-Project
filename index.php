@@ -199,8 +199,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_fstore' onclick='see_fstore()'>Click here to the 10 latest featured stores</a>";
-                echo "<a href='#' id='collapse_fstore' onclick='fstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_fstore(){
                     document.querySelector('.see_all_fstore').style.display='block';
                     document.querySelector('#collapse_fstore').style.display='block';
@@ -215,6 +213,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display_fstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
+                echo "<a id='display_fstore' onclick='see_fstore()'>Click here to the 10 latest featured stores</a>";
+                echo "<a id='collapse_fstore' onclick='fstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<div class='tiny-container see_all_fstore' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
@@ -274,8 +274,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a id='display_fproduct' onclick='see_fproduct()'>Click here to see the 10 latest featured products</a>";
-                echo "<a id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_fproduct(){
                     document.querySelector('.see_all_fproduct').style.display='block';
                     document.querySelector('#collapse_fproduct').style.display='block';
@@ -290,6 +288,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display_fproduct').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
+                echo "<a id='display_fproduct' onclick='see_fproduct()'>Click here to see the 10 latest featured products</a>";
+                echo "<a id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<div class='tiny-container see_all_fproduct' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
@@ -345,8 +345,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a id='display_nstore' onclick='see_nstore()'>Click here to see the 10 latest new stores</a>";
-                echo "<a id='collapse_nstore' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_nstore(){
                     document.querySelector('.see_all_nstore').style.display='block';
                     document.querySelector('#collapse_nstore').style.display='block';
@@ -361,6 +359,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display_nstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
+                echo "<a id='display_nstore' onclick='see_nstore()'>Click here to see the 10 latest new stores</a>";
+                echo "<a id='collapse_nstore' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<div class='tiny-container see_all_nstore' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
