@@ -250,7 +250,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     echo "<tr>";
                     echo "<td>$key</td>";
                     for($i = 0 ; $i<count($value);$i+=1){
-                        if ($key==$_SESSION['start_display_position']){
+                        if (($key==$_SESSION['start_display_position'])||($key==($_SESSION['start_display_position']+1))){
                             // $end_position = $i+1;
                             echo "<td>";
                             echo "<strong style='color:red;'>".$value[$i].str_repeat('&nbsp',3)."</strong>";
