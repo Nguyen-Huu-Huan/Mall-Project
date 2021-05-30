@@ -132,7 +132,7 @@ if (isset($_SESSION['valid'])){
         <input type='file' id='myFile' name='filename'>
         </form>
       </div>
-      <h1 class='section-title'>Admin Dashboard</h1>
+      <h1 class='section-title'>About Us Portraits</h1>
       <div class='row'>
       
       </div>
