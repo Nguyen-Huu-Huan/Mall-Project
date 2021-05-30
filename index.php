@@ -199,16 +199,16 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_fstore' onclick='see_products()'>Click here to see all featured stores</a>";
-                echo "<a href='#' id='collapse_fstore' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
-                echo "<script type='text/javascript'>function see_products(){
+                echo "<a href='#' id='display_fstore' onclick='see_fstore()'>Click here to see all featured stores</a>";
+                echo "<a href='#' id='collapse_fstore' onclick='fstore_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_fstore(){
                     document.querySelector('.see_all_fstore').style.display='block';
                     document.querySelector('#collapse_fstore').style.display='block';
                     document.querySelector('#display_fstore').style.display='none';
                     document.querySelector('#collapse_fstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<script type='text/javascript'>function product_disappear(){
+                echo "<script type='text/javascript'>function fstore_disappear(){
                     document.querySelector('.see_all_fstore').style.display='none';
                     document.querySelector('#collapse_fstore').style.display='none';
                     document.querySelector('#display_fstore').style. display='block';
@@ -314,16 +314,16 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all new stores</a>";
-                echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
-                echo "<script type='text/javascript'>function see_products(){
+                echo "<a href='#' id='display' onclick='see_nstore()'>Click here to see all new stores</a>";
+                echo "<a href='#' id='collapse' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_nstore(){
                     document.querySelector('.see_all_nstore').style.display='block';
                     document.querySelector('#collapse_nstore').style.display='block';
                     document.querySelector('#display_nstore').style.display='none';
                     document.querySelector('#collapse_nstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<script type='text/javascript'>function product_disappear(){
+                echo "<script type='text/javascript'>function nstore_disappear(){
                     document.querySelector('.see_all_nstore').style.display='none';
                     document.querySelector('#collapse_nstore').style.display='none';
                     document.querySelector('#display_nstore').style. display='block';
