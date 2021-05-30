@@ -48,52 +48,54 @@ if (file_exists('install.php') === TRUE) {
   </noscript>
 </head>
 <?php
-$yoa = 'zxc';
 session_start();
-echo ($_SESSION['valid']);
-echo ($yoa = $admin[0] && password_verify('zxc', $admin[1]));
+if (isset($_POST['logout'])) {
+  unset($_POST);
+  $_SESSION['valid'] = false;
+}
 
 ?>
-
-<section class="admin-reg">
-  <h1 class="section-title">Admin login</h1>
-  <div class="small-container">
-    <div class="row">
-      <div class="col-50">
-        <form method="post" name="admin-login-form" onsubmit="return passCheck()">
-          <label for="admin-username">Username</label><br>
-          <input style="width: 100%;" type="text" name="admin-username" required><br><br>
-          <label for="admin-password">Password</label><br>
-          <input style="width: 100%;" type="password" name="admin-password" id="password" required><br><br>
-          <?php
+<?php
+    if (isset($_SESSION['valid'])== false|| $_SESSION['valid'] == false) { echo"
+<section class='admin-reg'>
+  <h1 class='section-title'>Admin login</h1>
+  <div class='small-container'>
+    <div class='row'>
+      <div class='col-50'>
+        <form method='post' name='admin-login-form' onsubmit='return passCheck()'>
+          <label for='admin-username'>Username</label><br>
+          <input style='width: 100%;' type='text' name='admin-username' required><br><br>
+          <label for='admin-password'>Password</label><br>
+          <input style='width: 100%;' type='password' name='admin-password' id='password' required>";
+    }
+          
 
           if (isset($_POST['admin-login'])) {
             if (
               $_POST['admin-username'] != $admin[0] || password_verify($_POST['admin-password'], $admin[1]) === false
             ) {
-              $_SESSION['valid'] === false;
-              echo "<meta http-equiv='refresh' content='0'>";
+              $_SESSION['valid'] = false;
             }
             if (
               $_POST['admin-username'] = $admin[0] && password_verify($_POST['admin-password'], $admin[1])
             ) {
-              $_SESSION['valid'] === true;
+              $_SESSION['valid'] = true;
               echo "<meta http-equiv='refresh' content='0'>";
             }
           }
-          ?>
-          <br><br>
-          <button id="submit" class="btn" style="width: 30%;" type="submit" name="admin-login">Submit</button>
+          if (isset($_SESSION['valid'])== false|| $_SESSION['valid'] == false) { echo"
+          <br>
+          <button id='submit' class='btn' style='width: 30%;' type='submit' name='admin-login'>Submit</button>
         </form>
       </div>
     </div>
   </div>
-</section>
-
+</section>";}
+?>
 <?php
-
-if ($_SESSION['valid'] === true) {
-  echo "
+if (isset($_SESSION['valid'])){
+    if ($_SESSION['valid'] == true) {
+      echo "
 <body>
   <section class='admin-dashboard'>
     <h1 class='section-title'>Admin Dashboard</h1>
@@ -103,20 +105,20 @@ if ($_SESSION['valid'] === true) {
       <div class='row'>
         <div class='col-100'>
           <form method='post' name='admin-dashboard-form' action=''>
-            <label class='text-big' for='copyright-text'>Copyright Texts</label>
+            <label class='text-big' for='copyright-text'>Copyright</label>
             <textarea class='ad-textarea' name='copyright-text' placeholder=''>";
-  echo str_replace("<br>", "", $texts[0]);
-  echo "</textarea><br>
+      echo str_replace("<br>", "", $texts[0]);
+      echo "</textarea><br>
 
             <label class='text-big' for='tos-text'>Term Of Services</label>
             <textarea class='ad-textarea' name='tos-text' placeholder=''>";
-  echo str_replace("<br>", "", $texts[1]);
-  echo "</textarea><br>
+      echo str_replace("<br>", "", $texts[1]);
+      echo "</textarea><br>
 
             <label class='text-big' for='cprivacy-text'>Privacy Policy</label>
             <textarea class='ad-textarea' name='privacy-text' placeholder=''>";
-  echo str_replace("<br>", "", $texts[2]);
-  echo "</textarea><br>
+      echo str_replace("<br>", "", $texts[2]);
+      echo "</textarea><br>
             <div style='margin:0 35%'>
             <form method='post'>
             <button style='width: 45%;' class='btn bg-color-black' type='submit' name='logout'>Logout</button>
@@ -125,12 +127,18 @@ if ($_SESSION['valid'] === true) {
               <button class='btn' style='width: 45%;' type='submit' name='admin-dashboard'>Save</button><br>
 
             </div>
-          </form>
+          
         </div>
+        <input type='file' id='myFile' name='filename'>
+        </form>
+      </div>
+      <h1 class='section-title'>Admin Dashboard</h1>
+      <div class='row'>
+      
       </div>
     </div>
   </section>
 </body>";
-} ?>
+}} ?>
 
 </html>
