@@ -272,6 +272,35 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 for ($i = 0; $i < count($created_time); $i += 1) {
                     featured_products_display($created_time[$i]);
                 }
+                echo "<a href='#' id='display_fproduct' onclick='see_fproduct()'>Click here to see all new stores</a>";
+                echo "<a href='#' id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_fproduct(){
+                    document.querySelector('.see_all_fproduct').style.display='block';
+                    document.querySelector('#collapse_fproduct').style.display='block';
+                    document.querySelector('#display_fproduct').style.display='none';
+                    document.querySelector('#collapse_fproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function fproduct_disappear(){
+                    document.querySelector('.see_all_fproduct').style.display='none';
+                    document.querySelector('#collapse_fproduct').style.display='none';
+                    document.querySelector('#display_fproduct').style. display='block';
+                    document.querySelector('#display_fproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<div class='tiny-container see_all_fproduct' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Products' names</th><th>Created time</th>";
+                echo "</tr>";
+                foreach ($created_time as $stores) {
+                    echo "<tr>";
+                    echo "<td>$stores[1]</td>";
+                    echo "<td>$stores[3]</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
                 ?>
             </section>
             <!----NEW STORES--->
