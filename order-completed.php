@@ -122,7 +122,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
                                         <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
+                                            <a href="browse-by-category.php">Browse store by category &#8628;</a>
                                             <div class="dropdown-content dropdown-category">
                                                 <a href="fashion.php">Fashion</a>
                                                 <a href="electronics.php">Electronics and technology</a>
