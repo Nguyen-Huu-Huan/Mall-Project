@@ -239,6 +239,20 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     document.querySelector('#display').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
+                echo "<script type='text/javascript'>function see_products(){
+                    document.querySelector('.see_all').style.display='block';
+                    document.querySelector('#collapse').style.display='block';
+                    document.querySelector('#display').style.display='none';
+                    document.querySelector('#collapse').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function product_disappear(){
+                    document.querySelector('.see_all').style.display='none';
+                    document.querySelector('#collapse').style.display='none';
+                    document.querySelector('#display').style. display='block';
+                    document.querySelector('#display').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
                 echo "<a href='' id='display' onclick='see_products()'>Click here to see all products</a>";
                 echo "<a href='' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<div class='tiny-container see_all' style=\"display:none;\">";
