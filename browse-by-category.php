@@ -183,24 +183,26 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </form>";
         echo "<div class='row'>";
         $o = 0;
-        foreach ($stores_by_category_array as $category => $store){            
-            if ($category==$_POST['category']){
-                foreach ($store as $item){
-                    echo "<div class='col-20'>
-                            <div class='new-products-wrapper hover-shadow'>
-                                <figure class='new-products-img-wrapper'>
-                                    <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
-                                    <img class='new-products-brand' src='images/nike.jpg'>
-                                </figure>
-                                <p class='text-center text-small color-gray'>$categories_array[$o]</p>
-                                <p class='text-center text-medium color-black'>$item</p>
-                                <h2 class='text-center text-medium'>$category</h2>
-                            </div>
-                        </div>";
+        if (isset($_POST['letter'])){
+            foreach ($stores_by_category_array as $category => $store){            
+                if ($category==$_POST['category']){
+                    foreach ($store as $item){
+                        echo "<div class='col-20'>
+                                <div class='new-products-wrapper hover-shadow'>
+                                    <figure class='new-products-img-wrapper'>
+                                        <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
+                                        <img class='new-products-brand' src='images/nike.jpg'>
+                                    </figure>
+                                    <p class='text-center text-small color-gray'>$categories_array[$o]</p>
+                                    <p class='text-center text-medium color-black'>$item</p>
+                                    <h2 class='text-center text-medium'>$category</h2>
+                                </div>
+                            </div>";
+                    }
                 }
-            }
-            $o+=1;
-        } 
+                $o+=1;
+            }  
+        }
         echo"</div>
             </div>
         </section>";
