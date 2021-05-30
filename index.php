@@ -199,7 +199,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_fstore' onclick='see_fstore()'>Click here to see all featured stores</a>";
+                echo "<a href='#' id='display_fstore' onclick='see_fstore()'>Click here to the 10 latest featured stores</a>";
                 echo "<a href='#' id='collapse_fstore' onclick='fstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_fstore(){
                     document.querySelector('.see_all_fstore').style.display='block';
@@ -274,7 +274,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_fproduct' onclick='see_fproduct()'>Click here to see all featured products</a>";
+                echo "<a href='#' id='display_fproduct' onclick='see_fproduct()'>Click here to see the 10 latest featured products</a>";
                 echo "<a href='#' id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_fproduct(){
                     document.querySelector('.see_all_fproduct').style.display='block';
@@ -345,7 +345,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_nstore' onclick='see_nstore()'>Click here to see all new stores</a>";
+                echo "<a href='#' id='display_nstore' onclick='see_nstore()'>Click here to see the 10 latest new stores</a>";
                 echo "<a href='#' id='collapse_nstore' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_nstore(){
                     document.querySelector('.see_all_nstore').style.display='block';
@@ -420,7 +420,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display_nproduct' onclick='see_nproduct()'>Click here to see all new products</a>";
+                echo "<a href='#' id='display_nproduct' onclick='see_nproduct()'>Click here to see the 10 latest new products</a>";
                 echo "<a href='#' id='collapse_nproduct' onclick='nproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_nproduct(){
                     document.querySelector('.see_all_nproduct').style.display='block';
