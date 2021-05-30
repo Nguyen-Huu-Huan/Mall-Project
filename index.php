@@ -232,7 +232,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </section>
 
             <!----FEATURED PRODUCTS--->
-            <section class="featured-products ">
+            <section class="featured-products">
                 <h2 class="section-title color-purple">Featured Products</h2>
                 <?php
                 $file = 'CSV_files/products.csv';
@@ -254,13 +254,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 function featured_products_display($item)
                 {
                     echo "
-                    <div class='thumbnail-wrapper-products hover-shadow '>
+                    <div class='thumbnail-wrapper-products hover-shadow'>
                             <figure class='new-products-img-wrapper '>
-                                <a href='store/store-home.php '><img class='new-products-brand hover-shadow ' src='images/nike.jpg ' id='brand-hover '></a>
-                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img ' src='images/shirtnike1.png ' alt='Red Shirt '></a>
+                                <a href='store/store-home.php'><img class='new-products-brand hover-shadow' src='images/nike.jpg' id='brand-hover'></a>
+                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'></a>
                             </figure>
-                            <a href='store/store-home.php ' class='text-center text-small color-gray '>Store $item[4]</a>
-                            <a href='store/product-details-dunklowblack.php '>
+                            <a href='store/store-home.php' class='text-center text-small color-gray'>Store $item[4]</a>
+                            <a href='store/product-details-dunklowblack.php'>
                                 <h2 class='text-medium color-purple'>$item[1]</h2>
                             </a>
                             <h3 class='text-normal color-red '>$$item[2]</h3>
@@ -272,7 +272,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 for ($i = 0; $i < count($created_time); $i += 1) {
                     featured_products_display($created_time[$i]);
                 }
-                echo "<a href='#' id='display_fproduct' onclick='see_fproduct()'>Click here to see all new stores</a>";
+                echo "</div>
+                </div>";
+                echo "<a href='#' id='display_fproduct' onclick='see_fproduct()'>Click here to see all featured products</a>";
                 echo "<a href='#' id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_fproduct(){
                     document.querySelector('.see_all_fproduct').style.display='block';
