@@ -418,6 +418,37 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 for ($i = 0; $i < count($created_time); $i += 1) {
                     new_products_display($created_time[$i]);
                 }
+                echo "</div>
+                </div>";
+                echo "<a href='#' id='display_nproduct' onclick='see_nproduct()'>Click here to see all new products</a>";
+                echo "<a href='#' id='collapse_nproduct' onclick='nproduct_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<script type='text/javascript'>function see_nproduct(){
+                    document.querySelector('.see_all_nproduct').style.display='block';
+                    document.querySelector('#collapse_nproduct').style.display='block';
+                    document.querySelector('#display_nproduct').style.display='none';
+                    document.querySelector('#collapse_nproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function nproduct_disappear(){
+                    document.querySelector('.see_all_nproduct').style.display='none';
+                    document.querySelector('#collapse_nproduct').style.display='none';
+                    document.querySelector('#display_nproduct').style. display='block';
+                    document.querySelector('#display_nproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<div class='tiny-container see_all_nproduct' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Products' names</th><th>Created time</th>";
+                echo "</tr>";
+                foreach ($created_time as $stores) {
+                    echo "<tr>";
+                    echo "<td>$stores[1]</td>";
+                    echo "<td>$stores[3]</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
                 ?>
             </section>
 
