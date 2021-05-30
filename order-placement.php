@@ -210,6 +210,15 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                     <div class="col-30">
                         <?php
+                        echo "<script>
+                        function order_successful() {
+                            if (localStorage.getItem('login') == 'true') {
+                                localStorage.removeItem('Dunk Low Black');
+                                localStorage.removeItem('Air Force One');
+                                localStorage.removeItem('coupon');
+                            }
+                        }
+                        </script>";
                         echo "<form method='POST'><input type='submit' class=\"btn hover-shadow img\" id=\"order-button\" name='order' onclick=\"order_successful()\" value='Order'></form>";
                         ?>
                     </div>
