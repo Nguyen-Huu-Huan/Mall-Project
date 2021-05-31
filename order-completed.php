@@ -7,15 +7,19 @@ if (isset($_POST['logout1'])) {
     $_SESSION['validate'] = false;
   }
 if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
-        button.removeAttribute('href');
-        button.setAttribute('href', 'logged-in.php')</script>";
-    }
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' });
+
+    </script>";
+}
 ?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+echo "<script>        
+localStorage.removeItem('Dunk Low Black');
+localStorage.removeItem('Air Force One');
+localStorage.removeItem('coupon');
+</script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
