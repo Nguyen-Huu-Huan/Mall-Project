@@ -1,24 +1,24 @@
 
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+// if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
-if(isset($_SESSION['validate'])){
+// }
+// if(isset($_SESSION['validate'])){
 
  
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
-  }
-  if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
-   </script>";
-    }
-    else if($_SESSION['validate']=== FALSE){
-        echo"<script>document.querySelector('.logout').style.display = 'none' 
-   </script>";
-    }
-}
+// if (isset($_POST['logout1'])) {
+//     unset($_POST);
+//     $_SESSION['validate'] = false;
+//   }
+//   if($_SESSION['validate']=== TRUE){
+//     echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
+//    </script>";
+//     }
+//     else if($_SESSION['validate']=== FALSE){
+//         echo"<script>document.querySelector('.logout').style.display = 'none' 
+//    </script>";
+//     }
+// }
 ?>
 <?php 
 # Don't delete, PHP01
@@ -27,10 +27,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-    session_start();
     if (isset($_POST['order'])){
         if((isset($_SESSION['logged-in']))&&($_SESSION['logged-in']==true)){
             header("location:order-completed.php");
+
         }else{
             header("location:register.php");
         }
@@ -191,16 +191,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     </div>
                     <div class="col-30">
                         <?php
-                        echo "<script>
-                        function order_successful() {
-                            if (localStorage.getItem('login') == 'true') {
-                                localStorage.removeItem('Dunk Low Black');
-                                localStorage.removeItem('Air Force One');
-                                localStorage.removeItem('coupon');
-                            }
-                        }
-                        </script>";
-                        echo "<form method='POST'><input type='submit' class=\"btn hover-shadow img\" id=\"order-button\" name='order' onclick=\"order_successful()\" value='Order'></form>";
+                        echo "<form method='POST'><input type='submit' class=\"btn hover-shadow img\" id=\"order-button\" name='order' value='Order'></form>";
                         ?>
                     </div>
                     <!-- href="order-completed.php" -->
