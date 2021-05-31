@@ -188,13 +188,15 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 $file = 'CSV_files/stores.txt';
                 $store_csv_file = fopen($file, "r");
                 $stores_array = array();
+                $line_count = 0;
                 while ($line = fgetcsv($store_csv_file, 1000)) {
-                    if (isset($letter)){
+                    if ((isset($letter))&&($line_count!=0)){
                         $compare = stripos($line[1],$letter);
                         if ($compare===0){
                             $stores_array[] = $line[1];                     
                         }
                     }
+                    $line_count+=1;
                 }    
                 $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
                 $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
