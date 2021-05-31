@@ -401,6 +401,7 @@ function cart_load() {
         }
     }
 }
+
 function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
         document.querySelector(".HD-apply").style.display = "block"
