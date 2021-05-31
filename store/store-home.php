@@ -1,3 +1,25 @@
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if(isset($_SESSION['validate'])){
+
+ 
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+  if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
+   </script>";
+    }
+    else if($_SESSION['validate']=== FALSE){
+        echo"<script>document.querySelector('.logout').style.display = 'none' 
+   </script>";
+    }
+}
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
@@ -144,7 +166,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 $feature_product_images = [];
                 function feature_products_display($item, $image){
                     echo "
-                        <div class='thumbnail-wrapper-products'>
+                        <div class='thumbnail-wrapper-products hover-shadow' style='background-color: white'>
                             <div class='row'>
                                 <div class='col-80'>
                                     <img src=$image class='offer-img'>
@@ -167,7 +189,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }
                 echo "</div>";
                 echo "</div>";
-                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all products</a>";
+                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all featured products</a>";
                 echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
                 echo "<script type='text/javascript'>function see_products(){
                     document.querySelector('.see_all').style.display='block';

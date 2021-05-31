@@ -1,8 +1,28 @@
+
 <?php
-# Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {
-    die('Error, the file install.php is still exists');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
+if(isset($_SESSION['validate'])){
+
+ 
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+  if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
+   </script>";
+    }
+    else if($_SESSION['validate']=== FALSE){
+        echo"<script>document.querySelector('.logout').style.display = 'none' 
+   </script>";
+    }
+}
+?>
+<?php 
+# Don't delete, PHP01
+if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +75,7 @@ if (file_exists('install.php') === TRUE) {
                         <div class="mobile-menu-dropdown ">
                             <ul>
                                 <li><input type="checkbox " class="mobile-menu-dropdown-trigger " id="menu-cate ">
-                                    <label for="menu-cate " class="text-thin text-bold ">Browse store by category &#8628;</label>
+                                    <label for="menu-cate " class="text-thin text-bold ">Browse store by category</label>
 
                                     <div id="mobile-menu-cate " class="mobile-menu-dropdown-content ">
                                         <ul>
@@ -108,7 +128,7 @@ if (file_exists('install.php') === TRUE) {
                                         <div class="dropdown-content ">
                                             <a href="browse-by-name.php ">Browse stores by names</a>
                                             <div class="dropdown ">
-                                                <a>Browse store by category &#8628;</a>
+                                                <a href="browse-by-category.php">Browse store by category</a>
                                                 <div class="dropdown-content dropdown-category ">
                                                     <a href="fashion.php ">Fashion</a>
                                                     <a href="electronics.php ">Electronics and technology</a>
@@ -186,23 +206,23 @@ if (file_exists('install.php') === TRUE) {
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all stores</a>";
-                echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
-                echo "<script type='text/javascript'>function see_products(){
-                    document.querySelector('.see_all').style.display='block';
-                    document.querySelector('#collapse').style.display='block';
-                    document.querySelector('#display').style.display='none';
-                    document.querySelector('#collapse').addEventListener(\"click\", function(event){
+                echo "<script type='text/javascript'>function see_fstore(){
+                    document.querySelector('.see_all_fstore').style.display='block';
+                    document.querySelector('#collapse_fstore').style.display='block';
+                    document.querySelector('#display_fstore').style.display='none';
+                    document.querySelector('#collapse_fstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<script type='text/javascript'>function product_disappear(){
-                    document.querySelector('.see_all').style.display='none';
-                    document.querySelector('#collapse').style.display='none';
-                    document.querySelector('#display').style. display='block';
-                    document.querySelector('#display').addEventListener(\"click\", function(event){
+                echo "<script type='text/javascript'>function fstore_disappear(){
+                    document.querySelector('.see_all_fstore').style.display='none';
+                    document.querySelector('#collapse_fstore').style.display='none';
+                    document.querySelector('#display_fstore').style. display='block';
+                    document.querySelector('#display_fstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<div class='tiny-container see_all' style=\"display:none;\">";
+                echo "<a id='display_fstore' onclick='see_fstore()'>Click here to the 10 latest featured stores</a>";
+                echo "<a id='collapse_fstore' onclick='fstore_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<div class='tiny-container see_all_fstore' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
                 echo "<th>Products' names</th><th>Created time</th>";
@@ -219,7 +239,7 @@ if (file_exists('install.php') === TRUE) {
             </section>
 
             <!----FEATURED PRODUCTS--->
-            <section class="featured-products ">
+            <section class="featured-products">
                 <h2 class="section-title color-purple">Featured Products</h2>
                 <?php
                 $file = 'CSV_files/products.csv';
@@ -241,13 +261,13 @@ if (file_exists('install.php') === TRUE) {
                 function featured_products_display($item)
                 {
                     echo "
-                    <div class='thumbnail-wrapper-products hover-shadow '>
+                    <div class='thumbnail-wrapper-products hover-shadow'>
                             <figure class='new-products-img-wrapper '>
-                                <a href='store/store-home.php '><img class='new-products-brand hover-shadow ' src='images/nike.jpg ' id='brand-hover '></a>
-                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img ' src='images/shirtnike1.png ' alt='Red Shirt '></a>
+                                <a href='store/store-home.php'><img class='new-products-brand hover-shadow' src='images/nike.jpg' id='brand-hover'></a>
+                                <a href='store/product-details-dunklowblack.php '><img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'></a>
                             </figure>
-                            <a href='store/store-home.php ' class='text-center text-small color-gray '>Store $item[4]</a>
-                            <a href='store/product-details-dunklowblack.php '>
+                            <a href='store/store-home.php' class='text-center text-small color-gray'>Store $item[4]</a>
+                            <a href='store/product-details-dunklowblack.php'>
                                 <h2 class='text-medium color-purple'>$item[1]</h2>
                             </a>
                             <h3 class='text-normal color-red '>$$item[2]</h3>
@@ -259,6 +279,37 @@ if (file_exists('install.php') === TRUE) {
                 for ($i = 0; $i < count($created_time); $i += 1) {
                     featured_products_display($created_time[$i]);
                 }
+                echo "</div>
+                </div>";
+                echo "<script type='text/javascript'>function see_fproduct(){
+                    document.querySelector('.see_all_fproduct').style.display='block';
+                    document.querySelector('#collapse_fproduct').style.display='block';
+                    document.querySelector('#display_fproduct').style.display='none';
+                    document.querySelector('#collapse_fproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function fproduct_disappear(){
+                    document.querySelector('.see_all_fproduct').style.display='none';
+                    document.querySelector('#collapse_fproduct').style.display='none';
+                    document.querySelector('#display_fproduct').style. display='block';
+                    document.querySelector('#display_fproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<a id='display_fproduct' onclick='see_fproduct()'>Click here to see the 10 latest featured products</a>";
+                echo "<a id='collapse_fproduct' onclick='fproduct_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<div class='tiny-container see_all_fproduct' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Products' names</th><th>Created time</th>";
+                echo "</tr>";
+                foreach ($created_time as $stores) {
+                    echo "<tr>";
+                    echo "<td>$stores[1]</td>";
+                    echo "<td>$stores[3]</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
                 ?>
             </section>
             <!----NEW STORES--->
@@ -301,23 +352,23 @@ if (file_exists('install.php') === TRUE) {
                 }
                 echo "</div>
                 </div>";
-                echo "<a href='#' id='display' onclick='see_products()'>Click here to see all stores</a>";
-                echo "<a href='#' id='collapse' onclick='product_disappear()' style=\"display:none\">Collapse table</a>";
-                echo "<script type='text/javascript'>function see_products(){
-                    document.querySelector('.see_all').style.display='block';
-                    document.querySelector('#collapse').style.display='block';
-                    document.querySelector('#display').style.display='none';
-                    document.querySelector('#collapse').addEventListener(\"click\", function(event){
+                echo "<script type='text/javascript'>function see_nstore(){
+                    document.querySelector('.see_all_nstore').style.display='block';
+                    document.querySelector('#collapse_nstore').style.display='block';
+                    document.querySelector('#display_nstore').style.display='none';
+                    document.querySelector('#collapse_nstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<script type='text/javascript'>function product_disappear(){
-                    document.querySelector('.see_all').style.display='none';
-                    document.querySelector('#collapse').style.display='none';
-                    document.querySelector('#display').style. display='block';
-                    document.querySelector('#display').addEventListener(\"click\", function(event){
+                echo "<script type='text/javascript'>function nstore_disappear(){
+                    document.querySelector('.see_all_nstore').style.display='none';
+                    document.querySelector('#collapse_nstore').style.display='none';
+                    document.querySelector('#display_nstore').style. display='block';
+                    document.querySelector('#display_nstore').addEventListener(\"click\", function(event){
                         event.preventDefault()});
                 }</script>";
-                echo "<div class='tiny-container see_all' style=\"display:none;\">";
+                echo "<a id='display_nstore' onclick='see_nstore()'>Click here to see the 10 latest new stores</a>";
+                echo "<a id='collapse_nstore' onclick='nstore_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<div class='tiny-container see_all_nstore' style=\"display:none;\">";
                 echo "<table rules='all' class='text-center'>";
                 echo "<tr>";
                 echo "<th>Products' names</th><th>Created time</th>";
@@ -374,6 +425,37 @@ if (file_exists('install.php') === TRUE) {
                 for ($i = 0; $i < count($created_time); $i += 1) {
                     new_products_display($created_time[$i]);
                 }
+                echo "</div>
+                </div>";
+                echo "<script type='text/javascript'>function see_nproduct(){
+                    document.querySelector('.see_all_nproduct').style.display='block';
+                    document.querySelector('#collapse_nproduct').style.display='block';
+                    document.querySelector('#display_nproduct').style.display='none';
+                    document.querySelector('#collapse_nproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<script type='text/javascript'>function nproduct_disappear(){
+                    document.querySelector('.see_all_nproduct').style.display='none';
+                    document.querySelector('#collapse_nproduct').style.display='none';
+                    document.querySelector('#display_nproduct').style. display='block';
+                    document.querySelector('#display_nproduct').addEventListener(\"click\", function(event){
+                        event.preventDefault()});
+                }</script>";
+                echo "<a id='display_nproduct' onclick='see_nproduct()'>Click here to see the 10 latest new products</a>";
+                echo "<a id='collapse_nproduct' onclick='nproduct_disappear()' style=\"display:none\">Collapse table</a>";
+                echo "<div class='tiny-container see_all_nproduct' style=\"display:none;\">";
+                echo "<table rules='all' class='text-center'>";
+                echo "<tr>";
+                echo "<th>Products' names</th><th>Created time</th>";
+                echo "</tr>";
+                foreach ($created_time as $stores) {
+                    echo "<tr>";
+                    echo "<td>$stores[1]</td>";
+                    echo "<td>$stores[3]</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
                 ?>
             </section>
 

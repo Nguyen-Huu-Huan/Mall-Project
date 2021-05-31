@@ -1,3 +1,18 @@
+<?php
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
+        button.removeAttribute('href');
+        button.setAttribute('href', 'logged-in.php')</script>";
+    }
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
@@ -78,7 +93,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -123,7 +138,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -284,7 +299,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                     </div>
                 </div>
