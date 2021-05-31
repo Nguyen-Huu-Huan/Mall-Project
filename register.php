@@ -79,13 +79,9 @@ if (file_exists('install.php') === TRUE) {
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-<<<<<<< HEAD
-             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
-=======
             <li class="logout text-bold">
                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
             </li>
->>>>>>> 22282b6f02f1bb195d229725f8c4bba4c8f6d38f
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -121,13 +117,9 @@ if (file_exists('install.php') === TRUE) {
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-<<<<<<< HEAD
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
-=======
                             <li class="logout">
                                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
->>>>>>> 22282b6f02f1bb195d229725f8c4bba4c8f6d38f
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -175,11 +167,7 @@ if (file_exists('install.php') === TRUE) {
                 <div class="row">
 
                     <div class="col-100">
-<<<<<<< HEAD
-                        <form    class="form" id="form" method="POST">
-=======
                         <form class="form" id="form" method="POST">
->>>>>>> 22282b6f02f1bb195d229725f8c4bba4c8f6d38f
                             <fieldset class="shopper-fieldset">
                                 <br>
                                 <div class="row">
@@ -608,13 +596,9 @@ if (file_exists('install.php') === TRUE) {
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-<<<<<<< HEAD
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
-=======
                             <li class="logout">
                                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
->>>>>>> 22282b6f02f1bb195d229725f8c4bba4c8f6d38f
                         </ul>
                     </div>
                 </div>
