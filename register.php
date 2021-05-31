@@ -118,7 +118,7 @@ if (file_exists('install.php') === TRUE) {
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
                             <li class="logout1">
-                                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+                                <form action="myaccount.php" method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
@@ -126,40 +126,8 @@ if (file_exists('install.php') === TRUE) {
                     <div class="res-index-space1 col-70"></div>
                 </div>
         </header>
-         
-        <?php
 
-    if( isset($_POST['register'])){
-        $email = $_POST["email"];
-        $phone = $_POST["phone"];
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $pass = $_POST["pass"];
-        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-        $userfile = fopen('../userfile.txt', 'a');
-        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
-    }else{
-    }
-?>
 
-        <?php
-
-        if (isset($_POST['register'])) {
-            $email = $_POST["email"];
-            $phone = $_POST["phone"];
-            $fname = $_POST["fname"];
-            $lname = $_POST["lname"];
-            $address = $_POST["address"];
-            $city = $_POST["city"];
-            $pass = $_POST["pass"];
-            $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-            $userfile = fopen('../userfile.txt', 'a');
-            fwrite($userfile, $email . "," . $password_hash . "," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
-        } else {
-        }
-        ?>
 
         <main class="login-wrapper">
             <h1 class="section-title">Register</h1>
@@ -176,10 +144,10 @@ if (file_exists('install.php') === TRUE) {
                                             <label for="account">Account Type</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                            <input type="radio" name="account" value="shopper" required checked="checked">
+                                            <input type="radio" name="account" value="shopper"  checked="checked">
                                             <br><br>
                                             <label class="text-thin" for="account">Store Owner</label>
-                                            <input type="radio" name="account" value="owner" id="owner-checked" required>
+                                            <input type="radio" name="account" value="owner" id="owner-checked" >
                                             <br>
 
                                             <fieldset class="owner-fieldset">
@@ -225,7 +193,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" value="" required placeholder="*required" id="email">
+                                                <input type="email" name="email" value=""  placeholder="*" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -233,21 +201,21 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone" value="" required placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
+                                                <input type="tel" name="phone" value=""  placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" value="" required placeholder="*required" id="pw">
+                                                <input type="password" name="pass" value=""  placeholder="*" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" value="" required placeholder="*required" id="confirmPW">
+                                                <input type="password" name="cfpass" value=""  placeholder="*" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -261,45 +229,45 @@ if (file_exists('install.php') === TRUE) {
                                     <div class="col-50">
                                         <div class="container">
                                             <label for="upload"><strong>Profile Picture</strong></label>
-                                            <input type="file" name="upload" value="" required>
+                                            <input type="file" name="upload" value="" >
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" value="" required placeholder="*required" id="firstName">
+                                                <input type="text" name="fname" value=""  placeholder="*" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" value="" required placeholder="*required" id="lastName">
+                                                <input type="text" name="lname" value=""  placeholder="*" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" value="" required placeholder="*required" id="address">
+                                                <input type="text" name="address" value=""  placeholder="*" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value="" required placeholder="*required" id="city">
+                                                <input type="text" name="city" value=""  placeholder="*" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
+                                                <input type="tel" name="zipcode" value=""  placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <label for="country">Country</label>
                                             <br>
-                                            <select name="country" required>
+                                            <select name="country" >
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AX">Åland Islands</option>
                                                 <option value="AL">Albania</option>
@@ -578,7 +546,21 @@ if (file_exists('install.php') === TRUE) {
                     </div>
                 </div>
             </section>
+            <?php
 
+if(isset($_POST['register'])){
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $address = $_POST["address"];
+    $city = $_POST["city"];
+    $pass = $_POST["pass"];
+    $password_hash = password_hash($pass, PASSWORD_BCRYPT);
+    $userfile = fopen('../userfile.txt', 'a');
+    fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
+}
+?>
         </main>
         <!----Footer--->
         <footer class="footer">
@@ -598,7 +580,7 @@ if (file_exists('install.php') === TRUE) {
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
                             <li class="logout1">
-                                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+                                <form action="myaccount.php" method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
                         </ul>
                     </div>
