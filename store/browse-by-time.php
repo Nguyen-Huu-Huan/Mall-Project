@@ -155,12 +155,12 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 }else if ((isset($_POST['sort_order']))&&($_POST["sort_order"]=='oldest_first')){
                     $_SESSION['sort'] = 'oldest';
                 }
-                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='newest_first'))||($_SESSION['sort']=='newest')){
+                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='newest_first'))||((isset($_SESSION['sort']))&&($_SESSION['sort']=='newest'))){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
                         krsort($created_time);
                     }
                 }
-                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='oldest_first'))||($_SESSION['sort']=='oldest')){
+                if (((isset($_POST['sort_order']))&&($_POST['sort_order']=='oldest_first'))||((isset($_SESSION['sort']))&&($_SESSION['sort']=='oldest'))){
                     if(array_keys($created_time) !== range(0, count($created_time) - 1)){
                         ksort($created_time);
                     }else{
@@ -255,13 +255,21 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 foreach ($created_time as $key => $value){
                     echo "<tr>";
                     echo "<td>$key</td>";
-                    for($i = 0 ; $i<count($value);$i+=1){
-                        if (($key==$_SESSION['start_display_position'])||($key==($_SESSION['start_display_position']+1))){
-                            // $end_position = $i+1;
-                            echo "<td>";
-                            echo "<strong style='color:red;'>".$value[$i].str_repeat('&nbsp',3)."</strong>";
-                            echo "</td>";
-                        }else{
+                    if (isset($_SESSION['start_display_position'])) {
+                        for ($i = 0; $i < count($value); $i += 1) {
+                            if (($key == $_SESSION['start_display_position']) || ($key == ($_SESSION['start_display_position'] + 1))) {
+                                // $end_position = $i+1;
+                                echo "<td>";
+                                echo "<strong style='color:red;'>" . $value[$i] . str_repeat('&nbsp', 3) . "</strong>";
+                                echo "</td>";
+                            } else {
+                                echo "<td>";
+                                echo $value[$i];
+                                echo "</td>";
+                            }
+                        }
+                    }else{
+                        for ($i = 0; $i < count($value); $i += 1) {
                             echo "<td>";
                             echo $value[$i];
                             echo "</td>";
@@ -301,3 +309,4 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </body>
 <script type="text/javascript" src="../effects.js"></script>
 </html>
+
