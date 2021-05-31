@@ -131,7 +131,7 @@ if (file_exists('../install.php') === TRUE) {die('Error, the file install.php is
                     $stores_array[] = $line;
                 }
                 ksort($created_time);
-                $created_time = array_slice($created_time,0,5);
+                $created_time = array_slice($created_time,-5);
                 fclose($product_csv_file);
                 # Function to display each of the 5 most recently added item with its image
                 function new_products_display($item, $image){
