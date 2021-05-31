@@ -71,8 +71,25 @@ if (file_exists('install.php') === TRUE) {
                     <div class="mobile-menu-dropdown-content">
                         <ul>
                             <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
-                            <li><a class="text-bold" href="browse-by-category.php">Browse store by category</a></li>
                         </ul>
+                        <div class="mobile-menu-dropdown">
+                            <ul>
+                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
+                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
+
+                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
+                                        <ul>
+                                            <li><a href="fashion.php">Fashion</a></li>
+                                            <li><a href="electronics.php">Electronics and technology</a></li>
+                                            <li><a href="beauty.php">Beauty</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
 
                     </div>
                 </div>
@@ -112,7 +129,15 @@ if (file_exists('install.php') === TRUE) {
                                     <a>Browse &#8628;</a>
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
-                                        <a href="browse-by-category.php">Browse store by category</a>
+                                        <div class="dropdown">
+                                            <a>Browse store by category &#8628;</a>
+                                            <div class="dropdown-content dropdown-category">
+                                                <a href="fashion.php">Fashion</a>
+                                                <a href="electronics.php">Electronics and technology</a>
+                                                <a href="beauty.php">Beauty</a>
+                                            </div>
+                                            </a>
+                                        </div>
 
                                     </div>
                                 </div>
