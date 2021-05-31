@@ -173,7 +173,7 @@ if (file_exists('install.php') === TRUE) {
                                 <div class="row">
                                     <div class="col-50">
                                         <div class="container">
-                                            <label for="account">Account Type</label>
+                                            <label for="account">Account Type asasas</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
                                             <input type="radio" name="account" value="shopper" required checked="checked">
