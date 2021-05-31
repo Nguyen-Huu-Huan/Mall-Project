@@ -575,7 +575,6 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     if(isset($_POST['register'])){
                                         echo"<p style='color-red'>Register successful!</p>";
                                     }
-
                             ?>
                             <div class="row">
                                 <input type="submit" onclick="checkInputs()" name="register" value="Register"
