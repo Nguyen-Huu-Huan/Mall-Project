@@ -120,7 +120,6 @@ if (file_exists('install.php') === TRUE) {
                             <li class="logout1">
                                 <form action="myaccount.php" method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
-                            
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -194,7 +193,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" value=""  placeholder="*required" id="email">
+                                                <input type="email" name="email" value=""  placeholder="*" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -209,14 +208,14 @@ if (file_exists('install.php') === TRUE) {
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" value=""  placeholder="*required" id="pw">
+                                                <input type="password" name="pass" value=""  placeholder="*" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" value=""  placeholder="*required" id="confirmPW">
+                                                <input type="password" name="cfpass" value=""  placeholder="*" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -233,28 +232,28 @@ if (file_exists('install.php') === TRUE) {
                                             <input type="file" name="upload" value="" >
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" value=""  placeholder="*required" id="firstName">
+                                                <input type="text" name="fname" value=""  placeholder="*" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" value=""  placeholder="*required" id="lastName">
+                                                <input type="text" name="lname" value=""  placeholder="*" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" value=""  placeholder="*required" id="address">
+                                                <input type="text" name="address" value=""  placeholder="*" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value=""  placeholder="*required" id="city">
+                                                <input type="text" name="city" value=""  placeholder="*" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -534,7 +533,7 @@ if (file_exists('install.php') === TRUE) {
                             }
 
                             ?>
-                     
+                            <!-- comment cho vo tran cong nguyennn -->
                             <div class="row">
                                 <input type="submit"  name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
