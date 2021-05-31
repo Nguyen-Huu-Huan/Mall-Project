@@ -738,15 +738,15 @@ function checkInputs() {
         countSuccess += 1
     }
 
-    if (document.querySelector("#owner-checked").checked == true) {
-        if (countSuccess == 11) {
-            window.open('myaccount.php')
-        }
-    } else {
-        if (countSuccess == 9) {
-            window.open('myaccount.php')
-        }
-    }
+    // if (document.querySelector("#owner-checked").checked == true) {
+    //     if (countSuccess == 11) {
+    //         window.open('myaccount.php')
+    //     }
+    // } else {
+    //     if (countSuccess == 9) {
+    //         window.open('myaccount.php')
+    //     }
+    // }
 }
 
 function setErrorFor(input, message) {

@@ -117,7 +117,7 @@ if (file_exists('install.php') === TRUE) {
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout">
+                            <li class="logout1">
                                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
                         </ul>
@@ -567,7 +567,7 @@ if (file_exists('install.php') === TRUE) {
                             ?>
                             <!-- comment cho vo tran cong nguyennn -->
                             <div class="row">
-                                <input type="submit" onclick="checkInputs()" name="register" value="Register" class="col-50 btn text-medium">
+                                <input type="submit"  name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
@@ -597,7 +597,7 @@ if (file_exists('install.php') === TRUE) {
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout">
+                            <li class="logout1">
                                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
                         </ul>
