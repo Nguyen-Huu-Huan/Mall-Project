@@ -57,17 +57,17 @@ function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
-if (document.querySelector('.logout') != null) {
-    if (localStorage.getItem('login') == 'true') {
-        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-        document.querySelectorAll("a[href='myaccount.php']:not(a[onclick='logOut()'])").forEach((button) => {
-            button.removeAttribute('href');
-            button.setAttribute('href', 'logged-in.php')
-        })
-    } else {
-        document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
-    }
-}
+// if (document.querySelector('.logout') != null) {
+//     if (localStorage.getItem('login') == 'true') {
+//         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+//         document.querySelectorAll("a[href='myaccount.php']:not(a[onclick='logOut()'])").forEach((button) => {
+//             button.removeAttribute('href');
+//             button.setAttribute('href', 'logged-in.php')
+//         })
+//     } else {
+//         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'none' })
+//     }
+// }
 
 // Log out button function
 function logOut() {
@@ -401,15 +401,6 @@ function cart_load() {
         }
     }
 }
-
-function order_successful() {
-    if (localStorage.getItem('login') == 'true') {
-        localStorage.removeItem('Dunk Low Black');
-        localStorage.removeItem('Air Force One');
-        localStorage.removeItem('coupon');
-    }
-}
-
 function coupon_apply() {
     if (document.querySelector("input[name='coupon']").value == "COSC2430-HD") {
         document.querySelector(".HD-apply").style.display = "block"

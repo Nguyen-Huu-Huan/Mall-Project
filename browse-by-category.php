@@ -1,3 +1,18 @@
+<?php
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
+        button.removeAttribute('href');
+        button.setAttribute('href', 'logged-in.php')</script>";
+    }
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
@@ -77,7 +92,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -108,7 +123,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
                                         <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
+                                            <a href="browse-by-category.php">Browse store by category &#8628;</a>
                                             <div class="dropdown-content dropdown-category">
                                                 <a href="fashion.php">Fashion</a>
                                                 <a href="electronics.php">Electronics and technology</a>
@@ -122,7 +137,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -168,24 +183,26 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </form>";
         echo "<div class='row'>";
         $o = 0;
-        foreach ($stores_by_category_array as $category => $store){            
-            if ($category==$_POST['category']){
-                foreach ($store as $item){
-                    echo "<div class='col-20'>
-                            <div class='new-products-wrapper hover-shadow'>
-                                <figure class='new-products-img-wrapper'>
-                                    <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
-                                    <img class='new-products-brand' src='images/nike.jpg'>
-                                </figure>
-                                <p class='text-center text-small color-gray'>$categories_array[$o]</p>
-                                <p class='text-center text-medium color-black'>$item</p>
-                                <h2 class='text-center text-medium'>$category</h2>
-                            </div>
-                        </div>";
+        if (isset($_POST['category'])){
+            foreach ($stores_by_category_array as $category => $store){            
+                if ($category==$_POST['category']){
+                    foreach ($store as $item){
+                        echo "<div class='col-20'>
+                                <div class='new-products-wrapper hover-shadow'>
+                                    <figure class='new-products-img-wrapper'>
+                                        <img class='new-products-img' src='images/shirtnike1.png' alt='Red Shirt'>
+                                        <img class='new-products-brand' src='images/nike.jpg'>
+                                    </figure>
+                                    <p class='text-center text-small color-gray'>$categories_array[$o]</p>
+                                    <p class='text-center text-medium color-black'>$item</p>
+                                    <h2 class='text-center text-medium'>$category</h2>
+                                </div>
+                            </div>";
+                    }
                 }
-            }
-            $o+=1;
-        } 
+                $o+=1;
+            }  
+        }
         echo"</div>
             </div>
         </section>";
@@ -207,7 +224,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                     </div>
                 </div>

@@ -1,3 +1,18 @@
+<?php
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
+    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
+        button.removeAttribute('href');
+        button.setAttribute('href', 'logged-in.php')</script>";
+    }
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
@@ -76,7 +91,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -107,7 +122,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
                                         <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
+                                            <a href="browse-by-category.php">Browse store by category &#8628;</a>
                                             <div class="dropdown-content dropdown-category">
                                                 <a href="fashion.php">Fashion</a>
                                                 <a href="electronics.php">Electronics and technology</a>
@@ -121,7 +136,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -168,53 +183,55 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </h2>
             </div>
             <?php
-            $letter = $_POST['letter'];
-            $file = 'CSV_files/stores.txt';
-            $store_csv_file = fopen($file, "r");
-            $stores_array = array();
-            while ($line = fgetcsv($store_csv_file, 1000)) {
-                if (isset($letter)){
-                    $compare = stripos($line[1],$letter);
-                    if ($compare===0){
-                        $stores_array[] = $line[1];                     
+            if (isset($_POST['letter'])){
+                $letter = $_POST['letter'];
+                $file = 'CSV_files/stores.txt';
+                $store_csv_file = fopen($file, "r");
+                $stores_array = array();
+                while ($line = fgetcsv($store_csv_file, 1000)) {
+                    if (isset($letter)){
+                        $compare = stripos($line[1],$letter);
+                        if ($compare===0){
+                            $stores_array[] = $line[1];                     
+                        }
+                    }
+                }    
+                $stores_array = array_slice($stores_array, 1, count($stores_array));
+                $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+                $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
+                               'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
+                               'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
+                               'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg','images/pacson.jpg',
+                               'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
+                               'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
+                               'images/yankee_candle.jpg', 'images/zara.jpg'];
+                $image_select = '';
+                for ($i = 0;$i<count($alphabet_letter);$i+=1){
+                    if ($letter==strtoupper($alphabet_letter[$i])){
+                        $image_select = $link_image[$i];
                     }
                 }
-            }    
-            $stores_array = array_slice($stores_array, 1, count($stores_array));
-            $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-            $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
-                           'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
-                           'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
-                           'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg','images/pacson.jpg',
-                           'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
-                           'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
-                           'images/yankee_candle.jpg', 'images/zara.jpg'];
-            $image_select = '';
-            for ($i = 0;$i<count($alphabet_letter);$i+=1){
-                if ($letter==strtoupper($alphabet_letter[$i])){
-                    $image_select = $link_image[$i];
+                sort($stores_array);
+                echo "<div class='container'>";
+                echo "<div class='text-start' class='row'>
+                        <h1 id='$letter'>$letter</h1>
+                    </div>";
+                echo "<div class='row'>";
+                function store_display_by_name($store, $image){
+                    echo "<a class='store-thumbnail' href='store/store-home.php'>
+                            <figure class='col-20 hover-shadow'>
+                                <img src=$image alt='$store'>
+                                <figcaption class='text-center'>
+                                    <a href='store/store-home.php' class='text-medium text-bold'>$store</a>
+                                </figcaption>
+                            </figure>
+                    </a>";
                 }
+                for ($i = 0;$i<count($stores_array);$i+=1){
+                    store_display_by_name($stores_array[$i], $image_select);
+                }
+                echo "</div>";
             }
-            sort($stores_array);
-            echo "<div class='container'>";
-            echo "<div class='text-start' class='row'>
-                    <h1 id='$letter'>$letter</h1>
-                </div>";
-            echo "<div class='row'>";
-            function store_display_by_name($store, $image){
-                echo "<a class='store-thumbnail' href='store/store-home.php'>
-                        <figure class='col-20 hover-shadow'>
-                            <img src=$image alt='$store'>
-                            <figcaption class='text-center'>
-                                <a href='store/store-home.php' class='text-medium text-bold'>$store</a>
-                            </figcaption>
-                        </figure>
-                </a>";
-            }
-            for ($i = 0;$i<count($stores_array);$i+=1){
-                store_display_by_name($stores_array[$i], $image_select);
-            }
-            echo "</div>";
             ?>
         </section>
         <footer class="footer">
@@ -233,7 +250,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                     </div>
                 </div>

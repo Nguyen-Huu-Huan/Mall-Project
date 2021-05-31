@@ -1,10 +1,33 @@
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+print_r($_SESSION['validate']);
+ 
+if (isset($_POST['logout1'])) {
+    unset($_POST);
+    $_SESSION['validate'] = false;
+  }
+  if($_SESSION['validate']=== TRUE){
+    echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
+   </script>";
+    }
+    else if($_SESSION['validate']=== FALSE){
+        echo"<script>document.querySelector('.logout').style.display = 'none' 
+   </script>";
+    }
+?>
 <?php 
 # Don't delete, PHP01
 if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
 ?>
-<?php 
-    session_start(); 
-    $_SESSION['logged-in'] = false;
+<?php
+if($_SESSION['validate'] === TRUE){
+    
+    echo "<script type='text/javascript'> document.location = 'logged-in.php'; </script>";
+}
+$_SESSION['logged-in'] = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +41,8 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
-</noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet" type="text/css" />
+    </noscript>
 </head>
 
 
@@ -79,7 +98,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+            <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -111,7 +130,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
                                         <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
+                                            <a href="browse-by-category.php">Browse store by category &#8628;</a>
                                             <div class="dropdown-content dropdown-category">
                                                 <a href="fashion.php">Fashion</a>
                                                 <a href="electronics.php">Electronics and technology</a>
@@ -125,7 +144,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><a href="myaccount.php" onclick="logOut()">Log out</a></li>
+                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -139,23 +158,49 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
 
                     <div class="col-100">
-                        <form id="form-login" onsubmit="login()" action="logged-in.php">
+                        <form id="form-login" method="POST">
                             <div class="form-control">
                                 <label for="fname">Email or User name</label>
                                 <br>
-                                <input type="text" id="login-email" name="email" value="" required placeholder="*required">
+                                <input type="text" id="login-email" name="email" value="" placeholder="*required">
                                 <br>
                                 <label for="lname">Password</label>
                                 <br>
-                                <input type="password" id="password" name="password" value="" required placeholder="*required" pattern="password" oninvalid="wrongPassword()">
+                                <input type="password" id="password" name="password" value="" placeholder="*required" oninvalid="wrongPassword()">
                                 <br>
                                 <span>
-                            <p class="color-red text-bold wrong-password">Wrong password, please try again</p></span>
+                                    <p class="color-red text-bold wrong-password">Wrong password, please try again</p>
+                                </span>
                                 <a href="forgot-password.php">Forgot password</a>
                                 <br>
                             </div>
                             <div class="text-center ">
-                                <input type="submit" name="" value="Login" class="small-container btn text-medium">
+                                <?php
+                                if (file_exists('../userfile.txt') === TRUE) {
+                                    $fp = fopen('../userfile.txt', 'r');
+                                   
+                                   
+                                    if (isset($_POST['abc'])) {
+                                        $i = 0;
+                                        while ($line = fgetcsv($fp, 1000)) {
+                                            if ($_POST['email'] == $line[0]) {
+                                                if (password_verify($_POST['password'],$line[1])) {
+                                                    $_SESSION['validate'] = true;
+                                                    echo "<script type='text/javascript'> document.location = 'logged-in.php'; </script>";
+                                                }
+                                            }
+                                            $i++;
+                                        }
+                                        echo "<p class='color-red'>Wrong Email or Password!</p>";
+                                    }
+                                    
+                                }else{
+                                   if(isset($_POST['abc'])){
+                                       echo"<p class='color-red'>Wrong Email or Password!</p>";
+                                   }
+                                }
+                                ?>
+                                <input type="submit" name="abc" value="Login" class="small-container btn text-medium">
                                 <h1 class="text-medium">Not a member yet? <a href="register.php" class="text-medium">Sign up here</a></h1>
                             </div>
                         </form>
@@ -188,7 +233,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <p class="copyright ">Copyright 2021 © - Web Programming - Group 38</p>
             </div>
         </footer>
-        </div>
+    </div>
 </body>
 <script type="text/javascript" src="effects.js"></script>
 
