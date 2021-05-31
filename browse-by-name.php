@@ -183,53 +183,55 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 </h2>
             </div>
             <?php
-            $letter = $_POST['letter'];
-            $file = 'CSV_files/stores.txt';
-            $store_csv_file = fopen($file, "r");
-            $stores_array = array();
-            while ($line = fgetcsv($store_csv_file, 1000)) {
-                if (isset($letter)){
-                    $compare = stripos($line[1],$letter);
-                    if ($compare===0){
-                        $stores_array[] = $line[1];                     
+            if (isset($_POST['letter'])){
+                $letter = $_POST['letter'];
+                $file = 'CSV_files/stores.txt';
+                $store_csv_file = fopen($file, "r");
+                $stores_array = array();
+                while ($line = fgetcsv($store_csv_file, 1000)) {
+                    if (isset($letter)){
+                        $compare = stripos($line[1],$letter);
+                        if ($compare===0){
+                            $stores_array[] = $line[1];                     
+                        }
+                    }
+                }    
+                $stores_array = array_slice($stores_array, 1, count($stores_array));
+                $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+                $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
+                               'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
+                               'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
+                               'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg','images/pacson.jpg',
+                               'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
+                               'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
+                               'images/yankee_candle.jpg', 'images/zara.jpg'];
+                $image_select = '';
+                for ($i = 0;$i<count($alphabet_letter);$i+=1){
+                    if ($letter==strtoupper($alphabet_letter[$i])){
+                        $image_select = $link_image[$i];
                     }
                 }
-            }    
-            $stores_array = array_slice($stores_array, 1, count($stores_array));
-            $alphabet_letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-            $link_image = ['images/adidas.jpg','images/babylon.jpg','images/chanel.jpg','images/drmartens.jpg',
-                           'images/ecco.jpg','images/footlocker.jpg','images/givenchy.jpg','images/harrolds.jpg',
-                           'images/indigo.jpg','images/jbhifi.jpg','images/kookai.jpg','images/lg-logo.jpg',
-                           'images/mjbale.jpg','images/nike.jpg','images/offwhite.jpg','images/pacson.jpg',
-                           'images/qatar.jpg','images/reebok.jpg','images/saintlaurent.jpg','images/tde.jpg',
-                           'images/uniqlo.jpg','images/victoria.jpg','images/western.jpg','images/xfinity.jpg',
-                           'images/yankee_candle.jpg', 'images/zara.jpg'];
-            $image_select = '';
-            for ($i = 0;$i<count($alphabet_letter);$i+=1){
-                if ($letter==strtoupper($alphabet_letter[$i])){
-                    $image_select = $link_image[$i];
+                sort($stores_array);
+                echo "<div class='container'>";
+                echo "<div class='text-start' class='row'>
+                        <h1 id='$letter'>$letter</h1>
+                    </div>";
+                echo "<div class='row'>";
+                function store_display_by_name($store, $image){
+                    echo "<a class='store-thumbnail' href='store/store-home.php'>
+                            <figure class='col-20 hover-shadow'>
+                                <img src=$image alt='$store'>
+                                <figcaption class='text-center'>
+                                    <a href='store/store-home.php' class='text-medium text-bold'>$store</a>
+                                </figcaption>
+                            </figure>
+                    </a>";
                 }
+                for ($i = 0;$i<count($stores_array);$i+=1){
+                    store_display_by_name($stores_array[$i], $image_select);
+                }
+                echo "</div>";
             }
-            sort($stores_array);
-            echo "<div class='container'>";
-            echo "<div class='text-start' class='row'>
-                    <h1 id='$letter'>$letter</h1>
-                </div>";
-            echo "<div class='row'>";
-            function store_display_by_name($store, $image){
-                echo "<a class='store-thumbnail' href='store/store-home.php'>
-                        <figure class='col-20 hover-shadow'>
-                            <img src=$image alt='$store'>
-                            <figcaption class='text-center'>
-                                <a href='store/store-home.php' class='text-medium text-bold'>$store</a>
-                            </figcaption>
-                        </figure>
-                </a>";
-            }
-            for ($i = 0;$i<count($stores_array);$i+=1){
-                store_display_by_name($stores_array[$i], $image_select);
-            }
-            echo "</div>";
             ?>
         </section>
         <footer class="footer">
