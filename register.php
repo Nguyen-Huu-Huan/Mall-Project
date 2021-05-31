@@ -1,21 +1,27 @@
 <?php
- if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
-  }
-if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
-        button.removeAttribute('href');
-        button.setAttribute('href', 'logged-in.php')</script>";
+if (isset($_SESSION['validate'])) {
+
+
+    if (isset($_POST['logout1'])) {
+        unset($_POST);
+        $_SESSION['validate'] = false;
     }
+    if ($_SESSION['validate'] === TRUE) {
+        echo "<script>document.querySelector('.logout').style.display = 'inline-block' 
+   </script>";
+    } else if ($_SESSION['validate'] === FALSE) {
+        echo "<script>document.querySelector('.logout').style.display = 'none' 
+   </script>";
+    }
+}
 ?>
-<?php 
-# Don't delete, PHP01
-if (file_exists('install.php') === TRUE) {die('Error, the file install.php is still exists');}
+<?php
+                
+    die('Error, the file install.php is still exists');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +33,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
     <title>Mallux Register| Online Shopping Mall</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet"
-            type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500;800&display=swap" rel="stylesheet" type="text/css" />
     </noscript>
 </head>
 
@@ -52,8 +56,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
         </div>
     </div>
     <input type="checkbox" id="hamburger">
-    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img
-            src="images/mobile-nav.svg"></label>
+    <label for="hamburger" class="hamburger"><span class="text-bold close-hamburger color-red">X</span><img src="images/mobile-nav.svg"></label>
     <nav class="mobile-menu">
         <ul>
             <li><a class="text-bold" href="index.php">Home</a></li>
@@ -67,33 +70,17 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                     <div class="mobile-menu-dropdown-content">
                         <ul>
                             <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
+                            <li><a class="text-bold" href="browse-by-category.php">Browse store by category</a></li>
                         </ul>
-                        <div class="mobile-menu-dropdown">
-                            <ul>
-                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
-                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category
-                                        &#8628;</label>
-
-                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
-                                        <ul>
-                                            <li><a href="fashion.php">Fashion</a></li>
-                                            <li><a href="electronics.php">Electronics and technology</a></li>
-                                            <li><a href="beauty.php">Beauty</a></li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                            </ul>
-
-
-                        </div>
 
                     </div>
                 </div>
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+            <li class="logout text-bold">
+                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+            </li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -122,45 +109,39 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <a>Browse &#8628;</a>
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
-                                        <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
-                                            <div class="dropdown-content dropdown-category">
-                                                <a href="fashion.php">Fashion</a>
-                                                <a href="electronics.php">Electronics and technology</a>
-                                                <a href="beauty.php">Beauty</a>
-                                            </div>
-                                            </a>
-                                        </div>
+                                        <a href="browse-by-category.php">Browse store by category</a>
 
                                     </div>
                                 </div>
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+                            <li class="logout">
+                                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+                            </li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
                     <div class="res-index-space1 col-70"></div>
                 </div>
         </header>
-         
+
         <?php
 
-    if( isset($_POST['register'])){
-        $email = $_POST["email"];
-        $phone = $_POST["phone"];
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $pass = $_POST["pass"];
-        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-        $userfile = fopen('../userfile.txt', 'a');
-        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
-    }else{
-    }
-?>
+        if (isset($_POST['register'])) {
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $fname = $_POST["fname"];
+            $lname = $_POST["lname"];
+            $address = $_POST["address"];
+            $city = $_POST["city"];
+            $pass = $_POST["pass"];
+            $password_hash = password_hash($pass, PASSWORD_BCRYPT);
+            $userfile = fopen('../userfile.txt', 'a');
+            fwrite($userfile, $email . "," . $password_hash . "," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
+        } else {
+        }
+        ?>
 
         <main class="login-wrapper">
             <h1 class="section-title">Register</h1>
@@ -168,7 +149,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                 <div class="row">
 
                     <div class="col-100">
-                        <form    class="form" id="form" method="POST">
+                        <form class="form" id="form" method="POST">
                             <fieldset class="shopper-fieldset">
                                 <br>
                                 <div class="row">
@@ -177,12 +158,10 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                             <label for="account">Account Type</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                            <input type="radio" name="account" value="shopper" required
-                                                checked="checked">
+                                            <input type="radio" name="account" value="shopper" required checked="checked">
                                             <br><br>
                                             <label class="text-thin" for="account">Store Owner</label>
-                                            <input type="radio" name="account" value="owner" id="owner-checked"
-                                                required>
+                                            <input type="radio" name="account" value="owner" id="owner-checked" required>
                                             <br>
 
                                             <fieldset class="owner-fieldset">
@@ -228,8 +207,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" value="" required
-                                                    placeholder="*required" id="email">
+                                                <input type="email" name="email" value="" required placeholder="*required" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -237,24 +215,21 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 
                                             <div class="form-control">
                                                 <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone" value="" required
-                                                    placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
+                                                <input type="tel" name="phone" value="" required placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" value="" required
-                                                    placeholder="*required" id="pw">
+                                                <input type="password" name="pass" value="" required placeholder="*required" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" value="" required
-                                                    placeholder="*required" id="confirmPW">
+                                                <input type="password" name="cfpass" value="" required placeholder="*required" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -271,40 +246,35 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                             <input type="file" name="upload" value="" required>
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" value="" required
-                                                    placeholder="*required" id="firstName">
+                                                <input type="text" name="fname" value="" required placeholder="*required" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" value="" required
-                                                    placeholder="*required" id="lastName">
+                                                <input type="text" name="lname" value="" required placeholder="*required" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" value="" required
-                                                    placeholder="*required" id="address">
+                                                <input type="text" name="address" value="" required placeholder="*required" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value="" required placeholder="*required"
-                                                    id="city">
+                                                <input type="text" name="city" value="" required placeholder="*required" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="tel" name="zipcode" value="" required
-                                                    placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
+                                                <input type="tel" name="zipcode" value="" required placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -572,13 +542,13 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <br>
                             <br>
                             <?php
-                                    if(isset($_POST['register'])){
-                                        echo"<p style='color-red'>Register successful!</p>";
-                                    }
+                            if (isset($_POST['register'])) {
+                                echo "<p style='color-red'>Register successful!</p>";
+                            }
+
                             ?>
                             <div class="row">
-                                <input type="submit" onclick="checkInputs()" name="register" value="Register"
-                                    class="col-50 btn text-medium">
+                                <input type="submit" onclick="checkInputs()" name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
@@ -608,7 +578,9 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+                            <li class="logout">
+                                <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
+                            </li>
                         </ul>
                     </div>
                 </div>
