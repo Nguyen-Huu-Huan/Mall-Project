@@ -546,8 +546,6 @@ if (contactMessage != null) {
 
 if (form != null) {
     form.addEventListener('submit', e => {
-
-        e.preventDefault();
         checkInputs();
     });
 }
