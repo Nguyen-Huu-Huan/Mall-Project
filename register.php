@@ -567,7 +567,7 @@ if (file_exists('install.php') === TRUE) {
                             ?>
                             <!-- comment cho vo tran cong nguyennn -->
                             <div class="row">
-                                <input type="submit" onclick="checkInputs()" name="register" value="Register" class="col-50 btn text-medium">
+                                <input type="submit"  name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
