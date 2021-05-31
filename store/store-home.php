@@ -130,7 +130,7 @@ if (file_exists('../install.php') === TRUE) {die('Error, the file install.php is
                     $created_time[$time_conversion] = $line;
                     $stores_array[] = $line;
                 }
-                ksort($created_time);
+                krsort($created_time);
                 $created_time = array_slice($created_time,-5);
                 fclose($product_csv_file);
                 # Function to display each of the 5 most recently added item with its image
@@ -150,12 +150,13 @@ if (file_exists('../install.php') === TRUE) {die('Error, the file install.php is
                     </div>";
                 }
                 # An array with new products' image links
-                $new_product_images = ['../images/kits.jpg','../images/red_lobster.jpg','../images/solprole.png','../images/starbucks.jpg','../images/doritos.jpg'];
+                $new_product_images = ['../images/doritos.jpg','../images/starbucks.jpg','../images/solprole.png','../images/red_lobster.jpg','../images/kits.jpg'];
                 echo "            
                 <section class='new-products'>
                     <div class='medium-container'>
                         <h2 class='section-title'>New Products</h2>
                         <div class='row'>";
+            
                 for ($i = 0; $i<count($created_time); $i+=1){
                     new_products_display($created_time[$i], $new_product_images[$i]);
                 }
