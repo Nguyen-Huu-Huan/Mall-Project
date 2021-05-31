@@ -536,7 +536,7 @@ if (file_exists('install.php') === TRUE) {
                             ?>
                      
                             <div class="row">
-                                <input type="submit"  name="register" value="Register" class="col-50 btn text-medium">
+                                <input type="submit"  action="myaccount.php" name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
