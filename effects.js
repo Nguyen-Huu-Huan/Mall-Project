@@ -133,6 +133,9 @@ window.onload = function() {
     if (window.location.pathname.includes("index.php")) {
         index_file();
     }
+    if (window.location.pathname.includes("order-placement.php")) {
+        cart_load()
+    }
     logOutButton();
 };
 

@@ -50,7 +50,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </noscript>
 </head>
 
-<body class="index" onload="cart_load()">
+<body class="index" onload="">
     <div class="cookie">
         <div class="container">
             <h1 class="text-extra text-center">Cookie Consent</h1>
