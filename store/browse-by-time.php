@@ -129,7 +129,7 @@ if (file_exists('../install.php') === TRUE) {die('Error, the file install.php is
                         </form>
                     </div>
                 <?php 
-                $file = '../CSV_files/products.txt';
+                $file = '../CSV_files/products.csv';
                 $product_csv_file = fopen($file, "r");
                 $products_array = array();
                 $created_time = array();

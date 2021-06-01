@@ -171,7 +171,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             <?php
             if (isset($_POST['letter'])){
                 $letter = $_POST['letter'];
-                $file = 'CSV_files/stores.txt';
+                $file = 'CSV_files/stores.csv';
                 $store_csv_file = fopen($file, "r");
                 $stores_array = array();
                 $line_count = 0;

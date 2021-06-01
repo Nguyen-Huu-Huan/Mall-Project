@@ -1,24 +1,21 @@
-
 <?php
-// if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-// }
-// if(isset($_SESSION['validate'])){
+}
 
- 
-// if (isset($_POST['logout1'])) {
-//     unset($_POST);
-//     $_SESSION['validate'] = false;
-//   }
-//   if($_SESSION['validate']=== TRUE){
-//     echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
-//    </script>";
-//     }
-//     else if($_SESSION['validate']=== FALSE){
-//         echo"<script>document.querySelector('.logout').style.display = 'none' 
-//    </script>";
-//     }
-// }
+echo "<script>var showLogout = false</script>";
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        $_SESSION['validate'] = false;
+    }
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
+    }
+}
 ?>
 <?php 
 # Don't delete, PHP01
