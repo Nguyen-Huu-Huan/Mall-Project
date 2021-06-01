@@ -526,7 +526,7 @@ if (file_exists('install.php') === TRUE) {
                             </fieldset>
                             <br>
                             <br>
-                            
+<script type="text/javascript" src="effects.js"></script>                            
                             <?php
 
 if(isset($_POST['register'])){
@@ -599,7 +599,6 @@ if(isset($_POST['register'])){
             </div>
         </footer>
     </div>
-    <script type="text/javascript" src="effects.js"></script>
 </body>
 
 
