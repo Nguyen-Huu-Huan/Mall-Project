@@ -131,9 +131,12 @@ function inView(element) {
 }
 
 window.onload = function() {
-    index_file();
+    if (window.location.pathname.includes("index.php")) {
+        index_file();
+    }
     logOutButton();
 };
+
 
 function index_file() {
 
