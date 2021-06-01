@@ -134,7 +134,7 @@ if (file_exists('install.php') === TRUE) {
                 <div class="row">
 
                     <div class="col-100">
-                        <form class="form" id="form" method="POST">
+                        <form class="form" id="form" method="POST" onsubmit="return checkInputs()">
                             <fieldset class="shopper-fieldset">
                                 <br>
                                 <div class="row">
@@ -143,10 +143,10 @@ if (file_exists('install.php') === TRUE) {
                                             <label for="account">Account Type</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                            <input type="radio" name="account" value="shopper" checked="checked" onclick="checkInputs()">
+                                            <input type="radio" name="account" value="shopper" checked="checked" >
                                             <br><br>
                                             <label class="text-thin" for="account">Store Owner</label>
-                                            <input type="radio" name="account" value="owner" id="owner-checked" onclick="checkInputs()">
+                                            <input type="radio" name="account" value="owner" id="owner-checked" >
                                             <br>
 
                                             <fieldset class="owner-fieldset">
@@ -156,7 +156,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="bname">Business Name</label>
                                                         <br>
-                                                        <input type="text" name="bname" oninput="checkInputs()" id="bName">
+                                                        <input type="text" name="bname"  id="bName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -164,7 +164,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="sname">Store Name</label>
                                                         <br>
-                                                        <input type="text" name="sname" oninput="checkInputs()" id="sName">
+                                                        <input type="text" name="sname"  id="sName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -192,7 +192,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" oninput="checkInputs()"  placeholder="*required" id="email">
+                                                <input type="email" name="email"   placeholder="*required" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -200,21 +200,21 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone" oninput="checkInputs()"  placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
+                                                <input type="tel" name="phone"   placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" oninput="checkInputs()"  placeholder="*required" id="pw">
+                                                <input type="password" name="pass"   placeholder="*required" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" oninput="checkInputs()"  placeholder="*required" id="confirmPW">
+                                                <input type="password" name="cfpass"   placeholder="*required" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -228,38 +228,38 @@ if (file_exists('install.php') === TRUE) {
                                     <div class="col-50">
                                         <div class="container">
                                             <label for="upload"><strong>Profile Picture</strong></label>
-                                            <input type="file" name="upload" onclick="checkInputs()" required>
+                                            <input type="file" name="upload"  required>
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" oninput="checkInputs()" placeholder="*required" id="firstName">
+                                                <input type="text" name="fname"  placeholder="*required" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" oninput="checkInputs()"  placeholder="*required" id="lastName">
+                                                <input type="text" name="lname"   placeholder="*required" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" oninput="checkInputs()"  placeholder="*required" id="address">
+                                                <input type="text" name="address"   placeholder="*required" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" oninput="checkInputs()"  placeholder="*required" id="city">
+                                                <input type="text" name="city"   placeholder="*required" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="tel" name="zipcode" oninput="checkInputs()"  placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
+                                                <input type="tel" name="zipcode"   placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -527,7 +527,7 @@ if (file_exists('install.php') === TRUE) {
                             <br>
                             <br>
                             <div class="row">
-                                <input type="submit" name="register" value="Register" class="col-50 btn text-medium reg_button">
+                                <input type="submit" name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
@@ -546,6 +546,19 @@ if(isset($_POST['register'])){
                 echo "<p class='color-red'>Use another phone number, this one has already been registerd!</p>";
             }
         }
+        
+        fclose($fp);
+        $phone = $_POST["phone"];
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $address = $_POST["address"];
+        $city = $_POST["city"];
+        $pass = $_POST["pass"];
+        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
+        $userfile = fopen('../userfile.csv', 'a');
+        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
+        echo "<p class='color-red'>Register successful!</p>";
+        
     }else{
         $phone = $_POST["phone"];
         $fname = $_POST["fname"];
@@ -557,7 +570,7 @@ if(isset($_POST['register'])){
         $userfile = fopen('../userfile.csv', 'a');
         fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
         echo "<p class='color-red'>Register successful!</p>";
-        echo("<meta http-equiv='refresh' content='1'>");
+        
     }
 }
 ?>
