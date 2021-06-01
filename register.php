@@ -528,7 +528,8 @@ if (file_exists('install.php') === TRUE) {
                             <br>
 <script type="text/javascript" src="effects.js"></script>                            
                             <?php
-
+echo "<script>document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()</script>";
 if(isset($_POST['register'])){
     $email = $_POST["email"];
     if (file_exists('../userfile.csv') === TRUE) {
