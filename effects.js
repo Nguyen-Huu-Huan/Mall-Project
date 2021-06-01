@@ -555,7 +555,7 @@ if (contactMessage != null) {
 
 if (form != null) {
 //     form.addEventListener('submit', e => {
-        checkInputs();
+    document.querySelector('.reg_button').addEventListener('click', checkInputs());
 //     });
 }
 
