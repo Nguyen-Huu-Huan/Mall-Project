@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-echo "<script>var showLogout = false</script>";
 
 if (isset($_SESSION['validate'])) {
     
