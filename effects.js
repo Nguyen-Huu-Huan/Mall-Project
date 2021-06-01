@@ -341,7 +341,7 @@ function cart_load() {
             item_div_1_1_1.appendChild(item_name)
 
             var item_img = new Image();
-            item_img.src = cart_item[items][2]
+            item_img.src = (cart_item[items][2]).replace("../", "")
             item_div_1_1_1_1.appendChild(item_img)
 
             var item_div_1_3_1 = document.createElement("div");
