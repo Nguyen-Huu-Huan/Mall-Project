@@ -124,7 +124,6 @@ const scrollProducts1Element = document.querySelector('.scroll-products1');
 const scrollProducts1FirstElement = '.scroll-products1 .thumbnail-wrapper-products'
 var scrollProducts1Loop
 
-
 function inView(element) {
     var bounding = element.getBoundingClientRect();
     return bounding.right > 0;
