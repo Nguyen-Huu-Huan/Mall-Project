@@ -1,4 +1,4 @@
-# Access hosted website: https://mallux.online/
+# Access hosted website: https://mallux.online/index.php
 
 # Special Instructions and Notices while browsing through the webpage:
 ## My Account Page:
