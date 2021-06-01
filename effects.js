@@ -553,11 +553,11 @@ if (contactMessage != null) {
     })
 }
 
-if (form != null) {
-//     form.addEventListener('submit', e => {
-    document.querySelector('.reg_button').addEventListener('click', checkInputs());
-//     });
-}
+// if (form != null) {
+// //     form.addEventListener('submit', e => {
+//     document.querySelector('.reg_button').addEventListener('click', checkInputs());
+// //     });
+// }
 
 
 function checkContact() {
