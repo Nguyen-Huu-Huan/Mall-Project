@@ -39,7 +39,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </head>
 
 
-<body class="index">
+<body class="index" onload="index_file()">
     <div class="cookie ">
         <div class="container ">
             <h1 class="text-extras text-center ">Cookie Consent</h1>
