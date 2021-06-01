@@ -748,7 +748,7 @@ function checkInputs() {
     if (document.querySelector("#owner-checked").checked == true) {
         if (countSuccess == 11) {
             document.querySelector('.reg_button').addEventListener('click', function(event){
-                event.submit();
+                event.submit();console.log('fwfwf');
             });
             window.open('myaccount.php');       
         }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
@@ -757,7 +757,7 @@ function checkInputs() {
     } else {
         if (countSuccess == 9) {
             document.querySelector('.reg_button').addEventListener('click', function(event){
-                event.submit();
+                event.submit();console.log('fwfwf');
             });
             window.open('myaccount.php');       
         }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
