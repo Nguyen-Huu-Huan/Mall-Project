@@ -526,10 +526,12 @@ if (file_exists('install.php') === TRUE) {
                             </fieldset>
                             <br>
                             <br>
-<script type="text/javascript" src="effects.js"></script>                            
-                            <?php
-echo "<script>document.querySelector('.reg_button').addEventListener('click', function(event){
-  event.preventDefault()</script>";
+                            <div class="row">
+                                <input type="submit"  action="myaccount.php" name="register" value="Register" class="col-50 btn text-medium reg_button">
+                                <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
+                            </div>
+                        </form>
+                                                    <?php
 if(isset($_POST['register'])){
     $email = $_POST["email"];
     if (file_exists('../userfile.csv') === TRUE) {
@@ -557,12 +559,6 @@ if(isset($_POST['register'])){
     }
 }
 ?>
-
-                            <div class="row">
-                                <input type="submit"  action="myaccount.php" name="register" value="Register" class="col-50 btn text-medium reg_button">
-                                <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
-                            </div>
-                        </form>
                     </div>
                     <div class="col-100 text-center">
                         <h1 class="text-medium">Already a member? <a href="myaccount.php" class="text-medium">Login
@@ -600,6 +596,8 @@ if(isset($_POST['register'])){
             </div>
         </footer>
     </div>
+    <script type="text/javascript" src="effects.js"></script>                            
+
 </body>
 
 
