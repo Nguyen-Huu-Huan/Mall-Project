@@ -144,10 +144,10 @@ if (file_exists('install.php') === TRUE) {
                                             <label for="account">Account Type</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                            <input type="radio" name="account" value="shopper"  checked="checked">
+                                            <input type="radio" name="account" value="shopper" checked="checked" onclick="checkInputs()">
                                             <br><br>
                                             <label class="text-thin" for="account">Store Owner</label>
-                                            <input type="radio" name="account" value="owner" id="owner-checked" >
+                                            <input type="radio" name="account" value="owner" id="owner-checked" onclick="checkInputs()">
                                             <br>
 
                                             <fieldset class="owner-fieldset">
@@ -229,7 +229,7 @@ if (file_exists('install.php') === TRUE) {
                                     <div class="col-50">
                                         <div class="container">
                                             <label for="upload"><strong>Profile Picture</strong></label>
-                                            <input type="file" name="upload" value=""required >
+                                            <input type="file" name="upload" onclick="checkInputs()" required>
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
                                                 <input type="text" name="fname" oninput="checkInputs()" placeholder="*required" id="firstName">
