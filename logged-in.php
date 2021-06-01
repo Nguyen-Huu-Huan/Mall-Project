@@ -146,7 +146,7 @@ if ($_SESSION['validate'] === false) {
                     <h3>Full name: <span class="text-medium ">admin</span></h3>
                     <?php 
                     echo "<h3>Email address: <span class='text-medium'>";
-                    echo $_POST['login-email']; 
+                    echo $_SESSION['login-email']; 
                     echo "</span></h3>"
                     ?>
                     

@@ -4,7 +4,7 @@ while ($line = fgets($fp)) {
   $texts[] = $line;
 };
 
-$fp = fopen('../adminfile.txt', 'r');
+$fp = fopen('../adminfile.csv', 'r');
 while ($line = fgets($fp)) {
   $admin[] = $line;
 };
@@ -15,8 +15,8 @@ if (isset($_POST['admin-dashboard'])) {
   echo "<meta http-equiv='refresh' content='0'>";
   $fp = fopen('data.csv', 'w');
   $copyright = htmlspecialchars($_POST['copyright-text']);
-  $tos = $_POST['tos-text'];
-  $privacy = $_POST['privacy-text'];
+  $tos = htmlspecialchars($_POST['tos-text']);
+  $privacy = htmlspecialchars($_POST['privacy-text']);
   fwrite($fp, str_replace("\n", "<br>", (rtrim($copyright, "\n"))) . "\n");
   fwrite($fp, str_replace("\n", "<br>", (rtrim($tos, "\n"))) . "\n");
   fwrite($fp, str_replace("\n", "<br>", (rtrim($privacy, "\n"))) . "\n");
@@ -64,7 +64,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
   </noscript>
 </head>
 <?php
-session_start();
+
 if (isset($_POST['logout'])) {
   unset($_POST);
   $_SESSION['valid'] = false;

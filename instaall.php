@@ -56,9 +56,10 @@
                 $username = $_POST['admin-username'];
                 $password = $_POST['admin-password'];
                 $password_hash = password_hash($password, PASSWORD_BCRYPT);
-                $adminfile = fopen('../adminfile.txt', 'w');
+                $adminfile = fopen('../adminfile.csv', 'w');
                 fwrite($adminfile, $username . "\n");
                 fwrite($adminfile, $password_hash);
+                echo "Admin account created";
             }
             ?>
 
@@ -66,8 +67,8 @@
             if (document.querySelector("#password").value == "") {
                 document.querySelector("#error").innerHTML = "";
             } else {
-                message = "Password does not match"
-                document.querySelector("#error").innerHTML = message;
+                
+                document.querySelector("#error").innerHTML = "Password does not match";
             }
             return false;
         }

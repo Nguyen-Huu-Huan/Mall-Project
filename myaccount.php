@@ -168,12 +168,12 @@ $_SESSION['logged-in'] = false;
 
                                     
                                     if (isset($_POST['abc'])) {
-                                        $_SESSION['login-email'] = $_POST['login-email'];
+                                        $_SESSION['login-email'] = htmlspecialchars($_POST['login-email']);
                                         $i = 0;
                                         while ($line = fgetcsv($fp, 1000)) {
-                                            if ($_POST['login-email'] == $line[0]) {
+                                            if (htmlspecialchars($_POST['login-email'])  == $line[0]) {
 
-                                                if (password_verify($_POST['password'], $line[1])) {
+                                                if (password_verify(htmlspecialchars($_POST['password']), $line[1])) {
                                                     $_SESSION['validate'] = true;
                                                     echo "<script type='text/javascript'> document.location = 'logged-in.php'; </script>";
                                                 }
