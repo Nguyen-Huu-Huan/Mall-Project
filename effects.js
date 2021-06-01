@@ -552,11 +552,11 @@ if (contactMessage != null) {
     })
 }
 
-if (form != null) {
-    form.addEventListener('submit', e => {
-        checkInputs();
-    });
-}
+// if (form != null) {
+// //     form.addEventListener('submit', e => {
+//     document.querySelector('.reg_button').addEventListener('click', checkInputs());
+// //     });
+// }
 
 
 function checkContact() {
@@ -744,15 +744,23 @@ function checkInputs() {
         countSuccess += 1
     }
 
-    // if (document.querySelector("#owner-checked").checked == true) {
-    //     if (countSuccess == 11) {
-    //         window.open('myaccount.php')
-    //     }
-    // } else {
-    //     if (countSuccess == 9) {
-    //         window.open('myaccount.php')
-    //     }
-    // }
+    if (document.querySelector("#owner-checked").checked == true) {
+        if (countSuccess == 11) {
+            document.querySelector('.reg_button').addEventListener('click', function(){
+                form.submit(); window.open('myaccount.php');       
+            });      
+        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()
+});}
+    } else {
+        if (countSuccess == 9) {
+            document.querySelector('.reg_button').addEventListener('click', function(){
+                form.submit(); window.open('myaccount.php');       
+            });
+        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()
+});}
+    }
 }
 
 function setErrorFor(input, message) {
@@ -760,11 +768,12 @@ function setErrorFor(input, message) {
     const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
     small.innerText = message;
+
 }
 
 function setSuccessFor(input) {
     const formControl = input.parentElement;
-
+    formControl.className = 'form-control success';
 }
 
 function isEmail(email) {
