@@ -536,7 +536,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <?php
 if(isset($_POST['register'])){
     $email = $_POST["email"];
-    $fail_register = true;
+    $fail_register = false;
     if (file_exists('../userfile.csv') === TRUE) {
         $fp = fopen('../userfile.csv', 'r');
         while ($line = fgetcsv($fp, 1000)) {
