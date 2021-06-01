@@ -554,9 +554,9 @@ if (contactMessage != null) {
 }
 
 if (form != null) {
-    form.addEventListener('submit', e => {
+//     form.addEventListener('submit', e => {
         checkInputs();
-    });
+//     });
 }
 
 
