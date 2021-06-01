@@ -78,13 +78,9 @@ $_SESSION['logged-in'] = false;
                     <div class="mobile-menu-dropdown-content">
                         <ul>
                             <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
-                        </ul>
-                        <div class="mobile-menu-dropdown">
-                            <ul>
-                            <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
                             <li><a class="text-bold" href="browse-by-category.php">Browse store by category</a></li>
                         </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </li>

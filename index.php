@@ -39,7 +39,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
 </head>
 
 
-<body class="index" onload="index_file()">
+<body class="index">
     <div class="cookie ">
         <div class="container ">
             <h1 class="text-extras text-center ">Cookie Consent</h1>
@@ -124,19 +124,11 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                 <li>
                                     <div class="dropdown ">
                                         <a>Browse &#8628;</a>
-                                        <div class="dropdown-content ">
-                                            <a href="browse-by-name.php ">Browse stores by names</a>
-                                            <div class="dropdown ">
-                                                <a href="browse-by-category.php">Browse store by category</a>
-                                                <div class="dropdown-content dropdown-category ">
-                                                    <a href="fashion.php ">Fashion</a>
-                                                    <a href="electronics.php ">Electronics and technology</a>
-                                                    <a href="beauty.php ">Beauty</a>
-                                                </div>
-                                                </a>
-                                            </div>
+                                        <div class="dropdown-content">
+                                        <a href="browse-by-name.php">Browse stores by names</a>
+                                        <a href="browse-by-category.php">Browse store by category</a>
 
-                                        </div>
+                                    </div>
                                     </div>
                                 </li>
                                 <li><a href="faq.php ">FAQs</a></li>

@@ -57,19 +57,13 @@ function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
-window.onload = function() {
-    logOutButton();
-};
 
 function logOutButton() {
-    console.log("hello");
     if (showLogout === true) {
-        console.log("true");
         document.querySelectorAll('.logout1').forEach((button) => { button.style.display = 'inline-block' })
     }
 
     if (showLogout === false) {
-        console.log("false");
         document.querySelectorAll('.logout1').forEach((button) => { button.style.display = 'none' })
     }
 }
@@ -135,6 +129,11 @@ function inView(element) {
     var bounding = element.getBoundingClientRect();
     return bounding.right > 0;
 }
+
+window.onload = function() {
+    index_file();
+    logOutButton();
+};
 
 function index_file() {
 
