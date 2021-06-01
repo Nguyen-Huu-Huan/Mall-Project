@@ -156,7 +156,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="bname">Business Name</label>
                                                         <br>
-                                                        <input type="text" name="bname" value="" id="bName">
+                                                        <input type="text" name="bname" oninput="checkInputs()" id="bName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -164,7 +164,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="sname">Store Name</label>
                                                         <br>
-                                                        <input type="text" name="sname" value="" id="sName">
+                                                        <input type="text" name="sname" oninput="checkInputs()" id="sName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -192,7 +192,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" value=""  placeholder="*required" id="email">
+                                                <input type="email" name="email" oninput="checkInputs()"  placeholder="*required" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -200,21 +200,21 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone" value=""  placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
+                                                <input type="tel" name="phone" oninput="checkInputs()"  placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" value=""  placeholder="*required" id="pw">
+                                                <input type="password" name="pass" oninput="checkInputs()"  placeholder="*required" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" value=""  placeholder="*required" id="confirmPW">
+                                                <input type="password" name="cfpass" oninput="checkInputs()"  placeholder="*required" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -231,35 +231,35 @@ if (file_exists('install.php') === TRUE) {
                                             <input type="file" name="upload" value=""required >
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" value=""  placeholder="*required" id="firstName">
+                                                <input type="text" name="fname" oninput="checkInputs()" placeholder="*required" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" value=""  placeholder="*required" id="lastName">
+                                                <input type="text" name="lname" oninput="checkInputs()"  placeholder="*required" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" value=""  placeholder="*required" id="address">
+                                                <input type="text" name="address" oninput="checkInputs()"  placeholder="*required" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value=""  placeholder="*required" id="city">
+                                                <input type="text" name="city" oninput="checkInputs()"  placeholder="*required" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="tel" name="zipcode" value=""  placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
+                                                <input type="tel" name="zipcode" oninput="checkInputs()"  placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
