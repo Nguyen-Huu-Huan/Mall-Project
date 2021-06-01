@@ -131,7 +131,6 @@ function inView(element) {
 }
 
 window.onload = function() {
-    index_file();
     logOutButton();
 };
 
