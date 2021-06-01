@@ -10,7 +10,7 @@ echo "<script>var showLogout = false</script>";
 if (isset($_SESSION['validate'])) {
     
     if (isset($_POST['logout1'])) {
-        unset($_SESSION['validate']);
+        $_SESSION['validate'] = false;
     }
     if ($_SESSION['validate'] === true) {
         echo "<script> var showLogout = true</script>";
