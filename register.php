@@ -192,7 +192,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email" value=""  placeholder="*" id="email">
+                                                <input type="email" name="email" value=""  placeholder="*required" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -207,14 +207,14 @@ if (file_exists('install.php') === TRUE) {
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass" value=""  placeholder="*" id="pw">
+                                                <input type="password" name="pass" value=""  placeholder="*required" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass" value=""  placeholder="*" id="confirmPW">
+                                                <input type="password" name="cfpass" value=""  placeholder="*required" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -228,31 +228,31 @@ if (file_exists('install.php') === TRUE) {
                                     <div class="col-50">
                                         <div class="container">
                                             <label for="upload"><strong>Profile Picture</strong></label>
-                                            <input type="file" name="upload" value="" >
+                                            <input type="file" name="upload" value=""required >
                                             <div class="form-control">
                                                 <label for="fname">First name</label>
-                                                <input type="text" name="fname" value=""  placeholder="*" id="firstName">
+                                                <input type="text" name="fname" value=""  placeholder="*required" id="firstName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname" value=""  placeholder="*" id="lastName">
+                                                <input type="text" name="lname" value=""  placeholder="*required" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" value=""  placeholder="*" id="address">
+                                                <input type="text" name="address" value=""  placeholder="*required" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" value=""  placeholder="*" id="city">
+                                                <input type="text" name="city" value=""  placeholder="*required" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -526,12 +526,37 @@ if (file_exists('install.php') === TRUE) {
                             </fieldset>
                             <br>
                             <br>
+                            
                             <?php
-                            if (isset($_POST['register'])) {
-                                echo "<p style='color-red'>Register successful!</p>";
-                            }
 
-                            ?>
+if(isset($_POST['register'])){
+    $email = $_POST["email"];
+    if (file_exists('../userfile.csv') === TRUE) {
+        $fp = fopen('../userfile.csv', 'r');
+        while ($line = fgetcsv($fp, 1000)) {
+            if (htmlspecialchars($email)  == $line[0]){
+                echo "<p class='color-red'>Use another email, this one has already been registerd!</p>";
+            }
+            if (htmlspecialchars($email)  == $line[2]){
+                echo "<p class='color-red'>Use another phone number, this one has already been registerd!</p>";
+            }
+        }
+    }else{
+        $phone = $_POST["phone"];
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $address = $_POST["address"];
+        $city = $_POST["city"];
+        $pass = $_POST["pass"];
+        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
+        $userfile = fopen('../userfile.csv', 'a');
+        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
+        echo "<p class='color-red'>Register successful!</p>";
+        echo("<meta http-equiv='refresh' content='1'>");
+    }
+}
+?>
+
                             <div class="row">
                                 <input type="submit"  action="myaccount.php" name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
@@ -544,21 +569,7 @@ if (file_exists('install.php') === TRUE) {
                     </div>
                 </div>
             </section>
-            <?php
-
-if(isset($_POST['register'])){
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $address = $_POST["address"];
-    $city = $_POST["city"];
-    $pass = $_POST["pass"];
-    $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-    $userfile = fopen('../userfile.csv', 'a');
-    fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
-}
-?>
+            
         </main>
         <!----Footer--->
         <footer class="footer">

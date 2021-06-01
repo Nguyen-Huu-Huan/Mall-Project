@@ -170,7 +170,7 @@ $_SESSION['logged-in'] = false;
                                     
                                     if (isset($_POST['abc'])) {
                                         $_SESSION['login-email'] = htmlspecialchars($_POST['login-email']);
-                                        $i = 0;
+                                  
                                         while ($line = fgetcsv($fp, 1000)) {
                                             if (htmlspecialchars($_POST['login-email'])  == $line[0]) {
 
@@ -179,7 +179,7 @@ $_SESSION['logged-in'] = false;
                                                     echo "<script type='text/javascript'> document.location = 'logged-in.php'; </script>";
                                                 }
                                             }
-                                            $i++;
+                                            
                                         }
                                         echo "<p class='color-red'>Wrong Email or Password!</p>";
                                     }
