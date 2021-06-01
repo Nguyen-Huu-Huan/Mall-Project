@@ -143,10 +143,10 @@ if (file_exists('install.php') === TRUE) {
                                             <label for="account">Account Type</label>
                                             <br><br>
                                             <label class="text-thin" for="account">Shopper</label>&nbsp;&nbsp;
-                                            <input type="radio" name="account" value="shopper" checked="checked" >
+                                            <input required type="radio" name="account" value="shopper" checked="checked" >
                                             <br><br>
                                             <label class="text-thin" for="account">Store Owner</label>
-                                            <input type="radio" name="account" value="owner" id="owner-checked" >
+                                            <input required type="radio" name="account" value="owner" id="owner-checked" >
                                             <br>
 
                                             <fieldset class="owner-fieldset">
@@ -156,7 +156,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="bname">Business Name</label>
                                                         <br>
-                                                        <input type="text" name="bname"  id="bName">
+                                                        <input required type="text" name="bname"  id="bName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -164,7 +164,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="sname">Store Name</label>
                                                         <br>
-                                                        <input type="text" name="sname"  id="sName">
+                                                        <input required type="text" name="sname"  id="sName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -192,7 +192,7 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="email">Email address</label>
-                                                <input type="email" name="email"   placeholder="*required" id="email">
+                                                <input required type="email" name="email"   placeholder="*required" id="email">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -200,21 +200,21 @@ if (file_exists('install.php') === TRUE) {
 
                                             <div class="form-control">
                                                 <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone"   placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
+                                                <input required type="tel" name="phone"   placeholder="0901234567" pattern="0[0-9]{9}" id="phone">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="pass">Password</label>
-                                                <input type="password" name="pass"   placeholder="*required" id="pw">
+                                                <input required type="password" name="pass"   placeholder="*required" id="pw">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="cfpass">Confirm Password</label>
-                                                <input type="password" name="cfpass"   placeholder="*required" id="confirmPW">
+                                                <input required type="password" name="cfpass"   placeholder="*required" id="confirmPW">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -238,28 +238,28 @@ if (file_exists('install.php') === TRUE) {
                                             </div>
                                             <div class="form-control">
                                                 <label for="lname">Last name</label>
-                                                <input type="text" name="lname"   placeholder="*required" id="lastName">
+                                                <input required type="text" name="lname"   placeholder="*required" id="lastName">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address"   placeholder="*required" id="address">
+                                                <input required type="text" name="address"   placeholder="*required" id="address">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city"   placeholder="*required" id="city">
+                                                <input required type="text" name="city"   placeholder="*required" id="city">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
                                             </div>
                                             <div class="form-control">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="tel" name="zipcode"   placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
+                                                <input required type="tel" name="zipcode"   placeholder="4-6 digits" pattern="[0-9]{4,6}" id="zipcode">
                                                 <i class="correct">&#10004;</i>
                                                 <i class="wrong">&#9888;</i>
                                                 <small>Error message</small>
@@ -536,30 +536,23 @@ if (file_exists('install.php') === TRUE) {
                                                     <?php
 if(isset($_POST['register'])){
     $email = $_POST["email"];
+    $fail_register = true;
     if (file_exists('../userfile.csv') === TRUE) {
         $fp = fopen('../userfile.csv', 'r');
         while ($line = fgetcsv($fp, 1000)) {
             if (htmlspecialchars($email)  == $line[0]){
                 echo "<p class='color-red'>Use another email, this one has already been registerd!</p>";
+                $fail_register = true;
             }
             if (htmlspecialchars($email)  == $line[2]){
                 echo "<p class='color-red'>Use another phone number, this one has already been registerd!</p>";
+                $fail_register = true;
             }
+            
         }
         
-        fclose($fp);
-        $phone = $_POST["phone"];
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $pass = $_POST["pass"];
-        $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-        $userfile = fopen('../userfile.csv', 'a');
-        fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
-        echo "<p class='color-red'>Register successful!</p>";
-        
-    }else{
+    }
+    if ($fail_register === false){
         $phone = $_POST["phone"];
         $fname = $_POST["fname"];
         $lname = $_POST["lname"];
