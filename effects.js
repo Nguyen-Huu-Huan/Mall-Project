@@ -761,8 +761,8 @@ function setErrorFor(input, message) {
     const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
     small.innerText = message;
-//     document.querySelector('.reg_button').addEventListener('click', function(event){
-//   event.preventDefault()
+    document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()
 });
 }
 
