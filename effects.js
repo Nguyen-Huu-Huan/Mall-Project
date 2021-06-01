@@ -57,6 +57,23 @@ function logged_in() {
     document.querySelector('#user-email').innerHTML = localStorage.getItem('login_email')
 }
 
+window.onload = function() {
+    logOutButton();
+};
+
+function logOutButton() {
+    console.log("hello");
+    if (showLogout === true) {
+        console.log("true");
+        document.querySelectorAll('.logout1').forEach((button) => { button.style.display = 'inline-block' })
+    }
+
+    if (showLogout === false) {
+        console.log("false");
+        document.querySelectorAll('.logout1').forEach((button) => { button.style.display = 'none' })
+    }
+}
+
 // if (document.querySelector('.logout') != null) {
 //     if (localStorage.getItem('login') == 'true') {
 //         document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })

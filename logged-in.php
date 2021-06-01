@@ -2,18 +2,18 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        $_SESSION['validate'] = false;
+    }
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
+    }
 }
-// if ($_SESSION['validate'] === TRUE) {
-//     echo "<script>document.getElementById('logout').style.display = 'inline-block' 
-//    </script>";
-// } else if ($_SESSION['validate'] === FALSE) {
-//     echo "<script>document.getElementById('logout').style.display = 'none' 
-//    </script>";
-// }
 ?>
 <?php
 # Don't delete, PHP01
@@ -24,7 +24,11 @@ if (file_exists('install.php') === TRUE) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php $_SESSION['logged-in'] = true; ?>
+<?php $_SESSION['logged-in'] = true; 
+if ($_SESSION['validate'] === false) {
+
+    echo "<script type='text/javascript'> document.location = 'myaccount.php'; </script>";
+}?>
 
 <head>
     <meta charset="UTF-8">
@@ -73,19 +77,9 @@ if (file_exists('install.php') === TRUE) {
                         </ul>
                         <div class="mobile-menu-dropdown">
                             <ul>
-                                <li><input type="checkbox" class="mobile-menu-dropdown-trigger" id="menu-cate">
-                                    <label for="menu-cate" class="text-thin text-bold">Browse store by category &#8628;</label>
-
-                                    <div id="mobile-menu-cate" class="mobile-menu-dropdown-content">
-                                        <ul>
-                                            <li><a href="fashion.php">Fashion</a></li>
-                                            <li><a href="electronics.php">Electronics and technology</a></li>
-                                            <li><a href="beauty.php">Beauty</a></li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                            </ul>
+                            <li><a class="text-bold" href="browse-by-name.php">Browse stores by names</a></li>
+                            <li><a class="text-bold" href="browse-by-category.php">Browse store by category</a></li>
+                        </ul>
 
 
                         </div>
@@ -95,7 +89,7 @@ if (file_exists('install.php') === TRUE) {
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li id="logout" class="logout text-bold">
+            <li id="logout" class="logout1 text-bold">
                 <form method="POST">
                     <input type="submit" name="logout1" value="Log Out">
                 </form>
@@ -128,22 +122,14 @@ if (file_exists('install.php') === TRUE) {
                                     <a>Browse &#8628;</a>
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
-                                        <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
-                                            <div class="dropdown-content dropdown-category">
-                                                <a href="fashion.php">Fashion</a>
-                                                <a href="electronics.php">Electronics and technology</a>
-                                                <a href="beauty.php">Beauty</a>
-                                            </div>
-                                            </a>
-                                        </div>
+                                        <a href="browse-by-category.php">Browse store by category</a>
 
                                     </div>
                                 </div>
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li id="logout" class="logout">
+                            <li id="logout" class="logout1">
                                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
                             </li>
                         </ul>
@@ -158,7 +144,12 @@ if (file_exists('install.php') === TRUE) {
             <div class="row ">
                 <div class="col-40 ">
                     <h3>Full name: <span class="text-medium ">admin</span></h3>
-                    <h3>Email address: <span id="user-email" class="text-medium "></span></h3>
+                    <?php 
+                    echo "<h3>Email address: <span class='text-medium'>";
+                    echo $_POST['login-email']; 
+                    echo "</span></h3>"
+                    ?>
+                    
                     <h3>Phone number: <span class="text-medium ">(+84)0123456789</span></h3>
                 </div>
                 <div class="col-40 ">

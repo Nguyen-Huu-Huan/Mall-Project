@@ -1,17 +1,20 @@
 <?php
- if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
-  }
-if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
-        button.removeAttribute('href');
-        button.setAttribute('href', 'logged-in.php')</script>";
+
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        unset($_SESSION['validate']);
     }
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
+    }
+}
 ?>
 <?php 
 # Don't delete, PHP01
@@ -92,7 +95,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-             <li class="logout text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+             <li class="logout1 text-bold"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
             <li>
                 <a href="order-placement.php"><img class="mobile-cart-icon" src="images/cart.png" alt="cart"></a>
             </li>
@@ -123,22 +126,14 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                     <a>Browse &#8628;</a>
                                     <div class="dropdown-content">
                                         <a href="browse-by-name.php">Browse stores by names</a>
-                                        <div class="dropdown">
-                                            <a>Browse store by category &#8628;</a>
-                                            <div class="dropdown-content dropdown-category">
-                                                <a href="fashion.php">Fashion</a>
-                                                <a href="electronics.php">Electronics and technology</a>
-                                                <a href="beauty.php">Beauty</a>
-                                            </div>
-                                            </a>
-                                        </div>
+                                        <a href="browse-by-category.php">Browse store by category</a>
 
                                     </div>
                                 </div>
                             </li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+                            <li class="logout1"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                         <a href="order-placement.php"><img class="cart-icon" src="images/cart.png" alt="cart"></a>
                     </nav>
@@ -253,7 +248,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                             <li><a href="copyright.php">Copyright</a></li>
                             <li><a href="faq.php">FAQs</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li class="logout"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
+                            <li class="logout1"><form method="POST"><input type="submit" name="logout1" value="Log Out"></form></li>
                         </ul>
                     </div>
                 </div>

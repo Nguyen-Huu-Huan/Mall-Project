@@ -1,17 +1,20 @@
 <?php
- if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
-  }
-if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelectorAll('.logout').forEach((button) => { button.style.display = 'inline-block' })
-    document.querySelectorAll('a[href='myaccount.php']:not(a[onclick='logOut()'])').forEach((button) => {
-        button.removeAttribute('href');
-        button.setAttribute('href', 'logged-in.php')</script>";
+
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        unset($_SESSION['validate']);
     }
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
+    }
+}
 ?>
 <?php 
 # Don't delete, PHP01

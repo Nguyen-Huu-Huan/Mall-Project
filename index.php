@@ -3,20 +3,17 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if(isset($_SESSION['validate'])){
 
- 
-if (isset($_POST['logout1'])) {
-    unset($_POST);
-    $_SESSION['validate'] = false;
-  }
-  if($_SESSION['validate']=== TRUE){
-    echo"<script>document.querySelector('.logout').style.display = 'inline-block' 
-   </script>";
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        unset($_SESSION['validate']);
     }
-    else if($_SESSION['validate']=== FALSE){
-        echo"<script>document.querySelector('.logout').style.display = 'none' 
-   </script>";
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
     }
 }
 ?>
@@ -96,7 +93,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
             </li>
             <li><a class="text-bold " href="faq.php ">FAQs</a></li>
             <li><a class="text-bold " href="contact.php ">Contact</a></li>
-            <li class="logout text-bold "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
+            <li class="logout1 text-bold "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
             <li>
                 <a href="order-placement.php "><img class="mobile-cart-icon " src="images/cart.png " alt="cart "></a>
             </li>
@@ -142,7 +139,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                 </li>
                                 <li><a href="faq.php ">FAQs</a></li>
                                 <li><a href="contact.php ">Contact</a></li>
-                                <li class="logout "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
+                                <li class="logout1 "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
                             </ul>
                             <a href="order-placement.php "><img class="cart-icon " src="images/cart.png " alt="cart "></a>
                         </nav>
@@ -477,7 +474,7 @@ if (file_exists('install.php') === TRUE) {die('Error, the file install.php is st
                                 <li><a href="store/copyright.php ">Copyright</a></li>
                                 <li><a href="faq.php ">FAQs</a></li>
                                 <li><a href="contact.php ">Contact</a></li>
-                                <li class="logout "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
+                                <li class="logout1 "><a href="myaccount.php " onclick="logOut() ">Log out</a></li>
                             </ul>
                         </div>
                     </div>

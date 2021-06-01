@@ -1,22 +1,20 @@
 <?php
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-// if (isset($_SESSION['validate'])) {
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-
-//     if (isset($_POST['logout1'])) {
-//         unset($_POST);
-//         $_SESSION['validate'] = false;
-//     }
-//     if ($_SESSION['validate'] === TRUE) {
-//         echo "<script>document.querySelector('.logout').style.display = 'inline-block' 
-//    </script>";
-//     } else if ($_SESSION['validate'] === FALSE) {
-//         echo "<script>document.querySelector('.logout').style.display = 'none' 
-//    </script>";
-//     }
-// }
+if (isset($_SESSION['validate'])) {
+    
+    if (isset($_POST['logout1'])) {
+        unset($_SESSION['validate']);
+    }
+    if ($_SESSION['validate'] === true) {
+        echo "<script> var showLogout = true</script>";
+    }
+    if ($_SESSION['validate'] === false || !isset($_SESSION['validate'])) {
+        echo "<script>var showLogout = false</script>";
+    }
+}
 ?>
 <?php
 # Don't delete, PHP01
@@ -79,7 +77,7 @@ if (file_exists('install.php') === TRUE) {
             </li>
             <li><a class="text-bold" href="faq.php">FAQs</a></li>
             <li><a class="text-bold" href="contact.php">Contact</a></li>
-            <li class="logout text-bold">
+            <li class="logout1 text-bold">
                 <form method="POST"><input type="submit" name="logout1" value="Log Out"></form>
             </li>
             <li>
@@ -533,7 +531,6 @@ if (file_exists('install.php') === TRUE) {
                             }
 
                             ?>
-                            <!-- comment cho vo tran cong nguyennn -->
                             <div class="row">
                                 <input type="submit"  action="myaccount.php" name="register" value="Register" class="col-50 btn text-medium">
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
@@ -557,7 +554,7 @@ if(isset($_POST['register'])){
     $city = $_POST["city"];
     $pass = $_POST["pass"];
     $password_hash = password_hash($pass, PASSWORD_BCRYPT);
-    $userfile = fopen('../userfile.txt', 'a');
+    $userfile = fopen('../userfile.csv', 'a');
     fwrite($userfile, $email . "," . $password_hash."," . $phone . "," . $fname . "," . $lname . "," . $address . "," . $city . "\n");
 }
 ?>
