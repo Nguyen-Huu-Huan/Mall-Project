@@ -747,19 +747,17 @@ function checkInputs() {
 
     if (document.querySelector("#owner-checked").checked == true) {
         if (countSuccess == 11) {
-            document.querySelector('.reg_button').addEventListener('click', function(event){
-                event.submit();console.log('fwfwf');
-            });
-            window.open('myaccount.php');       
+            document.querySelector('.reg_button').addEventListener('click', function(){
+                form.submit(); window.open('myaccount.php');       
+            });      
         }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
   event.preventDefault()
 });}
     } else {
         if (countSuccess == 9) {
-            document.querySelector('.reg_button').addEventListener('click', function(event){
-                event.submit();console.log('fwfwf');
+            document.querySelector('.reg_button').addEventListener('click', function(){
+                form.submit(); window.open('myaccount.php');       
             });
-            window.open('myaccount.php');       
         }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
   event.preventDefault()
 });}
