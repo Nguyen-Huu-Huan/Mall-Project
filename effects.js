@@ -746,20 +746,26 @@ function checkInputs() {
 
     if (document.querySelector("#owner-checked").checked == true) {
         if (countSuccess == 11) {
-            document.querySelector('.reg_button').addEventListener('click', function(){
-                form.submit(); window.open('myaccount.php');       
-            });      
-        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
-  event.preventDefault()
-});}
+            document.querySelector('.reg_button').addEventListener('click', function() {
+                form.submit();
+                window.open('myaccount.php');
+            });
+        } else {
+            document.querySelector('.reg_button').addEventListener('click', function(event) {
+                event.preventDefault()
+            });
+        }
     } else {
         if (countSuccess == 9) {
-            document.querySelector('.reg_button').addEventListener('click', function(){
-                form.submit(); window.open('myaccount.php');       
+            document.querySelector('.reg_button').addEventListener('click', function() {
+                form.submit();
+                window.open('myaccount.php');
             });
-        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
-  event.preventDefault()
-});}
+        } else {
+            document.querySelector('.reg_button').addEventListener('click', function(event) {
+                event.preventDefault()
+            });
+        }
     }
 }
 
