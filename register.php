@@ -531,6 +531,8 @@ if (file_exists('install.php') === TRUE) {
                                 <input type="reset" name="" value="Clear" class="col-30 btn text-medium">
                             </div>
                         </form>
+                        <script type="text/javascript" src="effects.js"></script>                            
+
                                                     <?php
 if(isset($_POST['register'])){
     $email = $_POST["email"];
@@ -596,7 +598,6 @@ if(isset($_POST['register'])){
             </div>
         </footer>
     </div>
-    <script type="text/javascript" src="effects.js"></script>                            
 
 </body>
 
