@@ -747,12 +747,22 @@ function checkInputs() {
 
     if (document.querySelector("#owner-checked").checked == true) {
         if (countSuccess == 11) {
-            document.querySelector('.reg_button').unbind('click');       
-        }
+            document.querySelector('.reg_button').addEventListener('click', function(event){
+                event.submit();
+            });
+            window.open('myaccount.php');       
+        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()
+});}
     } else {
         if (countSuccess == 9) {
-            document.querySelector('.reg_button').unbind('click');       
-        }
+            document.querySelector('.reg_button').addEventListener('click', function(event){
+                event.submit();
+            });
+            window.open('myaccount.php');       
+        }else{    document.querySelector('.reg_button').addEventListener('click', function(event){
+  event.preventDefault()
+});}
     }
 }
 
@@ -761,9 +771,7 @@ function setErrorFor(input, message) {
     const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
     small.innerText = message;
-    document.querySelector('.reg_button').addEventListener('click', function(event){
-  event.preventDefault()
-});
+
 }
 
 function setSuccessFor(input) {
