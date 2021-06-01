@@ -745,15 +745,15 @@ function checkInputs() {
         countSuccess += 1
     }
 
-    // if (document.querySelector("#owner-checked").checked == true) {
-    //     if (countSuccess == 11) {
-    //         window.open('myaccount.php')
-    //     }
-    // } else {
-    //     if (countSuccess == 9) {
-    //         window.open('myaccount.php')
-    //     }
-    // }
+    if (document.querySelector("#owner-checked").checked == true) {
+        if (countSuccess == 11) {
+            document.querySelector('.reg_button').unbind('click');       
+        }
+    } else {
+        if (countSuccess == 9) {
+            document.querySelector('.reg_button').unbind('click');       
+        }
+    }
 }
 
 function setErrorFor(input, message) {
