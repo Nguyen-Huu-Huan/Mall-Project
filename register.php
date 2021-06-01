@@ -156,7 +156,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="bname">Business Name</label>
                                                         <br>
-                                                        <input required type="text" name="bname"  id="bName">
+                                                        <input  type="text" name="bname"  id="bName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>
@@ -164,7 +164,7 @@ if (file_exists('install.php') === TRUE) {
                                                     <div class="form-control">
                                                         <label for="sname">Store Name</label>
                                                         <br>
-                                                        <input required type="text" name="sname"  id="sName">
+                                                        <input  type="text" name="sname"  id="sName">
                                                         <i class="correct">&#10004;</i>
                                                         <i class="wrong">&#9888;</i>
                                                         <small>Error message</small>

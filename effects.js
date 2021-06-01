@@ -134,7 +134,7 @@ window.onload = function() {
         index_file();
     }
     if (window.location.pathname.includes("store-home.php")) {
-        index_file();
+        store_file();
     }
     if (window.location.pathname.includes("order-placement.php")) {
         cart_load()
